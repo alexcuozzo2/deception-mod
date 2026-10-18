@@ -31,8 +31,6 @@ namespace Deception.Core
         // These forms need native passive/visibility/naval adapters. Their omission is an OPEN coverage gap,
         // not a change to the all-tribe / city-origin release specification.
         public static readonly string[] Deferred=Array.Empty<string>();
-        static readonly HashSet<string> SafeAbilities=new(StringComparer.Ordinal){
-            "escape","fortify","stiff","static","skate","sneak","creep","swim","fly","land","amphibious","carry","water"};
         public static bool IsMenuId(string id)=>id==MenuId||id==AquarionCatalog.MimicId;
         public static string Variant(string source)=>IsMenuId(source)?source:Prefix+source;
         public static bool IsMimicId(string id)=>IsMenuId(id) || id.StartsWith(Prefix,StringComparison.Ordinal);
@@ -49,15 +47,9 @@ namespace Deception.Core
         static string[] Strings(JsonNode? n)=>n is JsonArray a?a.Select(x=>x!.GetValue<string>()).ToArray():System.Array.Empty<string>();
         static JsonObject Prototype(JsonObject source,string native,bool hidden)
         {
-            var u=Clone(source);
-            u["idx"]=-1;u["prefab"]=native;u["cost"]=NavalCopyOnly.Contains(native,StringComparer.Ordinal)?0:Cost;u["health"]=NativeHealth;
-            u["attack"]=0;u["defence"]=0;u["range"]=0;u["promotionLimit"]=0;u["independent"]=false;u["hidden"]=hidden;
-            u.Remove("upgradesFrom");u.Remove("promotesTo");u.Remove("growthRate");
-            u.Remove("embarksTo");u.Remove("attractsTo");
-            // A50: Dash belongs to every Mimic, independently of its disguise.
-            // Disguises still grant no Scout sight or map-changing passives. Public appearance
-            // information still reads the original source definition.
-            u["unitAbilities"]=new JsonArray(Strings(source["unitAbilities"]).Where(SafeAbilities.Contains).Append("dash").Distinct(StringComparer.Ordinal).Select(s=>(JsonNode?)JsonValue.Create(s)).ToArray());
+            // Unknown native metadata survives; the shipped GLD row owns all
+            // published mod values. Native source definitions stay untouched.
+            var u=ContentDefinitions.UnitFromNative(source,Variant(native),true);
             return u;
         }
         public static RecruitmentMutation Add(string treeJson)
@@ -79,16 +71,18 @@ namespace Deception.Core
                 forms.Add(new(id,Variant(id),Label(id),Int(u,"health")/10,Int(u,"movement"),
                     Int(u,"attack"),Int(u,"defence"),skills.Contains("swim")||skills.Contains("fly")));
             }
-            units[MenuId]=Prototype(warrior,"warrior",false);
-            units[AquarionCatalog.MimicId]=Prototype(units["mermaidwarrior"]!.AsObject(),"mermaidwarrior",false);
+            units[MenuId]=ContentDefinitions.UnitFromNative(warrior,MenuId,true);
+            units[AquarionCatalog.MimicId]=ContentDefinitions.UnitFromNative(units["mermaidwarrior"]!.AsObject(),AquarionCatalog.MimicId,true);
             AquarionCatalog.AddOverrides(root);
             var tech=root["techData"]![TechTree.DeceptionId]!.AsObject();
             if(tech["unitUnlocks"]!.AsArray().Count!=0)throw new RuleViolation("Unexpected existing Deception unlocks");
             // Registration and permission are separate: the native validator must be able to
             // find every concrete type under Deception. Hooks then enforce native-roster
             // membership and hide concrete variants from the ordinary city/AI menu.
-            tech["unitUnlocks"]=new JsonArray(new[]{MenuId}.Concat(forms.Select(f=>f.VariantId))
-                .Select(s=>(JsonNode?)JsonValue.Create(s)).ToArray());
+            var declared=ContentDefinitions.CloneRow("techData",TechTree.DeceptionId)["unitUnlocks"]!;
+            if(!Strings(declared).SequenceEqual(new[]{MenuId}.Concat(forms.Select(f=>f.VariantId))))
+                throw new RuleViolation("Declared recruitment roster differs from reviewed carrier identities");
+            tech["unitUnlocks"]=JsonNode.Parse(declared.ToJsonString());
             return new(root.ToJsonString(),forms.ToArray(),Deferred.ToArray());
         }
         public static void ValidateReentry(string json)

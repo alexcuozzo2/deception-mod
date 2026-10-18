@@ -41,8 +41,10 @@ namespace Deception.Tests
             try
             {
                 Case("PRELOAD-001-cold-both-player-first-open-has-no-decode",()=>{
-                    int loads=ImageConversion.Loads;Warm();int warm=ImageConversion.Loads,blits=Graphics.Blits,requests=SpriteHandle.Requested.Count;
-                    Check(warm>loads&&requests==2,"Both real profile families were not loaded during loading");
+                    int loads=ImageConversion.Loads,frames=Sprite.CreateModes.Count;Warm();int warm=ImageConversion.Loads,blits=Graphics.Blits,requests=SpriteHandle.Requested.Count;
+                    Check(warm==loads&&requests==2&&Sprite.CreateModes.Count>frames&&
+                        new[]{"mermimic_body_team","mimic-body-team"}.All(name=>ReferenceEquals(((Sprite)UnitArtAssets.Get(name)).texture,((Sprite)PolyMod.Registry.sprites["dcp_"+name+"__"]).texture)),
+                        "Both profile families must prewarm frames from loader textures without duplicate PNG decoding");
                     Check(Entry.Notes.Any(n=>n.Kind=="unit-art-loaded"&&n.Message.StartsWith("mermimic_body_team "))&&Entry.Notes.Any(n=>n.Kind=="unit-art-loaded"&&n.Message.StartsWith("mimic-body-team ")),"Both species body assets were not prewarmed");
                     TechArt();GameManager.LocalPlayer=GameManager.GameState.Players[2];TechArt();
                     Check(ImageConversion.Loads==warm&&Graphics.Blits==blits&&SpriteHandle.Requested.Count==requests,"First/second player tech open repeated cold work");

@@ -1,5 +1,5 @@
 // Managed factory/ownership/geometry checks. Native rendering remains Alex's
-// playtest responsibility; PNG pixels stay byte-identical in embedded sources.
+// playtest responsibility; fixture PNG bytes stand in for loader-owned assets.
 using System;
 using System.Linq;
 using Deception.Core;
@@ -78,7 +78,20 @@ namespace Deception.Tests
                 var replacement=(Sprite)UnitArtAssets.Get(name);
                 Check(!ReferenceEquals(source,replacement)&&ReferenceEquals(BranchArtAssets.Get(TechTree.PropagandaId,false),view)&&existing.sprite==view,
                     "Immutable source replacement invalidated a still-live published widget");
-                UnityEngine.Object.Destroy(texture);var repaired=(Sprite)BranchArtAssets.Get(TechTree.PropagandaId,false);
+                UnityEngine.Object.Destroy(texture);
+                bool denied=false;int loads=ImageConversion.Loads;
+                try{BranchArtAssets.Get(TechTree.PropagandaId,false);}catch(System.IO.InvalidDataException){denied=true;}
+                Check(denied&&ImageConversion.Loads==loads,"Dead loader texture caused a competing decode or a stale published view");
+                // Loader restoration is the ownership boundary: providers may
+                // resume from new registry content, never retire the old loader
+                // Sprite or silently substitute a separately decoded texture.
+                var key="dcp_"+name+"__";var oldLoaded=(Sprite)PolyMod.Registry.sprites[key];
+                var restoredTexture=new Texture2D{width=1024,height=1024,SourceName=texture.SourceName};
+                var restored=new Sprite(oldLoaded.Name){texture=restoredTexture,rect=new Rect(0,0,1024,1024)};
+                PolyMod.Registry.sprites[key]=restored;
+                var repaired=(Sprite)BranchArtAssets.Get(TechTree.PropagandaId,false);
+                replacement=(Sprite)UnitArtAssets.Get(name);
+                Check(oldLoaded.DestroyCalls==0&&restored.DestroyCalls==0&&restoredTexture.DestroyCalls==0,"Provider destroyed loader-owned content");
                 Check(!ReferenceEquals(view,repaired)&&view.DestroyCalls==1&&texture.DestroyCalls==1&&source.DestroyCalls==1,"Stale owned wrapper repair damaged borrowed assets");
                 Check(repaired&&repaired.texture&&ReferenceEquals(repaired.texture,replacement.texture),"Dead texture was reused for the replacement view");
                 UnityEngine.Object.Destroy(existing.gameObject);

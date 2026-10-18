@@ -10,12 +10,7 @@ namespace Deception.Core
         public static bool IsFoggerId(string id)=>id==Id;
         static JsonObject Definition(JsonObject warrior)
         {
-            var unit=JsonNode.Parse(warrior.ToJsonString())!.AsObject();
-            unit["idx"]=-1;unit["prefab"]="warrior";unit["cost"]=Cost;unit["health"]=Health;
-            unit["attack"]=0;unit["defence"]=10;unit["range"]=2;unit["movement"]=2;unit["promotionLimit"]=0;
-            unit["hidden"]=false;unit["independent"]=false;
-            foreach(string key in new[]{"upgradesFrom","promotesTo","growthRate","attractsTo"})unit.Remove(key);
-            unit["unitAbilities"]=new JsonArray("fly","dash","scout","doubleattack");
+            var unit=ContentDefinitions.UnitFromNative(warrior,Id,false);
             return unit;
         }
         internal static void Add(JsonObject root)

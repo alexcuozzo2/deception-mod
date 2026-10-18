@@ -99,9 +99,11 @@ namespace Deception.Core
             // branches are otherwise untouched. Native cost is the tier input;
             // native city-count and discount rules still determine the price.
             foreach(var node in Branch)
-                techs[node.Id]=new JsonObject { ["idx"]=-1,["cost"]=node.Tier,
-                    ["techUnlocks"]=new JsonArray(Branch.Where(t=>t.Parent==node.Id).Select(t=>(JsonNode?)JsonValue.Create(t.Id)).ToArray()),
-                    ["unitUnlocks"]=new JsonArray() };
+            {
+                var definition=ContentDefinitions.CloneRow("techData",node.Id);
+                // Unlock publication follows historical unit registration below.
+                definition["unitUnlocks"]=new JsonArray();techs[node.Id]=definition;
+            }
             Array(basic["techUnlocks"],"native roots").Insert(deceptionIndex,DeceptionId);
             return new(root.ToJsonString(),audits.Select(a=>a.Tribe).ToArray(),new[]{"basic"},original,audits.ToArray());
         }

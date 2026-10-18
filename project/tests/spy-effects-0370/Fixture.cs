@@ -96,7 +96,7 @@ namespace Deception.PolyModAdapter
  public static class NativeGameStateEnvelope{public class Snapshot{public long Revision=>1;public byte[] Bytes()=>new byte[]{1};}public static Snapshot? Value=new();public static Snapshot? Get(object s)=>Value;}
  public static class NativeExchangeCommands{public static bool IsExchange(object a)=>((BuildAction)a).Custom;public static NativeExchangeIntent? Get(object a)=>((BuildAction)a).Intent;public static void ValidateBase(object a,NativeExchangeIntent i){if(((BuildAction)a).Invalid)throw new Exception("base");}}
  public static class Entry{public static List<string> Notes=new();public static void Note(string k,string m)=>Notes.Add(k+":"+m);}
- public static class UnitArtAssets{public static object DecodeFrame(byte[] b,int w,int h,float x,float y,float rw,float rh)=>new UnityEngine.Sprite{rect=new(x,y,rw,rh)};}
+ public static class UnitArtAssets{public static object DecodeLoadedFrame(string path,int w,int h,float x,float y,float rw,float rh)=>new UnityEngine.Sprite{rect=new(x,y,rw,rh)};}
  public static class MimicControls{public static object NativeSprite(string n)=>new UnityEngine.Sprite();}
 }
 public class BuildAction:Il2CppSystem.Object{public bool Custom=true,Invalid;public NativeExchangeIntent? Intent;}

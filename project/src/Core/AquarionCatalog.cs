@@ -9,7 +9,8 @@ namespace Deception.Core
         {
             var map=root["tribeData"]!["aquarion"]!["unitOverrides"]!.AsObject();
             if(map.ContainsKey(RecruitmentCatalog.MenuId)||map.ContainsKey(SpyCatalog.Id))throw new RuleViolation("Aquarion custom overrides already present.");
-            map[RecruitmentCatalog.MenuId]=MimicId;map[SpyCatalog.Id]=SpyCatalog.AquarionId;
+            var definitions=ContentDefinitions.CloneRow("tribeData","aquarion")["unitOverrides"]!.AsObject();
+            foreach(var pair in definitions)map[pair.Key]=JsonNode.Parse(pair.Value!.ToJsonString());
         }
         internal static void RemoveValidatedOverrides(JsonObject root)
         {

@@ -152,8 +152,10 @@ namespace Deception.Tests
             test("UI-066-embedded-mimic-art-is-private-and-cached",()=> {
                 var first=MimicPortraitAsset.Get();int builds=PolyMod.Managers.Visual.Builds;
                 Check(ReferenceEquals(first,MimicPortraitAsset.Get())&&PolyMod.Managers.Visual.Builds==builds);
-                Check(PolyMod.Managers.Visual.LastBytes?.Length==263111&&PolyMod.Managers.Visual.LastPixelsPerUnit==100f);
-                Check(PolyMod.Managers.Visual.LastBytes![0]==137&&PolyMod.Managers.Visual.LastBytes[1]==80);
+                var bytes=ModContentAssets.Read(MimicPortraitAsset.AssetPath);
+                Check(bytes.Length==263111&&((UnityEngine.Sprite)first).pixelsPerUnit==100f);
+                Check(bytes[0]==137&&bytes[1]==80);
+                Check(ReferenceEquals(((UnityEngine.Sprite)first).texture,((UnityEngine.Sprite)PolyMod.Registry.sprites["dcp_mimic-portrait__"]).texture));
                 Check(((UnityEngine.Sprite)first).rect==new UnityEngine.Rect(452,213,430,690));
                 Check(UnityEngine.Sprite.LastFrame==new UnityEngine.Rect(452,213,430,690)&&UnityEngine.Sprite.LastPivot==new UnityEngine.Vector2(0.5f,0.5f));
                 Check(MimicControls.NativeSprite("UNKNOWN_ICON") is UnityEngine.Sprite native&&native.Name=="UNKNOWN_ICON");

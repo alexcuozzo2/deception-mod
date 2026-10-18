@@ -53,7 +53,7 @@ class PackageTests(unittest.TestCase):
         dll=self.root/'Deception.dll';dll.write_bytes(b'fixture DLL bytes NOT executable')
         output=self.root/'mod.zip';m.make_archive(dll,output)
         with zipfile.ZipFile(output) as z:
-            self.assertIsNone(z.testzip());self.assertEqual(set(z.namelist()),{'manifest.json','localization.json','Deception.dll','DEVELOPMENT-STATUS.txt'})
+            self.assertIsNone(z.testzip());self.assertEqual(set(z.namelist()),{'manifest.json','localization.json','Deception.dll','DEVELOPMENT-STATUS.txt'} | set(m.content_entries()))
     def test_09_model_gate_rejects_summary_only(self):
         with self.assertRaises(m.Stop):m.validate_model_results({'total':100,'passed':100,'failed':0,'is64Bit':True})
     def test_10_model_gate_rejects_a_failure(self):

@@ -172,6 +172,17 @@ namespace Deception.Tests
                 Check(ReferenceEquals(UnitArtAssets.Icon(),sprites[3])&&ReferenceEquals(UnitArtAssets.Icon(true),sprites[6]));
                 Check(!ReferenceEquals(sprites[3].texture,sprites[2].texture),"Type glyph still crops the old physical mask/body texture");
                 Check(sprites.All(s=>s&&s.texture&&s.rect.width>0&&s.rect.height>0));
+                for(int i=0;i<names.Length;i++)
+                {
+                    var loaded=(Sprite)PolyMod.Registry.sprites["dcp_"+names[i]+"__"];
+                    Check(ReferenceEquals(sprites[i].texture,loaded.texture),"Artwork duplicated the loader texture");
+                    Check(loaded.DestroyCalls==0&&loaded.texture.DestroyCalls==0,"Borrowed loader art was destroyed");
+                }
+                int loads=ImageConversion.Loads;
+                var extra=(Sprite)UnitArtAssets.DecodeLoadedFrame("assets/unit-art/dcp_mimic_icon__.png",1024,1024,252,269,494,525);
+                Check(ImageConversion.Loads==loads&&ReferenceEquals(extra.texture,sprites[3].texture),"Loaded frame decoded another PNG");
+                UnityEngine.Object.Destroy(extra);
+                Check(sprites[3].texture.DestroyCalls==0,"Owned frame retirement destroyed borrowed texture");
             });
             test("UI-100-owner-color-and-native-profile-independent-of-viewer",()=>{
                 var owner=new PlayerState{Id=2,tribe=TribeType.Bardur,skinType=SkinType.TestSkin,color=0x123456};

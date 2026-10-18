@@ -19,7 +19,7 @@ public enum UnitEffect{Frozen=0,Poisoned=1,Boosted=2,Invisible=3,Bubble=4,Petrif
 namespace Polytopia.Data{public sealed class UnitData:Il2CppSystem.Object{public UnitType type{get;set;}public ushort health{get;set;}=100;public int Attack=20,Defence=20,Range=1;public bool NoRetaliate;}}
 public sealed class UnitState:Il2CppSystem.Object{public uint id{get;set;}public byte owner{get;set;}public UnitType type{get;set;}public Polytopia.Data.UnitData UnitData{get;set;}=new();public ushort health{get;set;}=100;public ushort promotionLevel{get;set;}public UnitState? passengerUnit{get;set;}public Il2CppSystem.Collections.Generic.List<UnitEffect> effects{get;set;}=new();public WorldCoordinates coordinates{get;set;}public bool moved{get;set;}public bool attacked{get;set;}}
 public sealed class MapData:Il2CppSystem.Object{}
-public sealed class GameState:Il2CppSystem.Object{public MapData Map{get;set;}=new();public byte CurrentPlayer{get;set;}=1;public uint CurrentTurn{get;set;}=3;public bool Ready=true;public Guid Epoch=Guid.NewGuid();public Dictionary<uint,UnitState> Units=new();public Dictionary<uint,LedgerUnit> Rows=new();public Dictionary<string,Polytopia.Data.UnitData> Data=new();public bool TryGetUnit(uint id,out UnitState? unit)=>Units.TryGetValue(id,out unit);}
+public sealed class GameState:Il2CppSystem.Object{public MapData Map{get;set;}=new();public byte CurrentPlayer{get;set;}=1;public uint CurrentTurn{get;set;}=3;public bool Ready=true;public Guid Epoch=Guid.NewGuid();public Dictionary<byte,PlayerState> Players=new(){{0,new(){Id=0}},{1,new(){Id=1}},{2,new(){Id=2}},{3,new(){Id=3}}};public Dictionary<uint,UnitState> Units=new();public Dictionary<uint,LedgerUnit> Rows=new();public Dictionary<string,Polytopia.Data.UnitData> Data=new();public bool TryGetUnit(uint id,out UnitState? unit)=>Units.TryGetValue(id,out unit);}
 public sealed class PlayerState:Il2CppSystem.Object{public byte Id{get;set;}=1;}
 public sealed class ActionManager:Il2CppSystem.Object{public bool IsProcessing{get;set;}}
 public sealed class ClientBase:Il2CppSystem.Object{public GameState GameState{get;set;}=null!;public ActionManager ActionManager{get;set;}=new();public bool IsReplay{get;set;}public bool IsSpectating{get;set;}public bool IsWaitingForCommand{get;set;}}
@@ -28,6 +28,7 @@ public sealed class MapRenderer:UnityEngine.Object{public static MapRenderer? Cu
 public sealed class Unit:UnityEngine.Object
 {
  public UnitState UnitState{get;set;}=null!;public Il2CppSystem.Collections.Generic.List<Unit> overlayUnits{get;set;}=new();public bool Visible=true,Invisible,Death,ActualFocus;public int Shows;public List<bool> DeathAttempts=new();public bool GetVisible()=>Visible;public bool IsInvisibleForLocalPlayer()=>Invisible;
+ public PlayerState Owner{get{object owner=GameManager.GameState!.Players[UnitState.owner];if(BattleHelpers.Enable)NativeCombatPreview.HoverOwner(this,ref owner);return (PlayerState)owner;}}
  public ushort Health{get{ushort health=UnitState.health;if(BattleHelpers.Enable)NativeCombatPreview.Health(this,ref health);return health;}}
  public void ShowDeathIndicator(){bool allow=!BattleHelpers.Enable||NativeCombatPreview.Death(this);DeathAttempts.Add(allow);if(allow){Death=true;Shows++;}}
  public void HideDeathIndicator(){Death=false;}
@@ -50,11 +51,11 @@ public sealed class Tile:UnityEngine.Object{public Unit? Unit{get;set;}public Li
 public sealed class DamageIndicator:UnityEngine.Object{public bool Shown;public List<(float Damage,float Health)> Writes=new();public void Show(Unit unit,float damage,float health,float delay){if(!BattleHelpers.Enable||NativeCombatPreview.Indicator(unit,ref damage,ref health)){Shown=true;Writes.Add((damage,health));}}}
 public sealed class ClientInteraction:Il2CppSystem.Object
 {
- public Unit? selectedUnit{get;set;}public DamageIndicator Indicator=new(),OwnIndicator=new();public BattleResults Last;public ushort TargetHealth,ActorHealth;public bool ThrowHover;public Action? DuringHover;
+ public Unit? selectedUnit{get;set;}public DamageIndicator Indicator=new(),OwnIndicator=new();public BattleResults Last;public ushort TargetHealth,ActorHealth;public bool ThrowHover;public Action? DuringHover;public bool OwnerGate=true;
  public void StartHoverUnit(Unit target)
  {
   NativeCombatPreview.Scope? scope=null;bool run=!BattleHelpers.Enable||NativeCombatPreview.BeforeHover(this,target,out scope);Exception? error=null;
-  try{if(!run)return;DuringHover?.Invoke();if(ThrowHover)throw new InvalidOperationException("native hover failed");Last=BattleHelpers.GetBattleResults(GameManager.GameState!,selectedUnit!.UnitState,target.UnitState,false,true);TargetHealth=target.Health;ActorHealth=selectedUnit.Health;Indicator.Show(target,Last.attackDamage,TargetHealth,0);OwnIndicator.Show(selectedUnit,Last.retaliationDamage,ActorHealth,0.5f);}
+  try{if(!run)return;DuringHover?.Invoke();if(ThrowHover)throw new InvalidOperationException("native hover failed");if(OwnerGate&&Native.Same(selectedUnit!.Owner,target.Owner))return;Last=BattleHelpers.GetBattleResults(GameManager.GameState!,selectedUnit!.UnitState,target.UnitState,false,true);TargetHealth=target.Health;ActorHealth=selectedUnit.Health;Indicator.Show(target,Last.attackDamage,TargetHealth,0);OwnIndicator.Show(selectedUnit,Last.retaliationDamage,ActorHealth,0.5f);}
   catch(Exception e){error=e;throw;}finally{NativeCombatPreview.Finished(error,scope);}
  }
 }
@@ -82,8 +83,9 @@ public static class BattleHelpers
 }
 namespace Deception.PolyModAdapter
 {
+ internal static class NativeRogueRules{internal static LedgerUnit? Row(object s,object body)=>((GameState)s).Rows.GetValueOrDefault(((UnitState)body).id);}
  internal static class RecruitmentHooks{internal static object Data(object s,string form)=>((GameState)s).Data[form];}
- internal static class Entry{internal static int Errors;internal static void Note(string kind,string detail){Errors++;}}
+ internal static class Entry{internal static int Errors;internal static void Note(string kind,string detail){Errors++;Console.Error.WriteLine(kind+": "+detail);}}
  internal static partial class NativeGameStateEnvelope
  {
   static readonly Dictionary<GameState,Snapshot> Cache=new();

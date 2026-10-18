@@ -14,9 +14,8 @@ namespace Deception.PolyModAdapter
         static bool AudioFailed;
         static byte[] Read(string name,string sha)
         {
-            using var input=typeof(SmokeGrenadeAssets).Assembly.GetManifestResourceStream("Deception.SpyEffects."+name)??throw new InvalidDataException("Missing Spy effect asset: "+name);
-            if(input.Length>2_000_000)throw new InvalidDataException("Spy effect asset exceeds bound.");
-            using var data=new MemoryStream();input.CopyTo(data);var bytes=data.ToArray();
+            var bytes=ModContentAssets.Read("assets/spy-effects/"+(name.EndsWith(".png",StringComparison.Ordinal)?"dcp_"+name.Substring(0,name.Length-4)+"__.png":name));
+            if(bytes.Length>2_000_000)throw new InvalidDataException("Spy effect asset exceeds bound.");
             if(!Convert.ToHexString(SHA256.HashData(bytes)).Equals(sha,StringComparison.OrdinalIgnoreCase))throw new InvalidDataException("Spy effect asset hash changed: "+name);
             return bytes;
         }
@@ -26,7 +25,7 @@ namespace Deception.PolyModAdapter
             if(Native.UnityAlive(old)&&Native.UnityAlive(Native.Get(old!,"texture")))return old!;
             if(Native.UnityAlive(old))Native.Invoke(Native.M("UnityEngine.Object","Destroy","UnityEngine.Object"),null,old);
             var bytes=Read(icon?"smoke_grenade_icon.png":"smoke_grenade_projectile.png",icon?"f74c08e7d64580c33c3126b62a2c230978517f0603a450b9bc0cd52e8790e206":"04c68d7a7aaef6c0676acbabd804b266cc5edb8b4e73b3f9304b827b8adb0aa9");
-            object sprite=UnitArtAssets.DecodeFrame(bytes,3870,3870,icon?590:1203,icon?710:916,icon?2829:1499,icon?2670:1940);
+            object sprite=UnitArtAssets.DecodeLoadedFrame("assets/spy-effects/dcp_"+(icon?"smoke_grenade_icon":"smoke_grenade_projectile")+"__.png",3870,3870,icon?590:1203,icon?710:916,icon?2829:1499,icon?2670:1940);
             var texture=Native.Get(sprite,"texture")!;
             if(icon)
             {
@@ -41,7 +40,7 @@ namespace Deception.PolyModAdapter
                         texture,Native.Get(sprite,"rect"),Activator.CreateInstance(Native.T("UnityEngine.Vector2"),.5f,.5f),ppu,0u,Enum.Parse(Native.T("UnityEngine.SpriteMeshType"),"FullRect"));
                     if(!Native.UnityAlive(replacement))throw new InvalidDataException("Smoke icon was not created.");
                 }
-                catch{Native.Invoke(Native.M("UnityEngine.Object","Destroy","UnityEngine.Object"),null,sprite);Native.Invoke(Native.M("UnityEngine.Object","Destroy","UnityEngine.Object"),null,texture);throw;}
+                catch{Native.Invoke(Native.M("UnityEngine.Object","Destroy","UnityEngine.Object"),null,sprite);throw;}
                 Native.Invoke(Native.M("UnityEngine.Object","Destroy","UnityEngine.Object"),null,sprite);sprite=replacement!;Menu=sprite;
             }
             else ProjectileSprite=sprite;

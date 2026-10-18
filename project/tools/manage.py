@@ -273,7 +273,7 @@ OBSERVED_LIGHTHOUSE_REMOVAL_03100_SHA256='98211f2a80934a5c16ebe1098a83cc91c2ca62
 # Exact installed 0.3.101, rehashed 2026-10-18; evidence/observed-branch-position-03101.json.
 OBSERVED_BRANCH_POSITION_03101_SHA256='78db51e7e2b9dd0eff0016e60d4783223967dd47ff43c3d4e491aac1e10225e7'
 
-UI_ADAPTER_SOURCES=('NativeApi.cs','RecruitmentWheelUi.cs','TechPresentation.cs','NativeBranchTechUi.cs','BranchArtAssets.cs','FoggerArtAssets.cs','NativeFoggerPresentation.cs','TradeSecretsArtAssets.cs','BlackmailArtAssets.cs','NativeBlackmailUnitPresentation.cs','SmokeGrenadeAssets.cs','NativeSurveillanceUi.cs','NativeRogueVisuals.cs','TechIconGlow.cs','NativeButtonArt.cs','NativeVisualSnapshot.cs',
+UI_ADAPTER_SOURCES=('ModContentAssets.cs','NativeApi.cs','RecruitmentWheelUi.cs','TechPresentation.cs','NativeBranchTechUi.cs','BranchArtAssets.cs','FoggerArtAssets.cs','NativeFoggerPresentation.cs','TradeSecretsArtAssets.cs','BlackmailArtAssets.cs','NativeBlackmailUnitPresentation.cs','SmokeGrenadeAssets.cs','NativeSurveillanceUi.cs','NativeRogueVisuals.cs','TechIconGlow.cs','NativeButtonArt.cs','NativeVisualSnapshot.cs',
                     'NativeAquarionUnits.cs','MimicPresentationState.cs','NativeSpyPresentation.cs','NativeSpyActions.cs','MimicPresentationUi.cs','MimicControls.cs','NativeSpecialActionUi.cs','NativeActionBarScroll.cs','MimicActionMenu.cs','MimicAbilityTags.cs',
                     'MimicInspectionControls.cs','MimicDualPortrait.cs','MimicMapInspection.cs','NativeRoguePresentation.cs','MimicPortraitAsset.cs','UnitArtAssets.cs','UnitArtOutline.cs','MimicHoldInput.cs','OrdinaryActionEligibility.cs','MimicSmuggleActions.cs','MimicSmuggleUi.cs')
 
@@ -368,6 +368,12 @@ def sdk():
     raise Stop('Existing .NET SDK compiler was not found. No SDK/runtime download or upgrade was attempted.')
 
 def csc(dotnet,compiler,sources,out,refs,log,resources=(),unsafe=False,runner=None,defines=()):
+    # Fixture-only data loading. Production reads patch.json from PolyMod's mod files.
+    if out.name != 'Deception.dll' and any(p.name == 'ContentDefinitions.cs' for p in sources):
+        resources=list(resources)+[(ROOT/'content/patch.json','Deception.Content.patch.json')]
+        defines=tuple(defines)+('DECEPTION_CONTENT_FIXTURE',)
+    if any(p.name == 'ModContentAssets.cs' for p in sources) and out.name != 'Deception.dll':
+        sources=list(sources)+[ROOT/'tests/loose-content/RegistryFixture.cs']
     # Native runtime libraries are references only; nothing is copied into Mods/core.
     # Direct csc avoids NuGet restore and dependency/runtime upgrades.
     lines=['-nologo','-nostdlib+','-target:library','-langversion:10','-nullable:enable','-deterministic+','-optimize+','-warn:4']
@@ -387,8 +393,20 @@ def csc(dotnet,compiler,sources,out,refs,log,resources=(),unsafe=False,runner=No
     (runner or call)([dotnet,'exec',compiler,'-noconfig','@'+str(rsp)],log=log)
     regular(out)
 
+def content_entries():
+    """Public, inspectable content shared by every platform's archive builder."""
+    entries={'patch.json':regular(ROOT/'content/patch.json').read_bytes()}
+    entries['assets/dcp_mimic-portrait__.png']=regular(ROOT/'content/mimic-portrait.png').read_bytes()
+    for folder in ('unit-art','spy-effects'):
+        for path in sorted((ROOT/'content'/folder).iterdir()):
+            if path.suffix in ('.png','.wav'):
+                name=('dcp_'+path.stem+'__.png') if path.suffix=='.png' else path.name
+                entries['assets/'+folder+'/'+name]=regular(path).read_bytes()
+    return entries
+
 def make_archive(dll,destination):
     entries={n:(ROOT/'content'/n).read_bytes() for n in ('manifest.json','localization.json')}
+    entries.update(content_entries())
     entries['Deception.dll']=regular(dll).read_bytes()
     entries['DEVELOPMENT-STATUS.txt']=(ROOT/'content/DEVELOPMENT-STATUS.txt').read_bytes()
     with zipfile.ZipFile(destination,'x',compression=zipfile.ZIP_DEFLATED) as z:
@@ -665,7 +683,7 @@ def run_candidate_0359(dotnet,compiler,work,refs,log,host,runtime):
         ('path-preference','path-preference-0375',('NativeSpyMovementProfile.cs','NativeDisguiseConcealment.cs','NativeMimicTransport.cs','NativeExchangePlan.cs','NativeExchangePlanning.cs','NativeExchangeCommit.cs','NativeApparentUpgrades.cs','NativeShedDisguise.cs','NativeDisguiseConcealmentEffects.cs','NativeMimicWaterMovement.cs','NativeDisguiseMovement.cs','NativeMimicMovement.cs','NativeCloakMovement.cs','NativeRogueTactics.cs','NativeDisguisePathPreference.cs'),'Deception.PathPreferenceTests','Deception.Tests.PathPreferenceTests'),
         ('mimic-movement','mimic-movement-0370',('NativeSpyMovementProfile.cs','NativeMimicTransport.cs','NativeExchangePlan.cs','NativeExchangePlanning.cs','NativeExchangeCommit.cs','NativeApparentUpgrades.cs','NativeShedDisguise.cs','NativeDisguiseConcealmentEffects.cs','NativeMimicWaterMovement.cs','NativeDisguiseMovement.cs','NativeMimicMovement.cs','NativeCloakMovement.cs','NativeRogueTactics.cs'),'Deception.MimicMovementTests','Deception.Tests.MimicMovementTests'),
         ('rogue-visuals','rogue-visuals-0370',('NativeSpyActions.cs','NativeSpyNetwork.cs','NativeSpyReadinessPresentation.cs','NativeRogueVisuals.cs'),'Deception.RogueVisualTests','Deception.Tests.RogueVisualTests'),
-        ('spy-effects','spy-effects-0370',('SmokeGrenadeAssets.cs','NativeSpyEffectPresentation.cs'),'Deception.SpyEffectTests','SpyEffectTests'),
+        ('spy-effects','spy-effects-0370',('ModContentAssets.cs','SmokeGrenadeAssets.cs','NativeSpyEffectPresentation.cs'),'Deception.SpyEffectTests','SpyEffectTests'),
         ('blackmail-hostility','blackmail-hostility-0369',('NativeBlackmailHostility.cs',),'Deception.HostilityTests','Deception.Tests.HostilityTests'),
         ('blackmail-notices','blackmail-notices-0369',('NativeBlackmail.cs','NativeExchangePlan.cs','NativeBlackmailNotices.cs'),'Deception.NoticeTests','Deception.Tests.NoticeTests'),
         ('blackmail-income','blackmail-income-0369',('NativeBlackmail.cs','NativeExchangePlan.cs','NativeBlackmailIncomeUi.cs'),'Deception.IncomeTests','Deception.Tests.IncomeTests'),
@@ -1038,7 +1056,7 @@ def build(game):
             refs+[game/'BepInEx/core/BepInEx.Core.dll',game/'BepInEx/core/0Harmony.dll',
                   game/'BepInEx/core/Il2CppInterop.Runtime.dll',game/'BepInEx/interop/Il2Cppmscorlib.dll',
                   game/'BepInEx/interop/GameLogicAssembly.dll',game/'BepInEx/interop/PolytopiaAssembly.dll',
-                  game/'BepInEx/interop/UnityEngine.CoreModule.dll'],log,resources=portrait_resource+bridge_resources)
+                  game/'BepInEx/interop/UnityEngine.CoreModule.dll'],log,resources=bridge_resources)
         call([sys.executable,ROOT/'tools/audit_compiler_metadata.py',work/'Deception.dll',work/'compiler-metadata-results.json'],log=log)
         make_archive(work/'Deception.dll',work/MODNAME)
     if source!=same_tree_sources():raise Stop('Project source changed during the build; install disabled.')

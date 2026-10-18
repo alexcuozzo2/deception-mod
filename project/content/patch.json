@@ -1,0 +1,1404 @@
+{
+  "techData": {
+    "dcp_deception": {
+      "idx": -1,
+      "cost": 1,
+      "techUnlocks": [
+        "dcp_propaganda",
+        "dcp_intelligence"
+      ],
+      "unitUnlocks": [
+        "dcp_mimic",
+        "dcp_mimic_form_amphibian",
+        "dcp_mimic_form_aquapult",
+        "dcp_mimic_form_archer",
+        "dcp_mimic_form_babydragon",
+        "dcp_mimic_form_battlesled",
+        "dcp_mimic_form_bombership",
+        "dcp_mimic_form_boomchi",
+        "dcp_mimic_form_bugegg",
+        "dcp_mimic_form_bunny",
+        "dcp_mimic_form_catapult",
+        "dcp_mimic_form_centipede",
+        "dcp_mimic_form_ciru",
+        "dcp_mimic_form_cloak",
+        "dcp_mimic_form_cloak_boat",
+        "dcp_mimic_form_crab",
+        "dcp_mimic_form_dagger",
+        "dcp_mimic_form_dcp_motherfogger",
+        "dcp_mimic_form_dcp_spy",
+        "dcp_mimic_form_dcp_spymaid",
+        "dcp_mimic_form_defender",
+        "dcp_mimic_form_doomux",
+        "dcp_mimic_form_dragonegg",
+        "dcp_mimic_form_exida",
+        "dcp_mimic_form_firedragon",
+        "dcp_mimic_form_gaami",
+        "dcp_mimic_form_giant",
+        "dcp_mimic_form_hexapod",
+        "dcp_mimic_form_icearcher",
+        "dcp_mimic_form_icefortress",
+        "dcp_mimic_form_island",
+        "dcp_mimic_form_jelly",
+        "dcp_mimic_form_juggernaut",
+        "dcp_mimic_form_kiton",
+        "dcp_mimic_form_knight",
+        "dcp_mimic_form_larva",
+        "dcp_mimic_form_mantis",
+        "dcp_mimic_form_mermaidarcher",
+        "dcp_mimic_form_mermaidcloak",
+        "dcp_mimic_form_mermaiddagger",
+        "dcp_mimic_form_mermaiddefender",
+        "dcp_mimic_form_mermaidswordsman",
+        "dcp_mimic_form_mermaidwarrior",
+        "dcp_mimic_form_mindbender",
+        "dcp_mimic_form_mooni",
+        "dcp_mimic_form_moth",
+        "dcp_mimic_form_phychi",
+        "dcp_mimic_form_pirate",
+        "dcp_mimic_form_polytaur",
+        "dcp_mimic_form_rammership",
+        "dcp_mimic_form_raychi",
+        "dcp_mimic_form_rider",
+        "dcp_mimic_form_scoutship",
+        "dcp_mimic_form_shaman",
+        "dcp_mimic_form_shark",
+        "dcp_mimic_form_siren",
+        "dcp_mimic_form_swordsman",
+        "dcp_mimic_form_transportship",
+        "dcp_mimic_form_tridention",
+        "dcp_mimic_form_warrior"
+      ]
+    },
+    "dcp_propaganda": {
+      "idx": -1,
+      "cost": 2,
+      "techUnlocks": [
+        "dcp_espionage"
+      ],
+      "unitUnlocks": []
+    },
+    "dcp_intelligence": {
+      "idx": -1,
+      "cost": 2,
+      "techUnlocks": [
+        "dcp_camouflage"
+      ],
+      "unitUnlocks": []
+    },
+    "dcp_espionage": {
+      "idx": -1,
+      "cost": 3,
+      "techUnlocks": [],
+      "unitUnlocks": [
+        "dcp_spy"
+      ]
+    },
+    "dcp_camouflage": {
+      "idx": -1,
+      "cost": 3,
+      "techUnlocks": [],
+      "unitUnlocks": [
+        "dcp_motherfogger"
+      ]
+    }
+  },
+  "unitData": {
+    "dcp_spy": {
+      "health": 50,
+      "defence": 10,
+      "movement": 2,
+      "range": 0,
+      "attack": 0,
+      "cost": 5,
+      "unitAbilities": [
+        "scout"
+      ],
+      "weapon": 1,
+      "promotionLimit": 0,
+      "idx": -1,
+      "prefab": "warrior",
+      "hidden": false,
+      "independent": false
+    },
+    "dcp_spymaid": {
+      "health": 50,
+      "defence": 10,
+      "movement": 2,
+      "range": 0,
+      "attack": 0,
+      "cost": 5,
+      "unitAbilities": [
+        "scout",
+        "swim",
+        "amphibious"
+      ],
+      "weapon": 1,
+      "promotionLimit": 0,
+      "idx": -1,
+      "prefab": "mermaidwarrior",
+      "hidden": false,
+      "independent": false
+    },
+    "dcp_motherfogger": {
+      "health": 100,
+      "defence": 10,
+      "movement": 2,
+      "range": 2,
+      "attack": 0,
+      "cost": 5,
+      "unitAbilities": [
+        "fly",
+        "dash",
+        "scout",
+        "doubleattack"
+      ],
+      "weapon": 1,
+      "promotionLimit": 0,
+      "idx": -1,
+      "prefab": "warrior",
+      "hidden": false,
+      "independent": false
+    },
+    "dcp_mimic_form_amphibian": {
+      "health": 10,
+      "defence": 0,
+      "movement": 2,
+      "range": 0,
+      "attack": 0,
+      "cost": 1,
+      "unitAbilities": [
+        "escape",
+        "swim",
+        "amphibious",
+        "dash"
+      ],
+      "weapon": 1,
+      "promotionLimit": 0,
+      "idx": -1,
+      "prefab": "amphibian",
+      "independent": false,
+      "hidden": false
+    },
+    "dcp_mimic_form_aquapult": {
+      "health": 10,
+      "defence": 0,
+      "movement": 2,
+      "range": 0,
+      "attack": 0,
+      "cost": 1,
+      "unitAbilities": [
+        "swim",
+        "water",
+        "stiff",
+        "dash"
+      ],
+      "movementTerrain": [
+        "water",
+        "ocean",
+        "wetland"
+      ],
+      "weapon": 17,
+      "promotionLimit": 0,
+      "idx": -1,
+      "prefab": "aquapult",
+      "independent": false,
+      "hidden": false
+    },
+    "dcp_mimic_form_archer": {
+      "health": 10,
+      "defence": 0,
+      "movement": 1,
+      "range": 0,
+      "attack": 0,
+      "cost": 1,
+      "unitAbilities": [
+        "fortify",
+        "land",
+        "dash"
+      ],
+      "weapon": 3,
+      "promotionLimit": 0,
+      "idx": -1,
+      "prefab": "archer",
+      "independent": false,
+      "hidden": false
+    },
+    "dcp_mimic_form_babydragon": {
+      "health": 10,
+      "defence": 0,
+      "movement": 2,
+      "range": 0,
+      "attack": 0,
+      "cost": 1,
+      "hidden": false,
+      "unitAbilities": [
+        "fly",
+        "escape",
+        "static",
+        "dash"
+      ],
+      "weapon": 7,
+      "promotionLimit": 0,
+      "idx": -1,
+      "prefab": "babydragon",
+      "independent": false
+    },
+    "dcp_mimic_form_battlesled": {
+      "health": 10,
+      "defence": 0,
+      "movement": 3,
+      "range": 0,
+      "attack": 0,
+      "cost": 1,
+      "unitAbilities": [
+        "escape",
+        "skate",
+        "land",
+        "dash"
+      ],
+      "weapon": 2,
+      "promotionLimit": 0,
+      "idx": -1,
+      "prefab": "battlesled",
+      "independent": false,
+      "hidden": false
+    },
+    "dcp_mimic_form_bombership": {
+      "health": 10,
+      "defence": 0,
+      "movement": 2,
+      "range": 0,
+      "attack": 0,
+      "cost": 0,
+      "hidden": false,
+      "unitAbilities": [
+        "carry",
+        "swim",
+        "stiff",
+        "water",
+        "static",
+        "dash"
+      ],
+      "weapon": 5,
+      "promotionLimit": 0,
+      "idx": -1,
+      "prefab": "bombership",
+      "independent": false
+    },
+    "dcp_mimic_form_boomchi": {
+      "idx": -1,
+      "cost": 1,
+      "health": 10,
+      "defence": 0,
+      "movement": 2,
+      "weapon": 7,
+      "range": 0,
+      "attack": 0,
+      "promotionLimit": 0,
+      "unitAbilities": [
+        "swim",
+        "amphibious",
+        "stiff",
+        "dash"
+      ],
+      "prefab": "boomchi",
+      "independent": false,
+      "hidden": false
+    },
+    "dcp_mimic_form_bugegg": {
+      "health": 10,
+      "defence": 0,
+      "movement": 0,
+      "range": 0,
+      "attack": 0,
+      "cost": 1,
+      "hidden": false,
+      "unitAbilities": [
+        "stiff",
+        "static",
+        "dash"
+      ],
+      "weapon": 0,
+      "promotionLimit": 0,
+      "idx": -1,
+      "prefab": "bugegg",
+      "independent": false
+    },
+    "dcp_mimic_form_bunny": {
+      "health": 10,
+      "defence": 0,
+      "movement": 1,
+      "range": 0,
+      "attack": 0,
+      "cost": 1,
+      "hidden": false,
+      "unitAbilities": [
+        "static",
+        "land",
+        "dash"
+      ],
+      "weapon": 2,
+      "promotionLimit": 0,
+      "idx": -1,
+      "prefab": "bunny",
+      "independent": false
+    },
+    "dcp_mimic_form_catapult": {
+      "health": 10,
+      "defence": 0,
+      "movement": 1,
+      "range": 0,
+      "attack": 0,
+      "cost": 1,
+      "weapon": 6,
+      "unitAbilities": [
+        "stiff",
+        "land",
+        "dash"
+      ],
+      "promotionLimit": 0,
+      "idx": -1,
+      "prefab": "catapult",
+      "independent": false,
+      "hidden": false
+    },
+    "dcp_mimic_form_centipede": {
+      "idx": -1,
+      "hidden": false,
+      "cost": 1,
+      "health": 10,
+      "defence": 0,
+      "movement": 2,
+      "weapon": 7,
+      "range": 0,
+      "attack": 0,
+      "promotionLimit": 0,
+      "unitAbilities": [
+        "creep",
+        "static",
+        "land",
+        "dash"
+      ],
+      "prefab": "centipede",
+      "independent": false
+    },
+    "dcp_mimic_form_ciru": {
+      "idx": -1,
+      "cost": 1,
+      "health": 10,
+      "defence": 0,
+      "movement": 1,
+      "weapon": 7,
+      "range": 0,
+      "attack": 0,
+      "promotionLimit": 0,
+      "unitAbilities": [
+        "static",
+        "land",
+        "dash"
+      ],
+      "prefab": "ciru",
+      "independent": false,
+      "hidden": false
+    },
+    "dcp_mimic_form_cloak": {
+      "idx": -1,
+      "health": 10,
+      "defence": 0,
+      "movement": 2,
+      "range": 0,
+      "attack": 0,
+      "cost": 1,
+      "unitAbilities": [
+        "creep",
+        "stiff",
+        "static",
+        "land",
+        "dash"
+      ],
+      "weapon": 1,
+      "promotionLimit": 0,
+      "prefab": "cloak",
+      "independent": false,
+      "hidden": false
+    },
+    "dcp_mimic_form_cloak_boat": {
+      "health": 10,
+      "defence": 0,
+      "movement": 2,
+      "range": 0,
+      "attack": 0,
+      "cost": 0,
+      "hidden": false,
+      "unitAbilities": [
+        "carry",
+        "swim",
+        "water",
+        "static",
+        "stiff",
+        "dash"
+      ],
+      "promotionLimit": 0,
+      "weapon": 1,
+      "idx": -1,
+      "prefab": "cloak_boat",
+      "independent": false
+    },
+    "dcp_mimic_form_crab": {
+      "health": 10,
+      "defence": 0,
+      "movement": 2,
+      "range": 0,
+      "attack": 0,
+      "cost": 1,
+      "hidden": false,
+      "unitAbilities": [
+        "escape",
+        "swim",
+        "amphibious",
+        "static",
+        "dash"
+      ],
+      "weapon": 7,
+      "promotionLimit": 0,
+      "idx": -1,
+      "prefab": "crab",
+      "independent": false
+    },
+    "dcp_mimic_form_dagger": {
+      "health": 10,
+      "defence": 0,
+      "movement": 1,
+      "range": 0,
+      "attack": 0,
+      "cost": 1,
+      "hidden": false,
+      "unitAbilities": [
+        "static",
+        "land",
+        "dash"
+      ],
+      "weapon": 13,
+      "promotionLimit": 0,
+      "idx": -1,
+      "prefab": "dagger",
+      "independent": false
+    },
+    "dcp_mimic_form_dcp_motherfogger": {
+      "health": 10,
+      "defence": 0,
+      "movement": 2,
+      "range": 0,
+      "attack": 0,
+      "cost": 1,
+      "unitAbilities": [
+        "fly",
+        "dash"
+      ],
+      "weapon": 1,
+      "promotionLimit": 0,
+      "idx": -1,
+      "prefab": "dcp_motherfogger",
+      "hidden": false,
+      "independent": false
+    },
+    "dcp_mimic_form_dcp_spy": {
+      "health": 10,
+      "defence": 0,
+      "movement": 2,
+      "range": 0,
+      "attack": 0,
+      "cost": 1,
+      "unitAbilities": [
+        "dash"
+      ],
+      "weapon": 1,
+      "promotionLimit": 0,
+      "idx": -1,
+      "prefab": "dcp_spy",
+      "hidden": false,
+      "independent": false
+    },
+    "dcp_mimic_form_dcp_spymaid": {
+      "health": 10,
+      "defence": 0,
+      "movement": 2,
+      "range": 0,
+      "attack": 0,
+      "cost": 1,
+      "unitAbilities": [
+        "swim",
+        "amphibious",
+        "dash"
+      ],
+      "weapon": 1,
+      "promotionLimit": 0,
+      "idx": -1,
+      "prefab": "dcp_spymaid",
+      "hidden": false,
+      "independent": false
+    },
+    "dcp_mimic_form_defender": {
+      "health": 10,
+      "defence": 0,
+      "movement": 1,
+      "range": 0,
+      "attack": 0,
+      "cost": 1,
+      "weapon": 2,
+      "promotionLimit": 0,
+      "unitAbilities": [
+        "fortify",
+        "land",
+        "dash"
+      ],
+      "idx": -1,
+      "prefab": "defender",
+      "independent": false,
+      "hidden": false
+    },
+    "dcp_mimic_form_doomux": {
+      "idx": -1,
+      "cost": 1,
+      "health": 10,
+      "defence": 0,
+      "movement": 3,
+      "weapon": 7,
+      "range": 0,
+      "attack": 0,
+      "promotionLimit": 0,
+      "unitAbilities": [
+        "creep",
+        "static",
+        "land",
+        "dash"
+      ],
+      "prefab": "doomux",
+      "independent": false,
+      "hidden": false
+    },
+    "dcp_mimic_form_dragonegg": {
+      "health": 10,
+      "defence": 0,
+      "movement": 1,
+      "range": 0,
+      "attack": 0,
+      "cost": 1,
+      "hidden": false,
+      "unitAbilities": [
+        "fortify",
+        "static",
+        "stiff",
+        "land",
+        "dash"
+      ],
+      "weapon": 0,
+      "promotionLimit": 0,
+      "idx": -1,
+      "prefab": "dragonegg",
+      "independent": false
+    },
+    "dcp_mimic_form_exida": {
+      "idx": -1,
+      "cost": 1,
+      "health": 10,
+      "defence": 0,
+      "movement": 2,
+      "weapon": 11,
+      "range": 0,
+      "attack": 0,
+      "promotionLimit": 0,
+      "unitAbilities": [
+        "creep",
+        "land",
+        "dash"
+      ],
+      "prefab": "exida",
+      "independent": false,
+      "hidden": false
+    },
+    "dcp_mimic_form_firedragon": {
+      "health": 10,
+      "defence": 0,
+      "movement": 3,
+      "range": 0,
+      "attack": 0,
+      "cost": 1,
+      "hidden": false,
+      "unitAbilities": [
+        "fly",
+        "static",
+        "dash"
+      ],
+      "weapon": 8,
+      "promotionLimit": 0,
+      "idx": -1,
+      "prefab": "firedragon",
+      "independent": false
+    },
+    "dcp_mimic_form_gaami": {
+      "health": 10,
+      "defence": 0,
+      "movement": 1,
+      "range": 0,
+      "attack": 0,
+      "cost": 1,
+      "hidden": false,
+      "unitAbilities": [
+        "static",
+        "land",
+        "dash"
+      ],
+      "weapon": 7,
+      "promotionLimit": 0,
+      "idx": -1,
+      "prefab": "gaami",
+      "independent": false
+    },
+    "dcp_mimic_form_giant": {
+      "health": 10,
+      "defence": 0,
+      "movement": 1,
+      "range": 0,
+      "attack": 0,
+      "cost": 1,
+      "hidden": false,
+      "weapon": 1,
+      "unitAbilities": [
+        "static",
+        "land",
+        "dash"
+      ],
+      "promotionLimit": 0,
+      "idx": -1,
+      "prefab": "giant",
+      "independent": false
+    },
+    "dcp_mimic_form_hexapod": {
+      "health": 10,
+      "defence": 0,
+      "movement": 2,
+      "range": 0,
+      "attack": 0,
+      "cost": 1,
+      "unitAbilities": [
+        "escape",
+        "creep",
+        "sneak",
+        "land",
+        "dash"
+      ],
+      "weapon": 7,
+      "promotionLimit": 0,
+      "idx": -1,
+      "prefab": "hexapod",
+      "independent": false,
+      "hidden": false
+    },
+    "dcp_mimic_form_icearcher": {
+      "health": 10,
+      "defence": 0,
+      "movement": 1,
+      "range": 0,
+      "attack": 0,
+      "cost": 1,
+      "unitAbilities": [
+        "fortify",
+        "stiff",
+        "land",
+        "dash"
+      ],
+      "weapon": 10,
+      "promotionLimit": 0,
+      "idx": -1,
+      "prefab": "icearcher",
+      "independent": false,
+      "hidden": false
+    },
+    "dcp_mimic_form_icefortress": {
+      "health": 10,
+      "defence": 0,
+      "movement": 2,
+      "range": 0,
+      "attack": 0,
+      "cost": 1,
+      "unitAbilities": [
+        "skate",
+        "escape",
+        "static",
+        "land",
+        "dash"
+      ],
+      "weapon": 5,
+      "promotionLimit": 0,
+      "idx": -1,
+      "prefab": "icefortress",
+      "independent": false,
+      "hidden": false
+    },
+    "dcp_mimic_form_island": {
+      "idx": -1,
+      "cost": 1,
+      "health": 10,
+      "movement": 2,
+      "range": 0,
+      "defence": 0,
+      "attack": 0,
+      "unitAbilities": [
+        "swim",
+        "water",
+        "static",
+        "dash"
+      ],
+      "movementTerrain": [
+        "water",
+        "ocean",
+        "wetland"
+      ],
+      "weapon": 16,
+      "promotionLimit": 0,
+      "prefab": "island",
+      "independent": false,
+      "hidden": false
+    },
+    "dcp_mimic_form_jelly": {
+      "health": 10,
+      "defence": 0,
+      "movement": 2,
+      "range": 0,
+      "cost": 1,
+      "attack": 0,
+      "unitAbilities": [
+        "swim",
+        "stiff",
+        "static",
+        "water",
+        "dash"
+      ],
+      "movementTerrain": [
+        "water",
+        "ocean",
+        "wetland"
+      ],
+      "weapon": 14,
+      "promotionLimit": 0,
+      "idx": -1,
+      "prefab": "jelly",
+      "independent": false,
+      "hidden": false
+    },
+    "dcp_mimic_form_juggernaut": {
+      "health": 10,
+      "movement": 2,
+      "range": 0,
+      "defence": 0,
+      "attack": 0,
+      "cost": 0,
+      "hidden": false,
+      "unitAbilities": [
+        "stiff",
+        "swim",
+        "carry",
+        "water",
+        "static",
+        "dash"
+      ],
+      "weapon": 16,
+      "promotionLimit": 0,
+      "idx": -1,
+      "prefab": "juggernaut",
+      "independent": false
+    },
+    "dcp_mimic_form_kiton": {
+      "idx": -1,
+      "cost": 1,
+      "health": 10,
+      "defence": 0,
+      "movement": 1,
+      "weapon": 7,
+      "range": 0,
+      "attack": 0,
+      "promotionLimit": 0,
+      "unitAbilities": [
+        "creep",
+        "land",
+        "dash"
+      ],
+      "prefab": "kiton",
+      "independent": false,
+      "hidden": false
+    },
+    "dcp_mimic_form_knight": {
+      "health": 10,
+      "defence": 0,
+      "movement": 3,
+      "range": 0,
+      "attack": 0,
+      "cost": 1,
+      "unitAbilities": [
+        "fortify",
+        "land",
+        "dash"
+      ],
+      "weapon": 16,
+      "promotionLimit": 0,
+      "idx": -1,
+      "prefab": "knight",
+      "independent": false,
+      "hidden": false
+    },
+    "dcp_mimic_form_larva": {
+      "health": 10,
+      "defence": 0,
+      "movement": 1,
+      "range": 0,
+      "attack": 0,
+      "cost": 1,
+      "hidden": false,
+      "unitAbilities": [
+        "creep",
+        "static",
+        "land",
+        "dash"
+      ],
+      "weapon": 16,
+      "promotionLimit": 0,
+      "idx": -1,
+      "prefab": "larva",
+      "independent": false
+    },
+    "dcp_mimic_form_mantis": {
+      "health": 10,
+      "defence": 0,
+      "movement": 1,
+      "range": 0,
+      "attack": 0,
+      "cost": 1,
+      "unitAbilities": [
+        "land",
+        "creep",
+        "dash"
+      ],
+      "weapon": 7,
+      "promotionLimit": 0,
+      "idx": -1,
+      "prefab": "mantis",
+      "independent": false,
+      "hidden": false
+    },
+    "dcp_mimic_form_mermaidarcher": {
+      "health": 10,
+      "defence": 0,
+      "movement": 1,
+      "range": 0,
+      "attack": 0,
+      "cost": 1,
+      "unitAbilities": [
+        "fortify",
+        "swim",
+        "amphibious",
+        "dash"
+      ],
+      "weapon": 3,
+      "promotionLimit": 0,
+      "idx": -1,
+      "prefab": "mermaidarcher",
+      "independent": false,
+      "hidden": false
+    },
+    "dcp_mimic_form_mermaidcloak": {
+      "idx": -1,
+      "health": 10,
+      "defence": 0,
+      "movement": 2,
+      "range": 0,
+      "attack": 0,
+      "cost": 1,
+      "unitAbilities": [
+        "creep",
+        "swim",
+        "amphibious",
+        "static",
+        "stiff",
+        "dash"
+      ],
+      "weapon": 1,
+      "promotionLimit": 0,
+      "prefab": "mermaidcloak",
+      "independent": false,
+      "hidden": false
+    },
+    "dcp_mimic_form_mermaiddagger": {
+      "health": 10,
+      "defence": 0,
+      "movement": 1,
+      "range": 0,
+      "attack": 0,
+      "cost": 1,
+      "hidden": false,
+      "unitAbilities": [
+        "static",
+        "swim",
+        "amphibious",
+        "dash"
+      ],
+      "weapon": 13,
+      "promotionLimit": 0,
+      "idx": -1,
+      "prefab": "mermaiddagger",
+      "independent": false
+    },
+    "dcp_mimic_form_mermaiddefender": {
+      "health": 10,
+      "defence": 0,
+      "movement": 1,
+      "range": 0,
+      "attack": 0,
+      "cost": 1,
+      "weapon": 2,
+      "promotionLimit": 0,
+      "unitAbilities": [
+        "fortify",
+        "swim",
+        "amphibious",
+        "dash"
+      ],
+      "idx": -1,
+      "prefab": "mermaiddefender",
+      "independent": false,
+      "hidden": false
+    },
+    "dcp_mimic_form_mermaidswordsman": {
+      "health": 10,
+      "defence": 0,
+      "movement": 1,
+      "range": 0,
+      "attack": 0,
+      "cost": 1,
+      "unitAbilities": [
+        "swim",
+        "amphibious",
+        "dash"
+      ],
+      "weapon": 2,
+      "promotionLimit": 0,
+      "idx": -1,
+      "prefab": "mermaidswordsman",
+      "independent": false,
+      "hidden": false
+    },
+    "dcp_mimic_form_mermaidwarrior": {
+      "health": 10,
+      "defence": 0,
+      "movement": 1,
+      "range": 0,
+      "attack": 0,
+      "cost": 1,
+      "unitAbilities": [
+        "fortify",
+        "swim",
+        "amphibious",
+        "dash"
+      ],
+      "weapon": 1,
+      "promotionLimit": 0,
+      "idx": -1,
+      "prefab": "mermaidwarrior",
+      "independent": false,
+      "hidden": false
+    },
+    "dcp_mimic_form_mindbender": {
+      "health": 10,
+      "defence": 0,
+      "movement": 1,
+      "range": 0,
+      "attack": 0,
+      "cost": 1,
+      "unitAbilities": [
+        "stiff",
+        "land",
+        "dash"
+      ],
+      "weapon": 4,
+      "promotionLimit": 0,
+      "idx": -1,
+      "prefab": "mindbender",
+      "independent": false,
+      "hidden": false
+    },
+    "dcp_mimic_form_mooni": {
+      "health": 10,
+      "defence": 0,
+      "movement": 2,
+      "range": 0,
+      "attack": 0,
+      "cost": 1,
+      "unitAbilities": [
+        "skate",
+        "stiff",
+        "land",
+        "dash"
+      ],
+      "weapon": 7,
+      "promotionLimit": 0,
+      "idx": -1,
+      "prefab": "mooni",
+      "independent": false,
+      "hidden": false
+    },
+    "dcp_mimic_form_moth": {
+      "idx": -1,
+      "health": 10,
+      "movement": 2,
+      "defence": 0,
+      "range": 0,
+      "attack": 0,
+      "cost": 1,
+      "unitAbilities": [
+        "sneak",
+        "static",
+        "stiff",
+        "fly",
+        "dash"
+      ],
+      "weapon": 12,
+      "promotionLimit": 0,
+      "prefab": "moth",
+      "independent": false,
+      "hidden": false
+    },
+    "dcp_mimic_form_phychi": {
+      "idx": -1,
+      "cost": 1,
+      "health": 10,
+      "defence": 0,
+      "movement": 2,
+      "weapon": 12,
+      "range": 0,
+      "attack": 0,
+      "promotionLimit": 0,
+      "unitAbilities": [
+        "fly",
+        "dash"
+      ],
+      "prefab": "phychi",
+      "independent": false,
+      "hidden": false
+    },
+    "dcp_mimic_form_pirate": {
+      "health": 10,
+      "defence": 0,
+      "movement": 2,
+      "range": 0,
+      "attack": 0,
+      "cost": 0,
+      "hidden": false,
+      "unitAbilities": [
+        "swim",
+        "carry",
+        "water",
+        "static",
+        "dash"
+      ],
+      "weapon": 13,
+      "promotionLimit": 0,
+      "idx": -1,
+      "prefab": "pirate",
+      "independent": false
+    },
+    "dcp_mimic_form_polytaur": {
+      "health": 10,
+      "defence": 0,
+      "movement": 1,
+      "range": 0,
+      "attack": 0,
+      "cost": 1,
+      "hidden": false,
+      "unitAbilities": [
+        "fortify",
+        "static",
+        "land",
+        "dash"
+      ],
+      "weapon": 7,
+      "promotionLimit": 0,
+      "idx": -1,
+      "prefab": "polytaur",
+      "independent": false
+    },
+    "dcp_mimic_form_rammership": {
+      "health": 10,
+      "movement": 3,
+      "range": 0,
+      "defence": 0,
+      "attack": 0,
+      "cost": 0,
+      "hidden": false,
+      "unitAbilities": [
+        "swim",
+        "carry",
+        "water",
+        "static",
+        "dash"
+      ],
+      "weapon": 16,
+      "promotionLimit": 0,
+      "idx": -1,
+      "prefab": "rammership",
+      "independent": false
+    },
+    "dcp_mimic_form_raychi": {
+      "idx": -1,
+      "cost": 1,
+      "health": 10,
+      "defence": 0,
+      "movement": 3,
+      "weapon": 7,
+      "range": 0,
+      "attack": 0,
+      "promotionLimit": 0,
+      "unitAbilities": [
+        "swim",
+        "water",
+        "dash"
+      ],
+      "movementTerrain": [
+        "water",
+        "ocean",
+        "wetland"
+      ],
+      "prefab": "raychi",
+      "independent": false,
+      "hidden": false
+    },
+    "dcp_mimic_form_rider": {
+      "health": 10,
+      "defence": 0,
+      "movement": 2,
+      "range": 0,
+      "attack": 0,
+      "cost": 1,
+      "unitAbilities": [
+        "escape",
+        "fortify",
+        "land",
+        "dash"
+      ],
+      "weapon": 1,
+      "promotionLimit": 0,
+      "idx": -1,
+      "prefab": "rider",
+      "independent": false,
+      "hidden": false
+    },
+    "dcp_mimic_form_scoutship": {
+      "health": 10,
+      "defence": 0,
+      "movement": 3,
+      "range": 0,
+      "attack": 0,
+      "cost": 0,
+      "hidden": false,
+      "unitAbilities": [
+        "carry",
+        "swim",
+        "water",
+        "static",
+        "dash"
+      ],
+      "weapon": 3,
+      "promotionLimit": 0,
+      "idx": -1,
+      "prefab": "scoutship",
+      "independent": false
+    },
+    "dcp_mimic_form_shaman": {
+      "idx": -1,
+      "cost": 1,
+      "health": 10,
+      "defence": 0,
+      "movement": 1,
+      "weapon": 7,
+      "range": 0,
+      "attack": 0,
+      "promotionLimit": 0,
+      "unitAbilities": [
+        "land",
+        "dash"
+      ],
+      "prefab": "shaman",
+      "independent": false,
+      "hidden": false
+    },
+    "dcp_mimic_form_shark": {
+      "health": 10,
+      "movement": 3,
+      "range": 0,
+      "defence": 0,
+      "attack": 0,
+      "cost": 1,
+      "unitAbilities": [
+        "swim",
+        "water",
+        "dash"
+      ],
+      "movementTerrain": [
+        "water",
+        "ocean",
+        "wetland"
+      ],
+      "weapon": 7,
+      "promotionLimit": 0,
+      "idx": -1,
+      "prefab": "shark",
+      "independent": false,
+      "hidden": false
+    },
+    "dcp_mimic_form_siren": {
+      "health": 10,
+      "defence": 0,
+      "movement": 1,
+      "range": 0,
+      "attack": 0,
+      "cost": 1,
+      "unitAbilities": [
+        "swim",
+        "amphibious",
+        "stiff",
+        "dash"
+      ],
+      "weapon": 4,
+      "promotionLimit": 0,
+      "idx": -1,
+      "prefab": "siren",
+      "independent": false,
+      "hidden": false
+    },
+    "dcp_mimic_form_swordsman": {
+      "health": 10,
+      "defence": 0,
+      "movement": 1,
+      "range": 0,
+      "attack": 0,
+      "cost": 1,
+      "unitAbilities": [
+        "land",
+        "dash"
+      ],
+      "weapon": 2,
+      "promotionLimit": 0,
+      "idx": -1,
+      "prefab": "swordsman",
+      "independent": false,
+      "hidden": false
+    },
+    "dcp_mimic_form_transportship": {
+      "health": 10,
+      "defence": 0,
+      "movement": 2,
+      "range": 0,
+      "attack": 0,
+      "cost": 0,
+      "hidden": false,
+      "unitAbilities": [
+        "carry",
+        "swim",
+        "water",
+        "static",
+        "stiff",
+        "dash"
+      ],
+      "weapon": 3,
+      "promotionLimit": 0,
+      "idx": -1,
+      "prefab": "transportship",
+      "independent": false
+    },
+    "dcp_mimic_form_tridention": {
+      "health": 10,
+      "defence": 0,
+      "movement": 2,
+      "range": 0,
+      "attack": 0,
+      "cost": 1,
+      "unitAbilities": [
+        "swim",
+        "amphibious",
+        "dash"
+      ],
+      "weapon": 9,
+      "promotionLimit": 0,
+      "idx": -1,
+      "prefab": "tridention",
+      "independent": false,
+      "hidden": false
+    },
+    "dcp_mimic_form_warrior": {
+      "health": 10,
+      "defence": 0,
+      "movement": 1,
+      "range": 0,
+      "attack": 0,
+      "cost": 1,
+      "unitAbilities": [
+        "fortify",
+        "land",
+        "dash"
+      ],
+      "weapon": 1,
+      "promotionLimit": 0,
+      "idx": -1,
+      "prefab": "warrior",
+      "independent": false,
+      "hidden": false
+    },
+    "dcp_mimic": {
+      "health": 10,
+      "defence": 0,
+      "movement": 1,
+      "range": 0,
+      "attack": 0,
+      "cost": 1,
+      "unitAbilities": [
+        "fortify",
+        "land",
+        "dash"
+      ],
+      "weapon": 1,
+      "promotionLimit": 0,
+      "idx": -1,
+      "prefab": "warrior",
+      "independent": false,
+      "hidden": false
+    },
+    "dcp_mermimic": {
+      "health": 10,
+      "defence": 0,
+      "movement": 1,
+      "range": 0,
+      "attack": 0,
+      "cost": 1,
+      "unitAbilities": [
+        "fortify",
+        "swim",
+        "amphibious",
+        "dash"
+      ],
+      "weapon": 1,
+      "promotionLimit": 0,
+      "idx": -1,
+      "prefab": "mermaidwarrior",
+      "independent": false,
+      "hidden": false
+    }
+  },
+  "tribeData": {
+    "aquarion": {
+      "unitOverrides": {
+        "dcp_mimic": "dcp_mermimic",
+        "dcp_spy": "dcp_spymaid"
+      }
+    }
+  }
+}

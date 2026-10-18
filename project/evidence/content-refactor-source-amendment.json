@@ -1,0 +1,10 @@
+{
+  "authority": "spec/CONTENT_REFACTOR_03106.md",
+  "authority_sha256": "6349fa22e6984e266b4b067622271ec146e230e6aaf0a2fc171e82544f073f6a",
+  "sources": {
+    "src/Core/TechTree.cs": {
+      "previous_sha256": "3d59e4260b54a647d029452f0f81594fe304a88c78558f6458183f0af2e85bb2",
+      "source_sha256": "3e4ce597e15dbb4de612cdec2319b1d1d1974036f634de23fb525cd3dd215b3e"
+    }
+  }
+}

@@ -17,4 +17,8 @@ def assert_a11_source(test,root,name,historical=None):
         test.assertEqual(hashlib.sha256((root/current['authority']).read_bytes()).hexdigest(),current['authority_sha256'])
         test.assertEqual(current['sources'][name]['previous_sha256'],expected)
         expected=current['sources'][name]['source_sha256']
+        current=json.loads((root/'evidence/content-refactor-source-amendment.json').read_text())
+        test.assertEqual(hashlib.sha256((root/current['authority']).read_bytes()).hexdigest(),current['authority_sha256'])
+        test.assertEqual(current['sources'][name]['previous_sha256'],expected)
+        expected=current['sources'][name]['source_sha256']
     test.assertEqual(hashlib.sha256((root/name).read_bytes()).hexdigest(),expected)

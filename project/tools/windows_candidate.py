@@ -83,6 +83,7 @@ def package(api, work, dll):
              'localization.json':(api.ROOT/'content/localization.json').read_bytes(),
              'Deception.dll':dll.read_bytes(),
              'DEVELOPMENT-STATUS.txt':b'SHARED TEST CANDIDATE. Exact public 1.2.18 and clean-beta profiles; public is local/pass-and-play only. Windows beta predecessor tested with stock Dobby; Windows public native acceptance pending. This exact artifact requires Mac/Windows acceptance; cross-platform multiplayer and resign remain unverified. Both peers require this exact archive. No approval marker or test flag required on the admitted Windows runtime. No loader or game libraries bundled.\n'}
+    entries.update(api.content_entries())
     output=work/'alex_deception_windows_candidate.polymod'
     with zipfile.ZipFile(output,'x',zipfile.ZIP_DEFLATED) as archive:
         for name,data in entries.items():

@@ -1,11 +1,12 @@
 {
   "schema": 1,
-  "reason": "Windows-tested loaded-module verification plus exact clean-beta reflection guard. Managed .NET 6 APIs only; no new native imports. Reviewed against Windows branch 156b2e5 and Mac clean-beta implementation. 0.3.105: public loader hash alternative only, no new imports or native calls.",
+  "reason": "Windows-tested loaded-module verification plus exact clean-beta reflection guard. Managed .NET 6 APIs only; no new native imports. Reviewed against Windows branch 156b2e5 and Mac clean-beta implementation. 0.3.105: public loader hash alternative only, no new imports or native calls. 0.3.106: reviewed ArgumentException(message,paramName), String.Contains(string), and IDictionary indexer for exact own-mod asset registry lookup; standard .NET 6 managed calls, no native imports.",
   "sources": {
     "src/PolyMod/NativeWindowsHooks.cs": "0976d22f0931d031bf88845dde3659ef8227529a4019eedfaf6edbce1da06a23",
     "src/PolyMod/NativeCleanBetaCompatibility.cs": "18ff682161cbf1e448899ba6da24b74eb39a62466c47e1da57e40bd9a16c12f4",
     "src/PolyMod/NativeWindowsPrologueAudit.cs": "4aa418907ec0b3c871b87a8325b26ec7656d580b2be97aed2f87c1bab4c9e912",
-    "src/PolyMod/NativePlatformContract.cs": "679c8f0b78ed6b9f43cb41234fcdaa031b83fc8b363445bfba94047e1e825870"
+    "src/PolyMod/NativePlatformContract.cs": "679c8f0b78ed6b9f43cb41234fcdaa031b83fc8b363445bfba94047e1e825870",
+    "src/PolyMod/ModContentAssets.cs": "bd0ab1c7f7e4ae78298db178f065cd4cb7670440f39b6c86d430364de596034f"
   },
   "references": {
     "dotnet/System.Diagnostics.Process.dll": "d1b222d4a58a225669a3c9031697c5bb86045fbf117954b7a35d72e20780231c",
@@ -33,8 +34,11 @@
       "[[\"type\",[\"assembly\",\"System.Diagnostics.Process\",[6,0,0,0],0,\"b03f5f7f11d50a3a\",\"\"],\"System.Diagnostics\",\"ProcessModule\"],\"get_BaseAddress\",[\"method\",32,0,[\"primitive\",24],[]]]",
       "[[\"type\",[\"assembly\",\"System.Diagnostics.Process\",[6,0,0,0],0,\"b03f5f7f11d50a3a\",\"\"],\"System.Diagnostics\",\"ProcessModule\"],\"get_FileName\",[\"method\",32,0,[\"primitive\",14],[]]]",
       "[[\"type\",[\"assembly\",\"System.Diagnostics.Process\",[6,0,0,0],0,\"b03f5f7f11d50a3a\",\"\"],\"System.Diagnostics\",\"ProcessModule\"],\"get_ModuleName\",[\"method\",32,0,[\"primitive\",14],[]]]",
+      "[[\"type\",[\"assembly\",\"System.Private.CoreLib\",[6,0,0,0],0,\"7cec85d7bea7798e\",\"\"],\"System\",\"ArgumentException\"],\".ctor\",[\"method\",32,0,[\"primitive\",1],[[\"primitive\",14],[\"primitive\",14]]]]",
       "[[\"type\",[\"assembly\",\"System.Private.CoreLib\",[6,0,0,0],0,\"7cec85d7bea7798e\",\"\"],\"System\",\"Object\"],\"Equals\",[\"method\",32,0,[\"primitive\",2],[[\"primitive\",28]]]]",
+      "[[\"type\",[\"assembly\",\"System.Private.CoreLib\",[6,0,0,0],0,\"7cec85d7bea7798e\",\"\"],\"System\",\"String\"],\"Contains\",[\"method\",32,0,[\"primitive\",2],[[\"primitive\",14]]]]",
       "[[\"type\",[\"assembly\",\"System.Private.CoreLib\",[6,0,0,0],0,\"7cec85d7bea7798e\",\"\"],\"System\",\"Type\"],\"get_Namespace\",[\"method\",32,0,[\"primitive\",14],[]]]",
+      "[[\"type\",[\"assembly\",\"System.Private.CoreLib\",[6,0,0,0],0,\"7cec85d7bea7798e\",\"\"],\"System.Collections\",\"IDictionary\"],\"get_Item\",[\"method\",32,0,[\"primitive\",28],[[\"primitive\",28]]]]",
       "[[\"type\",[\"assembly\",\"System.Private.CoreLib\",[6,0,0,0],0,\"7cec85d7bea7798e\",\"\"],\"System.Reflection\",\"CustomAttributeData\"],\"get_AttributeType\",[\"method\",32,0,[\"named\",18,[\"type\",[\"assembly\",\"System.Private.CoreLib\",[6,0,0,0],0,\"7cec85d7bea7798e\",\"\"],\"System\",\"Type\"]],[]]]",
       "[[\"type\",[\"assembly\",\"System.Private.CoreLib\",[6,0,0,0],0,\"7cec85d7bea7798e\",\"\"],\"System.Reflection\",\"FieldInfo\"],\"get_IsAssembly\",[\"method\",32,0,[\"primitive\",2],[]]]",
       "[[\"type\",[\"assembly\",\"System.Private.CoreLib\",[6,0,0,0],0,\"7cec85d7bea7798e\",\"\"],\"System.Reflection\",\"MemberInfo\"],\"GetCustomAttributesData\",[\"method\",32,0,[\"generic-instance\",[\"named\",18,[\"type\",[\"assembly\",\"System.Private.CoreLib\",[6,0,0,0],0,\"7cec85d7bea7798e\",\"\"],\"System.Collections.Generic\",\"IList`1\"]],[[\"named\",18,[\"type\",[\"assembly\",\"System.Private.CoreLib\",[6,0,0,0],0,\"7cec85d7bea7798e\",\"\"],\"System.Reflection\",\"CustomAttributeData\"]]]],[]]]",

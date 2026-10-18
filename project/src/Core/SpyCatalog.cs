@@ -12,12 +12,7 @@ namespace Deception.Core
         public const int Cost=5,Health=50;
         static JsonObject Definition(JsonObject warrior,bool amphibious=false)
         {
-            var unit=JsonNode.Parse(warrior.ToJsonString())!.AsObject();
-            unit["idx"]=-1;unit["prefab"]=amphibious?"mermaidwarrior":"warrior";unit["cost"]=Cost;unit["health"]=Health;
-            unit["attack"]=0;unit["defence"]=10;unit["range"]=0;unit["movement"]=2;unit["promotionLimit"]=0;
-            unit["hidden"]=false;unit["independent"]=false;
-            foreach(string key in new[]{"upgradesFrom","promotesTo","growthRate","attractsTo"})unit.Remove(key);
-            unit["unitAbilities"]=amphibious?new JsonArray("scout","swim","amphibious"):new JsonArray("scout");
+            var unit=ContentDefinitions.UnitFromNative(warrior,amphibious?AquarionId:Id,false);
             return unit;
         }
         internal static void Add(JsonObject root)

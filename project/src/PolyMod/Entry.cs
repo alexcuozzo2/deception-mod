@@ -26,6 +26,7 @@ namespace Deception.PolyModAdapter
         public static void Load(ManualLogSource logger)
         {
             Log=logger;
+            ContentDefinitions.Configure(System.Text.Encoding.UTF8.GetString(ModContentAssets.Read("patch.json")));
             if(Patches is not null)throw new InvalidOperationException("Duplicate Deception PolyScript");
             var poly=AppDomain.CurrentDomain.GetAssemblies().Single(a=>a.GetName().Name=="PolyMod");
             var loader=poly.GetType("PolyMod.Loader",true)!;
@@ -164,8 +165,19 @@ namespace Deception.PolyModAdapter
             try
             {
                 string before=NativeJson.Read(__1);var source=JsonNode.Parse(before)!.AsObject();
-                if(source["techData"]?[TechTree.DeceptionId] is not null&&Applied)
-                {RecruitmentCatalog.ValidateReentry(before);SmuggleCatalog.ValidateReentry(before);NativeExchangeCatalog.ValidateReentry(before);NativeExchangeDiagnosticResearch.ValidateReentry(before);RecruitmentHooks.ValidateRosterReentry(before);NativeRegistryOrder.Arm(__1);Note("registry-reentry","Validated original Basic root and native prototype invariants.");return;}
+                if(source["improvementData"]?[NativeExchangeCatalog.Regroup] is not null&&Applied)
+                {
+                    RecruitmentCatalog.ValidateReentry(before);SmuggleCatalog.ValidateReentry(before);
+                    NativeExchangeCatalog.ValidateReentry(before);NativeExchangeDiagnosticResearch.ValidateReentry(before);
+                    RecruitmentHooks.ValidateRosterReentry(before);
+                    // Re-merging a standard patch resets its autoindex fields.
+                    // Restore only already-verified IDs; Arm still checks live enum mappings.
+                    publication=new NativeRegistryPublication(__1,ParseRegistry(__1,NativeRegistryIds.Pin(before)));
+                    publication.Apply();NativeRegistryOrder.Arm(__1);
+                    Note("registry-reentry","Validated original Basic root and native prototype invariants.");return;
+                }
+                before=ContentDefinitions.NormalizeInput(before);
+                source=JsonNode.Parse(before)!.AsObject();
                 var profile=new JsonObject();
                 foreach(string key in new[]{"tribeData","techData","unitData","resourceData","unitAbilityData","improvementData"})
                     if(source[key] is JsonNode n)profile[key]=JsonNode.Parse(n.ToJsonString());
@@ -175,9 +187,8 @@ namespace Deception.PolyModAdapter
                 if(!RecruitmentHooks.Ready)throw new InvalidOperationException("Recruitment hooks were not armed; refusing dangling city menu.");
                 var result=RecruitmentCatalog.Add(tree.Json);
                 string candidateJson=NativeExchangeDiagnosticResearch.Add(NativeExchangeCatalog.Add(SmuggleCatalog.Add(result.Json)));
-                Type jt=__1.GetType();
-                var parse=jt.GetMethod("Parse",BindingFlags.Public|BindingFlags.Static,null,new[]{typeof(string)},null)??throw new MissingMethodException("JObject.Parse(string)");
-                object candidate=parse.Invoke(null,new object[]{candidateJson})??throw new InvalidOperationException("Null parsed JSON");
+                if(Applied)candidateJson=NativeRegistryIds.Pin(candidateJson);
+                object candidate=ParseRegistry(__1,candidateJson);
                 publication=new NativeRegistryPublication(__1,candidate);
                 publication.Apply();
                 // Aquarion replacements must reach the live native parser too.
@@ -211,6 +222,12 @@ namespace Deception.PolyModAdapter
                 try{Write("adapter-error.txt",e.ToString());}catch{}
                 Log!.LogError((object)("DECEPTION NOT ACTIVATED: "+e));
             }
+        }
+        static object ParseRegistry(object prototype,string json)
+        {
+            var parse=prototype.GetType().GetMethod("Parse",BindingFlags.Public|BindingFlags.Static,null,new[]{typeof(string)},null)
+                ??throw new MissingMethodException("JObject.Parse(string)");
+            return parse.Invoke(null,new object[]{json})??throw new InvalidOperationException("Null parsed JSON");
         }
         public static void AfterProcess(object __1)=>NativeRegistryOrder.Complete(__1);
         internal static void Note(string kind,string message)

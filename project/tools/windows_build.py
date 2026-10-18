@@ -120,9 +120,7 @@ def run(api, game, mode, dotnet, exception_probe=None, native_pack=None, mac_mod
         before = {str(p.relative_to(game)):api.sha(p) for p in refs}
         sources_before = api.same_tree_sources()
         sources = sorted((api.ROOT/'src/Core').glob('*.cs')) + sorted((api.ROOT/'src/PolyMod').glob('*.cs')) + [api.ROOT/'src/Version.cs']
-        resources = [(api.ROOT/'content/mimic-portrait.png','Deception.MimicPortrait.png')]
-        resources += [(p,'Deception.UnitArt.'+p.name) for p in sorted((api.ROOT/'content/unit-art').glob('*.png'))]
-        resources += [(p,'Deception.SpyEffects.'+p.name) for p in sorted((api.ROOT/'content/spy-effects').glob('*')) if p.suffix in ('.png','.wav')]
+        resources = []
         output = work/'Deception.dll'
         defines = ()
         if mode == 'windows-candidate':

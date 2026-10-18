@@ -69,6 +69,7 @@ def review_package(work,dll,loader):
              'localization.json':(api.ROOT/'content/localization.json').read_bytes(),
              'Deception.dll':dll.read_bytes(),'DEVELOPMENT-STATUS.txt':note.encode(),
              'REVIEW-LOADER.json':json.dumps(loader,indent=2).encode()}
+    entries.update(api.content_entries())
     output=work/'Deception-shared-review.polymod'
     with zipfile.ZipFile(output,'x',zipfile.ZIP_DEFLATED) as archive:
         for name,data in entries.items():archive.writestr(name,data)
@@ -137,9 +138,6 @@ def build(args):
         resources=[]
         for name,data in sorted(payloads.items()):
             path=work/name;path.write_bytes(data);resources.append((path,name))
-        resources += [(api.ROOT/'content/mimic-portrait.png','Deception.MimicPortrait.png')]
-        resources += [(p,'Deception.UnitArt.'+p.name) for p in sorted((api.ROOT/'content/unit-art').glob('*.png'))]
-        resources += [(p,'Deception.SpyEffects.'+p.name) for p in sorted((api.ROOT/'content/spy-effects').glob('*')) if p.suffix in ('.png','.wav')]
         dotnet,compiler=api.sdk(); runtime=game/'dotnet'
         refs=sorted(runtime.glob('*.dll'))+[game/p for p in (
             'BepInEx/core/BepInEx.Core.dll','BepInEx/core/0Harmony.dll','BepInEx/core/Il2CppInterop.Runtime.dll',

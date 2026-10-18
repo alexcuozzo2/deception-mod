@@ -7,7 +7,7 @@ using System.Security.Cryptography;
 
 namespace Deception.PolyModAdapter
 {
-    // Original PNGs are embedded byte-for-byte. Frames and part placement are
+    // Original PNGs are loaded byte-for-byte from our mod file registry. Frames and part placement are
     // renderer metadata: no color key, resampling, or destructive PNG editing.
     internal static class UnitArtAssets
     {
@@ -43,8 +43,6 @@ namespace Deception.PolyModAdapter
             ["disguise_icon"]=new(1024,1024,"e35408ab6a0199b7efc6cf9a3c5e44be2dee75f79153b97748f114fc4c795a3f",256,273,485,517)
         };
         static readonly Dictionary<string,object> Sprites=new(StringComparer.Ordinal);
-        // Retain only textures belonging to this provider, never native heads.
-        static readonly List<object> Decoded=new();
         internal static object Get(string name)
         {
             if(Sprites.TryGetValue(name,out var cached)&&Native.UnityAlive(cached))
@@ -56,15 +54,25 @@ namespace Deception.PolyModAdapter
                 Sprites.Remove(name);
             }
             var a=Definitions[name];
-            using var source=typeof(UnitArtAssets).Assembly.GetManifestResourceStream("Deception.UnitArt."+name+".png")
-                ??throw new InvalidOperationException("Missing unit artwork: "+name);
-            using var buffer=new MemoryStream();source.CopyTo(buffer);var bytes=buffer.ToArray();
+            var path="assets/unit-art/dcp_"+name+"__.png";
+            var bytes=ModContentAssets.Read(path);
             if(!Convert.ToHexString(SHA256.HashData(bytes)).Equals(a.Sha,StringComparison.OrdinalIgnoreCase))
                 throw new InvalidOperationException("Unit artwork hash differs: "+name);
             var timer=Stopwatch.StartNew();
-            var sprite=DecodeFrame(bytes,a.Width,a.Height,a.X,a.Y,a.W,a.H);
-            Decoded.Add(Native.Get(sprite,"texture")!);Sprites[name]=sprite;
+            var sprite=DecodeLoadedFrame(path,a.Width,a.Height,a.X,a.Y,a.W,a.H);
+            Sprites[name]=sprite;
             Entry.Note("unit-art-loaded",name+" sha256="+a.Sha+" decodeMs="+timer.Elapsed.TotalMilliseconds.ToString("F1",System.Globalization.CultureInfo.InvariantCulture));return sprite;
+        }
+        // The loader owns the PNG texture. Create only our cropped Sprite;
+        // neither success nor failure may destroy or mutate the shared texture.
+        internal static object DecodeLoadedFrame(string path,int width,int height,float x,float y,float w,float h)
+        {
+            var texture=ModContentAssets.LoadedTexture(path,width,height);
+            var frame=Activator.CreateInstance(Native.T("UnityEngine.Rect"),x,y,w,h)!;
+            var pivot=Activator.CreateInstance(Native.T("UnityEngine.Vector2"),.5f,.5f)!;
+            return Native.Invoke(Native.M("UnityEngine.Sprite","Create","UnityEngine.Texture2D","UnityEngine.Rect","UnityEngine.Vector2","System.Single","System.UInt32","UnityEngine.SpriteMeshType"),null,
+                texture,frame,pivot,100f,0u,Enum.Parse(Native.T("UnityEngine.SpriteMeshType"),"FullRect"))
+                ??throw new InvalidOperationException("Loaded unit artwork frame failed.");
         }
         internal static object DecodeFrame(byte[] bytes,int width,int height,float x,float y,float w,float h)
         {

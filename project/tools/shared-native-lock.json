@@ -30,7 +30,7 @@
     "src/Native/deception-execution-bridge.cpp": "16dd26fa8b6c87c33f9575a295d3d383cb73359f0e9c7a5d2c5c318cbce40885",
     "src/Native/deception-platform.h": "df29c21626b5fbf10b07c5f727d07e81ea5f9bd2c8de67e113e21c193724c5d1",
     "src/Native/deception-state-bridge.cpp": "6bd0b907197c22b4231a2597342fd08323402159fb22bf62e7879dec685516ff",
-    "src/PolyMod/Entry.cs": "1d21d57c208ce51d9295c4527f0e702945a32cf304f925a126f23d2d182a60b6",
+    "src/PolyMod/Entry.cs": "990bf1b2e93b066405294decfd456e6706c093d579265033e9ae4173df4a704a",
     "src/PolyMod/NativeApi.cs": "16f21a461482e459abb27de71ffd2ef91db0b6177e17ec96b2052dc9c59dd148",
     "src/PolyMod/NativeBlackoutAccess.cs": "338478e681a7589dbd17e03db36b568f4962308ca52c777cb34e18684cd6f165",
     "src/PolyMod/NativeCommandOuterAbi.cs": "01b5bea97423fea6d2f3433a23cd216e9b7c41b26506c005ddf5b18e515617e6",
@@ -73,7 +73,7 @@
   },
   "managed_review": {
     "windows_commit": "156b2e5",
-    "reason": "Reviewed managed clean-beta admission and stock-Dobby workaround. Native C++/ABI/bridge owners/seams unchanged; helper resource hashes retained. 0.3.105 adds the exact public 1.2.18 loader alternative; all other pins and native resources unchanged. Public online remains excluded. Windows public native acceptance pending.",
+    "reason": "Reviewed managed clean-beta admission and stock-Dobby workaround. Native C++/ABI/bridge owners/seams unchanged; helper resource hashes retained. 0.3.105 adds the exact public 1.2.18 loader alternative; all other pins and native resources unchanged. Public online remains excluded. Windows public native acceptance pending. 0.3.106: Entry configures loose patch content and validates/reuses historical indices on repeated GLD patch merges. No native ABI or bridge code changes.",
     "files": [
       "src/PolyMod/Entry.cs",
       "src/PolyMod/NativeOnlinePreview.cs",

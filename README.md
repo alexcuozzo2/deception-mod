@@ -49,14 +49,14 @@ Deception — Mimics
 
 ## Download and installation
 
-**[Download Deception 0.3.105 (.polymod)](https://github.com/alexcuozzo2/deception-mod/releases/download/v0.3.105/Deception-0.3.105-mac-windows.polymod)** — one shared **Windows/macOS WIP release**.
+**[Download Deception 0.3.107 (.polymod)](https://github.com/alexcuozzo2/deception-mod/releases/download/v0.3.107/Deception-0.3.107-mac-windows.polymod)** — one shared **Windows/macOS WIP release**.
 
 1. Install Polytopia **2.17.3.16375** and obtain **PolyMod 1.2.18** from [its official release](https://github.com/PolyModdingTeam/PolyMod/releases/tag/v1.2.18). You need a working PolyMod setup for your platform first; this mod does not install the loader or Mac compatibility runtime.
 2. Quit Polytopia and download the `.polymod` above. **Do not extract it** or use GitHub's source ZIP as the mod.
 3. Put the file in your game's `Mods` folder. Replace your previous Deception file and keep only one Deception version enabled.
 4. Launch through your existing PolyMod setup.
 
-[Release notes and checksum](https://github.com/alexcuozzo2/deception-mod/releases/tag/v0.3.105) identify the exact tested file. No loader, game or runtime libraries are bundled. You do not need the multiplayer beta for local play.
+[Release notes and checksum](https://github.com/alexcuozzo2/deception-mod/releases/tag/v0.3.107) identify the exact tested file. No loader, game or runtime libraries are bundled. You do not need the multiplayer beta for local play.
 
 ## Status and compatibility
 
@@ -88,7 +88,7 @@ Share only the relevant log excerpt after checking it for personal information. 
 
 ## Development and technical review
 
-**0.3.107 refactor candidate:** ordinary units, native ability lists and technologies now live in `project/content/patch.json`; PNG/WAV assets ship separately inside the mod archive. See the [content reviewer guide](docs/CONTENT-REFACTOR.md) for the file map and remaining custom code. Mac 0.3.106 playtesting passed; 0.3.107 adds a [Rogue calculator fix](docs/ROGUE-HOVER-03107.md) awaiting native testing. Windows refactor testing is pending; the download above remains 0.3.105.
+**0.3.107 content refactor:** unit definitions, native ability lists and technologies live in `project/content/patch.json`; PNG/WAV assets ship separately inside the mod archive. See the [reviewer guide](docs/CONTENT-REFACTOR.md). Alex reported successful Mac and Windows playtesting of the shared package, including the Rogue calculator fix on Mac. These reports do not establish exhaustive gameplay or multiplayer coverage.
 
 Deception is a compiled C# PolyMod mod with custom art/audio, model tests and platform-specific native helpers. Those helpers currently handle parts of command execution and persistent game state. The clean beta DLL is not modified on disk; an exact-version runtime filter handles one incompatible serializer registration.
 

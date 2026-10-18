@@ -1,6 +1,6 @@
-# Declarative content review — 0.3.107 candidate
+# Declarative content review — 0.3.107
 
-This refactor separates ordinary game data and original artwork/audio from the compiled behavior. It preserves 0.3.105 gameplay and the shared Mac/Windows native helpers. Alex reported that 0.3.106 passed basic Mac playtesting. Version 0.3.107 adds a scoped Rogue-to-friendly hover-calculator fix; its native playtesting and Windows refactor playtesting are pending. 0.3.105 remains the main published release.
+This refactor separates ordinary game data and original artwork/audio from the compiled behavior. It preserves 0.3.105 gameplay and the shared Mac/Windows native helpers. Alex reported successful Mac and Windows playtesting of the shared 0.3.107 package on 2026-10-18, including confirmation of the Rogue-to-friendly calculator fix on Mac. The tested artifact is promoted unchanged; no rebuild. These user reports are not exhaustive interaction or multiplayer validation.
 
 ## Start here
 

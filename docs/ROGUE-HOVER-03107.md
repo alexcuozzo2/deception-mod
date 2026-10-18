@@ -7,3 +7,7 @@ Inside the existing validated synchronous hover scope, the second owner comparis
 The fixture now reproduces the native owner-pointer comparison. 87 preview cases and 136 assertions pass, including Rogue-to-friendly, reverse, Rogue-to-Rogue, Rogue-to-enemy, ordinary allies, hidden/replay/wrong-viewer/stale/closed guards, and unchanged actual ownership after the scope. Native gameplay testing remains separate.
 
 Mac 0.3.106 refactor playtesting was reported successful by Alex. Test 0.3.107 on Mac and Windows using the same shared artifact; check both damage directions against a friendly unit while commanding a Rogue.
+
+## User acceptance — 2026-10-18
+
+Alex confirmed the calculator fix works on Mac and subsequently reported successful Windows testing of the shared 0.3.107 package, authorizing release. SHA-256: `63acf0d7cae5f52ac3815f75ed5c880adf38902454193e578dc98842f8eea678`. The release promotes those exact bytes without rebuilding.

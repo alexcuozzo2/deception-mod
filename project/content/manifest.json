@@ -3,8 +3,7 @@
   "name": "Deception 0.3.102 \u2014 Visible Spies",
   "version": "0.3.102",
   "authors": [
-    "Alex (design)",
-    "Alex / assisted implementation"
+    "nanobot"
   ],
   "dependencies": [
     {

@@ -1,6 +1,8 @@
 #if DECEPTION_WINDOWS_PORT_CANDIDATE
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.Linq;
 using System.IO;
 using System.Reflection;
 using System.Runtime.InteropServices;
@@ -17,17 +19,49 @@ namespace Deception.PolyModAdapter
         static readonly Dictionary<IntPtr,MethodInfo> Owners=new();
         static readonly HashSet<(MethodInfo,Type,string?,string?,string?)> Installed=new();
         static bool Ready;
+        static long ImageBase;
         static IntPtr Pointer(MethodInfo method)=>(IntPtr)Native.T("Il2CppInterop.Runtime.Injection.InjectorHelpers")
             .GetMethod("GetIl2CppMethodPointer",BindingFlags.Public|BindingFlags.NonPublic|BindingFlags.Static,null,new[]{typeof(MethodBase)},null)!
             .Invoke(null,new object[]{method})!;
+        static string Digest(string path)
+        {
+            using var stream=File.OpenRead(path);using var hash=SHA256.Create();
+            return Convert.ToHexString(hash.ComputeHash(stream)).ToLowerInvariant();
+        }
+        static string LoadedAssemblyHash(string name)
+        {
+            var matches=AppDomain.CurrentDomain.GetAssemblies().Where(a=>a.GetName().Name==name).ToArray();
+            if(matches.Length!=1||string.IsNullOrEmpty(matches[0].Location))
+                throw new PlatformNotSupportedException("Missing or ambiguous Windows runtime assembly: "+name);
+            return Digest(matches[0].Location);
+        }
+        static void VerifyRuntime()
+        {
+            // Inspect the loaded detour module, not an unrelated DLL beside the game.
+            // BepInEx has already initialized its detour provider before loading mods.
+            using var process=Process.GetCurrentProcess();
+            var modules=process.Modules.Cast<ProcessModule>().Where(m=>
+                string.Equals(m.ModuleName,"dobby.dll",StringComparison.OrdinalIgnoreCase)).ToArray();
+            if(modules.Length!=1)throw new PlatformNotSupportedException("Missing or ambiguous loaded Windows Dobby runtime.");
+            NativePlatformContract.AdmitWindowsRuntime(
+                Digest(Path.Combine(BepInEx.Paths.GameRootPath,"GameAssembly.dll")),LoadedAssemblyHash("PolyMod"),
+                Digest(modules[0].FileName),LoadedAssemblyHash("Il2CppInterop.Runtime"),
+                LoadedAssemblyHash("Il2CppInterop.HarmonySupport"),LoadedAssemblyHash("0Harmony"));
+            Entry.Note("windows-runtime-compatibility","Verified game, unmodified loader and loaded hook dependencies; archive name and test opt-in are not required.");
+        }
         internal static void Initialize()
         {
             if(!Enabled)return;
+            VerifyRuntime();
             var profile=NativePlatformContract.Select("win",RuntimeInformation.ProcessArchitecture,IntPtr.Size);
             string path=Path.Combine(BepInEx.Paths.GameRootPath,profile.GameRelativePath);
             using var input=File.OpenRead(path);using var sha=SHA256.Create();
             if(Convert.ToHexString(sha.ComputeHash(input)).ToLowerInvariant()!=profile.GameSha256)
                 throw new NotSupportedException("Windows hook folding requires the pinned game image.");
+            using(var process=Process.GetCurrentProcess())
+                foreach(ProcessModule module in process.Modules)
+                    if(string.Equals(module.ModuleName,"GameAssembly.dll",StringComparison.OrdinalIgnoreCase))ImageBase=module.BaseAddress.ToInt64();
+            if(ImageBase==0)throw new NotSupportedException("Windows game image is not loaded.");
             var empty=Pointer(Native.M("RevealCapitalAction","Execute","GameState"));
             if(empty!=Pointer(Native.M("Unit","set_Depth","System.Int32"))||
                 Marshal.ReadByte(empty)!=0xc2||Marshal.ReadInt16(empty,1)!=0)
@@ -105,6 +139,7 @@ namespace Deception.PolyModAdapter
             if(target.DeclaringType!.Assembly.GetName().Name!="PolyMod")
             {
                 var pointer=Pointer(target);
+                NativeWindowsPrologueAudit.Require(pointer.ToInt64()-ImageBase,owner+"."+target.Name);
                 if(Owners.TryGetValue(pointer,out var previous)&&previous!=target)
                     throw new NotSupportedException("Unreviewed shared Windows hook: "+previous+" / "+target);
                 Owners[pointer]=target;

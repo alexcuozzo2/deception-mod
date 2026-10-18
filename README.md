@@ -47,34 +47,33 @@ Deception — Mimics
     └── Counter Intelligence — Foggers + Trade Secrets
 ```
 
+## Download and installation
+
+**[Download Deception 0.3.105 (.polymod)](https://github.com/alexcuozzo2/deception-mod/releases/download/v0.3.105/Deception-0.3.105-mac-windows.polymod)** — one shared **Windows/macOS WIP release**.
+
+1. Install Polytopia **2.17.3.16375** and obtain **PolyMod 1.2.18** from [its official release](https://github.com/PolyModdingTeam/PolyMod/releases/tag/v1.2.18). You need a working PolyMod setup for your platform first; this mod does not install the loader or Mac compatibility runtime.
+2. Quit Polytopia and download the `.polymod` above. **Do not extract it** or use GitHub's source ZIP as the mod.
+3. Put the file in your game's `Mods` folder. Replace your previous Deception file and keep only one Deception version enabled.
+4. Launch through your existing PolyMod setup.
+
+[Release notes and checksum](https://github.com/alexcuozzo2/deception-mod/releases/tag/v0.3.105) identify the exact tested file. No loader, game or runtime libraries are bundled. You do not need the multiplayer beta for local play.
+
 ## Status and compatibility
 
-**Experimental; being prepared for PolyMod developer review.** The descriptions above explain the intended gameplay. They are not a claim that every interaction or platform is fully validated.
+**Work in progress, released for community testing and PolyMod review.**
 
-| Component | Current evidence |
+| Platform / loader | Evidence and scope |
 | --- | --- |
-| Polytopia | Pinned to game build **2.17.3.16375** |
-| Public PolyMod **1.2.18** | Local startup observed; user reported basic testing on an earlier review candidate |
-| Supplied multiplayer beta **1.3.0-pre-android-multi-1** | Unmodified DLL tested locally on Mac; narrow runtime compatibility shim remains in Deception |
-| macOS | Local gameplay testing on the existing Intel/Rosetta compatibility stack |
-| Windows | Earlier experimental build had user-reported basic gameplay; the current clean-loader candidate is not validated on Windows |
-| Linux | Helper tooling exists; full game integration is unverified |
-| Multiplayer | Matching supported builds required; current two-client/cross-platform acceptance is still pending |
+| Public PolyMod **1.2.18** | Local/pass-and-play target. Exact release reached the Mac menu; Windows startup and user-reported gameplay checks passed. |
+| Multiplayer beta **1.3.0-pre-android-multi-1** | Compatible profile included. Exact release passed Windows startup and user-reported smoke testing. Earlier 0.3.104 passed Mac gameplay; 0.3.105 Mac beta startup stalled during one test. |
+| Windows | Tested x64 game/runtime with stock Dobby, including on Windows ARM64 emulation. Version-specific dependency checks remain. |
+| macOS | Existing Intel/Rosetta PolyMod compatibility setup required. This download is not a native Apple Silicon loader. |
+| Linux | Unsupported by this release. |
+| Multiplayer / resign | Real Mac–Windows multiplayer and explicit multiplayer resignation are not yet verified. Multiplayer requires the supported beta and identical mod versions on all clients. |
 
-Intermittent black-screen startup remains under investigation. Automated model and adapter tests do not establish native gameplay or multiplayer correctness.
+**Known issue:** startup can occasionally stall on a black screen. Quit normally and retry. The cause remains unresolved; do not replace runtime libraries or bypass compatibility checks to work around it. Report persistent failures.
 
-## Installation and downloads
-
-There is **no approved general-purpose review release yet**. The former loader-containing setup ZIPs were withdrawn. Do not use historical bundled-setup instructions as the current installation guide.
-
-You need your own copy of Polytopia and PolyMod obtained from its developers. This repository does not grant redistribution rights to their game, loader or runtime components. A source checkout alone is not a complete installation.
-
-- [Official-loader review workflow and exact compatibility details](docs/PUBLIC-POLYMOD-REVIEW.md)
-- [PolyMod public releases](https://github.com/PolyModdingTeam/PolyMod/releases)
-- [Windows development notes](docs/WINDOWS-PORT.md) — experimental and version-specific
-- [Shared-build workflow](docs/SHARED-BUILD-FROM-MAC.md) — developer tooling, not a supported end-user installer
-
-When a reviewed `.polymod` is published, its release notes will identify the supported game, loader and platform combination. Do not assume an old test archive is compatible with a newer build.
+See [compatibility and review details](docs/PUBLIC-POLYMOD-REVIEW.md) and [Windows validation results](docs/WINDOWS-SHARED-0.3.105-RESULTS.md). Automated checks and user playtesting do not cover every gameplay interaction.
 
 ## Feedback
 

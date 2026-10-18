@@ -36,6 +36,7 @@ public sealed class MapData:Il2CppSystem.Object{public NativeArray<TileData> Til
 public sealed class PlayerState:Il2CppSystem.Object{public byte Id{get;set;}public int Currency{get;set;}=37;public bool Treaty{get;set;}public bool TerrainDefence{get;set;}public uint casualities{get;set;}}
 public sealed class GameState:Il2CppSystem.Object
 {
+ public int Version{get;set;}=115;
  public enum State{Started,Ended}public State CurrentState{get;set;}=State.Started;public byte CurrentPlayer{get;set;}=1;public uint CurrentTurn{get;set;}=4;
  public MapData Map{get;set;}=new();public L.List<PlayerState> PlayerStates{get;set;}=new();public L.List<ActionBase> ActionStack{get;set;}=new();public bool HasFlaggedNeedForUpdateRoutes{get;set;}
  public bool TryGetPlayer(byte id,out PlayerState? player){player=Native.Items(PlayerStates).Cast<PlayerState>().SingleOrDefault(p=>p.Id==id);return player is not null;}
@@ -51,6 +52,7 @@ public static class MapDataExtensions
 }
 public static class PlayerExtensions
 {
+ public static int GetDefenceBonus(PlayerState player,int terrain,GameState state)=>player.TerrainDefence&&terrain!=0?2:1;
  public static int CountUnits(PlayerState player,GameState state)=>state.Map.Tiles.Values.Count(t=>t.unit?.owner==player.Id);
  public static int CountUnits(PlayerState player,GameState state,out L.List<UnitState> units){units=new();foreach(var t in state.Map.Tiles.Values)if(t.unit?.owner==player.Id)units.Add(t.unit);return units.Count;}
  public static void ModifyAggressionsFromAttack(PlayerState a,PlayerState b,TileData tile,GameState state){}

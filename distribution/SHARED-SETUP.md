@@ -1,3 +1,7 @@
+> **Historical maintainer workflow — not current installation instructions.** Loader-containing setup bundles described below were withdrawn and are not distributed by this public repository. Install the standalone `.polymod` using the [current README](../README.md#download-and-installation). Do not seek or substitute a bundled beta/runtime ZIP.
+>
+> The guarded shared-build workflow below depends on a historical private native-helper baseline and local game fixtures. These are not available in a public source clone. The scripts also support an exact pinned donor-mod input, but a current release is not automatically a replacement for that older baseline. Rebuilding native helpers requires an independently audited baseline; do not bypass the checks. See [publication limitations](../PUBLICATION.md).
+
 # Deception 0.3.101 — shared Windows/Mac setup
 
 Download **Deception-Setup-0.3.101-windows-mac.1.zip** from this private repository's

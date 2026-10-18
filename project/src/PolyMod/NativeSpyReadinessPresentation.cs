@@ -90,11 +90,33 @@ namespace Deception.PolyModAdapter
             return true;
         }
         static Scope? ForSkin(object skin)=>Current is Scope s&&Native.Same(s.Skin,skin)&&Valid(s)?s:null;
+        // Pinned Windows Unit.GetOverlayColorAndStrength(true, effects), without
+        // passing its Color/float ValueTuple through generated IL2CPP interop.
+        // Later native tests override earlier ones in precisely this order.
+        internal static float WindowsReadyStrength(object effects)
+        {
+            int mask=0;
+            foreach(var effect in Native.Items(effects))
+            {int value=Native.Int(effect);if(value>=0&&value<=6)mask|=1<<value;}
+            float strength=0;
+            if((mask&(1<<2))!=0)strength=0.5f; // Boosted
+            if((mask&(1<<6))!=0)strength=0.4f; // Swift
+            if((mask&(1<<1))!=0)strength=0.3f; // Poisoned
+            if((mask&(1<<0))!=0)strength=0.5f; // Frozen
+            if((mask&(1<<5))!=0)strength=0.6f; // Petrified
+            return strength;
+        }
         public static void BeforeColor(object __0,ref float __2,ref float __4)
         {
             try
             {
                 var scope=ForSkin(__0);if(scope is null)return;
+#if DECEPTION_WINDOWS_PORT_CANDIDATE
+                if(NativeWindowsHooks.Enabled)
+                {
+                    __2=WindowsReadyStrength(Native.Get(scope.Unit,"effects")!);__4=0;return;
+                }
+#endif
                 // Native's readiness boolean changes only overlay strength.
                 // Retain its status color, and remove the separate spent tint.
                 // This wrapped tuple is invoked through its generated wrapper,

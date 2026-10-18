@@ -35,6 +35,28 @@ namespace Deception.Tests
   {
    try
    {
+#if DECEPTION_WINDOWS_PORT_CANDIDATE
+    Test("WINDOWS-ready-sink-bypasses-failing-tuple-wrapper",()=>{
+     var w=new World();NativeWindowsHooks.Enabled=true;Unit.OverlayThrows=true;
+     NativeSpyReadinessPresentation.BeforeUpdate(w.Visual,w.Context,out long scope);
+     try {
+      float overlay=4.79392E19f,team=0.5f;
+      NativeSpyReadinessPresentation.BeforeColor(w.Skin,ref overlay,ref team);
+      Check(overlay==0&&team==0,"Windows clear readiness must not read failing native tuple");
+      w.Body.effects.Add(UnitEffect.Poisoned);overlay=4.79392E19f;
+      NativeSpyReadinessPresentation.BeforeColor(w.Skin,ref overlay,ref team);
+      Check(overlay==0.3f&&team==0,"Windows poison strength retained");
+     } finally {NativeSpyReadinessPresentation.Finished(null,scope);NativeWindowsHooks.Enabled=false;Unit.OverlayThrows=false;}
+    });
+#endif
+    Test("WINDOWS-ready-overlay-native-priority-all-effect-combinations",()=>{
+     for(int mask=0;mask<128;mask++){
+      var effects=new Il2CppSystem.Collections.Generic.List<UnitEffect>();
+      for(int bit=0;bit<7;bit++)if((mask&(1<<bit))!=0)effects.Add((UnitEffect)bit);
+      float expected=(mask&32)!=0?0.6f:(mask&1)!=0?0.5f:(mask&2)!=0?0.3f:(mask&64)!=0?0.4f:(mask&4)!=0?0.5f:0;
+      Check(NativeSpyReadinessPresentation.WindowsReadyStrength(effects)==expected,"Native effect priority/strength mismatch "+mask);
+     }
+    });
     Test("SPY-GLOW-001-unmoved-specialist-ready-retains-native-render",()=>{var w=new World();string data=w.Snapshot();w.Render();w.Lit();Check(w.Snapshot()==data,"Rendering changed physical identity, HP, movement, attack or fog");});
     Test("SPY-GLOW-002-spent-specialist-action-dims",()=>{var w=new World();w.Render();w.Lit();w.Body.attacked=true;w.Render();w.Dark();});
     Test("SPY-GLOW-003-attack-denial-remains-during-and-after-render",()=>{

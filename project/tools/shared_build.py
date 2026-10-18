@@ -37,7 +37,7 @@ def native_inputs(root):
 def validate_native_inputs(root=api.ROOT):
     expected = json.loads(LOCK.read_text())
     require(native_inputs(root) == expected['sources'],
-            'Native/platform source changed: build and audit a new Windows native baseline before reusing its helpers.')
+            'Native/platform source changed: review the changed boundary and update its baseline before reusing helpers.')
     return expected
 
 
@@ -61,17 +61,15 @@ def standalone_donor(path):
 
 def review_package(work,dll,loader):
     manifest=json.loads((api.ROOT/'content/manifest.json').read_text())
-    manifest['name']+=' — Official PolyMod local review'
-    manifest['description']+=' Review target: official PolyMod 1.2.18. Local/pass-and-play only; online unavailable. Windows experimental.'
-    note=('Official unmodified PolyMod 1.2.18 local/pass-and-play REVIEW CANDIDATE. '
-          'No loader/runtime bundled. Native gameplay acceptance NOT RUN. '
-          'Existing Windows runtime compatibility requirements remain; Windows requires DECEPTION_WINDOWS_PORT_TEST=1. '
-          'Not a stock Windows runtime compatibility claim. Preview multiplayer is unavailable on this loader.\n')
+    note=('SHARED PUBLIC/BETA REVIEW CANDIDATE. Exact public PolyMod 1.2.18: local/pass-and-play; '
+          'supported clean beta: online adapter retained. Windows public runtime admitted with pinned dependencies; '
+          'native acceptance on both loader versions required. No loader/runtime bundled. '
+          'Both peers require this exact archive and the same supported beta for multiplayer.\n')
     entries={'manifest.json':json.dumps(manifest,indent=2).encode(),
              'localization.json':(api.ROOT/'content/localization.json').read_bytes(),
              'Deception.dll':dll.read_bytes(),'DEVELOPMENT-STATUS.txt':note.encode(),
              'REVIEW-LOADER.json':json.dumps(loader,indent=2).encode()}
-    output=work/'Deception-public-review.polymod'
+    output=work/'Deception-shared-review.polymod'
     with zipfile.ZipFile(output,'x',zipfile.ZIP_DEFLATED) as archive:
         for name,data in entries.items():archive.writestr(name,data)
     return output
@@ -121,6 +119,9 @@ def build(args):
     game=args.game.expanduser().resolve()
     with api.lock():
         public_loader=None
+        if args.clean_beta:
+            import clean_beta
+            clean_beta.configure(api,game)
         if args.public_loader:
             import public_polymod
             public_loader=public_polymod.configure(api,game)
@@ -153,7 +154,11 @@ def build(args):
             import audit_compiler_metadata
             metadata=audit_compiler_metadata.check(output)
             import shared_import_audit
-            imports=shared_import_audit.audit(output,donor)
+            review=json.loads((api.ROOT/'tools/shared-import-review.json').read_text())
+            require(review.get('schema')==1,'Unknown shared import review schema.')
+            require(all(api.sha(api.regular(api.ROOT/name))==digest for name,digest in review['sources'].items()),'Reviewed managed import source changed.')
+            require(all(api.sha(api.regular(game/name))==digest for name,digest in review['references'].items()),'Reviewed managed import references changed.')
+            imports=shared_import_audit.audit(output,donor,reviewed=review['imports'])
             require(embedded_resources(output)==payloads,'Candidate native resource bytes changed.')
             host=Path(receipt['work'])/'model-test-host'
             # Conditional admission helpers execute under bundled Intel .NET;
@@ -189,7 +194,9 @@ if __name__=='__main__':
     donor_group=parser.add_mutually_exclusive_group(required=True)
     donor_group.add_argument('--base-zip',type=Path)
     donor_group.add_argument('--donor-mod',type=Path)
-    parser.add_argument('--public-loader',action='store_true')
+    loader_group=parser.add_mutually_exclusive_group()
+    loader_group.add_argument('--public-loader',action='store_true')
+    loader_group.add_argument('--clean-beta',action='store_true')
     parser.add_argument('--mac-receipt',type=Path,required=True)
     parser.add_argument('--game',type=Path,default=api.GAME)
     try: build(parser.parse_args())

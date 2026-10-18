@@ -34,6 +34,15 @@ namespace Deception.Tests
   static object Positions(params (int X,int Y)[] ps)=>Native.NewList("WorldCoordinates",ps.Select(p=>(object)new WorldCoordinates(p.X,p.Y)));
   static string World(GameState s)=>string.Join("|",s.Map.Tiles.Values.Select(t=>$"{t.coordinates.X},{t.coordinates.Y}:{t.owner}/{t.unit?.id}:{t.unit?.owner}:{t.unit?.health}:{t.unit?.moved}:{t.unit?.attacked}:{t.improvement?.Wall}:{string.Join(',',Native.Items(t.explorers))}"));
   public static int Run(){try{
+   foreach(int version in new[]{114,115,116})foreach(bool terrain in new[]{false,true})foreach(bool poison in new[]{false,true})foreach(byte cityOwner in new byte[]{1,2,3})
+    Test($"windows-rogue-defence-{version}-{terrain}-{poison}-{cityOwner}",()=>{
+     var s=Make();s.Version=version;var u=Unit(s,2);u.Abilities.Add(Ability.Fortify);var t=Tile(s,1,2);t.owner=cityOwner;t.improvement=new(){Wall=true};t.terrain=terrain?1:0;
+     s.TryGetPlayer(u.owner,out var p);p!.TerrainDefence=terrain;if(poison)u.effects.Add(UnitEffect.Poisoned);
+     string before=World(s);int result=-1;Check(!NativeRogueAccounting.WindowsDefence(u,s,ref result),"Rogue handled");
+     int expected=poison&&version<115?7:(terrain?15:10)>>(poison?1:0);
+     Check(result==expected,"version, terrain and poison retained without city bonus");Check(before==World(s)&&t.HasImprovement(Improvement.City),"no world mutation or city predicate interception");
+    });
+   Test("windows-defence-ordinary-bypass",()=>{var s=Make(false);int result=123;Check(NativeRogueAccounting.WindowsDefence(Unit(s,2),s,ref result)&&result==123,"ordinary defence stays native");});
    Test("registration-safe-accounting-rules-tactics-hooks",()=>{var h=new HarmonyLib.Harmony();NativeRogueAccounting.Install(h);NativeRogueRules.Install(h);NativeRogueTactics.Install(h);Check(h.Hooks.Count==25,"seven accounting, sixteen rules, two safe tactics detours");Check(!h.Hooks.Any(x=>x.Contains("IsAllowedToFinish")),"unsafe wrapped PathFinderSettings not installed");});
    Test("permanent-counts-reserve-original-owner-and-exclude-commander",()=>{var s=Make();string before=World(s);Check(Count(s,1)==1&&Count(s,2)==1&&Count(s,3)==1,"one root belongs to each permanent owner");Check(before==World(s),"count does not edit native owner fields");});
    Test("count-out-list-uses-identical-permanent-roster",()=>{var s=Make();s.TryGetPlayer(2,out var p);object list=Native.NewList("UnitState",Array.Empty<object>());int n=0;Check(!NativeRogueAccounting.CountList(p!,s,ref list,ref n),"custom count handles Rogue context");Check(n==1&&Native.Same(Native.Items(list).Single(),Unit(s,2)),"out list contains exact reserved physical unit");});

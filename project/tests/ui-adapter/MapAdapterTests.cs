@@ -90,7 +90,7 @@ namespace Deception.Tests
             });
             Case("UI-123-native-overlay-rejects-foreign-renderer-reference",()=> {
                 var a=Create();var foreign=new SpriteRenderer{sprite=new Sprite("Other unit")};
-                foreign.Properties.SetFloat("_OverlayStrength",0.9f);a.Body.Properties.SetFloat("_OverlayStrength",0.4f);
+                foreign.Properties.SetFloat("_OverlayStrength",0.9f);a.Body.Properties.SetFloat("_OverlayStrength",0.4f);a.Poly.isBatched=false;
                 a.Unit.skinVisuals.visualParts=new(new[]{new SkinVisualsReference.VisualPart{renderer=new(){spriteRenderer=foreign}},a.Unit.skinVisuals.visualParts[0]});
                 MimicMapInspection.Configure(_=>true);MimicMapInspection.Refresh(a.Unit);
                 Near(Art(a)[0].Properties.GetFloat("_OverlayStrength"),0.4f);
@@ -118,7 +118,7 @@ namespace Deception.Tests
                 var a=Create();var tinted=new SpriteRenderer{sprite=new Sprite("Tinted native")};tinted.transform.SetParent(a.Unit.spriteContainer,false);
                 a.Unit.skinVisuals.visualParts=new(new[]{a.Unit.skinVisuals.visualParts[0],new SkinVisualsReference.VisualPart{tintable=true,renderer=new(){spriteRenderer=tinted}}});
                 var fixedColor=new Color(0.2f,0.4f,0.8f,1);var spent=new Color(1,1,1,1);
-                a.Body.Properties.SetColor("_OverlayColor",fixedColor);a.Body.Properties.SetFloat("_OverlayStrength",0.2f);
+                a.Poly.isBatched=false;a.Body.Properties.SetColor("_OverlayColor",fixedColor);a.Body.Properties.SetFloat("_OverlayStrength",0.2f);
                 tinted.Properties.SetColor("_OverlayColor",spent);tinted.Properties.SetFloat("_OverlayStrength",0.4f);
                 tinted.Properties.SetFloat("ForeignTextureBinding",42);
                 MimicMapInspection.Configure(_=>true);MimicMapInspection.Refresh(a.Unit);var art=Art(a);
@@ -127,6 +127,17 @@ namespace Deception.Tests
                 Near(art[1].Properties.GetFloat("_OverlayStrength"),0.4f);Check(!art[1].Properties.Values.ContainsKey("ForeignTextureBinding"));
                 tinted.Properties.SetFloat("_OverlayStrength",0);MimicMapInspection.Tick();Near(Art(a)[1].Properties.GetFloat("_OverlayStrength"),0);
                 Check(tinted.Properties.GetFloat("ForeignTextureBinding")==42&&a.Body.Properties.GetColor("_OverlayColor")==fixedColor);
+                // Native batch cache can disagree with the inactive backing renderer.
+                a.Poly.isBatched=true;a.Poly.overlayColor=new Color(1,1,1,1);a.Poly.overlayStrength=0;
+                a.Body.Properties.SetColor("_OverlayColor",new Color(0,0,0,1));a.Body.Properties.SetFloat("_OverlayStrength",1);
+                MimicMapInspection.Tick();
+                Near(Art(a)[0].Properties.GetFloat("_OverlayStrength"),0);
+                Check(Art(a)[0].Properties.GetColor("_OverlayColor")==a.Poly.overlayColor);
+                Check(a.Body.Properties.GetFloat("_OverlayStrength")==1);
+                a.Poly.isBatched=false;a.Poly.spriteRenderer=null;
+                a.Unit.skinVisuals.visualParts[0].renderer.spriteRenderer=null;
+                a.Poly.overlayStrength=0.25f;MimicMapInspection.Tick();
+                Near(Art(a)[0].Properties.GetFloat("_OverlayStrength"),0.25f);
                 MimicMapInspection.Clear();Original(a);UnchangedState(a);
             });
             Case("UI-103-delayed-head-map-upgrades-with-stable-badges-and-state",()=> {

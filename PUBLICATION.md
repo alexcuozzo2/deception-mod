@@ -19,4 +19,4 @@ Alex supplied the custom artwork and confirmed creation of Ninja Smoke audio. No
 
 ## Validation scope
 
-This is a sanitized source publication, not a new gameplay build or a newly validated multiplayer release. Historical evidence describes its original environment; placeholder paths are not runnable local configuration. See README.md for compatibility limitations.
+The public source is updated for the 0.3.105 WIP release. Its downloadable artifact is byte-identical to the shared candidate, with later Windows validation recorded separately. This is not a newly validated multiplayer release. Historical evidence describes its original environment; placeholder paths are not runnable local configuration. See README.md for compatibility limitations.

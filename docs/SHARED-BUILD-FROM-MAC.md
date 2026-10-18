@@ -1,3 +1,7 @@
+> **Historical maintainer workflow — not current installation instructions.** Loader-containing setup bundles described below were withdrawn and are not distributed by this public repository. Install the standalone `.polymod` using the [current README](../README.md#download-and-installation). Do not seek or substitute a bundled beta/runtime ZIP.
+>
+> The guarded shared-build workflow below depends on a historical private native-helper baseline and local game fixtures. These are not available in a public source clone. The scripts also support an exact pinned donor-mod input, but a current release is not automatically a replacement for that older baseline. Rebuilding native helpers requires an independently audited baseline; do not bypass the checks. See [publication limitations](../PUBLICATION.md).
+
 # Shared builds from the Mac
 
 Routine managed-code and artwork changes can reuse the native helpers from the pinned, published Windows/Mac baseline. This avoids needing the borrowed Windows PC for every release. It does not replace Windows gameplay testing.

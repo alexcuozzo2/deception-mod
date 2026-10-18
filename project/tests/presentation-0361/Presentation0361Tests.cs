@@ -185,8 +185,10 @@ namespace Deception.Tests
    });
    Case("public menu offset preserves exact fitting and restores pooled native art",()=>{
     var unit=SpyActor();var c=Select(unit);var images=c.Bar.duplicatedSprites.rectTransform.gameObject.ComponentsInChildren<Image>().ToArray();var layers=MimicInspectionControls.ActualLayers(unit.Owner,spy:true);
-    var rect=c.Bar.duplicatedSprites.rectTransform.rect;float fit=Math.Min(rect.width*.8f/UnitArtAssets.CanvasWidth,rect.height*.8f/UnitArtAssets.CanvasHeight);
-    for(int i=0;i<3;i++){Check(Math.Abs(images[i].rectTransform.anchoredPosition.y-(layers[i].Y*fit-4))<.001f,"menu has exact -4 UI-unit composition shift");Check(Math.Abs(images[i].rectTransform.rect.width-layers[i].Width*fit)<.001f&&Math.Abs(images[i].rectTransform.rect.height-layers[i].Height*fit)<.001f,"head/body width-height and fit remain unchanged");}
+    var rect=c.Bar.duplicatedSprites.rectTransform.rect;var fitted=MimicDualPortrait.FitSingle(layers,rect.width,rect.height,.8f,-4);
+    // The -4 offset belongs to the fitted visible silhouette, not the padded PNG canvas.
+    // Preserve one uniform scale and the calibrated relative head/body placement.
+    for(int i=0;i<3;i++){Check(Math.Abs(images[i].rectTransform.anchoredPosition.x-(layers[i].X*fitted.Fit+fitted.X))<.001f&&Math.Abs(images[i].rectTransform.anchoredPosition.y-(layers[i].Y*fitted.Fit+fitted.Y))<.001f,"menu centers fitted visible silhouette with downward offset");Check(Math.Abs(images[i].rectTransform.rect.width-layers[i].Width*fitted.Fit)<.001f&&Math.Abs(images[i].rectTransform.rect.height-layers[i].Height*fitted.Fit)<.001f,"head/body proportions retain one uniform silhouette fit");}
     var native=c.Bar.spriteDuplicationData;NativeSpyPresentation.BeforeBar(c.Bar);Check(c.Bar.duplicatedSprites.rectTransform.gameObject.ComponentsInChildren<Image>().Any(x=>x.sprite?.Name=="Warrior body")&&!c.Bar.duplicatedSprites.rectTransform.gameObject.ComponentsInChildren<Image>().Any(x=>ReferenceEquals(x.sprite,UnitArtAssets.Get("spy-fixed"))),"owned restore reproduces native source");
     MimicPresentationUi.BarReady(c.Bar);var old=c.Bar.duplicatedSprites.rectTransform.gameObject.ComponentsInChildren<Image>().ToArray();
     c.Bar.unit=null;c.Bar.duplicatedSprites.Clear();var replacement=new Image{sprite=new Sprite("pooled other unit")};replacement.rectTransform.SetParent(c.Bar.duplicatedSprites.rectTransform,false);int restores=c.Bar.duplicatedSprites.RestoreCalls;

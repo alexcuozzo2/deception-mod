@@ -23,6 +23,16 @@ namespace Deception.PolyModAdapter
         }
         sealed record Part(object Rect,object Image,object Sprite,Point Position,float XScale,float YScale,float ZScale,object Color);
 
+        // Selected-unit panels fit the visible composed silhouette, not the
+        // nominal 1000-unit canvas (Spy bodies extend beyond that canvas).
+        internal static (float Fit,float X,float Y) FitSingle(IReadOnlyList<UnitArtAssets.Layer> layers,float width,float height,float fraction,float yOffset)
+        {
+            var bounds=ActualBounds(layers);
+            float fit=Positive(Math.Min(Positive(width)*Positive(fraction)/bounds.Width,
+                Positive(height-2*Math.Abs(yOffset))*fraction/bounds.Height));
+            return (fit,-bounds.X*fit,yOffset-bounds.Y*fit);
+        }
+
         public static void Validate()
         {
             foreach(var method in new[]{Native.M("UnityEngine.GameObject","GetComponent","Il2CppSystem.Type"),

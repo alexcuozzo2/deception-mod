@@ -24,8 +24,6 @@ namespace Deception.PolyModAdapter
             Native.Hook(h,Native.M("Unit","UpdateStatusDisplay","MapRenderContext"),typeof(NativeRogueVisuals),nameof(BeforeStatusUpdate),null,nameof(Finished));
             Native.Hook(h,Native.M("ClientPlayerExtensions","GetPlayerColor","PlayerState","GameState"),typeof(NativeRogueVisuals),nameof(BadgeColor));
             Native.Hook(h,Native.M("Unit","get_Owner"),typeof(NativeRogueVisuals),null,nameof(Owner));
-            Native.Hook(h,Native.M("Tile","SpawnFire","System.Single","System.String"),typeof(NativeRogueVisuals),nameof(Fire));
-            Native.Hook(h,Native.M("Tile","SpawnRainbowFire","System.Single"),typeof(NativeRogueVisuals),nameof(Fire));
             Native.Hook(h,Native.M("GameManager","Update"),typeof(NativeRogueVisuals),null,nameof(Tick));
         }
         static bool State(object state)=>RecruitmentHooks.Registered&&NativeRegroupSession.Ready(state)&&Native.Same(state,Native.Static("GameManager","GameState"));
@@ -80,18 +78,6 @@ namespace Deception.PolyModAdapter
             if(__state is Frame f&&f.Generation==Generation&&ReferenceEquals(Current,f)){Current=f.Previous;Depth=f.Depth-1;}
             return __exception;
         }
-        public static bool Fire(object __instance)
-        {
-            try
-            {
-                var state=Native.Static("GameManager","GameState");if(state is null||!State(state)||!Native.UnityAlive(__instance))return true;
-                var data=Native.Get(__instance,"Data");if(data is null||Native.Get(data,"unit") is not object body||!Exact(state,body)||!NativeRogueRules.IsRogue(state,body)||
-                    !(bool)Native.Invoke(Native.M("TileData","HasImprovement","Polytopia.Data.ImprovementData+Type"),data,Native.EnumValue("Polytopia.Data.ImprovementData+Type","city"))!||
-                    !Native.Same(data,Native.Invoke(Native.M("MapDataExtensions","GetTile","MapData","WorldCoordinates"),null,Native.Get(state,"Map"),Native.Get(data,"coordinates"))))return true;
-                Native.Invoke(Native.M("Tile","StopFire","System.Boolean"),__instance,false);
-                Native.Invoke(Native.M("Tile","StopRainbowFire","System.Boolean"),__instance,false);return false;
-            }catch(Exception e){Note(e);return true;}
-        }
         // Native reactions can render before the new ledger/owner/action frame
         // is fully published. Rebuild only affected Rogue visuals once native
         // processing settles, using the completed immutable frame. No game
@@ -130,7 +116,7 @@ namespace Deception.PolyModAdapter
                     if(generation!=Generation||!Native.Same(state,Native.Static("GameManager","GameState"))||!Native.Same(map,Native.Static("MapRenderer","Current"))||
                         !Native.Same(client,Native.Static("GameManager","Client"))||!Native.Same(player,Native.Static("GameManager","LocalPlayer")))break;
                     var tile=Native.Invoke(Native.M("MapRenderer","GetTileInstance","WorldCoordinates"),map,Native.Get(body,"coordinates"));
-                    if(Native.UnityAlive(tile)&&Native.Same(Native.Get(tile!,"Data"),data))Fire(tile!);
+                    if(Native.UnityAlive(tile)&&Native.Same(Native.Get(tile!,"Data"),data))Native.Invoke(Native.M("Tile","RenderImprovement"),tile);
                 }
             }catch(Exception e){Note(e);}
         }

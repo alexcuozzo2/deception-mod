@@ -268,6 +268,8 @@ namespace Deception.PolyModAdapter
             float width=PositiveSize(Native.Get(bounds,"width")),height=PositiveSize(Native.Get(bounds,"height"));
             float fit=PositiveSize(Math.Min(width*PositiveSize(areaFraction)/UnitArtAssets.CanvasWidth,
                 height*areaFraction/UnitArtAssets.CanvasHeight));
+            float x=0,y=yOffset;
+            if(spy)(fit,x,y)=MimicDualPortrait.FitSingle(layers,width,height,areaFraction,yOffset);
             // Validate all input layers and geometry before the first clear.
             Native.Invoke(Native.M("UIDuplicatedSprites","Clear"),container);
             try
@@ -278,7 +280,7 @@ namespace Deception.PolyModAdapter
                 // CreateUnit destroys its temporary source. Their caller checks
                 // exact renderer/data/container ownership instead of source life.
                 if(!float.IsFinite(yOffset))throw new InvalidOperationException("Portrait offset is not finite.");
-                var children=AppendActualLayers(destination,layers,fit,0,yOffset);
+                var children=AppendActualLayers(destination,layers,fit,x,y);
                 Trace("portrait-fit",()=>"destination="+width+"x"+height+" actual-layers="+children.Length+" fit="+fit);
             }
             catch

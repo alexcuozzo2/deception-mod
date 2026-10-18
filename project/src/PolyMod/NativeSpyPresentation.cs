@@ -50,17 +50,18 @@ namespace Deception.PolyModAdapter
             }
             catch(Exception e){Entry.Note("public-unit-portrait-restore-error",e.ToString());}
         }
-        static bool Owned(Bar old)=>Native.UnityAlive(old.Widget)&&Native.Same(Native.Get(old.Widget,"unit"),old.Unit)&&
+        static bool Owned(Bar old)=>OwnedContext(old)&&SameChildren(old,Children(old.Container));
+        static bool OwnedContext(Bar old)=>Native.UnityAlive(old.Widget)&&Native.Same(Native.Get(old.Widget,"unit"),old.Unit)&&
             Native.UnityAlive(old.Container)&&Native.Same(Native.Get(old.Widget,"duplicatedSprites"),old.Container)&&
             Native.Same(Native.Get(old.Widget,"spriteDuplicationData"),old.Data)&&Native.Same(Native.Get(old.Data,"source"),old.Source)&&
-            Native.Same(Native.Get(old.Data,"container"),old.Container)&&SameChildren(old,Children(old.Container));
+            Native.Same(Native.Get(old.Data,"container"),old.Container);
         static bool SameChildren(Bar old,object[] children)=>old.Children.Length==children.Length&&old.Children.Zip(children,Native.Same).All(x=>x);
         internal static void Tick()
         {
             var old=PaintedBar;if(old is null)return;
             try
             {
-                if(!Owned(old)){PaintedBar=null;return;}
+                if(!OwnedContext(old)){PaintedBar=null;return;}
                 if(!Native.Same(old.Client,Native.Static("GameManager","Client"))||!Native.Same(old.Map,Native.Static("MapRenderer","Current"))||
                     !Native.Same(old.Viewer,Native.Static("GameManager","LocalPlayer"))||!Native.Same(old.State,Native.Static("GameManager","GameState")))
                 {RemoveBar(restore:false);return;}

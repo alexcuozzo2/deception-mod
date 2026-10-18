@@ -36,7 +36,7 @@ public sealed class UnitState:Identity
  public bool CanAttack(){bool b=false;return NativeSpyActions.NoAttack(this,ref b)?!attacked:b;}
 }
 public sealed class PlayerState:Identity {public byte Id{get;set;}=1;public int color;public string tribe="imperius",skin="default";}
-public sealed class TileData:Identity {public WorldCoordinates coordinates{get;set;}=new(2,3);public UnitState? unit{get;set;}public bool City=true;public bool HasImprovement(Polytopia.Data.ImprovementData.Type t)=>City&&t==Polytopia.Data.ImprovementData.Type.city;public bool Accessible=true;public bool GetExplored(byte b)=>Accessible;}
+public sealed class TileData:Identity {public WorldCoordinates coordinates{get;set;}=new(2,3);public UnitState? unit{get;set;}public byte owner=2;public bool City=true;public bool HasImprovement(Polytopia.Data.ImprovementData.Type t)=>City&&t==Polytopia.Data.ImprovementData.Type.city;public bool Accessible=true;public bool GetExplored(byte b)=>Accessible;}
 public sealed class MapData:Identity {public readonly Dictionary<WorldCoordinates,TileData> Tiles=new();}
 public static class MapDataExtensions {public static TileData? GetTile(MapData m,WorldCoordinates c)=>m.Tiles.GetValueOrDefault(c);}
 public sealed class GameState:Identity
@@ -136,11 +136,13 @@ public sealed class UnitStatusDisplay:UnityEngine.Object
 }
 public sealed class Tile:UnityEngine.Object
 {
- public TileData? Data{get;set;}public bool Fire,Rainbow;public int Stops,Spawns,RainbowStops,RainbowSpawns;
- public void SpawnFire(float delay,string name){if(!NativeRogueVisuals.Fire(this))return;Fire=true;Spawns++;}
- public void StopFire(bool instant){Fire=false;Stops++;}
- public void SpawnRainbowFire(float delay){if(!NativeRogueVisuals.Fire(this))return;Rainbow=true;RainbowSpawns++;}
- public void StopRainbowFire(bool instant){Rainbow=false;RainbowStops++;}
+ public TileData? Data{get;set;}public Unit? unit{get;set;}public int ImprovementRenders;
+ public void RenderImprovement(){ImprovementRenders++;var data=Data;var state=GameManager.GameState!;bool siege=data is not null&&data.City&&data.owner!=0&&data.unit is not null&&(NativeRogueRules.IsRogue(state,data.unit)||data.unit.owner!=data.owner);Fire=siege;Rainbow=false;}
+ public bool Fire,Rainbow,InstantFire,InstantRainbow;public int Stops,Spawns,RainbowStops,RainbowSpawns;
+ public void SpawnFire(float delay,string name){Fire=true;Spawns++;}
+ public void StopFire(bool instant){InstantFire=instant;if(instant)Fire=false;Stops++;}
+ public void SpawnRainbowFire(float delay){Rainbow=true;RainbowSpawns++;}
+ public void StopRainbowFire(bool instant){InstantRainbow=instant;if(instant)Rainbow=false;RainbowStops++;}
 }
 public static class ClientPlayerExtensions
 {

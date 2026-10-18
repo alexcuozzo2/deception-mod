@@ -1,8 +1,9 @@
 {
   "passed": true,
-  "cases": 92,
-  "assertions": 158,
+  "cases": 93,
+  "assertions": 286,
   "tests": [
+    "WINDOWS-ready-overlay-native-priority-all-effect-combinations",
     "SPY-GLOW-001-unmoved-specialist-ready-retains-native-render",
     "SPY-GLOW-002-spent-specialist-action-dims",
     "SPY-GLOW-003-attack-denial-remains-during-and-after-render",

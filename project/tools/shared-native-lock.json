@@ -30,19 +30,19 @@
     "src/Native/deception-execution-bridge.cpp": "16dd26fa8b6c87c33f9575a295d3d383cb73359f0e9c7a5d2c5c318cbce40885",
     "src/Native/deception-platform.h": "df29c21626b5fbf10b07c5f727d07e81ea5f9bd2c8de67e113e21c193724c5d1",
     "src/Native/deception-state-bridge.cpp": "6bd0b907197c22b4231a2597342fd08323402159fb22bf62e7879dec685516ff",
-    "src/PolyMod/Entry.cs": "33f666c7e05c95ff0ba6a858807f5a7929f2dcc7b6fda8a1ce71c11bdd66eb49",
+    "src/PolyMod/Entry.cs": "1d21d57c208ce51d9295c4527f0e702945a32cf304f925a126f23d2d182a60b6",
     "src/PolyMod/NativeApi.cs": "16f21a461482e459abb27de71ffd2ef91db0b6177e17ec96b2052dc9c59dd148",
     "src/PolyMod/NativeBlackoutAccess.cs": "338478e681a7589dbd17e03db36b568f4962308ca52c777cb34e18684cd6f165",
     "src/PolyMod/NativeCommandOuterAbi.cs": "01b5bea97423fea6d2f3433a23cd216e9b7c41b26506c005ddf5b18e515617e6",
     "src/PolyMod/NativeCommandOuterBridge.cs": "613e7bb553d5df8cdaaad82eb026bc9285453b4083054e2fce421d306124f5e0",
     "src/PolyMod/NativeExecutionBridge.cs": "6a629610dac558162a61f7aafc5240bf482722980822895b66bf29c3cc39f103",
-    "src/PolyMod/NativeOnlinePreview.cs": "0bee02c8dbb551a47ed0b615307b0a987c839257e1612044bfe1b7c2c321c527",
+    "src/PolyMod/NativeOnlinePreview.cs": "e4d9957fd08ac2e606d67dfb09cc27243df9e89adf58418ce52d0262d58a3aea",
     "src/PolyMod/NativeOrdinaryCommands.cs": "c8982e23b13c0761f1e5c43ada124066242657c10e5ba9f2563116701ed0d185",
-    "src/PolyMod/NativePlatformContract.cs": "37be28c76dc18ab6084e5b467083c6a29760b5ef717101d4cc7ad73cdad85b8d",
+    "src/PolyMod/NativePlatformContract.cs": "679c8f0b78ed6b9f43cb41234fcdaa031b83fc8b363445bfba94047e1e825870",
     "src/PolyMod/NativePlatformLibrary.cs": "313fc35a769b09791cf50ffedde87385e9986039ea13b159cc55e02107b09dd7",
     "src/PolyMod/NativeStateBridge.cs": "8fe5d7455a78afe1347b706de3bf52819092b51d9efe45fe433130900f641c4c",
     "src/PolyMod/NativeWindowsApproval.cs": "26440275580d905ad3d625391d3695ad02f320e3ce8e908365a8207be5e9871a",
-    "src/PolyMod/NativeWindowsHooks.cs": "f042fec28d9ff45b08dcebd6963add2daf51b62bc9f71409cf62020d14f8dd5e",
+    "src/PolyMod/NativeWindowsHooks.cs": "0976d22f0931d031bf88845dde3659ef8227529a4019eedfaf6edbce1da06a23",
     "tests/native/command-bridge-harness.cpp": "4f9d7f01b401b3fe852e5fb088dca1007eb10d2e7cff521d8cbd93fea8e2d7dc",
     "tests/native/execution-bridge-harness.cpp": "39fe3de3debf95e20a262993183481394373f6b5067e28d3d6751d90e0c94ba2",
     "tests/native/state-bridge-harness.cpp": "93536b51fc1c65b76f9628b44e026b6bbce4286073af7ba14e93aa9a1d8bdc14",
@@ -70,5 +70,15 @@
     "Deception.CommandBridge.dylib": "3d9429971781cf7f90a96c29f7d4a2a7f8b958bc0131770e01802dde66b30dda",
     "Deception.CommandBridge.sha256": "9c9fe08c016c274b5d54d7cbfdd385949d874926cc11538c58cf7e0f7d0ca3da",
     "Deception.CommandBridge.seams.json": "182819a3d7997bb89dae7d1e416d1c01ce3e4bafd2b7c2a2b633a4e557775c0e"
+  },
+  "managed_review": {
+    "windows_commit": "156b2e5",
+    "reason": "Reviewed managed clean-beta admission and stock-Dobby workaround. Native C++/ABI/bridge owners/seams unchanged; helper resource hashes retained. 0.3.105 adds the exact public 1.2.18 loader alternative; all other pins and native resources unchanged. Public online remains excluded. Windows public native acceptance pending.",
+    "files": [
+      "src/PolyMod/Entry.cs",
+      "src/PolyMod/NativeOnlinePreview.cs",
+      "src/PolyMod/NativePlatformContract.cs",
+      "src/PolyMod/NativeWindowsHooks.cs"
+    ]
   }
 }

@@ -805,7 +805,7 @@ public sealed class PolytopiaSpriteRenderer:UnityEngine.Component
     public UnityEngine.Bounds Bounds {get;set;}=new(new(0,0,0),new(1,1,0));
     public int SortingLayer {get;set;}public int SortingOrder {get;set;}
     public UnityEngine.Material SharedMaterial {get;set;}=new();public UnityEngine.Color overlayColor {get;set;}=new(1,1,1,1);public float overlayStrength {get;set;}
-    public bool isColorLocked {get;set;}public bool IsUsed {get;set;}=true;public bool isBatched=true;
+    public bool isColorLocked {get;set;}public bool IsUsed {get;set;}=true;public bool isBatched {get;set;}=true;
     public bool Dirty;public int ColorWrites,LockedWrites,PoolReturns;
     public UnityEngine.Color Color
     {

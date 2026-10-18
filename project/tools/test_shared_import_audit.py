@@ -83,5 +83,46 @@ class SignatureTests(unittest.TestCase):
                         audit(candidate, donor)
 
 
+class ReviewedImportsTests(unittest.TestCase):
+    assembly = '["assembly","System.Diagnostics.Process",[6,0,0,0],0,"token",""]'
+
+    def check(self, candidate, review):
+        with tempfile.TemporaryDirectory() as temporary:
+            path = Path(temporary) / 'dll'; path.write_bytes(b'dll')
+            baseline = {k: set() for k in ('assemblies', 'types', 'members', 'pinvoke')}
+            with patch.object(Imports, '__init__', return_value=None), patch.object(Imports, 'collect', side_effect=[candidate, baseline]):
+                return audit(path, path, review)
+
+    def test_exact_review_passes(self):
+        candidate = {k: set() for k in ('assemblies', 'types', 'members', 'pinvoke')}
+        candidate['assemblies'].add(self.assembly)
+        review = {'assemblies': [self.assembly], 'types': [], 'members': []}
+        self.assertEqual(self.check(candidate, review)['status'], 'EXTERNAL_IMPORT_REVIEWED_MATCH')
+        candidate['members'].add('unreviewed')
+        with self.assertRaisesRegex(ValueError, 'Novel emitted'):
+            self.check(candidate, review)
+
+    def test_unused_review_rejected(self):
+        candidate = {k: set() for k in ('assemblies', 'types', 'members', 'pinvoke')}
+        with self.assertRaisesRegex(ValueError, 'Unused reviewed'):
+            self.check(candidate, {'assemblies': [self.assembly], 'types': [], 'members': []})
+
+    def test_native_import_cannot_be_reviewed(self):
+        candidate = {k: set() for k in ('assemblies', 'types', 'members', 'pinvoke')}
+        candidate['pinvoke'].add('native')
+        review = {'assemblies': [], 'types': [], 'members': []}
+        with self.assertRaisesRegex(ValueError, 'Novel emitted'):
+            self.check(candidate, review)
+        review['pinvoke'] = ['native']
+        with self.assertRaisesRegex(ValueError, 'P/Invoke'):
+            self.check(candidate, review)
+
+    def test_malformed_or_broad_reviews_rejected(self):
+        candidate = {k: set() for k in ('assemblies', 'types', 'members', 'pinvoke')}
+        for entries in ('System.*', ['System.*'], ['[]'], [self.assembly, self.assembly], ['[ "assembly" ]']):
+            with self.subTest(entries=entries), self.assertRaises(ValueError):
+                self.check(candidate, {'assemblies': entries, 'types': [], 'members': []})
+
+
 if __name__ == '__main__':
     unittest.main()

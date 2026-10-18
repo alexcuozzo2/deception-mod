@@ -23,6 +23,7 @@ public sealed class WindowsPortProbe : BasePlugin
         string output = Path.Combine(BepInEx.Paths.BepInExRootPath,"deception-windows-probe-"+Guid.NewGuid().ToString("N")+".json");
         var rows = new List<object>();
         var shared = new List<object>();
+        var allMethods = new List<object>();
         string? failure = null;
         int? exceptionResult = null;
         try
@@ -54,6 +55,8 @@ public sealed class WindowsPortProbe : BasePlugin
                 catch { continue; } // Non-native helpers have no method pointer.
                 long offset=pointer.ToInt64()-module.BaseAddress.ToInt64();
                 if(offset<0||offset>module.ModuleMemorySize-32)continue;
+                allMethods.Add(new {method=type.FullName+"."+method.Name,
+                    signature=method.ToString(),is_static=method.IsStatic,rva=offset});
                 if(!all.TryGetValue(offset,out var aliases))all[offset]=aliases=new List<string>();
                 aliases.Add(type.FullName+"::"+method+" static="+method.IsStatic);
             }
@@ -110,7 +113,7 @@ public sealed class WindowsPortProbe : BasePlugin
         }
         catch(Exception error) { failure=error.ToString(); Log.LogError(error); }
         File.WriteAllText(output,JsonSerializer.Serialize(new {
-            schema=1, status=failure==null?"POINTER_INVENTORY_COMPLETE":"FAILED", error=failure,
+            schema=1, all_methods=allMethods, status=failure==null?"POINTER_INVENTORY_COMPLETE":"FAILED", error=failure,
             os_architecture=RuntimeInformation.OSArchitecture.ToString(),
             process_architecture=RuntimeInformation.ProcessArchitecture.ToString(),
             runtime_admitted=false, gameplay_verified=false, methods=rows

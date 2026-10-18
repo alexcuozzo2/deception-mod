@@ -19,8 +19,15 @@ namespace Deception.PolyModAdapter
             Native.Hook(h,Native.M("ActionUtils","KillUnit","GameState","TileData"),p,nameof(BeforeDeath),null,nameof(OwnersFinished));
             Native.Hook(h,Native.M("ActionUtils","PerformAttack","GameState","System.Byte","WorldCoordinates","WorldCoordinates","System.Int32"),p,nameof(BeforeDamage),nameof(AfterDamage));
             Native.Hook(h,Native.M("WipePlayerAction","Execute","GameState"),p,nameof(BeforeWipe),null,nameof(OwnersFinished));
-            Native.Hook(h,Native.M("UnitDataExtensions","GetDefenceBonus","UnitState","GameState"),p,nameof(BeforeDefence),null,nameof(DefenceFinished));
-            Native.Hook(h,Native.M("TileData","HasImprovement","Polytopia.Data.ImprovementData+Type"),p,nameof(CityFortification));
+#if DECEPTION_WINDOWS_PORT_CANDIDATE
+            if(NativeWindowsHooks.Enabled)
+                Native.Hook(h,Native.M("UnitDataExtensions","GetDefenceBonus","UnitState","GameState"),p,nameof(WindowsDefence));
+            else
+#endif
+            {
+                Native.Hook(h,Native.M("UnitDataExtensions","GetDefenceBonus","UnitState","GameState"),p,nameof(BeforeDefence),null,nameof(DefenceFinished));
+                Native.Hook(h,Native.M("TileData","HasImprovement","Polytopia.Data.ImprovementData+Type"),p,nameof(CityFortification));
+            }
         }
         static bool HasRogues(object state)
         {
@@ -111,6 +118,31 @@ namespace Deception.PolyModAdapter
         {if(__state is not null)Restore(__state.Before);return __exception;}
 
         [ThreadStatic] static Defence? CurrentDefence;
+        // Windows 2.17.3.16375, admitted by NativeWindowsHooks' image hash.
+        // The native Fortify check is inlined. Reproduce only the Rogue path
+        // without city defence; keep terrain and effect queries native. Do not
+        // hook HasImprovement: its entry branch is misrelocated by stock Dobby.
+        public static bool WindowsDefence(object __0,object __1,ref int __result)
+        {
+            if(!NativeRogueRules.IsRogue(__1,__0))return true;
+            int version=Native.Int(Native.Get(__1,"Version"));
+            bool Poisoned()=>(bool)Native.Invoke(Native.M("UnitState","HasEffect","UnitEffect"),__0,
+                Enum.ToObject(Native.T("UnitEffect"),1))!;
+            if(version<115&&Poisoned()){__result=7;return false;}
+            int defence=10;
+            var tile=Native.Invoke(Native.M("MapDataExtensions","GetTile","MapData","WorldCoordinates"),null,
+                Native.Get(__1,"Map"),Native.Get(__0,"coordinates"));
+            byte owner=Convert.ToByte(Native.Get(__0,"owner"));
+            object?[] player={owner,null};
+            if(tile is not null&&owner!=0&&(bool)Native.Invoke(Native.M("GameState","TryGetPlayer","System.Byte","PlayerState&"),__1,player)!)
+            {
+                var terrain=Native.Get(tile,"terrain")!;
+                if(Native.Int(Native.Invoke(Native.M("PlayerExtensions","GetDefenceBonus","PlayerState",terrain.GetType().FullName!,"GameState"),
+                    null,player[1],terrain,__1))>1)defence=15;
+            }
+            if(version>=115&&Poisoned())defence>>=1;
+            __result=defence;return false;
+        }
         internal sealed record Defence(object Tile,Defence? Parent);
         public static void BeforeDefence(object __0,object __1,out Defence? __state)
         {

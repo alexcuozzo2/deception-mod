@@ -628,7 +628,7 @@ namespace Deception.PolyModAdapter
                 {view.AppearancePlayer=NativeSpyPresentation.AppearancePlayer(owner,projection.Appearance!);view.AppearancePlayerKey=playerKey;}
                 owner=view.AppearancePlayer;
             }
-
+            
             var layers=fogger?FoggerArtAssets.Layers(owner):boat?UnitArtAssets.BoatLayers(owner):UnitArtAssets.Layers(owner,spy,aquarion);
             var dimensions=new Point((boat?UnitArtAssets.BoatVisibleWidth:UnitArtAssets.CanvasWidth)/100f,
                 (boat?UnitArtAssets.BoatVisibleHeight:UnitArtAssets.CanvasHeight)/100f,0);
@@ -819,8 +819,11 @@ namespace Deception.PolyModAdapter
                 var plain=Native.Get(union,"spriteRenderer");
                 if(!Native.UnityAlive(plain)&&Native.UnityAlive(psr))plain=Native.Get(psr!,"spriteRenderer");
                 bool Captured(object? renderer)=>Native.UnityAlive(renderer)&&parts.Any(p=>p.Main&&Native.Same(p.Renderer,renderer));
+                // Batched Polytopia renderers retain their authoritative overlay
+                // in the wrapper; the dormant Unity renderer can have stale data.
+                if(Captured(psr)&&(bool)Native.Get(psr!,"isBatched")!){poly=psr;break;}
                 if(Captured(plain)){source=plain;break;}
-                if(Captured(psr))poly=psr;
+                if(Captured(psr))poly=psr; // Preserve wrapper-only native renderers.
             }
             view.NativeProperties??=Activator.CreateInstance(Native.T("UnityEngine.MaterialPropertyBlock"))!;
             view.ArtProperties??=Activator.CreateInstance(Native.T("UnityEngine.MaterialPropertyBlock"))!;

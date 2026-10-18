@@ -66,6 +66,12 @@ namespace Deception.Tests
      var u=Actor();var original=u.UnitState.UnitData;MimicMapInspection.Refresh(u);Check(Art(u).Length==2,"actual Fogger map missing");
      var c=new ClientInteraction();c.SelectUnit(u);MimicPresentationUi.Selected(c,u);MimicPresentationUi.BarReady(c.Bar);
      var images=c.Bar.duplicatedSprites.rectTransform.gameObject.ComponentsInChildren<UnityEngine.UI.Image>().ToArray();Check(images.Any(x=>ReferenceEquals(x.sprite,FoggerArtAssets.Icon())),"bar aircraft missing");
+     // Native may repopulate the copied panel after our last paint. Same owner,
+     // changed children must trigger recomposition rather than abandoning it.
+     UIManager.Instance.SpriteDuplicator.RenderSprites(c.Bar.spriteDuplicationData);
+     NativeSpyPresentation.Tick();
+     images=c.Bar.duplicatedSprites.rectTransform.gameObject.ComponentsInChildren<UnityEngine.UI.Image>().ToArray();
+     Check(images.Length==2&&images.All(x=>ReferenceEquals(x.sprite,FoggerArtAssets.Icon())||ReferenceEquals(x.sprite,FoggerArtAssets.Team())),"native refresh retained a Warrior or duplicate aircraft");
      PopupManager.ProductionCallbacks=true;var popup=PopupManager.GetUnitPopup(new(){unit=u,unitData=u.UnitState.UnitData});Check(popup.data.type==UnitType.dcp_motherfogger,"popup native type changed");
      Check(popup.abilityButtons.Count==1&&Native.Items(popup.abilityButtons).Cast<UITextButton>().Any(x=>x.Key==MimicAbilityTags.BlackoutNameKey),"Blackout help absent (native Double Attack tag remains native)");
      Check(u.UnitState.type==UnitType.dcp_motherfogger&&ReferenceEquals(u.UnitState.UnitData,original)&&u.UnitState.health==100&&!u.UnitState.moved&&!u.UnitState.attacked,"presentation wrote live game data");

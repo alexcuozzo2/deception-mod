@@ -48,13 +48,6 @@ namespace Deception.PolyModAdapter
             try
             {
 #if DECEPTION_WINDOWS_PORT_CANDIDATE
-                if(RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
-                {
-                    NativePlatformContract.WindowsInstallationApproved=NativeWindowsApproval.IsApproved(
-                        Path.Combine(BepInEx.Paths.ConfigPath,"deception-windows-candidate.sha256"),
-                        Path.Combine(BepInEx.Paths.GameRootPath,"Mods","alex_deception_windows_candidate.polymod"));
-                    Note("windows-installation-approval",NativePlatformContract.WindowsInstallationApproved?"Installed archive approved.":"No matching installation approval; checking process opt-in.");
-                }
                 NativeWindowsHooks.Initialize();
 #endif
                 NativeTrainLeafProbeTrigger.ValidateMode();

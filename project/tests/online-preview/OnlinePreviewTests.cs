@@ -53,7 +53,9 @@ namespace Deception.Tests
                     NativeCleanBetaCompatibility.Installed=true;
                     Check(NativeOnlinePreview.AdmittedLoaderHash(NativeCleanBetaCompatibility.CleanSha256),"Clean beta with filter");
                     Check(!NativeOnlinePreview.AdmittedLoaderHash(new string('0',64)),"Unknown denied with filter");
+                    Check(!NativeOnlinePreview.AdmittedLoaderHash("db971aa345811ca299cc27a03c2699e17f85f63c0bcc0780dd1c8fb845815f6d"),"Public denied with beta filter");
                     NativeCleanBetaCompatibility.Installed=false;
+                    Check(!NativeOnlinePreview.AdmittedLoaderHash("db971aa345811ca299cc27a03c2699e17f85f63c0bcc0780dd1c8fb845815f6d"),"Public stays local without filter");
                     Check(NativeOnlinePreview.AdmittedLoaderHash(NativeOnlinePreview.PreviewSha256),"Historical adapted beta");
                 });
                 Test("PREVIEW-01-unknown-loader-keeps-adapter-unavailable",()=>{Check(!NativeOnlinePreview.Install(new HarmonyLib.Harmony()),"No PolyMod assembly loaded");Check(!NativeOnlinePreview.Available,"Unknown loader admitted");Reject(()=>NativeOnlinePreview.CurrentContract());});

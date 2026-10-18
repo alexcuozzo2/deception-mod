@@ -1,3 +1,9 @@
+0.3.105 — Public and Beta Compatibility
+Exact public PolyMod 1.2.18 and clean-beta runtime profiles. Public runs local/pass-and-play; beta retains online adapter. Windows public native acceptance pending. Loader/runtime not bundled.
+
+0.3.104 — Shared Stock Beta
+Integrates Windows stock-Dobby admission, rendering and Rogue siege fixes from 156b2e5. Windows predecessor playtested; this shared candidate requires both-platform acceptance. Speculative Mac 0.3.103 outline change excluded.
+
 0.3.102 — Visible Spies
 Current: spec/UI_A65_VISIBLE_SPIES.md. Spy/Spymaid movement no longer grants Hide; Spy disguises do not grant it either. Cloak disguise behavior and existing saved effects remain. Native playtest pending.
 

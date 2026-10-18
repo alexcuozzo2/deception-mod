@@ -110,8 +110,8 @@ namespace Deception.PolyModAdapter
             new("Deception.ExecutionBridge.dylib","Deception.ExecutionBridge.sha256","Deception.ExecutionBridge.seams.json","libdeception-execution-bridge.dylib"),
             new("Deception.CommandBridge.dylib","Deception.CommandBridge.sha256","Deception.CommandBridge.seams.json","libdeception-command-bridge.dylib"))
 #if DECEPTION_WINDOWS_PORT_CANDIDATE
-            // Private candidate only: exact Windows image and separately audited
-            // helper payloads/prologues. Selection also requires explicit opt-in.
+            // Exact Windows image and separately audited helper payloads/prologues.
+            // Selection requires verified loaded runtime dependencies.
             ,new("win-x64","win",Architecture.X64,8,"GameAssembly.dll",
                 "bfc4f4de358a2fa129ab6621d2d2cb58aa56f8e4176fbc9ee13a316039d16926",
                 new("Deception.Win.StateBridge.dll","Deception.Win.StateBridge.sha256","Deception.Win.StateBridge.seams.json","deception-state-bridge.dll"),
@@ -122,7 +122,22 @@ namespace Deception.PolyModAdapter
         static NativePlatformContract(){ValidateDescriptors(Profiles);}
         internal static Profile[] RegisteredProfiles()=>(Profile[])Profiles.Clone();
 #if DECEPTION_WINDOWS_PORT_CANDIDATE
-        internal static bool WindowsInstallationApproved;
+        internal static bool WindowsRuntimeVerified {get;private set;}
+        // Admission is tied to runtime evidence, never an archive name, marker or
+        // environment opt-in. Unknown detour builds fail before gameplay hooks.
+        internal static void AdmitWindowsRuntime(string game,string loader,string dobby,string interop,string harmonySupport,string harmony)
+        {
+            WindowsRuntimeVerified=false;
+            if(game!="bfc4f4de358a2fa129ab6621d2d2cb58aa56f8e4176fbc9ee13a316039d16926"||
+                (loader!="a878eecfcf15a5140d78ae7811a2d2610eb70ffdbb7bc4e4477b5aec4ec0e016"&&
+                 loader!="db971aa345811ca299cc27a03c2699e17f85f63c0bcc0780dd1c8fb845815f6d")||
+                dobby!="8015de7d867245a1095d13947a63763878e4cf5fd3d3089b63cc39200b055ded"||
+                interop!="65ab051a681c2c1e52df7596ff738be401aae72cff882ff18241cf54a3ea38a4"||
+                harmonySupport!="f7612ea2e5a4d473b771f34ee3b20cf32dc0c4ecea0185416474999a17fbcc07"||
+                harmony!="6c898933b52149e8bcf6722305c7e4d94add47c9e53b364096f91721624c0877")
+                throw new PlatformNotSupportedException("Unsupported Windows game/loader/hook runtime. Requires the audited game, unmodified PolyMod 1.2.18 or the supported multiplayer beta, and verified stock hook runtime. No opt-in can bypass this check.");
+            WindowsRuntimeVerified=true;
+        }
 #endif
         internal static Profile Current()=>Select(
             RuntimeInformation.IsOSPlatform(OSPlatform.OSX)?"osx":RuntimeInformation.IsOSPlatform(OSPlatform.Windows)?"win":
@@ -130,8 +145,8 @@ namespace Deception.PolyModAdapter
         internal static Profile Select(string os,Architecture architecture,int pointerSize)
         {
 #if DECEPTION_WINDOWS_PORT_CANDIDATE
-            if(os=="win"&&!WindowsInstallationApproved&&Environment.GetEnvironmentVariable("DECEPTION_WINDOWS_PORT_TEST")!="1")
-                throw new PlatformNotSupportedException("Windows candidate requires approval for the installed archive or DECEPTION_WINDOWS_PORT_TEST=1. See the repository Windows setup instructions.");
+            if(os=="win"&&!WindowsRuntimeVerified)
+                throw new PlatformNotSupportedException("Windows runtime compatibility has not been verified. No native helper was admitted.");
 #endif
             foreach(var profile in Profiles)
                 if(profile.OperatingSystem==os&&profile.Architecture==architecture&&profile.PointerSize==pointerSize)return profile;

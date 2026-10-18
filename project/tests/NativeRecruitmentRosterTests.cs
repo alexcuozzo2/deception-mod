@@ -24,7 +24,7 @@ namespace Deception.Tests
         {
             string input=File.ReadAllText(Environment.GetEnvironmentVariable("DECEPTION_CAPTURED_TREE_FIXTURE")!);
             JsonObject Copy()=>JsonNode.Parse(input)!.AsObject();
-
+            
             void Test(string name,Action body)=>KernelTests.Test(name,new[]{"A11"},body);
             IReadOnlyDictionary<string,NativeAppearanceRoster> R(JsonObject d)=>NativeRecruitmentRosters.AllResearchRosters(d.ToJsonString());
             string Fingerprint(IReadOnlyDictionary<string,NativeAppearanceRoster> d)=>JsonSerializer.Serialize(d);

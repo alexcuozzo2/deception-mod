@@ -159,14 +159,57 @@ class Imports:
         }
 
 
-def audit(candidate_path, donor_path):
+def reviewed_additions(reviewed):
+    """Accept only canonical, explicit metadata entries; never native imports.
+
+    The caller is responsible for binding this review to its source/reference
+    hashes. Empty or unused entries are rejected so stale approvals fail closed.
+    """
+    kinds = ('assemblies', 'types', 'members')
+    if reviewed is None:
+        return {kind: set() for kind in kinds}
+    if not isinstance(reviewed, dict) or set(reviewed) != set(kinds):
+        raise ValueError('Reviewed imports must contain exactly assemblies, types and members; P/Invoke cannot be reviewed')
+    result = {}
+    for kind in kinds:
+        entries = reviewed[kind]
+        if not isinstance(entries, list) or any(not isinstance(entry, str) for entry in entries):
+            raise ValueError('Reviewed imports must be lists of canonical metadata strings')
+        if len(set(entries)) != len(entries):
+            raise ValueError('Duplicate reviewed import')
+        for entry in entries:
+            try:
+                value = json.loads(entry)
+            except (ValueError, TypeError) as error:
+                raise ValueError('Invalid reviewed metadata') from error
+            if not isinstance(value, list) or json.dumps(value, separators=(',', ':')) != entry:
+                raise ValueError('Reviewed import must be canonical metadata')
+            if kind == 'assemblies':
+                valid = len(value) == 6 and value[0] == 'assembly'
+            elif kind == 'types':
+                valid = len(value) == 4 and value[0] == 'type'
+            else:
+                valid = len(value) == 3 and isinstance(value[0], list) and isinstance(value[1], str) and isinstance(value[2], list)
+            if not valid:
+                raise ValueError('Invalid reviewed import shape: ' + kind)
+        result[kind] = set(entries)
+    return result
+
+
+def audit(candidate_path, donor_path, reviewed=None):
     try:
+        additions = reviewed_additions(reviewed)
         candidate = Imports(candidate_path).collect()
         donor = Imports(donor_path).collect()
         novel = {kind: sorted(candidate[kind] - donor[kind]) for kind in candidate}
-        if any(novel.values()):
-            raise ValueError('Novel emitted external imports: ' + json.dumps({k: v for k, v in novel.items() if v}))
-        return {'status': 'EXTERNAL_IMPORT_SUBSET_MATCH',
+        unused = {kind: sorted(entries - set(novel[kind])) for kind, entries in additions.items()}
+        if any(unused.values()):
+            raise ValueError('Unused reviewed external imports: ' + json.dumps({k: v for k, v in unused.items() if v}))
+        unexpected = {kind: sorted(set(entries) - additions.get(kind, set())) for kind, entries in novel.items()}
+        if any(unexpected.values()):
+            raise ValueError('Novel emitted external imports: ' + json.dumps({k: v for k, v in unexpected.items() if v}))
+        return {'status': 'EXTERNAL_IMPORT_REVIEWED_MATCH' if any(additions.values()) else 'EXTERNAL_IMPORT_SUBSET_MATCH',
+                'reviewed_additions': {kind: sorted(entries) for kind, entries in additions.items()},
                 'candidate_sha256': hashlib.sha256(Path(candidate_path).read_bytes()).hexdigest(),
                 'donor_sha256': hashlib.sha256(Path(donor_path).read_bytes()).hexdigest(),
                 'counts': {kind: {'candidate': len(candidate[kind]), 'donor': len(donor[kind])} for kind in candidate},

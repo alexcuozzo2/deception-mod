@@ -88,7 +88,7 @@ Share only the relevant log excerpt after checking it for personal information. 
 
 ## Development and technical review
 
-**0.3.106 refactor candidate:** ordinary units, native ability lists and technologies now live in `project/content/patch.json`; PNG/WAV assets ship separately inside the mod archive. See the [content reviewer guide](docs/CONTENT-REFACTOR.md) for the file map and remaining custom code. Mac/Windows playtesting is pending; the download above remains 0.3.105.
+**0.3.107 refactor candidate:** ordinary units, native ability lists and technologies now live in `project/content/patch.json`; PNG/WAV assets ship separately inside the mod archive. See the [content reviewer guide](docs/CONTENT-REFACTOR.md) for the file map and remaining custom code. Mac 0.3.106 playtesting passed; 0.3.107 adds a [Rogue calculator fix](docs/ROGUE-HOVER-03107.md) awaiting native testing. Windows refactor testing is pending; the download above remains 0.3.105.
 
 Deception is a compiled C# PolyMod mod with custom art/audio, model tests and platform-specific native helpers. Those helpers currently handle parts of command execution and persistent game state. The clean beta DLL is not modified on disk; an exact-version runtime filter handles one incompatible serializer registration.
 

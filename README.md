@@ -103,7 +103,7 @@ We are investigating supported PolyMod/Polibrary APIs to reduce that custom inte
 
 ## Credits and rights
 
-Mod design, supplied artwork and Ninja Smoke audio: **Alex**. Implementation developed with AI assistance.
+Mod design, supplied artwork and audio: **Alex**. Implementation developed with AI assistance.
 
 The Battle of Polytopia belongs to its respective rights holders. PolyMod and other dependencies belong to their authors. Deception is an unofficial community project, not an official Midjiwan or PolyMod release.
 

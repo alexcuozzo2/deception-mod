@@ -1,0 +1,57 @@
+# This workspace also contains private operational history and generated releases.
+# Track only the project source and deliberate repository documentation.
+/*
+!/.gitignore
+!/.gitattributes
+!/README.md
+!/CONTRIBUTING.md
+!/PUBLICATION.md
+!/.github/
+!/docs/
+!/project/
+!/distribution/
+
+/project/build/
+/project/PACKAGE_SHA256.json
+/project/evidence/**/*.txt
+/project/evidence/**/*.jsonl
+/distribution/releases/
+/distribution/cloud-handoff-*/
+
+# Generated outputs, native/runtime binaries, archives and local credentials.
+**/__pycache__/
+*.py[cod]
+.DS_Store
+*.orig
+*.log
+*.zip
+*.polymod
+*.dll
+*.dylib
+*.so
+*.exe
+*.pdb
+*.o
+*.obj
+*.a
+*.lib
+*.signatures
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+**/.aws/
+**/.ssh/
+**/bin/
+**/obj/
+**/CMakeFiles/
+**/CMakeCache.txt
+/ci-logs/
+/native-work/
+/native-packs/
+
+# Local native captures: intentionally excluded from public distribution.
+/project/tests/native-tree.captured.json
+/project/tests/elyrion-eggs-0396/native-improvements.captured.json
+/project/evidence/m1e/api-signatures.json

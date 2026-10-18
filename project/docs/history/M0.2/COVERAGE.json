@@ -1,0 +1,3738 @@
+{
+  "design_id": "DECEPTION-DF-1",
+  "handoff": "v1.5 + A01/v1.6",
+  "milestone": "M0.2",
+  "note": "Source implementation status, not game execution. Model tests are related subchecks, never whole-case passes.",
+  "cases": [
+    {
+      "id": "DEC-001",
+      "title": "Sixth branch and prerequisites for every playable tribe",
+      "level": 1,
+      "rule_refs": [
+        "§1 as amended by A01 A/G",
+        "A01 DEC-196"
+      ],
+      "status": "PARTIAL SOURCE ONLY",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [
+        "M0-063-captured-all-sixteen-tribes-preserved",
+        "M0-065-legacy-root-prerequisite-regression",
+        "M0-067-reentry-on-assigned-custom-index",
+        "M0-068-reentry-rejects-duplicate-edge",
+        "M0-069-never-grant-missing-root-to-hide-error",
+        "M0-070-unaudited-native-root-override-rejected",
+        "M0-001-tree-topology",
+        "M0-055-native-root-identity-and-starting-prerequisite",
+        "M0-056-special-native-branch-override-preserved",
+        "M0-057-duplicate-root-rejected",
+        "M0-058-non-five-root-contract-rejected",
+        "M0-059-unknown-registry-category-rejected",
+        "M0-060-root-override-cycle-rejected"
+      ],
+      "note": "Only the Deception node is registered. M0.1 research purchase failed behind an unowned clone; M0.2 preserves native Basic. Complete five-node/all-tribe native case NOT RUN."
+    },
+    {
+      "id": "DEC-002",
+      "title": "Prices and no Propaganda range bonus",
+      "level": 1,
+      "rule_refs": [
+        "§1",
+        "§13"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [
+        "M0-002-fixed-custom-values",
+        "M0-028-range-not-increased-by-propaganda"
+      ],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-003",
+      "title": "Mimic recruit",
+      "level": 1,
+      "rule_refs": [
+        "§1",
+        "§5"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [
+        "M0-002-fixed-custom-values",
+        "M0-003-recruit-actual-and-observation",
+        "M0-005-unresearched-denied",
+        "M0-041-recruit-retry-keeps-original-id"
+      ],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-004",
+      "title": "Cancel recruitment",
+      "level": 1,
+      "rule_refs": [
+        "§5",
+        "§15"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [
+        "M0-004-cancel-is-no-commit"
+      ],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-005",
+      "title": "Appearance recruitment gate",
+      "level": 1,
+      "rule_refs": [
+        "§1",
+        "§5"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [
+        "M0-006-propaganda-is-not-real-tech"
+      ],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-006",
+      "title": "Forbidden direct forms",
+      "level": 1,
+      "rule_refs": [
+        "§5",
+        "V01"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [
+        "M0-007-forbidden-city-forms",
+        "M0-008-unimplemented-form-not-offered"
+      ],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-007",
+      "title": "Mimic Rider movement and no weapon",
+      "level": 1,
+      "rule_refs": [
+        "§2",
+        "§3"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [
+        "M0-009-mimic-mobility-not-weapon"
+      ],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-008",
+      "title": "Positive damage kills a Mimic",
+      "level": 1,
+      "rule_refs": [
+        "§4"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [
+        "M0-010-positive-damage-kills-once",
+        "M0-051-state-rejects-mimic-two-hp"
+      ],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-009",
+      "title": "Genuine disguised movement",
+      "level": 1,
+      "rule_refs": [
+        "§3"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [
+        "M0-011-genuine-mobility-remains-actual"
+      ],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-010",
+      "title": "First click and repeated-click toggle",
+      "level": 1,
+      "rule_refs": [
+        "§2.4"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [
+        "M0-012-mode-toggle-without-timing"
+      ],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-011",
+      "title": "Selection reset and targeting guard",
+      "level": 1,
+      "rule_refs": [
+        "§2.4"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [
+        "M0-013-mode-target-and-reset"
+      ],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-012",
+      "title": "Hidden enemy readiness",
+      "level": 1,
+      "rule_refs": [
+        "§2.3",
+        "§14"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [
+        "M0-014-enemy-readiness-equivalence"
+      ],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-013",
+      "title": "Actual and apparent equal is still independent",
+      "level": 1,
+      "rule_refs": [
+        "§2",
+        "§7.3"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [
+        "M0-015-same-type-independent"
+      ],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-014",
+      "title": "Private panel is not revelation",
+      "level": 1,
+      "rule_refs": [
+        "§2.4"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [
+        "M0-012-mode-toggle-without-timing"
+      ],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-015",
+      "title": "Genuine Spy stats and Dash",
+      "level": 1,
+      "rule_refs": [
+        "§1",
+        "§10"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-016",
+      "title": "Direct attack reveals source",
+      "level": 2,
+      "rule_refs": [
+        "§4.3"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-017",
+      "title": "Damage reveals target",
+      "level": 2,
+      "rule_refs": [
+        "§4"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [
+        "M0-016-positive-damage-reveals-genuine"
+      ],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-018",
+      "title": "Zero-damage target stays masked",
+      "level": 2,
+      "rule_refs": [
+        "§4.3",
+        "C05"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [
+        "M0-017-zero-loss-preserves-mask"
+      ],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-019",
+      "title": "Poison/freeze without damage",
+      "level": 2,
+      "rule_refs": [
+        "§3",
+        "§4"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [
+        "M0-018-nondamaging-status-preserves-mask"
+      ],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-020",
+      "title": "No explicit authenticity record",
+      "level": 2,
+      "rule_refs": [
+        "§2.2",
+        "§8"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-021",
+      "title": "Prediction versus real combat",
+      "level": 2,
+      "rule_refs": [
+        "§4.4"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-022",
+      "title": "Independent health snapshots",
+      "level": 2,
+      "rule_refs": [
+        "§4.1"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [
+        "M0-019-deep-snapshot-not-shared"
+      ],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-023",
+      "title": "Feign Heal on actual-full target",
+      "level": 2,
+      "rule_refs": [
+        "§4.2"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [
+        "M0-020-feign-heal-actual-full"
+      ],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-024",
+      "title": "Real healing does not normalize false HP",
+      "level": 2,
+      "rule_refs": [
+        "§4.2",
+        "C04"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [
+        "M0-021-real-heal-clamps-independently"
+      ],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-025",
+      "title": "Feign Swarm grants no mobility",
+      "level": 2,
+      "rule_refs": [
+        "§4.2"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-026",
+      "title": "Same support type offers real and fake",
+      "level": 2,
+      "rule_refs": [
+        "§2.4",
+        "§4.2"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-027",
+      "title": "One budget across menus",
+      "level": 2,
+      "rule_refs": [
+        "§2.4"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [
+        "M0-022-one-budget-between-menus"
+      ],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-028",
+      "title": "Actual-full Mimic apparently recovers",
+      "level": 2,
+      "rule_refs": [
+        "§4.2"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [
+        "M0-023-real-healing-mimic-stays-one"
+      ],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-029",
+      "title": "Native disband refund remains actual",
+      "level": 2,
+      "rule_refs": [
+        "§7.3"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-030",
+      "title": "Post-damage Cloak state",
+      "level": 2,
+      "rule_refs": [
+        "§4.3",
+        "C06"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-031",
+      "title": "Regroup Keep",
+      "level": 3,
+      "rule_refs": [
+        "§6"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [
+        "M0-029-keep-still-spends-initiator"
+      ],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-032",
+      "title": "Regroup Swap",
+      "level": 3,
+      "rule_refs": [
+        "§6"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [
+        "M0-024-regroup-exhausted-partner-preserved"
+      ],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-033",
+      "title": "Disguise Keep",
+      "level": 3,
+      "rule_refs": [
+        "§6"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-034",
+      "title": "Disguise Swap",
+      "level": 3,
+      "rule_refs": [
+        "§6"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-035",
+      "title": "Copy the costume, not the body",
+      "level": 3,
+      "rule_refs": [
+        "§6.1"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [
+        "M0-024-regroup-exhausted-partner-preserved"
+      ],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-036",
+      "title": "Any owned super/foreign form",
+      "level": 3,
+      "rule_refs": [
+        "§1",
+        "§5",
+        "§6"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-037",
+      "title": "Partner acted already",
+      "level": 3,
+      "rule_refs": [
+        "§6.2"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [
+        "M0-024-regroup-exhausted-partner-preserved"
+      ],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-038",
+      "title": "Frozen partner",
+      "level": 3,
+      "rule_refs": [
+        "§6"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [
+        "M0-025-frozen-partner-remains-frozen"
+      ],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-039",
+      "title": "Frozen initiator cannot act",
+      "level": 3,
+      "rule_refs": [
+        "§2",
+        "§6.1"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [
+        "M0-026-frozen-initiator-rejected"
+      ],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-040",
+      "title": "Moved Mimic can initiate",
+      "level": 3,
+      "rule_refs": [
+        "§6"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-041",
+      "title": "Ready artillery delivery",
+      "level": 3,
+      "rule_refs": [
+        "§6"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-042",
+      "title": "Fake-only continuation of a chain",
+      "level": 3,
+      "rule_refs": [
+        "§6.3"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-043",
+      "title": "Atomic cancellation",
+      "level": 3,
+      "rule_refs": [
+        "§6.2"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [
+        "M0-027-invalid-exchange-is-atomic"
+      ],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-044",
+      "title": "Copy-only physical legality",
+      "level": 3,
+      "rule_refs": [
+        "§6.4"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [
+        "M0-027-invalid-exchange-is-atomic"
+      ],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-045",
+      "title": "Exchange sight without movement passives",
+      "level": 3,
+      "rule_refs": [
+        "§6.2",
+        "§15"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-046",
+      "title": "Untouched recruit stays unready",
+      "level": 3,
+      "rule_refs": [
+        "§1",
+        "§6"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-047",
+      "title": "Exchange-delivered neutral capture",
+      "level": 3,
+      "rule_refs": [
+        "§6.3",
+        "§8"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-048",
+      "title": "Exchange-delivered ruin",
+      "level": 3,
+      "rule_refs": [
+        "§6.3",
+        "§8"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-049",
+      "title": "Actual Rogue partner",
+      "level": 3,
+      "rule_refs": [
+        "§6",
+        "§10"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-050",
+      "title": "Two-state observer equivalence",
+      "level": 3,
+      "rule_refs": [
+        "§2",
+        "§6.5",
+        "§14"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-051",
+      "title": "Normal boarding versus exchanged boarding",
+      "level": 4,
+      "rule_refs": [
+        "§7.2"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-052",
+      "title": "Giant coastal placement has no splash",
+      "level": 4,
+      "rule_refs": [
+        "§7.2"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-053",
+      "title": "Giant moves after coastal placement",
+      "level": 4,
+      "rule_refs": [
+        "§3",
+        "§7.2"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-054",
+      "title": "Spent partner remains spent at sea",
+      "level": 4,
+      "rule_refs": [
+        "§7.2"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-055",
+      "title": "Initiating naval Mimic remains spent on land",
+      "level": 4,
+      "rule_refs": [
+        "§6",
+        "§7"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-056",
+      "title": "Case A Regroup Keep",
+      "level": 4,
+      "rule_refs": [
+        "§7.4"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-057",
+      "title": "Case A Regroup Swap",
+      "level": 4,
+      "rule_refs": [
+        "§7.4"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-058",
+      "title": "Case A Disguise Keep",
+      "level": 4,
+      "rule_refs": [
+        "§7.4"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-059",
+      "title": "Case A Disguise Swap",
+      "level": 4,
+      "rule_refs": [
+        "§7.4"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-060",
+      "title": "Case B Regroup Keep",
+      "level": 4,
+      "rule_refs": [
+        "§7.5"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-061",
+      "title": "Case B Regroup Swap",
+      "level": 4,
+      "rule_refs": [
+        "§7.5"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-062",
+      "title": "Case B Disguise Keep",
+      "level": 4,
+      "rule_refs": [
+        "§7.5"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-063",
+      "title": "Case B Disguise Swap",
+      "level": 4,
+      "rule_refs": [
+        "§7.5"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-064",
+      "title": "Actual Rammer disembarks",
+      "level": 4,
+      "rule_refs": [
+        "§7.1",
+        "§7.2"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-065",
+      "title": "Aquatic-only dry-land swap rejected",
+      "level": 4,
+      "rule_refs": [
+        "§7.2"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-066",
+      "title": "Aquatic legal flooded endpoint",
+      "level": 4,
+      "rule_refs": [
+        "§7.2"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-067",
+      "title": "Free upgrade research gate",
+      "level": 4,
+      "rule_refs": [
+        "§7.3"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-068",
+      "title": "Two Raft upgrade menus",
+      "level": 4,
+      "rule_refs": [
+        "§2.4",
+        "§7.3"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-069",
+      "title": "Fake first then real upgrade preserves mask",
+      "level": 4,
+      "rule_refs": [
+        "§7.3"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-070",
+      "title": "Real first with same-type independence",
+      "level": 4,
+      "rule_refs": [
+        "§7.3"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-071",
+      "title": "Juggernaut feigns Bomber",
+      "level": 4,
+      "rule_refs": [
+        "§3",
+        "§7.3"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-072",
+      "title": "Genuine weapon after feigned upgrade",
+      "level": 4,
+      "rule_refs": [
+        "§4",
+        "§7.3"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-073",
+      "title": "Mimic free-upgrade cannot buy a real weapon",
+      "level": 4,
+      "rule_refs": [
+        "§2.4",
+        "§7.3"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [
+        "M0-048-mimic-cannot-buy-real-warship"
+      ],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-074",
+      "title": "Raft reappearance renews eligibility, not action",
+      "level": 4,
+      "rule_refs": [
+        "§7.3"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-075",
+      "title": "Two paths yield same genuine armament",
+      "level": 4,
+      "rule_refs": [
+        "§7.3"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-076",
+      "title": "Mimic Mooni splits tile and unit freeze",
+      "level": 5,
+      "rule_refs": [
+        "§3.2"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-077",
+      "title": "Genuine Warrior dressed as Mooni",
+      "level": 5,
+      "rule_refs": [
+        "§3"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-078",
+      "title": "Terrain source replacement",
+      "level": 5,
+      "rule_refs": [
+        "§3.2"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-079",
+      "title": "Fake Juggernaut movement splash",
+      "level": 5,
+      "rule_refs": [
+        "§3",
+        "§4.4"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-080",
+      "title": "Real Juggernaut in ordinary appearance",
+      "level": 5,
+      "rule_refs": [
+        "§4.4"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-081",
+      "title": "Source passive keeps mask, victim loses mask",
+      "level": 5,
+      "rule_refs": [
+        "§4.3"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-082",
+      "title": "Living Island terrain exactness",
+      "level": 5,
+      "rule_refs": [
+        "§3.2",
+        "V11"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-083",
+      "title": "No movement passive on swap",
+      "level": 5,
+      "rule_refs": [
+        "§6.2"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-084",
+      "title": "Mimic Cloak profile",
+      "level": 5,
+      "rule_refs": [
+        "§9"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-085",
+      "title": "Warrior cloak disguise",
+      "level": 5,
+      "rule_refs": [
+        "§9"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-086",
+      "title": "Cloak warrior disguise",
+      "level": 5,
+      "rule_refs": [
+        "§9"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-087",
+      "title": "Invisible-state transfer and local detection",
+      "level": 5,
+      "rule_refs": [
+        "§9",
+        "§6.5"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-088",
+      "title": "Hidden shuffle visibility clipping",
+      "level": 5,
+      "rule_refs": [
+        "§6.5",
+        "§14"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-089",
+      "title": "Copied egg phase",
+      "level": 5,
+      "rule_refs": [
+        "§3.3"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-090",
+      "title": "Growth cannot be accelerated by control",
+      "level": 5,
+      "rule_refs": [
+        "§3.3",
+        "C02"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-091",
+      "title": "Solo-head Centipede exception to compound-body copying",
+      "level": 5,
+      "rule_refs": [
+        "§3.3/C03 as amended by A01 B-E",
+        "V11"
+      ],
+      "status": "MODEL SOURCE ONLY",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [
+        "M0-075-new-solo-head-regroup-both-outcomes",
+        "M0-077-linked-head-blocks-regroup-keep-and-swap",
+        "M0-078-linked-head-blocks-disguise-keep-and-swap"
+      ],
+      "note": "A01 actual-topology and solo-head copy guards in model; native attachment, placement, UI and lifecycle adapters NOT IMPLEMENTED."
+    },
+    {
+      "id": "DEC-092",
+      "title": "Borrowed terrain effect on occupied tiles",
+      "level": 5,
+      "rule_refs": [
+        "§3.2",
+        "C01"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-093",
+      "title": "Smuggle standard",
+      "level": 6,
+      "rule_refs": [
+        "§8"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [
+        "M0-030-smuggle-native-home-and-price",
+        "M0-038-real-tech-required-for-harvest"
+      ],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-094",
+      "title": "Immediate Smuggle after delivery",
+      "level": 6,
+      "rule_refs": [
+        "§6",
+        "§8"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [
+        "M0-032-delivery-can-immediately-smuggle"
+      ],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-095",
+      "title": "No Dash harvesting",
+      "level": 6,
+      "rule_refs": [
+        "§8"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [
+        "M0-031-no-dash-smuggle"
+      ],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-096",
+      "title": "Domestic transfer versus native tile harvest",
+      "level": 6,
+      "rule_refs": [
+        "§8.1"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-097",
+      "title": "Hostile and unclaimed resources",
+      "level": 6,
+      "rule_refs": [
+        "§8"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-098",
+      "title": "Home reassignment after village",
+      "level": 6,
+      "rule_refs": [
+        "§8"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [
+        "M0-034-live-native-home-not-origin"
+      ],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-099",
+      "title": "Lost home remains destination",
+      "level": 6,
+      "rule_refs": [
+        "§8.2"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [
+        "M0-033-home-owned-by-enemy-kept"
+      ],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-100",
+      "title": "Other owner level-up is deferred",
+      "level": 6,
+      "rule_refs": [
+        "§8.2",
+        "C09"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [
+        "M0-033-home-owned-by-enemy-kept"
+      ],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-101",
+      "title": "Treaty resource distinction",
+      "level": 6,
+      "rule_refs": [
+        "§8",
+        "§10"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [
+        "M0-036-treaty-ordinary-blocked-rogue-allowed"
+      ],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-102",
+      "title": "Rogue Smuggle despite enemy home",
+      "level": 6,
+      "rule_refs": [
+        "§8",
+        "§10"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-103",
+      "title": "Missing home fails atomically",
+      "level": 6,
+      "rule_refs": [
+        "§8.2",
+        "V06"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [
+        "M0-035-missing-home-rejects-atomically"
+      ],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-104",
+      "title": "Starfish separate from Smuggle",
+      "level": 6,
+      "rule_refs": [
+        "§8.2",
+        "C10"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [
+        "M0-037-starfish-is-not-smuggle",
+        "M0-038-real-tech-required-for-harvest"
+      ],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-105",
+      "title": "Cloak-form capture restriction",
+      "level": 6,
+      "rule_refs": [
+        "§8",
+        "§9"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [
+        "M0-049-mimic-enemy-city-rule-not-old-prohibition"
+      ],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-106",
+      "title": "Single Subvert turn",
+      "level": 7,
+      "rule_refs": [
+        "§10.1",
+        "§10.2"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-107",
+      "title": "One acquisition despite reconstruction",
+      "level": 7,
+      "rule_refs": [
+        "§10.2"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [
+        "M0-053-acquisition-and-followups-persist"
+      ],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-108",
+      "title": "Rogue can attack any side",
+      "level": 7,
+      "rule_refs": [
+        "§10.3"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-109",
+      "title": "Treaty deniability",
+      "level": 7,
+      "rule_refs": [
+        "§10.3"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-110",
+      "title": "Rogue cannot capture or explore",
+      "level": 7,
+      "rule_refs": [
+        "§10.3"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [
+        "M0-049-mimic-enemy-city-rule-not-old-prohibition"
+      ],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-111",
+      "title": "Rogue cannot disband",
+      "level": 7,
+      "rule_refs": [
+        "§10.3"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-112",
+      "title": "Convert borrowed target permanently",
+      "level": 7,
+      "rule_refs": [
+        "§10.4"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [
+        "M0-044-rogue-old-owner-truth-not-readiness"
+      ],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-113",
+      "title": "Rogue Mind Bender converts another Rogue",
+      "level": 7,
+      "rule_refs": [
+        "§10.4"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-114",
+      "title": "Support excludes all Rogue recipients",
+      "level": 7,
+      "rule_refs": [
+        "§4.2",
+        "§10"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [
+        "M0-045-support-rejects-rogue-recipient"
+      ],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-115",
+      "title": "Conversion unlocks support not actions",
+      "level": 7,
+      "rule_refs": [
+        "§10.4"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-116",
+      "title": "Paid upgrade on borrowed ship",
+      "level": 7,
+      "rule_refs": [
+        "§7",
+        "§10"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-117",
+      "title": "Income before return",
+      "level": 7,
+      "rule_refs": [
+        "§10.5"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-118",
+      "title": "Return beneath fog",
+      "level": 7,
+      "rule_refs": [
+        "§10.5",
+        "§12"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-119",
+      "title": "Multiplayer sequential acquisition",
+      "level": 7,
+      "rule_refs": [
+        "§10.5",
+        "C11"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-120",
+      "title": "No surviving return after death",
+      "level": 7,
+      "rule_refs": [
+        "§10.5"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-121",
+      "title": "No passive support-slot exploit",
+      "level": 7,
+      "rule_refs": [
+        "§10.5",
+        "C11"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-122",
+      "title": "Owner eliminated while Rogue survives elsewhere",
+      "level": 7,
+      "rule_refs": [
+        "C11",
+        "V08"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-123",
+      "title": "Rogue ZOC and road context",
+      "level": 7,
+      "rule_refs": [
+        "C12",
+        "§10.6"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-124",
+      "title": "Two-node extended reach",
+      "level": 8,
+      "rule_refs": [
+        "§11"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-125",
+      "title": "Movement immediately changes network",
+      "level": 8,
+      "rule_refs": [
+        "§11"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-126",
+      "title": "Exhausted node relays",
+      "level": 8,
+      "rule_refs": [
+        "§11"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-127",
+      "title": "Frozen accessible node",
+      "level": 8,
+      "rule_refs": [
+        "§11",
+        "C15"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-128",
+      "title": "Real Spy wearing another appearance",
+      "level": 8,
+      "rule_refs": [
+        "§11"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-129",
+      "title": "Subvert real Spy adds local Scout",
+      "level": 8,
+      "rule_refs": [
+        "§11"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-130",
+      "title": "Fake Spy interrupts expected chain",
+      "level": 8,
+      "rule_refs": [
+        "§10",
+        "§11"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-131",
+      "title": "Recursive Spy chain",
+      "level": 8,
+      "rule_refs": [
+        "§10.2",
+        "§11"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-132",
+      "title": "Fresh rear action through spent forward Rogue",
+      "level": 8,
+      "rule_refs": [
+        "§11"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-133",
+      "title": "Network cycle",
+      "level": 8,
+      "rule_refs": [
+        "§11"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-134",
+      "title": "Hidden node breaks network",
+      "level": 8,
+      "rule_refs": [
+        "§11",
+        "§12"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-135",
+      "title": "Rediscovered node reconnects without own action",
+      "level": 8,
+      "rule_refs": [
+        "§11",
+        "§12"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-136",
+      "title": "Initiator emits at long range",
+      "level": 8,
+      "rule_refs": [
+        "§11",
+        "§14"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-137",
+      "title": "Post-selection topology change revalidates",
+      "level": 8,
+      "rule_refs": [
+        "§11",
+        "§15"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-138",
+      "title": "No continuing tether",
+      "level": 8,
+      "rule_refs": [
+        "§10.1"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-139",
+      "title": "Blackout one tile for every other player",
+      "level": 9,
+      "rule_refs": [
+        "§12.1",
+        "C16"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-140",
+      "title": "Already fogged target gives no feedback",
+      "level": 9,
+      "rule_refs": [
+        "§12.1"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-141",
+      "title": "Caster-unexplored target",
+      "level": 9,
+      "rule_refs": [
+        "§12.1"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-142",
+      "title": "Covered unit/city interfaces all blocked",
+      "level": 9,
+      "rule_refs": [
+        "§12.2"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [
+        "M0-042-fog-blocks-inspection-and-command"
+      ],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-143",
+      "title": "Trapped Scout cannot self-reveal",
+      "level": 9,
+      "rule_refs": [
+        "§12.3"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-144",
+      "title": "Nearby movement clears covered tile",
+      "level": 9,
+      "rule_refs": [
+        "§12.3"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-145",
+      "title": "Recruitment/borders/Explorer discovery",
+      "level": 9,
+      "rule_refs": [
+        "§12.3"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-146",
+      "title": "Conversion/Subvert discovery",
+      "level": 9,
+      "rule_refs": [
+        "§12.3"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-147",
+      "title": "Exchange discovery",
+      "level": 9,
+      "rule_refs": [
+        "§6",
+        "§12.3"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-148",
+      "title": "Hidden attacker no retaliation",
+      "level": 9,
+      "rule_refs": [
+        "§12.4"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-149",
+      "title": "Covered defender can retaliate",
+      "level": 9,
+      "rule_refs": [
+        "§12.4"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-150",
+      "title": "Both inaccessible positions",
+      "level": 9,
+      "rule_refs": [
+        "§12.4"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-151",
+      "title": "Several attacks through persistent fog",
+      "level": 9,
+      "rule_refs": [
+        "§12.4"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-152",
+      "title": "Splash through fog",
+      "level": 9,
+      "rule_refs": [
+        "§12.4",
+        "§4"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-153",
+      "title": "Independent players uncover independently",
+      "level": 9,
+      "rule_refs": [
+        "§12.3",
+        "§13"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-154",
+      "title": "Propaganda selection UI",
+      "level": 9,
+      "rule_refs": [
+        "§13"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-155",
+      "title": "Propaganda on Rogue and no authenticity",
+      "level": 9,
+      "rule_refs": [
+        "§13"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-156",
+      "title": "Isolated fog lockout remains until discovery",
+      "level": 9,
+      "rule_refs": [
+        "§12.2"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-157",
+      "title": "Attack, extract and permanently convert",
+      "level": 10,
+      "rule_refs": [
+        "§6",
+        "§10"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-158",
+      "title": "Same chain but fake continuation",
+      "level": 10,
+      "rule_refs": [
+        "§6",
+        "§10"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-159",
+      "title": "Coastal delivery, fake upgrade, real weapon",
+      "level": 10,
+      "rule_refs": [
+        "§6",
+        "§7",
+        "§4"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-160",
+      "title": "Real and fake upgrade paths survive same-type collision",
+      "level": 10,
+      "rule_refs": [
+        "§2",
+        "§7"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [
+        "M0-046-genuine-upgrade-preserves-mask",
+        "M0-047-upgrade-rejects-refresh"
+      ],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-161",
+      "title": "Enemy network infiltration with own backline action",
+      "level": 10,
+      "rule_refs": [
+        "§10",
+        "§11"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-162",
+      "title": "Invisible Rogue Cloak infiltrates commander city",
+      "level": 10,
+      "rule_refs": [
+        "§9",
+        "§15"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-163",
+      "title": "Rogue support after permanent conversion",
+      "level": 10,
+      "rule_refs": [
+        "§4",
+        "§10"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-164",
+      "title": "Rogue Knight sacrifices owned Mimics",
+      "level": 10,
+      "rule_refs": [
+        "§10",
+        "C14"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-165",
+      "title": "Rogue siege plus Blackout at return",
+      "level": 10,
+      "rule_refs": [
+        "§10.5",
+        "§12"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-166",
+      "title": "Fogged relay rescue and counter-Blackout",
+      "level": 10,
+      "rule_refs": [
+        "§11",
+        "§12"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-167",
+      "title": "Paid hidden upgrade under fog",
+      "level": 10,
+      "rule_refs": [
+        "§7.3",
+        "§12",
+        "§14"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-168",
+      "title": "Fake heal followed by real splash and attack",
+      "level": 10,
+      "rule_refs": [
+        "§4"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-169",
+      "title": "Disguised terrain-maker sea exchange",
+      "level": 10,
+      "rule_refs": [
+        "§3",
+        "§6",
+        "§7"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-170",
+      "title": "Three-player re-subversion and permanent conversion",
+      "level": 10,
+      "rule_refs": [
+        "§10.4",
+        "§10.5"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-171",
+      "title": "Save after spend and before native follow-up",
+      "level": 11,
+      "rule_refs": [
+        "§15",
+        "V13"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [
+        "M0-047-upgrade-rejects-refresh",
+        "M0-052-state-rejects-future-schema",
+        "M0-053-acquisition-and-followups-persist"
+      ],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-172",
+      "title": "Save between payment and animation completion",
+      "level": 11,
+      "rule_refs": [
+        "§15",
+        "V13"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [
+        "M0-039-smuggle-exactly-once-after-serialization",
+        "M0-040-conflicting-command-id-rejected",
+        "M0-041-recruit-retry-keeps-original-id"
+      ],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-173",
+      "title": "Atomic shuffle save boundary",
+      "level": 11,
+      "rule_refs": [
+        "§6.2",
+        "§15"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [
+        "M0-054-mixed-command-deterministic-model-replay"
+      ],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-174",
+      "title": "Fog survives reconstruction and rendering",
+      "level": 11,
+      "rule_refs": [
+        "§12",
+        "V04",
+        "V13"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [
+        "M0-043-fog-persists-in-model-save"
+      ],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-175",
+      "title": "Player-perspective replay secrecy",
+      "level": 11,
+      "rule_refs": [
+        "§14",
+        "V12",
+        "V15"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-176",
+      "title": "AI must act on observations",
+      "level": 11,
+      "rule_refs": [
+        "V14",
+        "§14"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-177",
+      "title": "Alternate inputs cannot bypass modes/access",
+      "level": 11,
+      "rule_refs": [
+        "§2.4",
+        "§12",
+        "§15"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [
+        "M0-042-fog-blocks-inspection-and-command"
+      ],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-178",
+      "title": "Observer-equivalence regression capture",
+      "level": 11,
+      "rule_refs": [
+        "§14",
+        "V12"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [
+        "M0-014-enemy-readiness-equivalence",
+        "M0-044-rogue-old-owner-truth-not-readiness",
+        "M0-050-genuine-vs-mimic-public-equivalence"
+      ],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-179",
+      "title": "Native-adapter evidence and advertised coverage",
+      "level": 11,
+      "rule_refs": [
+        "§17"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [
+        "M0-008-unimplemented-form-not-offered",
+        "M0-061-il2cpp-newslot-json-dispatch",
+        "M0-062-json-object-fallback-rejected",
+        "M0-058-non-five-root-contract-rejected",
+        "M0-059-unknown-registry-category-rejected"
+      ],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-180",
+      "title": "Full deterministic combined replay",
+      "level": 11,
+      "rule_refs": [
+        "§15",
+        "§17"
+      ],
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [
+        "M0-040-conflicting-command-id-rejected",
+        "M0-054-mixed-command-deterministic-model-replay"
+      ],
+      "note": "Native gameplay/observer adapters required; no full-case pass claimed."
+    },
+    {
+      "id": "DEC-181",
+      "title": "Newly spawned solo head is eligible",
+      "rule_refs": [
+        "A01 H",
+        "DEC-181"
+      ],
+      "status": "MODEL SUBCHECKS / NATIVE NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [
+        "M0-075-new-solo-head-regroup-both-outcomes"
+      ],
+      "note": "See A01 and implementation boundary. Related model tests do not satisfy full native acceptance."
+    },
+    {
+      "id": "DEC-182",
+      "title": "Formerly segmented solo head is eligible",
+      "rule_refs": [
+        "A01 H",
+        "DEC-182"
+      ],
+      "status": "MODEL SUBCHECKS / NATIVE NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [
+        "M0-076-formerly-linked-solo-disguise-both-outcomes"
+      ],
+      "note": "See A01 and implementation boundary. Related model tests do not satisfy full native acceptance."
+    },
+    {
+      "id": "DEC-183",
+      "title": "Linked head blocks Regroup including Keep",
+      "rule_refs": [
+        "A01 H",
+        "DEC-183"
+      ],
+      "status": "MODEL SUBCHECKS / NATIVE NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [
+        "M0-077-linked-head-blocks-regroup-keep-and-swap"
+      ],
+      "note": "See A01 and implementation boundary. Related model tests do not satisfy full native acceptance."
+    },
+    {
+      "id": "DEC-184",
+      "title": "Linked head blocks Disguise including Keep",
+      "rule_refs": [
+        "A01 H",
+        "DEC-184"
+      ],
+      "status": "MODEL SUBCHECKS / NATIVE NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [
+        "M0-078-linked-head-blocks-disguise-keep-and-swap"
+      ],
+      "note": "See A01 and implementation boundary. Related model tests do not satisfy full native acceptance."
+    },
+    {
+      "id": "DEC-185",
+      "title": "Attached body cannot be targeted",
+      "rule_refs": [
+        "A01 H",
+        "DEC-185"
+      ],
+      "status": "MODEL SUBCHECKS / NATIVE NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [
+        "M0-079-attached-segment-never-exchange-participant"
+      ],
+      "note": "See A01 and implementation boundary. Related model tests do not satisfy full native acceptance."
+    },
+    {
+      "id": "DEC-186",
+      "title": "Unpromoted body is not a solo head",
+      "rule_refs": [
+        "A01 H",
+        "DEC-186"
+      ],
+      "status": "MODEL SUBCHECKS / NATIVE NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [
+        "M0-080-unpromoted-isolated-segment-not-a-head"
+      ],
+      "note": "See A01 and implementation boundary. Related model tests do not satisfy full native acceptance."
+    },
+    {
+      "id": "DEC-187",
+      "title": "Disguise cannot hide actual linked structure",
+      "rule_refs": [
+        "A01 H",
+        "DEC-187"
+      ],
+      "status": "MODEL SUBCHECKS / NATIVE NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [
+        "M0-081-illegal-linked-disguise-rejected-not-migrated"
+      ],
+      "note": "See A01 and implementation boundary. Related model tests do not satisfy full native acceptance."
+    },
+    {
+      "id": "DEC-188",
+      "title": "Ordinary unit in solo-head appearance remains usable",
+      "rule_refs": [
+        "A01 H",
+        "DEC-188"
+      ],
+      "status": "MODEL SUBCHECKS / NATIVE NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [
+        "M0-082-ordinary-real-unit-wearing-head-remains-eligible",
+        "M0-083-solo-actual-head-copies-current-warrior-mask"
+      ],
+      "note": "See A01 and implementation boundary. Related model tests do not satisfy full native acceptance."
+    },
+    {
+      "id": "DEC-189",
+      "title": "Mimic head never generates segments",
+      "rule_refs": [
+        "A01 H",
+        "DEC-189"
+      ],
+      "status": "MODEL SUBCHECKS / NATIVE NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [
+        "M0-084-fake-head-cannot-own-native-segments",
+        "M0-085-disguised-warrior-does-not-gain-native-growth",
+        "M0-098-ineligible-segment-costume-rejected",
+        "M0-099-fake-head-cannot-do-real-attack"
+      ],
+      "note": "See A01 and implementation boundary. Related model tests do not satisfy full native acceptance."
+    },
+    {
+      "id": "DEC-190",
+      "title": "Genuine disguised head attacks then becomes ineligible",
+      "rule_refs": [
+        "A01 H",
+        "DEC-190"
+      ],
+      "status": "MODEL SUBCHECKS / NATIVE NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [
+        "M0-086-real-attack-reveals-before-genuine-growth"
+      ],
+      "note": "See A01 and implementation boundary. Related model tests do not satisfy full native acceptance."
+    },
+    {
+      "id": "DEC-191",
+      "title": "Non-attack real growth cleans unsupported mask",
+      "rule_refs": [
+        "A01 H",
+        "DEC-191"
+      ],
+      "status": "MODEL SUBCHECKS / NATIVE NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [
+        "M0-087-nonattack-topology-cleans-mask-only"
+      ],
+      "note": "See A01 and implementation boundary. Related model tests do not satisfy full native acceptance."
+    },
+    {
+      "id": "DEC-192",
+      "title": "Losing last body restores only eligibility",
+      "rule_refs": [
+        "A01 H",
+        "DEC-192"
+      ],
+      "status": "MODEL SUBCHECKS / NATIVE NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [
+        "M0-088-last-link-loss-restores-eligibility-not-actions"
+      ],
+      "note": "See A01 and implementation boundary. Related model tests do not satisfy full native acceptance."
+    },
+    {
+      "id": "DEC-193",
+      "title": "Revalidate selected target before commit",
+      "rule_refs": [
+        "A01 H",
+        "DEC-193"
+      ],
+      "status": "MODEL SUBCHECKS / NATIVE NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [
+        "M0-089-revalidate-stale-solo-selection-before-commit",
+        "M0-096-topology-cycle-rejected"
+      ],
+      "note": "See A01 and implementation boundary. Related model tests do not satisfy full native acceptance."
+    },
+    {
+      "id": "DEC-194",
+      "title": "Rejected targeting creates no identity signal",
+      "rule_refs": [
+        "A01 H",
+        "DEC-194"
+      ],
+      "status": "MODEL SUBCHECKS / NATIVE NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [
+        "M0-090-rejection-no-identity-or-visibility-signal"
+      ],
+      "note": "See A01 and implementation boundary. Related model tests do not satisfy full native acceptance."
+    },
+    {
+      "id": "DEC-195",
+      "title": "Links not adjacency determine head status",
+      "rule_refs": [
+        "A01 H",
+        "DEC-195"
+      ],
+      "status": "MODEL SUBCHECKS / NATIVE NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [
+        "M0-091-nearby-unlinked-body-not-counted",
+        "M0-092-hidden-distant-linked-body-still-counted"
+      ],
+      "note": "See A01 and implementation boundary. Related model tests do not satisfy full native acceptance."
+    },
+    {
+      "id": "DEC-196",
+      "title": "Every tribe receives the same sixth branch",
+      "rule_refs": [
+        "A01 H",
+        "DEC-196"
+      ],
+      "status": "MODEL SUBCHECKS / NATIVE NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [
+        "M0-063-captured-all-sixteen-tribes-preserved",
+        "M0-064-captured-native-fields-and-prices-unchanged",
+        "M0-066-captured-special-root-replacements-preserved",
+        "M0-069-never-grant-missing-root-to-hide-error",
+        "M0-055-native-root-identity-and-starting-prerequisite",
+        "M0-056-special-native-branch-override-preserved"
+      ],
+      "note": "See A01 and implementation boundary. Related model tests do not satisfy full native acceptance."
+    },
+    {
+      "id": "DEC-197",
+      "title": "Each tribe keeps its own direct-imitation roster",
+      "rule_refs": [
+        "A01 H",
+        "DEC-197"
+      ],
+      "status": "MODEL SUBCHECKS / NATIVE NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [
+        "M0-071-special-city-recruit-without-propaganda",
+        "M0-072-propaganda-does-not-grant-foreign-roster",
+        "M0-095-missing-native-harvest-not-invented"
+      ],
+      "note": "See A01 and implementation boundary. Related model tests do not satisfy full native acceptance."
+    },
+    {
+      "id": "DEC-198",
+      "title": "Cymanti Propaganda head is solo",
+      "rule_refs": [
+        "A01 H",
+        "DEC-198"
+      ],
+      "status": "MODEL SUBCHECKS / NATIVE NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [
+        "M0-073-cymanti-own-super-is-one-fake-head",
+        "M0-074-segment-never-direct-picker-even-propaganda"
+      ],
+      "note": "See A01 and implementation boundary. Related model tests do not satisfy full native acceptance."
+    },
+    {
+      "id": "DEC-199",
+      "title": "Foreign solo sample remains copyable",
+      "rule_refs": [
+        "A01 H",
+        "DEC-199"
+      ],
+      "status": "MODEL SUBCHECKS / NATIVE NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [
+        "M0-072-propaganda-does-not-grant-foreign-roster",
+        "M0-083-solo-actual-head-copies-current-warrior-mask",
+        "M0-093-owned-foreign-solo-copy-without-propaganda"
+      ],
+      "note": "See A01 and implementation boundary. Related model tests do not satisfy full native acceptance."
+    },
+    {
+      "id": "DEC-200",
+      "title": "Persistence across topology and all-tribe changes",
+      "rule_refs": [
+        "A01 H",
+        "DEC-200"
+      ],
+      "status": "MODEL SUBCHECKS / NATIVE NOT IMPLEMENTED",
+      "execution_status": "NOT RUN",
+      "related_model_subchecks": [
+        "M0-081-illegal-linked-disguise-rejected-not-migrated",
+        "M0-094-model-topology-rosters-and-flags-roundtrip",
+        "M0-096-topology-cycle-rejected",
+        "M0-097-model-v1-not-silently-migrated",
+        "M0-100-native-topology-receipt-idempotent"
+      ],
+      "note": "See A01 and implementation boundary. Related model tests do not satisfy full native acceptance."
+    }
+  ],
+  "native_gates": [
+    {
+      "id": "V01",
+      "requirement": "Exact Steam game build, mod-loader version/architecture, dependency list, ordinary-tribe registry and custom-ID registration.",
+      "status": "NOT RUN",
+      "amendment_requirement": "Audit all playable tribes, own rosters and actual native head/segment links/promotion/growth as applicable; A01 does not exclude special tribes."
+    },
+    {
+      "id": "V02",
+      "requirement": "Action flags and native Dash/Persist/follow-ups, recruitment exhaustion, conversion/transport constructors and stable logical IDs.",
+      "status": "NOT RUN"
+    },
+    {
+      "id": "V03",
+      "requirement": "Native range/adjacency metric and detection; use one consistent distance implementation for range-1 exchange and range-2 network/abilities.",
+      "status": "NOT RUN"
+    },
+    {
+      "id": "V04",
+      "requirement": "Per-player fog storage, source-scoped reveal hooks, unit concealment, combat/retaliation callbacks and no-self-reveal guards.",
+      "status": "NOT RUN"
+    },
+    {
+      "id": "V05",
+      "requirement": "Real naval upgrade costs/research/timing, normal boarding exhaustion, HP/cargo transition, disembarkation, and action-preserving conversion path.",
+      "status": "NOT RUN"
+    },
+    {
+      "id": "V06",
+      "requirement": "Native home-city/support reassignment, city ownership transfer, harvest/pop queues and missing-pointer recovery.",
+      "status": "NOT RUN"
+    },
+    {
+      "id": "V07",
+      "requirement": "City siege and income hook order, native deferred level-up choice queue, and player turn callbacks.",
+      "status": "NOT RUN"
+    },
+    {
+      "id": "V08",
+      "requirement": "Mind Bender/real support, ownership predicates, Rogue ZOC/roads/defense/refunds/score and true elimination hooks.",
+      "status": "NOT RUN"
+    },
+    {
+      "id": "V09",
+      "requirement": "Cloak hide/detect/eye/Infiltrate requirements, transferred invisibility, genuine reveal sequencing and spawned-Dagger owner.",
+      "status": "NOT RUN"
+    },
+    {
+      "id": "V10",
+      "requirement": "Current apparent Heal/Recover/Swarm numbers/expiry, status rendering and independent actual/apparent HP conversion.",
+      "status": "NOT RUN"
+    },
+    {
+      "id": "V11",
+      "requirement": "All allowed foreign/passive/growth forms; terrain-versus-unit output split, fruitless-algae helper, aquatic legality, segments and generation.",
+      "status": "NOT RUN",
+      "amendment_requirement": "Audit all playable tribes, own rosters and actual native head/segment links/promotion/growth as applicable; A01 does not exclude special tribes."
+    },
+    {
+      "id": "V12",
+      "requirement": "Battle preview/sweat, all unit info/readiness fields, public scores/cost breakdowns, camera/audio/replay/selection disclosure.",
+      "status": "NOT RUN"
+    },
+    {
+      "id": "V13",
+      "requirement": "Save schema, migration/version rejection, deterministic commands/replay and crash-safe pending transactions.",
+      "status": "NOT RUN"
+    },
+    {
+      "id": "V14",
+      "requirement": "AI observation/action APIs and fail-safe scoring of custom abilities; avoid true-type omniscience.",
+      "status": "NOT RUN"
+    },
+    {
+      "id": "V15",
+      "requirement": "Hot-seat/private multiplayer serialization and viewpoint filtering, same-mod compatibility, spectator/endgame policy and debug privacy.",
+      "status": "NOT RUN"
+    },
+    {
+      "id": "V16",
+      "requirement": "Art/font/icon/sound reuse permissions and final assets, resolution/scaling/input accessibility. No bundled font files are required.",
+      "status": "NOT RUN"
+    }
+  ],
+  "supplemental_presentation": [
+    {
+      "id": "VIS-01",
+      "source_number": 1,
+      "requirement": "Selecting your own Mimic shows Actual mode first, with actual and apparent forms both visible in the panel.",
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN"
+    },
+    {
+      "id": "VIS-02",
+      "source_number": 2,
+      "requirement": "Selecting the same Mimic again toggles to Appearance mode without changing the map sprite.",
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN"
+    },
+    {
+      "id": "VIS-03",
+      "source_number": 3,
+      "requirement": "Selecting a different unit resets that new selection to Actual mode.",
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN"
+    },
+    {
+      "id": "VIS-04",
+      "source_number": 4,
+      "requirement": "An opponent cannot tell from on-map readiness shading whether a shuffled unit has spent its action.",
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN"
+    },
+    {
+      "id": "VIS-05",
+      "source_number": 5,
+      "requirement": "Regroup and Disguise look the same to the opponent aside from the resulting visible board state.",
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN"
+    },
+    {
+      "id": "VIS-06",
+      "source_number": 6,
+      "requirement": "Swap and Stay produce the same public animation family.",
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN"
+    },
+    {
+      "id": "VIS-07",
+      "source_number": 7,
+      "requirement": "A visible disguised Spy that uses Subvert reveals itself; a disguised passive relay Spy does not.",
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN"
+    },
+    {
+      "id": "VIS-08",
+      "source_number": 8,
+      "requirement": "A Mimic performing Smuggle still looks like its apparent form to the opponent before, during, and after the action.",
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN"
+    },
+    {
+      "id": "VIS-09",
+      "source_number": 9,
+      "requirement": "A real unit disguised as a Cloak shows normal eye-warning behavior when appropriate.",
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN"
+    },
+    {
+      "id": "VIS-10",
+      "source_number": 10,
+      "requirement": "If only one participant in a shuffle is visible, the effect does not reveal the invisible partner’s tile.",
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN"
+    },
+    {
+      "id": "VIS-11",
+      "source_number": 11,
+      "requirement": "A genuine Juggernaut disguised as a Raft causes real splash damage but does not play Juggernaut-identifying source animation.",
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN"
+    },
+    {
+      "id": "VIS-12",
+      "source_number": 12,
+      "requirement": "A Mimic Boat apparently upgraded to Bomber shows Bomber-like visuals but cannot deal actual damage.",
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN"
+    },
+    {
+      "id": "VIS-13",
+      "source_number": 13,
+      "requirement": "An actual Raft with an independent apparent Raft can still access Appearance-mode feigned naval upgrades.",
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN"
+    },
+    {
+      "id": "VIS-14",
+      "source_number": 14,
+      "requirement": "Propaganda overlay appears only while an enemy unit/city is selected and only across tiles you can see.",
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN"
+    },
+    {
+      "id": "VIS-15",
+      "source_number": 15,
+      "requirement": "Blackout uses ordinary fog visuals for all opponents and gives no special persistent marker to the caster.",
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN"
+    },
+    {
+      "id": "VIS-16",
+      "source_number": 16,
+      "requirement": "Replays do not leak hidden actual identities through animation choices, path traces, or panel state.",
+      "status": "NOT IMPLEMENTED",
+      "execution_status": "NOT RUN"
+    }
+  ],
+  "model_tests": [
+    {
+      "id": "M0-063-captured-all-sixteen-tribes-preserved",
+      "related_cases": [
+        "DEC-001",
+        "DEC-196"
+      ],
+      "source": "tests/AmendmentTests.cs",
+      "execution_status": "NOT RUN IN ASSISTANT ENVIRONMENT"
+    },
+    {
+      "id": "M0-064-captured-native-fields-and-prices-unchanged",
+      "related_cases": [
+        "DEC-196"
+      ],
+      "source": "tests/AmendmentTests.cs",
+      "execution_status": "NOT RUN IN ASSISTANT ENVIRONMENT"
+    },
+    {
+      "id": "M0-065-legacy-root-prerequisite-regression",
+      "related_cases": [
+        "DEC-001"
+      ],
+      "source": "tests/AmendmentTests.cs",
+      "execution_status": "NOT RUN IN ASSISTANT ENVIRONMENT"
+    },
+    {
+      "id": "M0-066-captured-special-root-replacements-preserved",
+      "related_cases": [
+        "DEC-196"
+      ],
+      "source": "tests/AmendmentTests.cs",
+      "execution_status": "NOT RUN IN ASSISTANT ENVIRONMENT"
+    },
+    {
+      "id": "M0-067-reentry-on-assigned-custom-index",
+      "related_cases": [
+        "DEC-001"
+      ],
+      "source": "tests/AmendmentTests.cs",
+      "execution_status": "NOT RUN IN ASSISTANT ENVIRONMENT"
+    },
+    {
+      "id": "M0-068-reentry-rejects-duplicate-edge",
+      "related_cases": [
+        "DEC-001"
+      ],
+      "source": "tests/AmendmentTests.cs",
+      "execution_status": "NOT RUN IN ASSISTANT ENVIRONMENT"
+    },
+    {
+      "id": "M0-069-never-grant-missing-root-to-hide-error",
+      "related_cases": [
+        "DEC-001",
+        "DEC-196"
+      ],
+      "source": "tests/AmendmentTests.cs",
+      "execution_status": "NOT RUN IN ASSISTANT ENVIRONMENT"
+    },
+    {
+      "id": "M0-070-unaudited-native-root-override-rejected",
+      "related_cases": [
+        "DEC-001"
+      ],
+      "source": "tests/AmendmentTests.cs",
+      "execution_status": "NOT RUN IN ASSISTANT ENVIRONMENT"
+    },
+    {
+      "id": "M0-071-special-city-recruit-without-propaganda",
+      "related_cases": [
+        "DEC-197"
+      ],
+      "source": "tests/AmendmentTests.cs",
+      "execution_status": "NOT RUN IN ASSISTANT ENVIRONMENT"
+    },
+    {
+      "id": "M0-072-propaganda-does-not-grant-foreign-roster",
+      "related_cases": [
+        "DEC-197",
+        "DEC-199"
+      ],
+      "source": "tests/AmendmentTests.cs",
+      "execution_status": "NOT RUN IN ASSISTANT ENVIRONMENT"
+    },
+    {
+      "id": "M0-073-cymanti-own-super-is-one-fake-head",
+      "related_cases": [
+        "DEC-198"
+      ],
+      "source": "tests/AmendmentTests.cs",
+      "execution_status": "NOT RUN IN ASSISTANT ENVIRONMENT"
+    },
+    {
+      "id": "M0-074-segment-never-direct-picker-even-propaganda",
+      "related_cases": [
+        "DEC-198"
+      ],
+      "source": "tests/AmendmentTests.cs",
+      "execution_status": "NOT RUN IN ASSISTANT ENVIRONMENT"
+    },
+    {
+      "id": "M0-075-new-solo-head-regroup-both-outcomes",
+      "related_cases": [
+        "DEC-181",
+        "DEC-091"
+      ],
+      "source": "tests/AmendmentTests.cs",
+      "execution_status": "NOT RUN IN ASSISTANT ENVIRONMENT"
+    },
+    {
+      "id": "M0-076-formerly-linked-solo-disguise-both-outcomes",
+      "related_cases": [
+        "DEC-182"
+      ],
+      "source": "tests/AmendmentTests.cs",
+      "execution_status": "NOT RUN IN ASSISTANT ENVIRONMENT"
+    },
+    {
+      "id": "M0-077-linked-head-blocks-regroup-keep-and-swap",
+      "related_cases": [
+        "DEC-183",
+        "DEC-091"
+      ],
+      "source": "tests/AmendmentTests.cs",
+      "execution_status": "NOT RUN IN ASSISTANT ENVIRONMENT"
+    },
+    {
+      "id": "M0-078-linked-head-blocks-disguise-keep-and-swap",
+      "related_cases": [
+        "DEC-184",
+        "DEC-091"
+      ],
+      "source": "tests/AmendmentTests.cs",
+      "execution_status": "NOT RUN IN ASSISTANT ENVIRONMENT"
+    },
+    {
+      "id": "M0-079-attached-segment-never-exchange-participant",
+      "related_cases": [
+        "DEC-185"
+      ],
+      "source": "tests/AmendmentTests.cs",
+      "execution_status": "NOT RUN IN ASSISTANT ENVIRONMENT"
+    },
+    {
+      "id": "M0-080-unpromoted-isolated-segment-not-a-head",
+      "related_cases": [
+        "DEC-186"
+      ],
+      "source": "tests/AmendmentTests.cs",
+      "execution_status": "NOT RUN IN ASSISTANT ENVIRONMENT"
+    },
+    {
+      "id": "M0-081-illegal-linked-disguise-rejected-not-migrated",
+      "related_cases": [
+        "DEC-187",
+        "DEC-200"
+      ],
+      "source": "tests/AmendmentTests.cs",
+      "execution_status": "NOT RUN IN ASSISTANT ENVIRONMENT"
+    },
+    {
+      "id": "M0-082-ordinary-real-unit-wearing-head-remains-eligible",
+      "related_cases": [
+        "DEC-188"
+      ],
+      "source": "tests/AmendmentTests.cs",
+      "execution_status": "NOT RUN IN ASSISTANT ENVIRONMENT"
+    },
+    {
+      "id": "M0-083-solo-actual-head-copies-current-warrior-mask",
+      "related_cases": [
+        "DEC-188",
+        "DEC-199"
+      ],
+      "source": "tests/AmendmentTests.cs",
+      "execution_status": "NOT RUN IN ASSISTANT ENVIRONMENT"
+    },
+    {
+      "id": "M0-084-fake-head-cannot-own-native-segments",
+      "related_cases": [
+        "DEC-189"
+      ],
+      "source": "tests/AmendmentTests.cs",
+      "execution_status": "NOT RUN IN ASSISTANT ENVIRONMENT"
+    },
+    {
+      "id": "M0-085-disguised-warrior-does-not-gain-native-growth",
+      "related_cases": [
+        "DEC-189"
+      ],
+      "source": "tests/AmendmentTests.cs",
+      "execution_status": "NOT RUN IN ASSISTANT ENVIRONMENT"
+    },
+    {
+      "id": "M0-086-real-attack-reveals-before-genuine-growth",
+      "related_cases": [
+        "DEC-190"
+      ],
+      "source": "tests/AmendmentTests.cs",
+      "execution_status": "NOT RUN IN ASSISTANT ENVIRONMENT"
+    },
+    {
+      "id": "M0-087-nonattack-topology-cleans-mask-only",
+      "related_cases": [
+        "DEC-191"
+      ],
+      "source": "tests/AmendmentTests.cs",
+      "execution_status": "NOT RUN IN ASSISTANT ENVIRONMENT"
+    },
+    {
+      "id": "M0-088-last-link-loss-restores-eligibility-not-actions",
+      "related_cases": [
+        "DEC-192"
+      ],
+      "source": "tests/AmendmentTests.cs",
+      "execution_status": "NOT RUN IN ASSISTANT ENVIRONMENT"
+    },
+    {
+      "id": "M0-089-revalidate-stale-solo-selection-before-commit",
+      "related_cases": [
+        "DEC-193"
+      ],
+      "source": "tests/AmendmentTests.cs",
+      "execution_status": "NOT RUN IN ASSISTANT ENVIRONMENT"
+    },
+    {
+      "id": "M0-090-rejection-no-identity-or-visibility-signal",
+      "related_cases": [
+        "DEC-194"
+      ],
+      "source": "tests/AmendmentTests.cs",
+      "execution_status": "NOT RUN IN ASSISTANT ENVIRONMENT"
+    },
+    {
+      "id": "M0-091-nearby-unlinked-body-not-counted",
+      "related_cases": [
+        "DEC-195"
+      ],
+      "source": "tests/AmendmentTests.cs",
+      "execution_status": "NOT RUN IN ASSISTANT ENVIRONMENT"
+    },
+    {
+      "id": "M0-092-hidden-distant-linked-body-still-counted",
+      "related_cases": [
+        "DEC-195"
+      ],
+      "source": "tests/AmendmentTests.cs",
+      "execution_status": "NOT RUN IN ASSISTANT ENVIRONMENT"
+    },
+    {
+      "id": "M0-093-owned-foreign-solo-copy-without-propaganda",
+      "related_cases": [
+        "DEC-199"
+      ],
+      "source": "tests/AmendmentTests.cs",
+      "execution_status": "NOT RUN IN ASSISTANT ENVIRONMENT"
+    },
+    {
+      "id": "M0-094-model-topology-rosters-and-flags-roundtrip",
+      "related_cases": [
+        "DEC-200"
+      ],
+      "source": "tests/AmendmentTests.cs",
+      "execution_status": "NOT RUN IN ASSISTANT ENVIRONMENT"
+    },
+    {
+      "id": "M0-095-missing-native-harvest-not-invented",
+      "related_cases": [
+        "DEC-197"
+      ],
+      "source": "tests/AmendmentTests.cs",
+      "execution_status": "NOT RUN IN ASSISTANT ENVIRONMENT"
+    },
+    {
+      "id": "M0-096-topology-cycle-rejected",
+      "related_cases": [
+        "DEC-193",
+        "DEC-200"
+      ],
+      "source": "tests/AmendmentTests.cs",
+      "execution_status": "NOT RUN IN ASSISTANT ENVIRONMENT"
+    },
+    {
+      "id": "M0-097-model-v1-not-silently-migrated",
+      "related_cases": [
+        "DEC-200"
+      ],
+      "source": "tests/AmendmentTests.cs",
+      "execution_status": "NOT RUN IN ASSISTANT ENVIRONMENT"
+    },
+    {
+      "id": "M0-098-ineligible-segment-costume-rejected",
+      "related_cases": [
+        "DEC-189"
+      ],
+      "source": "tests/AmendmentTests.cs",
+      "execution_status": "NOT RUN IN ASSISTANT ENVIRONMENT"
+    },
+    {
+      "id": "M0-099-fake-head-cannot-do-real-attack",
+      "related_cases": [
+        "DEC-189"
+      ],
+      "source": "tests/AmendmentTests.cs",
+      "execution_status": "NOT RUN IN ASSISTANT ENVIRONMENT"
+    },
+    {
+      "id": "M0-100-native-topology-receipt-idempotent",
+      "related_cases": [
+        "DEC-200"
+      ],
+      "source": "tests/AmendmentTests.cs",
+      "execution_status": "NOT RUN IN ASSISTANT ENVIRONMENT"
+    },
+    {
+      "id": "M0-001-tree-topology",
+      "related_cases": [
+        "DEC-001"
+      ],
+      "source": "tests/KernelTests.cs",
+      "execution_status": "NOT RUN IN ASSISTANT ENVIRONMENT"
+    },
+    {
+      "id": "M0-002-fixed-custom-values",
+      "related_cases": [
+        "DEC-002",
+        "DEC-003"
+      ],
+      "source": "tests/KernelTests.cs",
+      "execution_status": "NOT RUN IN ASSISTANT ENVIRONMENT"
+    },
+    {
+      "id": "M0-003-recruit-actual-and-observation",
+      "related_cases": [
+        "DEC-003"
+      ],
+      "source": "tests/KernelTests.cs",
+      "execution_status": "NOT RUN IN ASSISTANT ENVIRONMENT"
+    },
+    {
+      "id": "M0-004-cancel-is-no-commit",
+      "related_cases": [
+        "DEC-004"
+      ],
+      "source": "tests/KernelTests.cs",
+      "execution_status": "NOT RUN IN ASSISTANT ENVIRONMENT"
+    },
+    {
+      "id": "M0-005-unresearched-denied",
+      "related_cases": [
+        "DEC-003"
+      ],
+      "source": "tests/KernelTests.cs",
+      "execution_status": "NOT RUN IN ASSISTANT ENVIRONMENT"
+    },
+    {
+      "id": "M0-006-propaganda-is-not-real-tech",
+      "related_cases": [
+        "DEC-005"
+      ],
+      "source": "tests/KernelTests.cs",
+      "execution_status": "NOT RUN IN ASSISTANT ENVIRONMENT"
+    },
+    {
+      "id": "M0-007-forbidden-city-forms",
+      "related_cases": [
+        "DEC-006"
+      ],
+      "source": "tests/KernelTests.cs",
+      "execution_status": "NOT RUN IN ASSISTANT ENVIRONMENT"
+    },
+    {
+      "id": "M0-008-unimplemented-form-not-offered",
+      "related_cases": [
+        "DEC-006",
+        "DEC-179"
+      ],
+      "source": "tests/KernelTests.cs",
+      "execution_status": "NOT RUN IN ASSISTANT ENVIRONMENT"
+    },
+    {
+      "id": "M0-009-mimic-mobility-not-weapon",
+      "related_cases": [
+        "DEC-007"
+      ],
+      "source": "tests/KernelTests.cs",
+      "execution_status": "NOT RUN IN ASSISTANT ENVIRONMENT"
+    },
+    {
+      "id": "M0-010-positive-damage-kills-once",
+      "related_cases": [
+        "DEC-008"
+      ],
+      "source": "tests/KernelTests.cs",
+      "execution_status": "NOT RUN IN ASSISTANT ENVIRONMENT"
+    },
+    {
+      "id": "M0-011-genuine-mobility-remains-actual",
+      "related_cases": [
+        "DEC-009"
+      ],
+      "source": "tests/KernelTests.cs",
+      "execution_status": "NOT RUN IN ASSISTANT ENVIRONMENT"
+    },
+    {
+      "id": "M0-012-mode-toggle-without-timing",
+      "related_cases": [
+        "DEC-010",
+        "DEC-014"
+      ],
+      "source": "tests/KernelTests.cs",
+      "execution_status": "NOT RUN IN ASSISTANT ENVIRONMENT"
+    },
+    {
+      "id": "M0-013-mode-target-and-reset",
+      "related_cases": [
+        "DEC-011"
+      ],
+      "source": "tests/KernelTests.cs",
+      "execution_status": "NOT RUN IN ASSISTANT ENVIRONMENT"
+    },
+    {
+      "id": "M0-014-enemy-readiness-equivalence",
+      "related_cases": [
+        "DEC-012",
+        "DEC-178"
+      ],
+      "source": "tests/KernelTests.cs",
+      "execution_status": "NOT RUN IN ASSISTANT ENVIRONMENT"
+    },
+    {
+      "id": "M0-015-same-type-independent",
+      "related_cases": [
+        "DEC-013"
+      ],
+      "source": "tests/KernelTests.cs",
+      "execution_status": "NOT RUN IN ASSISTANT ENVIRONMENT"
+    },
+    {
+      "id": "M0-016-positive-damage-reveals-genuine",
+      "related_cases": [
+        "DEC-017"
+      ],
+      "source": "tests/KernelTests.cs",
+      "execution_status": "NOT RUN IN ASSISTANT ENVIRONMENT"
+    },
+    {
+      "id": "M0-017-zero-loss-preserves-mask",
+      "related_cases": [
+        "DEC-018"
+      ],
+      "source": "tests/KernelTests.cs",
+      "execution_status": "NOT RUN IN ASSISTANT ENVIRONMENT"
+    },
+    {
+      "id": "M0-018-nondamaging-status-preserves-mask",
+      "related_cases": [
+        "DEC-019"
+      ],
+      "source": "tests/KernelTests.cs",
+      "execution_status": "NOT RUN IN ASSISTANT ENVIRONMENT"
+    },
+    {
+      "id": "M0-019-deep-snapshot-not-shared",
+      "related_cases": [
+        "DEC-022"
+      ],
+      "source": "tests/KernelTests.cs",
+      "execution_status": "NOT RUN IN ASSISTANT ENVIRONMENT"
+    },
+    {
+      "id": "M0-020-feign-heal-actual-full",
+      "related_cases": [
+        "DEC-023"
+      ],
+      "source": "tests/KernelTests.cs",
+      "execution_status": "NOT RUN IN ASSISTANT ENVIRONMENT"
+    },
+    {
+      "id": "M0-021-real-heal-clamps-independently",
+      "related_cases": [
+        "DEC-024"
+      ],
+      "source": "tests/KernelTests.cs",
+      "execution_status": "NOT RUN IN ASSISTANT ENVIRONMENT"
+    },
+    {
+      "id": "M0-022-one-budget-between-menus",
+      "related_cases": [
+        "DEC-027"
+      ],
+      "source": "tests/KernelTests.cs",
+      "execution_status": "NOT RUN IN ASSISTANT ENVIRONMENT"
+    },
+    {
+      "id": "M0-023-real-healing-mimic-stays-one",
+      "related_cases": [
+        "DEC-028"
+      ],
+      "source": "tests/KernelTests.cs",
+      "execution_status": "NOT RUN IN ASSISTANT ENVIRONMENT"
+    },
+    {
+      "id": "M0-024-regroup-exhausted-partner-preserved",
+      "related_cases": [
+        "DEC-032",
+        "DEC-035",
+        "DEC-037"
+      ],
+      "source": "tests/KernelTests.cs",
+      "execution_status": "NOT RUN IN ASSISTANT ENVIRONMENT"
+    },
+    {
+      "id": "M0-025-frozen-partner-remains-frozen",
+      "related_cases": [
+        "DEC-038"
+      ],
+      "source": "tests/KernelTests.cs",
+      "execution_status": "NOT RUN IN ASSISTANT ENVIRONMENT"
+    },
+    {
+      "id": "M0-026-frozen-initiator-rejected",
+      "related_cases": [
+        "DEC-039"
+      ],
+      "source": "tests/KernelTests.cs",
+      "execution_status": "NOT RUN IN ASSISTANT ENVIRONMENT"
+    },
+    {
+      "id": "M0-027-invalid-exchange-is-atomic",
+      "related_cases": [
+        "DEC-043",
+        "DEC-044"
+      ],
+      "source": "tests/KernelTests.cs",
+      "execution_status": "NOT RUN IN ASSISTANT ENVIRONMENT"
+    },
+    {
+      "id": "M0-028-range-not-increased-by-propaganda",
+      "related_cases": [
+        "DEC-002"
+      ],
+      "source": "tests/KernelTests.cs",
+      "execution_status": "NOT RUN IN ASSISTANT ENVIRONMENT"
+    },
+    {
+      "id": "M0-029-keep-still-spends-initiator",
+      "related_cases": [
+        "DEC-031"
+      ],
+      "source": "tests/KernelTests.cs",
+      "execution_status": "NOT RUN IN ASSISTANT ENVIRONMENT"
+    },
+    {
+      "id": "M0-030-smuggle-native-home-and-price",
+      "related_cases": [
+        "DEC-093"
+      ],
+      "source": "tests/KernelTests.cs",
+      "execution_status": "NOT RUN IN ASSISTANT ENVIRONMENT"
+    },
+    {
+      "id": "M0-031-no-dash-smuggle",
+      "related_cases": [
+        "DEC-095"
+      ],
+      "source": "tests/KernelTests.cs",
+      "execution_status": "NOT RUN IN ASSISTANT ENVIRONMENT"
+    },
+    {
+      "id": "M0-032-delivery-can-immediately-smuggle",
+      "related_cases": [
+        "DEC-094"
+      ],
+      "source": "tests/KernelTests.cs",
+      "execution_status": "NOT RUN IN ASSISTANT ENVIRONMENT"
+    },
+    {
+      "id": "M0-033-home-owned-by-enemy-kept",
+      "related_cases": [
+        "DEC-099",
+        "DEC-100"
+      ],
+      "source": "tests/KernelTests.cs",
+      "execution_status": "NOT RUN IN ASSISTANT ENVIRONMENT"
+    },
+    {
+      "id": "M0-034-live-native-home-not-origin",
+      "related_cases": [
+        "DEC-098"
+      ],
+      "source": "tests/KernelTests.cs",
+      "execution_status": "NOT RUN IN ASSISTANT ENVIRONMENT"
+    },
+    {
+      "id": "M0-035-missing-home-rejects-atomically",
+      "related_cases": [
+        "DEC-103"
+      ],
+      "source": "tests/KernelTests.cs",
+      "execution_status": "NOT RUN IN ASSISTANT ENVIRONMENT"
+    },
+    {
+      "id": "M0-036-treaty-ordinary-blocked-rogue-allowed",
+      "related_cases": [
+        "DEC-101"
+      ],
+      "source": "tests/KernelTests.cs",
+      "execution_status": "NOT RUN IN ASSISTANT ENVIRONMENT"
+    },
+    {
+      "id": "M0-037-starfish-is-not-smuggle",
+      "related_cases": [
+        "DEC-104"
+      ],
+      "source": "tests/KernelTests.cs",
+      "execution_status": "NOT RUN IN ASSISTANT ENVIRONMENT"
+    },
+    {
+      "id": "M0-038-real-tech-required-for-harvest",
+      "related_cases": [
+        "DEC-093",
+        "DEC-104"
+      ],
+      "source": "tests/KernelTests.cs",
+      "execution_status": "NOT RUN IN ASSISTANT ENVIRONMENT"
+    },
+    {
+      "id": "M0-039-smuggle-exactly-once-after-serialization",
+      "related_cases": [
+        "DEC-172"
+      ],
+      "source": "tests/KernelTests.cs",
+      "execution_status": "NOT RUN IN ASSISTANT ENVIRONMENT"
+    },
+    {
+      "id": "M0-040-conflicting-command-id-rejected",
+      "related_cases": [
+        "DEC-172",
+        "DEC-180"
+      ],
+      "source": "tests/KernelTests.cs",
+      "execution_status": "NOT RUN IN ASSISTANT ENVIRONMENT"
+    },
+    {
+      "id": "M0-041-recruit-retry-keeps-original-id",
+      "related_cases": [
+        "DEC-003",
+        "DEC-172"
+      ],
+      "source": "tests/KernelTests.cs",
+      "execution_status": "NOT RUN IN ASSISTANT ENVIRONMENT"
+    },
+    {
+      "id": "M0-042-fog-blocks-inspection-and-command",
+      "related_cases": [
+        "DEC-142",
+        "DEC-177"
+      ],
+      "source": "tests/KernelTests.cs",
+      "execution_status": "NOT RUN IN ASSISTANT ENVIRONMENT"
+    },
+    {
+      "id": "M0-043-fog-persists-in-model-save",
+      "related_cases": [
+        "DEC-174"
+      ],
+      "source": "tests/KernelTests.cs",
+      "execution_status": "NOT RUN IN ASSISTANT ENVIRONMENT"
+    },
+    {
+      "id": "M0-044-rogue-old-owner-truth-not-readiness",
+      "related_cases": [
+        "DEC-112",
+        "DEC-178"
+      ],
+      "source": "tests/KernelTests.cs",
+      "execution_status": "NOT RUN IN ASSISTANT ENVIRONMENT"
+    },
+    {
+      "id": "M0-045-support-rejects-rogue-recipient",
+      "related_cases": [
+        "DEC-114"
+      ],
+      "source": "tests/KernelTests.cs",
+      "execution_status": "NOT RUN IN ASSISTANT ENVIRONMENT"
+    },
+    {
+      "id": "M0-046-genuine-upgrade-preserves-mask",
+      "related_cases": [
+        "DEC-160"
+      ],
+      "source": "tests/KernelTests.cs",
+      "execution_status": "NOT RUN IN ASSISTANT ENVIRONMENT"
+    },
+    {
+      "id": "M0-047-upgrade-rejects-refresh",
+      "related_cases": [
+        "DEC-160",
+        "DEC-171"
+      ],
+      "source": "tests/KernelTests.cs",
+      "execution_status": "NOT RUN IN ASSISTANT ENVIRONMENT"
+    },
+    {
+      "id": "M0-048-mimic-cannot-buy-real-warship",
+      "related_cases": [
+        "DEC-073"
+      ],
+      "source": "tests/KernelTests.cs",
+      "execution_status": "NOT RUN IN ASSISTANT ENVIRONMENT"
+    },
+    {
+      "id": "M0-049-mimic-enemy-city-rule-not-old-prohibition",
+      "related_cases": [
+        "DEC-105",
+        "DEC-110"
+      ],
+      "source": "tests/KernelTests.cs",
+      "execution_status": "NOT RUN IN ASSISTANT ENVIRONMENT"
+    },
+    {
+      "id": "M0-050-genuine-vs-mimic-public-equivalence",
+      "related_cases": [
+        "DEC-178"
+      ],
+      "source": "tests/KernelTests.cs",
+      "execution_status": "NOT RUN IN ASSISTANT ENVIRONMENT"
+    },
+    {
+      "id": "M0-051-state-rejects-mimic-two-hp",
+      "related_cases": [
+        "DEC-008"
+      ],
+      "source": "tests/KernelTests.cs",
+      "execution_status": "NOT RUN IN ASSISTANT ENVIRONMENT"
+    },
+    {
+      "id": "M0-052-state-rejects-future-schema",
+      "related_cases": [
+        "DEC-171"
+      ],
+      "source": "tests/KernelTests.cs",
+      "execution_status": "NOT RUN IN ASSISTANT ENVIRONMENT"
+    },
+    {
+      "id": "M0-053-acquisition-and-followups-persist",
+      "related_cases": [
+        "DEC-107",
+        "DEC-171"
+      ],
+      "source": "tests/KernelTests.cs",
+      "execution_status": "NOT RUN IN ASSISTANT ENVIRONMENT"
+    },
+    {
+      "id": "M0-054-mixed-command-deterministic-model-replay",
+      "related_cases": [
+        "DEC-173",
+        "DEC-180"
+      ],
+      "source": "tests/KernelTests.cs",
+      "execution_status": "NOT RUN IN ASSISTANT ENVIRONMENT"
+    },
+    {
+      "id": "M0-061-il2cpp-newslot-json-dispatch",
+      "related_cases": [
+        "DEC-179"
+      ],
+      "source": "tests/KernelTests.cs",
+      "execution_status": "NOT RUN IN ASSISTANT ENVIRONMENT"
+    },
+    {
+      "id": "M0-062-json-object-fallback-rejected",
+      "related_cases": [
+        "DEC-179"
+      ],
+      "source": "tests/KernelTests.cs",
+      "execution_status": "NOT RUN IN ASSISTANT ENVIRONMENT"
+    },
+    {
+      "id": "M0-055-native-root-identity-and-starting-prerequisite",
+      "related_cases": [
+        "DEC-001",
+        "DEC-196"
+      ],
+      "source": "tests/KernelTests.cs",
+      "execution_status": "NOT RUN IN ASSISTANT ENVIRONMENT"
+    },
+    {
+      "id": "M0-056-special-native-branch-override-preserved",
+      "related_cases": [
+        "DEC-001",
+        "DEC-196"
+      ],
+      "source": "tests/KernelTests.cs",
+      "execution_status": "NOT RUN IN ASSISTANT ENVIRONMENT"
+    },
+    {
+      "id": "M0-057-duplicate-root-rejected",
+      "related_cases": [
+        "DEC-001"
+      ],
+      "source": "tests/KernelTests.cs",
+      "execution_status": "NOT RUN IN ASSISTANT ENVIRONMENT"
+    },
+    {
+      "id": "M0-058-non-five-root-contract-rejected",
+      "related_cases": [
+        "DEC-001",
+        "DEC-179"
+      ],
+      "source": "tests/KernelTests.cs",
+      "execution_status": "NOT RUN IN ASSISTANT ENVIRONMENT"
+    },
+    {
+      "id": "M0-059-unknown-registry-category-rejected",
+      "related_cases": [
+        "DEC-001",
+        "DEC-179"
+      ],
+      "source": "tests/KernelTests.cs",
+      "execution_status": "NOT RUN IN ASSISTANT ENVIRONMENT"
+    },
+    {
+      "id": "M0-060-root-override-cycle-rejected",
+      "related_cases": [
+        "DEC-001"
+      ],
+      "source": "tests/KernelTests.cs",
+      "execution_status": "NOT RUN IN ASSISTANT ENVIRONMENT"
+    }
+  ]
+}

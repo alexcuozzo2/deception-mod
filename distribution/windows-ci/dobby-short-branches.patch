@@ -1,0 +1,33 @@
+diff --git a/source/InstructionRelocation/x64/X64InstructionRelocation.cc b/source/InstructionRelocation/x64/X64InstructionRelocation.cc
+index 53f6522..e74fe2c 100644
+--- a/source/InstructionRelocation/x64/X64InstructionRelocation.cc
++++ b/source/InstructionRelocation/x64/X64InstructionRelocation.cc
+@@ -45,17 +45,26 @@ static int GenRelocateCodeFixed(void *buffer, AssemblyCodeChunk *origin, Assembl
+       DLOG(0, "[x86 relo] jc rel8, %p", buffer_cursor);
+
+       int8_t orig_offset = insn.immediate;
+-      int new_offset = (int)(curr_orig_ip + orig_offset - curr_relo_ip);
++      // rel8 is relative to the end of the original instruction; the
++      // expanded 0F 8x rel32 is six bytes long, not two.
++      int32_t new_offset = (int32_t)(curr_orig_ip + insn.length + orig_offset - (curr_relo_ip + 6));
+       uint8_t opcode = 0x80 | (insn.primary_opcode & 0x0f);
+
+       __ Emit8(0x0F);
+       __ Emit8(opcode);
+       __ Emit32(new_offset);
++    } else if (insn.immediate_offset >= 2 && insn.length - insn.immediate_offset == 4 &&
++               ((uint8_t *)buffer_cursor)[insn.immediate_offset - 2] == 0x0F &&
++               ((uint8_t *)buffer_cursor)[insn.immediate_offset - 1] >= 0x80 &&
++               ((uint8_t *)buffer_cursor)[insn.immediate_offset - 1] <= 0x8F) { // jcc rel32
++      int32_t offset = (int32_t)(curr_orig_ip + (int32_t)insn.immediate - curr_relo_ip);
++      __ EmitBuffer((void *)buffer_cursor, insn.immediate_offset);
++      __ Emit32(offset);
+     } else if (insn.primary_opcode == 0xEB) { // jmp rel8
+       DLOG(0, "[x86 relo] jmp rel8, %p", buffer_cursor);
+
+       int8_t orig_offset = insn.immediate;
+-      int8_t new_offset = (int8_t)(curr_orig_ip + orig_offset - curr_relo_ip);
++      int32_t new_offset = (int32_t)(curr_orig_ip + insn.length + orig_offset - (curr_relo_ip + 5));
+
+       __ Emit8(0xE9);
+       __ Emit32(new_offset);

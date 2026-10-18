@@ -1,0 +1,21 @@
+{
+  "names": [
+    "initiator-move-and-partner-readiness-matrix",
+    "growing-partners-keep-swap-preserve-age-and-wounds",
+    "owned-city-and-plain-endpoint-matrix",
+    "frozen-partner-is-allowed-and-preserved",
+    "spent-or-frozen-initiator-is-rejected",
+    "city-diplomacy-is-separate-from-partner-readiness",
+    "physical-placement-does-not-grant-or-require-movement-research",
+    "diagonal-adjacency-and-out-of-range",
+    "enemy-partner-and-inaccessible-tile-rejected",
+    "linked-or-carried-partner-rejected",
+    "solo-centipede-versus-attached-and-orphan-segment",
+    "cancelled-stale-location-or-appearance-rejected",
+    "keep-and-swap-have-independent-legality",
+    "native-birth-spent-genuine-partner-needs-no-refresh",
+    "newborn-mimic-target-allowed-initiator-stays-exhausted",
+    "camouflage-immediate-research-preserves-existing-and-birth-readiness"
+  ],
+  "assertions": 419
+}

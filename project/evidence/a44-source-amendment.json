@@ -1,0 +1,8 @@
+{
+  "authority": "spec/UI_A44_MIMIC_BALANCE_AND_LONG_MATCH_COST.md",
+  "authority_sha256": "4a5321f3d24e79fdc1ec1fe288131849ac661840170244f119aa9efa394a50bf",
+  "previous_sha256": "27b217dde74fc907f76619048a1e2ca85834a286992df78fc54e99bf834e671c",
+  "source": "src/Core/RecruitmentCatalog.cs",
+  "source_sha256": "6faef93fddb3df5a6a2874611b24b3992c8cf06834ee8d7c7ef3e6e6b1fda5a8",
+  "reason": "User removes Mimic Dash, borrowed Scout and terrain powers; retains all native source forms and traversal. A44 overrides prior retained catalog hash."
+}

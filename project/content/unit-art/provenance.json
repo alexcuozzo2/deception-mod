@@ -1,0 +1,401 @@
+{
+  "source": "Alex supplied seven PNG assets 2026-09-17. Mimic team file replaced by corrected mimic-body.png in same turn. Imported bytes unchanged; render geometry normalizes differing canvas resolutions. Six additional PNG assets supplied 2026-09-18 for boat, technology and Disguise artwork, imported byte-for-byte for 0.3.56. Two aligned Blackmail layers supplied 2026-09-19, imported byte-for-byte for 0.3.68. Three original Aquarion body layers supplied 2026-09-19 imported byte-for-byte for 0.3.71; composition only. Blackmail fixed/team layers replaced with Alex\u2019s supplied2026-09-24 unit-Blackmail art for0.3.86; exact bytes and prior import hashes recorded. Motherfogger layers supplied 2026-09-27 imported byte-for-byte for0.3.90. Original beige Blackmail layers recovered from the verified0.3.85 source snapshot as Trade Secrets; current black Blackmail unchanged. Fogger badge supplied 2026-09-28 imported byte-for-byte for 0.3.95.",
+  "files": [
+    {
+      "name": "mimic_mask.png",
+      "source": "user-supplied/mimic_mask.png",
+      "bytes": 232418,
+      "sha256": "79a09b5969ca98f3ca3d3f6a583896e1b644e5daa0597912743bc91b6e25bdef"
+    },
+    {
+      "name": "mimic_icon.png",
+      "source": "user-supplied/mimic_icon.png",
+      "bytes": 55205,
+      "sha256": "ec12d61ca69595ecc8483887e03d4bf82d8024f780db1c555df7ba272ec576af"
+    },
+    {
+      "name": "mimic-body-fixed.png",
+      "source": "user-supplied/mimic-body-fixed.png",
+      "bytes": 35861,
+      "sha256": "69a1bb6126855b63bf7cfb48e943a7a5bdb7e74a53bc67acbcb3bbe67be8f84b"
+    },
+    {
+      "name": "mimic-body-team.png",
+      "source": "user-supplied/mimic-body.png",
+      "bytes": 586763,
+      "sha256": "136c90209cac23fb618dfecc2818d70a1f5b7ca5303f69cea7e6fe741f38cc2d",
+      "canvas": [
+        3870,
+        3870
+      ],
+      "supersedes_sha256": "f7396921633f69b67b6b920bb1d06c62ac54dde51f99db1565b8f07841d773c0"
+    },
+    {
+      "name": "spy-team.png",
+      "source": "user-supplied/spy-team.png",
+      "bytes": 21393,
+      "sha256": "bd18538b8d1912577efeceac1fc5ab76382ad1fcb962ce058190b851d02d75c2"
+    },
+    {
+      "name": "spy-fixed.png",
+      "source": "user-supplied/spy-fixed.png",
+      "bytes": 43954,
+      "sha256": "c3941c327a18ba46e84778883c7867e6a7e9c4f113c3decea1d45f755260cfc3"
+    },
+    {
+      "name": "spy_icon.png",
+      "source": "user-supplied/spy_icon.png",
+      "bytes": 278620,
+      "sha256": "19d066b6d7d01bfcc844f8525264dc02d82439eb6469fcee14353cf627a1f642"
+    },
+    {
+      "name": "mimic_boat_fixed.png",
+      "source": "user-supplied/mimic_boat_fixed.png",
+      "bytes": 60779,
+      "sha256": "856d4d4adfaed5136bdcf08c32b1257518720bb6f68c10dc5230c32c3f3c1bb9",
+      "canvas": [
+        1024,
+        1024
+      ],
+      "alpha_bbox_top_left": [
+        146,
+        262,
+        815,
+        711
+      ],
+      "sprite_rect_bottom_left": [
+        0,
+        0,
+        1024,
+        1024
+      ],
+      "added_version": "0.3.56"
+    },
+    {
+      "name": "mimic_boat_team.png",
+      "source": "user-supplied/mimic_boat_team.png",
+      "bytes": 14112,
+      "sha256": "eea0d898efb3055baf0badae7e00709918a73b800d3451fad59dc9e331c15bab",
+      "canvas": [
+        1024,
+        1024
+      ],
+      "alpha_bbox_top_left": [
+        584,
+        405,
+        707,
+        578
+      ],
+      "sprite_rect_bottom_left": [
+        0,
+        0,
+        1024,
+        1024
+      ],
+      "added_version": "0.3.56"
+    },
+    {
+      "name": "propaganda_mask.png",
+      "source": "user-supplied/propaganda_mask.png",
+      "bytes": 59236,
+      "sha256": "d72accaf9df50434638333e8870c2dff418ffed05c0f950604ac867a1bbd515c",
+      "canvas": [
+        1024,
+        1024
+      ],
+      "alpha_bbox_top_left": [
+        204,
+        115,
+        780,
+        890
+      ],
+      "sprite_rect_bottom_left": [
+        204,
+        134,
+        576,
+        775
+      ],
+      "added_version": "0.3.56"
+    },
+    {
+      "name": "disguise_mask.png",
+      "source": "user-supplied/disguise_mask.png",
+      "bytes": 294919,
+      "sha256": "5f611aad9b2a9a41bf15e2bfa853a67635edc6fa1be1879e82900e42d97ab028",
+      "canvas": [
+        3870,
+        3870
+      ],
+      "alpha_bbox_top_left": [
+        773,
+        435,
+        2947,
+        3361
+      ],
+      "sprite_rect_bottom_left": [
+        773,
+        509,
+        2174,
+        2926
+      ],
+      "added_version": "0.3.56"
+    },
+    {
+      "name": "intelligence_icon.png",
+      "source": "user-supplied/intelligence_icon.png",
+      "bytes": 400616,
+      "sha256": "2c62c8751617f573c57748b07b6e5896cbf839e365eeadc8ca2c293ab63b8401",
+      "canvas": [
+        3870,
+        3870
+      ],
+      "alpha_bbox_top_left": [
+        935,
+        258,
+        2936,
+        3477
+      ],
+      "sprite_rect_bottom_left": [
+        935,
+        393,
+        2001,
+        3219
+      ],
+      "added_version": "0.3.56"
+    },
+    {
+      "name": "disguise_icon.png",
+      "source": "user-supplied/disguise_icon.png",
+      "bytes": 30722,
+      "sha256": "e35408ab6a0199b7efc6cf9a3c5e44be2dee75f79153b97748f114fc4c795a3f",
+      "canvas": [
+        1024,
+        1024
+      ],
+      "alpha_bbox_top_left": [
+        256,
+        234,
+        741,
+        751
+      ],
+      "sprite_rect_bottom_left": [
+        256,
+        273,
+        485,
+        517
+      ],
+      "added_version": "0.3.56"
+    },
+    {
+      "name": "blackmail_fixed.png",
+      "source": "user-supplied/blackmail_fixed.png",
+      "bytes": 32357,
+      "sha256": "0fb96f5c97e4e73403043fc0defcf730bd7b6242d3277a5c795f7c2098290d23",
+      "canvas": [
+        512,
+        512
+      ],
+      "alpha_bbox_top_left": [
+        44,
+        34,
+        465,
+        491
+      ],
+      "sprite_rect_bottom_left": [
+        44,
+        21,
+        421,
+        457
+      ],
+      "added_version": "0.3.68",
+      "prior_import_sha256": "8694aa7eac5ae634fe20fdca0528f50f776f8b750ee143dec80688f59c967006",
+      "updated_version": "0.3.86",
+      "update": "Alex supplied replacement Blackmail layers2026-09-24; imported byte-for-byte, original crop retained."
+    },
+    {
+      "name": "blackmail_team.png",
+      "source": "user-supplied/blackmail_team.png",
+      "bytes": 8380,
+      "sha256": "0339e2e3d0a2d374758355be743b5168590e668a5d3f396d1f188fa6b8ca6bbd",
+      "canvas": [
+        512,
+        512
+      ],
+      "alpha_bbox_top_left": [
+        198,
+        96,
+        374,
+        246
+      ],
+      "sprite_rect_bottom_left": [
+        44,
+        21,
+        421,
+        457
+      ],
+      "added_version": "0.3.68",
+      "prior_import_sha256": "4b45abc85bbe64f8cf84fc81c1d0bb9c9df700fdf9b068a5d9f0d0ebcd9c3105",
+      "updated_version": "0.3.86",
+      "update": "Alex supplied replacement Blackmail layers2026-09-24; imported byte-for-byte, original crop retained."
+    },
+    {
+      "name": "spymaid_team.png",
+      "source": "user-supplied/spymaid_team.png",
+      "bytes": 93192,
+      "sha256": "2263fe7d9c1c1d5cc1d8beab28e05e1d2a51f2ab84b3623452e5ad44f5298d04",
+      "canvas": [
+        1024,
+        1024
+      ],
+      "alpha_bbox_top_left": [
+        111,
+        310,
+        682,
+        784
+      ],
+      "sprite_rect_bottom_left": [
+        0,
+        0,
+        1024,
+        1024
+      ],
+      "added_version": "0.3.71"
+    },
+    {
+      "name": "spymaid_fixed.png",
+      "source": "user-supplied/spymaid_fixed.png",
+      "bytes": 37578,
+      "sha256": "f6ff411ee08765d2c0fa4f29b491a0f9780b8933a8c8e1b148eafbf29cd39687",
+      "canvas": [
+        1024,
+        1024
+      ],
+      "alpha_bbox_top_left": [
+        308,
+        364,
+        679,
+        713
+      ],
+      "sprite_rect_bottom_left": [
+        0,
+        0,
+        1024,
+        1024
+      ],
+      "added_version": "0.3.71"
+    },
+    {
+      "name": "mermimic_body_team.png",
+      "source": "user-supplied/mermimic_body_team.png",
+      "bytes": 753926,
+      "sha256": "7511011e2891c1690ec4cc165e9882e0966a54cbfc90647ec5d419210d74d0bb",
+      "canvas": [
+        3870,
+        3870
+      ],
+      "alpha_bbox_top_left": [
+        230,
+        1347,
+        2805,
+        2916
+      ],
+      "sprite_rect_bottom_left": [
+        0,
+        0,
+        3870,
+        3870
+      ],
+      "added_version": "0.3.71"
+    },
+    {
+      "name": "fogger_fixed.png",
+      "source": "user-supplied/fogger_fixed.png",
+      "bytes": 89581,
+      "sha256": "1aaaa647e794bdc3e748a04682ed0a24dcdd2446fc4b30fd6ba3130cbdd10b22",
+      "canvas": [
+        1240,
+        1240
+      ],
+      "alpha_bbox_top_left": [
+        131,
+        231,
+        1069,
+        905
+      ],
+      "added_version": "0.3.90",
+      "import": "Original supplied bytes unchanged; fixed head is part of this aircraft, not a tribe head overlay."
+    },
+    {
+      "name": "fogger_team.png",
+      "source": "user-supplied/fogger_team.png",
+      "bytes": 11801,
+      "sha256": "a6b0178d2ef3fb39ef9ee557837afb32f0b0ab04ced55aa8f819ba828b9f5487",
+      "canvas": [
+        1240,
+        1240
+      ],
+      "alpha_bbox_top_left": [
+        598,
+        479,
+        689,
+        576
+      ],
+      "added_version": "0.3.90",
+      "import": "Original supplied bytes unchanged; fixed head is part of this aircraft, not a tribe head overlay."
+    },
+    {
+      "name": "trade_secrets_fixed.png",
+      "source": "user-supplied/blackmail_fixed.png",
+      "bytes": 38468,
+      "sha256": "8694aa7eac5ae634fe20fdca0528f50f776f8b750ee143dec80688f59c967006",
+      "canvas": [
+        512,
+        512
+      ],
+      "alpha_bbox_top_left": [
+        44,
+        34,
+        465,
+        491
+      ],
+      "added_version": "0.3.90",
+      "import": "Original supplied bytes unchanged; Trade Secrets restores exact pre-0.3.86 beige Blackmail artwork."
+    },
+    {
+      "name": "trade_secrets_team.png",
+      "source": "user-supplied/blackmail_team.png",
+      "bytes": 8180,
+      "sha256": "4b45abc85bbe64f8cf84fc81c1d0bb9c9df700fdf9b068a5d9f0d0ebcd9c3105",
+      "canvas": [
+        512,
+        512
+      ],
+      "alpha_bbox_top_left": [
+        198,
+        96,
+        374,
+        246
+      ],
+      "added_version": "0.3.90",
+      "import": "Original supplied bytes unchanged; Trade Secrets restores exact pre-0.3.86 beige Blackmail artwork."
+    },
+    {
+      "name": "fogger_badge.png",
+      "source": "user-supplied/fogger_badge.png",
+      "bytes": 13167,
+      "sha256": "bb0ea720bcf2b9c3d69da8ea4f31d111bd3d09398a52d8d9f45b779f7d7f7d07",
+      "canvas": [
+        1024,
+        1024
+      ],
+      "alpha_bbox_top_left": [
+        107,
+        355,
+        930,
+        701
+      ],
+      "added_version": "0.3.95",
+      "import": "Original white silhouette and alpha unchanged; native badge fit is independent of aircraft scale."
+    }
+  ]
+}

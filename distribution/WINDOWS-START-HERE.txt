@@ -1,0 +1,64 @@
+DECEPTION @VERSION@ — WINDOWS PREPARATION
+
+This Windows section is NOT an installable mod yet. There is no setup.exe,
+no Windows PolyMod runtime bundle and nothing to copy into Mods. It gathers
+the first evidence needed to finish the Windows port. No compiler is required.
+
+1. Extract the entire combined ZIP (right-click > Extract All). Open
+   Deception-Setup > Windows. This folder contains START-HERE.txt and project.
+
+2. If you already have Polytopia + PolyMod working on Windows, note their
+   full versions, then quit normally. If PolyMod is not installed, you can
+   still inventory your Steam game; tell Alex "PolyMod not installed".
+   Do not use the Mac installer or Mac libraries to set up Windows.
+
+3. In this Windows folder, click File Explorer's address bar, type cmd,
+   and press Enter. Run:
+
+   py -3 --version
+
+   Python 3.11 or newer is required. If unavailable, send Alex the exact
+   output and stop. This ZIP does not bundle Python or install prerequisites.
+
+4. In Steam, right-click Polytopia > Manage > Browse local files. Copy the
+   game folder path from File Explorer.
+
+5. In the Command Prompt from step 3, run this as ONE line, replacing the
+   quoted example path with your actual game folder:
+
+   py -3 project\tools\native-platform-survey.py --game-root "C:\Program Files (x86)\Steam\steamapps\common\The Battle of Polytopia" --output windows-inventory.json
+
+   This reads named game/loader files and writes versions, architecture and
+   checksums to windows-inventory.json in this Windows folder. It does not
+   launch the game, copy game DLLs, change files in the game folder, or read
+   saves/accounts/logs. It sends nothing automatically. Missing PolyMod will
+   produce an incomplete inventory; that is still useful. If the output file
+   already exists, use --output windows-inventory-2.json instead.
+
+6. Send Alex:
+   - windows-inventory.json (even if the survey says incomplete).
+   - The full game version number and your Windows version.
+   - PolyMod version, including whether it is the 1.3 preview, or "not installed".
+   - Exact terminal output if a step failed.
+
+That completes the first handoff. Alex still needs to build and validate the
+Windows helpers, native game bindings and online compatibility before sending
+a playable release. A successful inventory alone does not enable the mod.
+
+OPTIONAL — EXISTING DEVELOPMENT TOOLS ONLY
+-----------------------------------------
+If you already have Visual Studio 2022 C++ tools + Windows SDK, CMake/CTest
+3.21+ and Python 3.11+, open "x64 Native Tools Command Prompt for VS 2022".
+Change directory to THIS Windows folder (adjust your extraction path):
+
+   cd /d "LOCAL_HOME\Downloads\Deception-Setup\Windows"
+
+Run as ONE line:
+
+   py -3 project\tools\native-platform-build.py build --rid win-x64 --build-dir windows-build --output windows-native-pack
+
+Both output directories must be new. This compiles and tests three helpers;
+it does not install them into the game. Send the windows-native-pack folder,
+windows-build\build.log and windows-build\ctest.xml, or the exact failure.
+Review build logs before sharing; they can contain local paths. Passing these
+standalone tests does not prove native game or multiplayer compatibility.

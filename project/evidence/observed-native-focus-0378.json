@@ -1,0 +1,7 @@
+{
+  "archive_sha256": "e4a8392c1a88ecefc35c36c9f8617aed23b5bc7fad755b1801979bce410f0f7a",
+  "archive_path": "/LOCAL_HOME/Library/Application Support/Steam/steamapps/common/The Battle of Polytopia/Mods/alex_deception_m0.polymod",
+  "observed_at": "2026-09-20T07:29:50.604782+00:00",
+  "copy": "/LOCAL_HOME/Developer/deception-local-workspace/run-output/full-branch-implementation/candidate-0379/baseline-0378.polymod",
+  "provenance": "Exact installed0.3.78, user-tested with unintended post-move reselection. Captured before0.3.79 installation; framework/launcher separately recorded."
+}

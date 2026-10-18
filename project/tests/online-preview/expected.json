@@ -1,0 +1,30 @@
+{
+  "passed": true,
+  "cases": 23,
+  "assertions": 92,
+  "tests": [
+    "PREVIEW-23-clean-beta-requires-runtime-filter",
+    "PREVIEW-01-unknown-loader-keeps-adapter-unavailable",
+    "PREVIEW-02-raw-and-generic-outer-frame-exact-owned-boundary",
+    "PREVIEW-03-no-marker-scanning-or-version-guessing",
+    "PREVIEW-04-corrupt-truncated-trailing-frame-rejected",
+    "PREVIEW-05-marker-identification-does-not-admit-by-itself",
+    "PREVIEW-06-contract-canonical-exact-checksum-profile-protocol",
+    "PREVIEW-07-missing-and-malformed-checksum-rejected",
+    "PREVIEW-08-creation-validates-native-versions-and-lobby-identity",
+    "PREVIEW-09-compute-exact-epoch-bytes-and-purpose",
+    "PREVIEW-10-counter-and-summary-ignore-ordinary-input",
+    "PREVIEW-11-receive-only-existing-preview-route-and-shadow",
+    "PREVIEW-12-finalizer-preserves-original-and-delegates-failure",
+    "PREVIEW-13-unavailable-adapter-does-not-begin-scopes",
+    "PREVIEW-14-patches-bind-exact-typed-result-and-first-priority",
+    "PREVIEW-15-worker-compute-reenters-scope-once-and-returns-tuple",
+    "PREVIEW-16-worker-summary-keeps-ref-out-array-and-reference-return",
+    "PREVIEW-17-worker-receive-and-live-followups-have-distinct-scopes",
+    "PREVIEW-18-skipped-original-has-no-dispatch-scope-or-result-write",
+    "PREVIEW-19-main-creation-and-worker-counter-clean-up-once",
+    "PREVIEW-20-dispatched-body-exception-preserved-with-single-disposal",
+    "PREVIEW-21-unregistered-method-cannot-be-dispatched",
+    "PREVIEW-22-disabled-combined-prefixes-preserve-native-behavior"
+  ]
+}

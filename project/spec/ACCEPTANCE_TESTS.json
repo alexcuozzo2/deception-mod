@@ -1,0 +1,4145 @@
+{
+  "schema_version": 1,
+  "design_id": "DECEPTION-DF-1",
+  "design_date": "2026-09-14",
+  "execution_status": "NOT RUN — documentation only",
+  "fixture_conventions": {
+    "players": "P is acting player; Q and R are other players unless a case says otherwise.",
+    "ready": "Fully unused actual movement and primary action; native follow-ups tracked independently.",
+    "actual_vs_apparent": "An actual/apparent pair is independent unless explicitly normal/unmasked.",
+    "native": "Values/eligibility from the pinned build adapter, not invented constants. Native upgrade timing is measured before sequence assertions.",
+    "observations": "Every case requires both authoritative-state checks and viewpoint-filtered presentation checks.",
+    "coordinates": "Straight-line examples use native distance; do not assume Euclidean geometry or undocumented diagonal rules.",
+    "reset": "Alternative branches named in one case begin from identical reset fixtures; do not grant in-match action refreshes to run alternatives.",
+    "scope": "A source form in a fixture must have a tested adapter. Missing adapter is NOT IMPLEMENTED, not PASS."
+  },
+  "levels": [
+    {
+      "level": 1,
+      "name": "Foundation and single-unit rules"
+    },
+    {
+      "level": 2,
+      "name": "Presentation, healing and direct revelation"
+    },
+    {
+      "level": 3,
+      "name": "Atomic exchanges and action preservation"
+    },
+    {
+      "level": 4,
+      "name": "Naval forms and independent upgrade paths"
+    },
+    {
+      "level": 5,
+      "name": "Terrain passives, concealment and growth"
+    },
+    {
+      "level": 6,
+      "name": "Capture, harvesting and economic recipients"
+    },
+    {
+      "level": 7,
+      "name": "Rogue ownership, actions and restoration"
+    },
+    {
+      "level": 8,
+      "name": "Spy networks and recursive acquisition"
+    },
+    {
+      "level": 9,
+      "name": "Blackout, Propaganda and fog combat"
+    },
+    {
+      "level": 10,
+      "name": "Combined tactical sequences"
+    },
+    {
+      "level": 11,
+      "name": "Persistence, observation security and release gates"
+    }
+  ],
+  "cases": [
+    {
+      "id": "DEC-001",
+      "level": 1,
+      "title": "Sixth branch and prerequisites",
+      "rule_refs": [
+        "§1"
+      ],
+      "setup": "Ordinary tribe; all research initially unowned.",
+      "actions": [
+        "Open research and buy each branch path."
+      ],
+      "expected_actual": [
+        "Five extra technologies follow Deception→Misdirection→Propaganda and Deception→Camouflage→Espionage. Native branches remain present and unchanged."
+      ],
+      "expected_visible": [
+        "Research displays the specified names and dependency edges."
+      ],
+      "must_not_happen": [
+        "Replacing a native tech or allowing Espionage through Misdirection alone."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-002",
+      "level": 1,
+      "title": "Prices and no Propaganda range bonus",
+      "rule_refs": [
+        "§1",
+        "§13"
+      ],
+      "setup": "Two cities and a known native discount fixture.",
+      "actions": [
+        "Compare each custom research price to the native formula for its tier; research Propaganda."
+      ],
+      "expected_actual": [
+        "Tier/city/discount calculation matches native. Exchange range remains 1. Spy range/link remains 2."
+      ],
+      "expected_visible": [
+        "Tooltip and targeting agree on those ranges."
+      ],
+      "must_not_happen": [
+        "A hidden +1 exchange-range bonus."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-003",
+      "level": 1,
+      "title": "Mimic recruit",
+      "rule_refs": [
+        "§1",
+        "§5"
+      ],
+      "setup": "City has a vacant recruit slot, Deception and exactly 3 stars; Warrior form unlocked.",
+      "actions": [
+        "Recruit a Warrior-shaped Mimic."
+      ],
+      "expected_actual": [
+        "Exactly 3 stars spent; one actual Mimic, 1 HP, attack/defense 0, native support and recruitment flags."
+      ],
+      "expected_visible": [
+        "Opponent sees Warrior spawn. Controller sees apparent Warrior plus private Mimic badge/info."
+      ],
+      "must_not_happen": [
+        "Naked map frame, free real Warrior, or immediate recruitment action."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-004",
+      "level": 1,
+      "title": "Cancel recruitment",
+      "rule_refs": [
+        "§5",
+        "§15"
+      ],
+      "setup": "Same recruit fixture with 3 stars.",
+      "actions": [
+        "Choose Mimic and an appearance, then cancel before commitment."
+      ],
+      "expected_actual": [
+        "No stars, slots, units or fog change."
+      ],
+      "expected_visible": [
+        "Picker closes without a spawn cue."
+      ],
+      "must_not_happen": [
+        "Charging or publishing an appearance before confirmation."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-005",
+      "level": 1,
+      "title": "Appearance recruitment gate",
+      "rule_refs": [
+        "§1",
+        "§5"
+      ],
+      "setup": "Catapult unresearched; Deception owned; no Propaganda.",
+      "actions": [
+        "Inspect picker, then research Propaganda and inspect again."
+      ],
+      "expected_actual": [
+        "Catapult absent before and present after; real Catapult research remains unowned."
+      ],
+      "expected_visible": [
+        "Only the controller sees the picker/research permission."
+      ],
+      "must_not_happen": [
+        "Propaganda granting actual Catapult technology."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-006",
+      "level": 1,
+      "title": "Forbidden direct forms",
+      "rule_refs": [
+        "§5",
+        "V01"
+      ],
+      "setup": "Deception and Propaganda; relevant special forms registered.",
+      "actions": [
+        "Inspect recruit picker."
+      ],
+      "expected_actual": [
+        "Eligible city-origin super forms appear; Daggers/adult dragons/Moth eggs/direct ships/naked Mimic do not."
+      ],
+      "expected_visible": [
+        "No placeholder invalid form button."
+      ],
+      "must_not_happen": [
+        "Treating every registered unit as city-recruitable."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-007",
+      "level": 1,
+      "title": "Mimic Rider movement and no weapon",
+      "rule_refs": [
+        "§2",
+        "§3"
+      ],
+      "setup": "Ready Rider-shaped Mimic on open terrain.",
+      "actions": [
+        "Inspect movement and attack commands."
+      ],
+      "expected_actual": [
+        "Uses represented Rider movement/profile but has no real attack or retaliation."
+      ],
+      "expected_visible": [
+        "Enemy menu shows apparent Rider traits. Private actual menu identifies no genuine weapon."
+      ],
+      "must_not_happen": [
+        "Using fake attack to trigger genuine attack-dependent escape."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-008",
+      "level": 1,
+      "title": "Positive damage kills a Mimic",
+      "rule_refs": [
+        "§4"
+      ],
+      "setup": "Mimic shows apparent 40/40 Giant HP.",
+      "actions": [
+        "Apply 1 positive actual damage using a controlled fixture."
+      ],
+      "expected_actual": [
+        "Actual HP reaches 0; unit removed once."
+      ],
+      "expected_visible": [
+        "Apparent unit disappears/poofs; no living naked Mimic."
+      ],
+      "must_not_happen": [
+        "Survival because apparent HP was high."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-009",
+      "level": 1,
+      "title": "Genuine disguised movement",
+      "rule_refs": [
+        "§3"
+      ],
+      "setup": "True Giant with independent Rider appearance.",
+      "actions": [
+        "Inspect true movement and move within legal actual range."
+      ],
+      "expected_actual": [
+        "Movement uses Giant definition, not Rider."
+      ],
+      "expected_visible": [
+        "Enemy sees Rider motion and may infer the contradiction; no automatic identity reset."
+      ],
+      "must_not_happen": [
+        "Granting Rider movement to a genuine Giant."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-010",
+      "level": 1,
+      "title": "First click and repeated-click toggle",
+      "rule_refs": [
+        "§2.4"
+      ],
+      "setup": "Controlled true unit with an independent appearance.",
+      "actions": [
+        "Select unit.",
+        "Click same selected unit.",
+        "Click it again."
+      ],
+      "expected_actual": [
+        "Panel modes are Actual, Appearance, Actual; no state/cost/action change."
+      ],
+      "expected_visible": [
+        "Map stays apparent throughout; panel names both forms privately."
+      ],
+      "must_not_happen": [
+        "Timed double-click requirement or true map sprite flash."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-011",
+      "level": 1,
+      "title": "Selection reset and targeting guard",
+      "rule_refs": [
+        "§2.4"
+      ],
+      "setup": "Appearance mode open.",
+      "actions": [
+        "Select another unit then return.",
+        "Start a targeted command and click its pending target."
+      ],
+      "expected_actual": [
+        "Fresh selection opens Actual. Pending target clicks belong to the command flow."
+      ],
+      "expected_visible": [
+        "No unexpected mode flip while selecting targets."
+      ],
+      "must_not_happen": [
+        "Toggling modes mid atomic exchange or spending actions by inspecting."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-012",
+      "level": 1,
+      "title": "Hidden enemy readiness",
+      "rule_refs": [
+        "§2.3",
+        "§14"
+      ],
+      "setup": "Two identical apparent enemy Warriors; one ready, one exhausted.",
+      "actions": [
+        "Observe, reselect, cross turn boundary and reload."
+      ],
+      "expected_actual": [
+        "Authoritative flags differ and remain correct."
+      ],
+      "expected_visible": [
+        "Ordinary observers see identical neutral readiness, no grayed command/tooltip leak."
+      ],
+      "must_not_happen": [
+        "Dimming only the exhausted unit or only Mimics."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-013",
+      "level": 1,
+      "title": "Actual and apparent equal is still independent",
+      "rule_refs": [
+        "§2",
+        "§7.3"
+      ],
+      "setup": "Genuine Raft receives Raft appearance via a Mimic.",
+      "actions": [
+        "Select/toggle its menus."
+      ],
+      "expected_actual": [
+        "Independent appearance flag exists despite equal type names."
+      ],
+      "expected_visible": [
+        "Actual paid path and eligible Appearance feigned path are distinct."
+      ],
+      "must_not_happen": [
+        "Coalescing type IDs and deleting the second menu."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-014",
+      "level": 1,
+      "title": "Private panel is not revelation",
+      "rule_refs": [
+        "§2.4"
+      ],
+      "setup": "True Giant appears Warrior.",
+      "actions": [
+        "Open Actual info repeatedly without using an action."
+      ],
+      "expected_actual": [
+        "Appearance unchanged."
+      ],
+      "expected_visible": [
+        "Controller sees Giant truth; opponent sees Warrior without poof."
+      ],
+      "must_not_happen": [
+        "Reveal caused by inspection."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-015",
+      "level": 1,
+      "title": "Genuine Spy stats and Dash",
+      "rule_refs": [
+        "§1",
+        "§10"
+      ],
+      "setup": "Unspent genuine Spy on a legal route with a target within final range.",
+      "actions": [
+        "Move one tile then Subvert."
+      ],
+      "expected_actual": [
+        "One native movement allowance used; Subvert legal via Dash; source action spent."
+      ],
+      "expected_visible": [
+        "Spy stats are 8 stars, 10 HP, 0 attack, 1 defense, movement 1 and Scout."
+      ],
+      "must_not_happen": [
+        "Old stationary/no-Dash restriction or movement 2."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-016",
+      "level": 2,
+      "title": "Direct attack reveals source",
+      "rule_refs": [
+        "§4.3"
+      ],
+      "setup": "Ready Giant appearing Warrior attacks a genuine enemy.",
+      "actions": [
+        "Commit genuine attack from Actual mode."
+      ],
+      "expected_actual": [
+        "Mask clears before actual combat; real Giant statistics determine result."
+      ],
+      "expected_visible": [
+        "Poof then genuine attacker where observable."
+      ],
+      "must_not_happen": [
+        "Warrior damage used because the map looked like Warrior."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-017",
+      "level": 2,
+      "title": "Damage reveals target",
+      "rule_refs": [
+        "§4"
+      ],
+      "setup": "Genuine Giant appears Warrior with false HP.",
+      "actions": [
+        "Deal positive actual damage."
+      ],
+      "expected_actual": [
+        "Real Giant takes real loss; independent overlay removed globally."
+      ],
+      "expected_visible": [
+        "Visible observers see actual form/HP and damage feedback."
+      ],
+      "must_not_happen": [
+        "Damage subtracting from false HP instead of true HP."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-018",
+      "level": 2,
+      "title": "Zero-damage target stays masked",
+      "rule_refs": [
+        "§4.3",
+        "C05"
+      ],
+      "setup": "Genuine disguised target; instrumentation forces 0 HP loss with no other reveal action.",
+      "actions": [
+        "Resolve incoming direct hit."
+      ],
+      "expected_actual": [
+        "Target retains mask; attacking genuine actor still reveals itself if masked."
+      ],
+      "expected_visible": [
+        "No target poof; appropriate zero-damage/status feedback only."
+      ],
+      "must_not_happen": [
+        "Treating any targeted command as positive damage."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-019",
+      "level": 2,
+      "title": "Poison/freeze without damage",
+      "rule_refs": [
+        "§3",
+        "§4"
+      ],
+      "setup": "Genuine disguised unit and a Mimic in separate fixtures.",
+      "actions": [
+        "Apply real nondamaging poison or freeze."
+      ],
+      "expected_actual": [
+        "Native real status applies without identity reset; Mimic remains 1 HP."
+      ],
+      "expected_visible": [
+        "Normal apparent status presentation, not a naked/true model."
+      ],
+      "must_not_happen": [
+        "Status application alone stripping disguise or status cure through copying."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-020",
+      "level": 2,
+      "title": "No explicit authenticity record",
+      "rule_refs": [
+        "§2.2",
+        "§8"
+      ],
+      "setup": "Known Mimic has visibly Smuggled.",
+      "actions": [
+        "Opponent reselects it and later watches it move."
+      ],
+      "expected_actual": [
+        "Still actual Mimic with unchanged apparent form."
+      ],
+      "expected_visible": [
+        "Opponent sees ordinary apparent type, no known-fake label; memory is human."
+      ],
+      "must_not_happen": [
+        "Persisted enemy true-type access because a tell occurred."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-021",
+      "level": 2,
+      "title": "Prediction versus real combat",
+      "rule_refs": [
+        "§4.4"
+      ],
+      "setup": "Enemy true Giant wears Warrior appearance; an attacking Knight would kill the apparent Warrior in the fixture.",
+      "actions": [
+        "Inspect sweat/preview, then commit attack."
+      ],
+      "expected_actual": [
+        "Preview uses apparent target; actual resolution uses Giant."
+      ],
+      "expected_visible": [
+        "Apparent lethal indicator before commitment; actual reveal afterward."
+      ],
+      "must_not_happen": [
+        "Free true-stat leak from hover or forcing real result to match preview."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-022",
+      "level": 2,
+      "title": "Independent health snapshots",
+      "rule_refs": [
+        "§4.1"
+      ],
+      "setup": "Mimic copies injured genuine unit showing 6/10.",
+      "actions": [
+        "Heal only one participant with a permitted event."
+      ],
+      "expected_actual": [
+        "Only that participant's true/apparent records evolve; other remains unchanged."
+      ],
+      "expected_visible": [
+        "No mirrored updates on the distant copy."
+      ],
+      "must_not_happen": [
+        "Shared mutable HP/status pointer between apparent forms."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-023",
+      "level": 2,
+      "title": "Feign Heal on actual-full target",
+      "rule_refs": [
+        "§4.2"
+      ],
+      "setup": "Owned target actual 10/10, apparent 4/10; fake Mind Bender ready.",
+      "actions": [
+        "Use Feign Heal for represented amount H."
+      ],
+      "expected_actual": [
+        "Target actual remains 10/10; apparent becomes min(10,4+H); actor pays native action."
+      ],
+      "expected_visible": [
+        "Normal Heal VFX; controller sees explicit feint and both HP values."
+      ],
+      "must_not_happen": [
+        "Hiding the action solely because actual HP is full."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-024",
+      "level": 2,
+      "title": "Real healing does not normalize false HP",
+      "rule_refs": [
+        "§4.2",
+        "C04"
+      ],
+      "setup": "Owned target actual 4/10, apparent 8/10; native heal amount fixture H=4.",
+      "actions": [
+        "Use genuine Heal."
+      ],
+      "expected_actual": [
+        "Actual 8/10 and apparent 10/10; genuine caster reveals; recipient retains mask."
+      ],
+      "expected_visible": [
+        "Apparent target heals normally; actual panel stays correct."
+      ],
+      "must_not_happen": [
+        "Snapping apparent HP to 8/10 merely because a real heal occurred."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-025",
+      "level": 2,
+      "title": "Feign Swarm grants no mobility",
+      "rule_refs": [
+        "§4.2"
+      ],
+      "setup": "Genuine Warrior with native movement N, eligible fake Shaman nearby.",
+      "actions": [
+        "Apply Feign Swarm then inspect/legal-move Warrior."
+      ],
+      "expected_actual": [
+        "Real movement stays N; apparent Swarm status follows native represented expiry."
+      ],
+      "expected_visible": [
+        "Enemy sees convincing Swarm cue; controller sees it is apparent only."
+      ],
+      "must_not_happen": [
+        "Real extra movement, fake early expiry, or cured true status."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-026",
+      "level": 2,
+      "title": "Same support type offers real and fake",
+      "rule_refs": [
+        "§2.4",
+        "§4.2"
+      ],
+      "setup": "Genuine Mind Bender wears independent Mind Bender appearance; eligible target.",
+      "actions": [
+        "Compare Actual Heal and Appearance Feign Heal in separate reset fixtures."
+      ],
+      "expected_actual": [
+        "Real version heals actual recipients/reveals actor; feint only changes appearance/preserves actor."
+      ],
+      "expected_visible": [
+        "Modes clearly distinguish actions privately; public supported action looks normal."
+      ],
+      "must_not_happen": [
+        "Automatically substituting genuine Heal for a chosen feint."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-027",
+      "level": 2,
+      "title": "One budget across menus",
+      "rule_refs": [
+        "§2.4"
+      ],
+      "setup": "Unit has a real specialist and a permitted feigned action.",
+      "actions": [
+        "Spend action on feint, toggle to Actual, attempt full genuine specialist."
+      ],
+      "expected_actual": [
+        "Second full action rejected; allowance already spent."
+      ],
+      "expected_visible": [
+        "True controller readiness stays spent in both modes."
+      ],
+      "must_not_happen": [
+        "A per-menu action refresh."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-028",
+      "level": 2,
+      "title": "Actual-full Mimic apparently recovers",
+      "rule_refs": [
+        "§4.2"
+      ],
+      "setup": "Mimic actual 1/1, apparent injured form, native Recover conditions satisfied.",
+      "actions": [
+        "Use apparent Recover."
+      ],
+      "expected_actual": [
+        "Actual remains 1/1; represented HP recovers; correct action cost consumed."
+      ],
+      "expected_visible": [
+        "Normal apparent recovery and private truthful HP."
+      ],
+      "must_not_happen": [
+        "No recovery button or actual HP growth beyond one."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-029",
+      "level": 2,
+      "title": "Native disband refund remains actual",
+      "rule_refs": [
+        "§7.3"
+      ],
+      "setup": "Genuine cheap unit wears expensive appearance; separate free-upgraded Mimic Boat fixture.",
+      "actions": [
+        "Inspect and execute eligible ordinary disband."
+      ],
+      "expected_actual": [
+        "Refund uses actual native paid investment; free feint adds none."
+      ],
+      "expected_visible": [
+        "Private refund correct; no fake-value economic reward."
+      ],
+      "must_not_happen": [
+        "Refund for a Giant/Bomber that was never actually acquired."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-030",
+      "level": 2,
+      "title": "Post-damage Cloak state",
+      "rule_refs": [
+        "§4.3",
+        "C06"
+      ],
+      "setup": "Actual Cloak wore Warrior appearance on an observer-visible tile.",
+      "actions": [
+        "Inflict positive damage."
+      ],
+      "expected_actual": [
+        "Mask clears and native detected/revealed state is applied; future hiding follows native policy."
+      ],
+      "expected_visible": [
+        "Poof does not immediately vanish into a contradictory same-frame hidden state."
+      ],
+      "must_not_happen": [
+        "Clearing tile fog or granting an action with reveal."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-031",
+      "level": 3,
+      "title": "Regroup Keep",
+      "rule_refs": [
+        "§6"
+      ],
+      "setup": "Ready Warrior-form Mimic adjacent to genuine Rider.",
+      "actions": [
+        "Regroup, Keep."
+      ],
+      "expected_actual": [
+        "Mimic becomes Rider-shaped in place and spends action; Rider state unchanged."
+      ],
+      "expected_visible": [
+        "Both appear Riders with shared effect; controller knows identities."
+      ],
+      "must_not_happen": [
+        "Changing real partner or spending partner allowance."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-032",
+      "level": 3,
+      "title": "Regroup Swap",
+      "rule_refs": [
+        "§6"
+      ],
+      "setup": "Same fixture as preceding case.",
+      "actions": [
+        "Regroup, Swap."
+      ],
+      "expected_actual": [
+        "Positions exchange; partner flags unchanged; final Mimic spent."
+      ],
+      "expected_visible": [
+        "Same public maybe-shuffle as Keep."
+      ],
+      "must_not_happen": [
+        "Different public sound/timing exposes swap choice."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-033",
+      "level": 3,
+      "title": "Disguise Keep",
+      "rule_refs": [
+        "§6"
+      ],
+      "setup": "Ready Warrior-form Mimic beside true Giant.",
+      "actions": [
+        "Disguise, Keep."
+      ],
+      "expected_actual": [
+        "Giant becomes Warrior-looking at same tile; true Giant stats/flags preserved."
+      ],
+      "expected_visible": [
+        "Two apparent Warriors; no source-Mimic marker."
+      ],
+      "must_not_happen": [
+        "Giant receives Warrior movement/attack or extra HP."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-034",
+      "level": 3,
+      "title": "Disguise Swap",
+      "rule_refs": [
+        "§6"
+      ],
+      "setup": "Same fixture as preceding case.",
+      "actions": [
+        "Disguise, Swap."
+      ],
+      "expected_actual": [
+        "True Giant moves to Mimic tile wearing Warrior mask; Mimic spent at old Giant tile."
+      ],
+      "expected_visible": [
+        "Same two shared stages as Regroup; no action-name popup."
+      ],
+      "must_not_happen": [
+        "Partner charged movement because it relocated."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-035",
+      "level": 3,
+      "title": "Copy the costume, not the body",
+      "rule_refs": [
+        "§6.1"
+      ],
+      "setup": "True Giant already looks Warrior; Rider-shaped Mimic adjacent.",
+      "actions": [
+        "Regroup with Giant."
+      ],
+      "expected_actual": [
+        "Copy Warrior snapshot, not Giant identity."
+      ],
+      "expected_visible": [
+        "Both display Warrior after transfer."
+      ],
+      "must_not_happen": [
+        "Peeking at true partner definition for Regroup."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-036",
+      "level": 3,
+      "title": "Any owned super/foreign form",
+      "rule_refs": [
+        "§1",
+        "§5",
+        "§6"
+      ],
+      "setup": "No Propaganda; player owns a true Giant and a converted special unit in separate fixtures.",
+      "actions": [
+        "Regroup with each."
+      ],
+      "expected_actual": [
+        "Their apparent forms copy without additional research."
+      ],
+      "expected_visible": [
+        "Correct copied form, no tech-gate refusal."
+      ],
+      "must_not_happen": [
+        "Reintroducing Mythmaking/Propaganda gate on copying."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-037",
+      "level": 3,
+      "title": "Partner acted already",
+      "rule_refs": [
+        "§6.2"
+      ],
+      "setup": "Genuine partner has moved/attacked; ready adjacent Mimic.",
+      "actions": [
+        "Exchange partner."
+      ],
+      "expected_actual": [
+        "Partner remains equally spent; exchange allowed."
+      ],
+      "expected_visible": [
+        "Enemy readiness remains neutral."
+      ],
+      "must_not_happen": [
+        "Rejecting exhausted partners or giving them another attack."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-038",
+      "level": 3,
+      "title": "Frozen partner",
+      "rule_refs": [
+        "§6"
+      ],
+      "setup": "Frozen genuine unit beside ready unfrozen Mimic.",
+      "actions": [
+        "Regroup/Swap."
+      ],
+      "expected_actual": [
+        "Frozen partner relocates; stays frozen and keeps flags."
+      ],
+      "expected_visible": [
+        "Approved frozen presentation continues without thaw/reveal."
+      ],
+      "must_not_happen": [
+        "Blocking all frozen partners or curing freeze on reconstruction."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-039",
+      "level": 3,
+      "title": "Frozen initiator cannot act",
+      "rule_refs": [
+        "§2",
+        "§6.1"
+      ],
+      "setup": "Actual frozen Mimic with ready-looking apparent snapshot.",
+      "actions": [
+        "Attempt Regroup."
+      ],
+      "expected_actual": [
+        "Rejected by actual frozen action restriction."
+      ],
+      "expected_visible": [
+        "Private inability truthful, no enemy true readiness disclosure."
+      ],
+      "must_not_happen": [
+        "Apparent readiness authorizing a frozen actor."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-040",
+      "level": 3,
+      "title": "Moved Mimic can initiate",
+      "rule_refs": [
+        "§6"
+      ],
+      "setup": "Mimic can move into range of a partner.",
+      "actions": [
+        "Move then Disguise."
+      ],
+      "expected_actual": [
+        "Legal; actor ends spent; partner state unchanged."
+      ],
+      "expected_visible": [
+        "Ordinary movement plus shared disguise sequence."
+      ],
+      "must_not_happen": [
+        "Smuggle no-Dash restriction incorrectly applied to Regroup."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-041",
+      "level": 3,
+      "title": "Ready artillery delivery",
+      "rule_refs": [
+        "§6"
+      ],
+      "setup": "Ready genuine Catapult beside a relay of action-ready Mimics.",
+      "actions": [
+        "Exchange Catapult forward, then use genuine attack without walking."
+      ],
+      "expected_actual": [
+        "Attack remains available and reveals Catapult; every Mimic initiator spent."
+      ],
+      "expected_visible": [
+        "Appearance ambiguity lasts until real attack; no premature spent tint."
+      ],
+      "must_not_happen": [
+        "Setting has_moved on Catapult or refreshing after it fires."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-042",
+      "level": 3,
+      "title": "Fake-only continuation of a chain",
+      "rule_refs": [
+        "§6.3"
+      ],
+      "setup": "True Giant and several Giant-form Mimics.",
+      "actions": [
+        "Move Giant for first link; leave it; continue later exchanges only between Mimics."
+      ],
+      "expected_actual": [
+        "Giant remains at chosen intermediate tile; remaining links use actual Mimics."
+      ],
+      "expected_visible": [
+        "No UI metadata tells observers where real Giant stopped."
+      ],
+      "must_not_happen": [
+        "Requiring a genuine partner at each link."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-043",
+      "level": 3,
+      "title": "Atomic cancellation",
+      "rule_refs": [
+        "§6.2"
+      ],
+      "setup": "Regroup target chosen; Keep/Swap dialog open.",
+      "actions": [
+        "Cancel or attempt unrelated movement before commitment."
+      ],
+      "expected_actual": [
+        "Cancel has no effects; unrelated command cannot interleave."
+      ],
+      "expected_visible": [
+        "No partial transform visible."
+      ],
+      "must_not_happen": [
+        "Appearance applied before cancellation or swap range extended by another move."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-044",
+      "level": 3,
+      "title": "Copy-only physical legality",
+      "rule_refs": [
+        "§6.4"
+      ],
+      "setup": "Mimic stands on terrain incompatible with proposed resulting profile; swap endpoint may be legal.",
+      "actions": [
+        "Inspect Keep and Swap outcomes."
+      ],
+      "expected_actual": [
+        "Each outcome independently validated; legal outcome available, illegal outcome disabled."
+      ],
+      "expected_visible": [
+        "Controller sees clear placement restriction without hidden true enemy disclosure."
+      ],
+      "must_not_happen": [
+        "Creating a land-only actual Mimic on illegal water."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-045",
+      "level": 3,
+      "title": "Exchange sight without movement passives",
+      "rule_refs": [
+        "§6.2",
+        "§15"
+      ],
+      "setup": "True Scout-capable unit and terrain/splash forms in reset fixtures.",
+      "actions": [
+        "Exchange into a new position."
+      ],
+      "expected_actual": [
+        "Actual sight refreshes; no movement ice/algae/flood/splash; topology/occupation updated."
+      ],
+      "expected_visible": [
+        "Newly entitled terrain visible; no fake arrival attack damage."
+      ],
+      "must_not_happen": [
+        "Calling full native Move then restoring flags afterward."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-046",
+      "level": 3,
+      "title": "Untouched recruit stays unready",
+      "rule_refs": [
+        "§1",
+        "§6"
+      ],
+      "setup": "Newly recruited unready real unit beside ready Mimic.",
+      "actions": [
+        "Exchange recruit to front."
+      ],
+      "expected_actual": [
+        "Original recruitment restrictions remain; no fresh attack."
+      ],
+      "expected_visible": [
+        "Controller accurate; opponent neutral shading."
+      ],
+      "must_not_happen": [
+        "Transport or disguise turning a fresh recruit into an active veteran."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-047",
+      "level": 3,
+      "title": "Exchange-delivered neutral capture",
+      "rule_refs": [
+        "§6.3",
+        "§8"
+      ],
+      "setup": "Fully unspent non-Rogue genuine unit on normal tile, Mimic adjacent to neutral village.",
+      "actions": [
+        "Exchange unit onto village; choose capture."
+      ],
+      "expected_actual": [
+        "Capture allowed immediately; native home assignment/cost/flags apply once."
+      ],
+      "expected_visible": [
+        "Normal capture animation, no automatic execution during shuffle."
+      ],
+      "must_not_happen": [
+        "Old start-turn tile check blocking explicit outcome."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-048",
+      "level": 3,
+      "title": "Exchange-delivered ruin",
+      "rule_refs": [
+        "§6.3",
+        "§8"
+      ],
+      "setup": "Fully unspent non-Rogue Mimic or genuine unit; adjacent eligible ruin.",
+      "actions": [
+        "Exchange onto ruin then Explore."
+      ],
+      "expected_actual": [
+        "Native reward once; collector identity preserved; action spent."
+      ],
+      "expected_visible": [
+        "Native reward presentation."
+      ],
+      "must_not_happen": [
+        "Rogue privilege, duplicated reward, or collector transformed into reward unit."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-049",
+      "level": 3,
+      "title": "Actual Rogue partner",
+      "rule_refs": [
+        "§6",
+        "§10"
+      ],
+      "setup": "Commanded Rogue next to owned ready Mimic.",
+      "actions": [
+        "Disguise/Swap with Rogue."
+      ],
+      "expected_actual": [
+        "Partner allowed and preserves its budget; Rogue ownership/status persists."
+      ],
+      "expected_visible": [
+        "Visible Rogue tint remains; no promise that shuffle conceals its ownership."
+      ],
+      "must_not_happen": [
+        "Copying Rogue status onto Mimic or silently treating Rogue as permanent ally."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-050",
+      "level": 3,
+      "title": "Two-state observer equivalence",
+      "rule_refs": [
+        "§2",
+        "§6.5",
+        "§14"
+      ],
+      "setup": "Two fixtures identical in apparent snapshots, visibility and public Rogue/status state; true IDs/readiness swapped.",
+      "actions": [
+        "Perform corresponding visually equivalent Keep/Swap operations."
+      ],
+      "expected_actual": [
+        "Actual outcomes differ as chosen."
+      ],
+      "expected_visible": [
+        "Unauthorized pixels/audio/tooltips/selections match apart from legitimate specified consequences."
+      ],
+      "must_not_happen": [
+        "Unit-ID tracking, grayed icon, true-name event, or endpoint sound leak."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-051",
+      "level": 4,
+      "title": "Normal boarding versus exchanged boarding",
+      "rule_refs": [
+        "§7.2"
+      ],
+      "setup": "Identical ready Warriors near a port/coast in reset fixtures.",
+      "actions": [
+        "A: walk through port into water.",
+        "B: be the ready partner in a coastal exchange."
+      ],
+      "expected_actual": [
+        "A receives native boarding exhaustion; B becomes an immediately usable actual Raft with preserved flags."
+      ],
+      "expected_visible": [
+        "Both are plausible naval forms; private readiness differs truthfully."
+      ],
+      "must_not_happen": [
+        "Using a single constructor path that exhausts both or refreshes both."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-052",
+      "level": 4,
+      "title": "Giant coastal placement has no splash",
+      "rule_refs": [
+        "§7.2"
+      ],
+      "setup": "Ready actual Giant; adjacent Mimic Boat; enemy in potential splash area.",
+      "actions": [
+        "Exchange Giant into water without subsequently moving."
+      ],
+      "expected_actual": [
+        "Actual Juggernaut created ready; zero arrival splash; enemy HP unchanged."
+      ],
+      "expected_visible": [
+        "Only shared exchange/transport presentation."
+      ],
+      "must_not_happen": [
+        "Calling Juggernaut on-move splash during teleport."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-053",
+      "level": 4,
+      "title": "Giant moves after coastal placement",
+      "rule_refs": [
+        "§3",
+        "§7.2"
+      ],
+      "setup": "Previous fixture; Giant retained full movement/action.",
+      "actions": [
+        "Move new Juggernaut genuinely through its legal range."
+      ],
+      "expected_actual": [
+        "Actual movement and corresponding true splash now occur; no extra allowance after use."
+      ],
+      "expected_visible": [
+        "Source animation uses apparent vessel; actual victims show real loss."
+      ],
+      "must_not_happen": [
+        "Suppressing every later passive because initial placement was a teleport."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-054",
+      "level": 4,
+      "title": "Spent partner remains spent at sea",
+      "rule_refs": [
+        "§7.2"
+      ],
+      "setup": "Already-acted Warrior/Giant beside Mimic Boat.",
+      "actions": [
+        "Exchange into water, then attempt move/attack."
+      ],
+      "expected_actual": [
+        "Unavailable allowance stays unavailable in resulting vessel."
+      ],
+      "expected_visible": [
+        "Controller menu reflects spent status, enemy sees neutral readiness."
+      ],
+      "must_not_happen": [
+        "New vessel object treated as fresh recruit with fresh turn."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-055",
+      "level": 4,
+      "title": "Initiating naval Mimic remains spent on land",
+      "rule_refs": [
+        "§6",
+        "§7"
+      ],
+      "setup": "Mimic Boat initiates swap with ready land Warrior.",
+      "actions": [
+        "Commit coastal swap."
+      ],
+      "expected_actual": [
+        "Land Mimic is spent; water Warrior Raft retains previous readiness."
+      ],
+      "expected_visible": [
+        "Apparent map forms; private states correctly differ."
+      ],
+      "must_not_happen": [
+        "Only partner preservation logic applied to both actors, refreshing initiator."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-056",
+      "level": 4,
+      "title": "Case A Regroup Keep",
+      "rule_refs": [
+        "§7.4"
+      ],
+      "setup": "Land Mimic-as-Giant; water true normal Warrior Raft; both accessible.",
+      "actions": [
+        "Land Mimic Regroups, Keep."
+      ],
+      "expected_actual": [
+        "Land actual Mimic now Warrior appearance; water remains true Warrior Raft."
+      ],
+      "expected_visible": [
+        "Corresponding Warrior land/raft water forms."
+      ],
+      "must_not_happen": [
+        "Copying actual Raft artwork literally onto a dry-land unit."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-057",
+      "level": 4,
+      "title": "Case A Regroup Swap",
+      "rule_refs": [
+        "§7.4"
+      ],
+      "setup": "Same case A fixture.",
+      "actions": [
+        "Land Mimic Regroups, Swap."
+      ],
+      "expected_actual": [
+        "Land true Warrior normal; water Mimic Boat apparent Warrior Raft; partner readiness preserved."
+      ],
+      "expected_visible": [
+        "Shared exchange with correct apparent passenger mapping."
+      ],
+      "must_not_happen": [
+        "Mimic becomes true Warrior or original Warrior remains phantom cargo."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-058",
+      "level": 4,
+      "title": "Case A Disguise Keep",
+      "rule_refs": [
+        "§7.4"
+      ],
+      "setup": "Same case A fixture.",
+      "actions": [
+        "Land Mimic Disguises, Keep."
+      ],
+      "expected_actual": [
+        "Land Mimic-as-Giant; true Warrior Raft now apparent Juggernaut."
+      ],
+      "expected_visible": [
+        "Apparent Giant on land, Juggernaut in water."
+      ],
+      "must_not_happen": [
+        "Actual Giant passenger created in real Raft."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-059",
+      "level": 4,
+      "title": "Case A Disguise Swap",
+      "rule_refs": [
+        "§7.4"
+      ],
+      "setup": "Same case A fixture.",
+      "actions": [
+        "Land Mimic Disguises, Swap."
+      ],
+      "expected_actual": [
+        "Land true Warrior-as-Giant; water Mimic Boat-as-Juggernaut."
+      ],
+      "expected_visible": [
+        "Two environment-appropriate Giant appearances."
+      ],
+      "must_not_happen": [
+        "Actual passenger/type/HP swapped with public snapshot."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-060",
+      "level": 4,
+      "title": "Case B Regroup Keep",
+      "rule_refs": [
+        "§7.5"
+      ],
+      "setup": "Land true normal Warrior; water initiating Mimic Boat-as-Juggernaut.",
+      "actions": [
+        "Boat Regroups, Keep."
+      ],
+      "expected_actual": [
+        "Warrior stays land; Mimic Boat becomes apparent Warrior Raft."
+      ],
+      "expected_visible": [
+        "Normal-looking environmental appearance transfer."
+      ],
+      "must_not_happen": [
+        "Unmasking the water Mimic."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-061",
+      "level": 4,
+      "title": "Case B Regroup Swap",
+      "rule_refs": [
+        "§7.5"
+      ],
+      "setup": "Same case B fixture.",
+      "actions": [
+        "Boat Regroups, Swap."
+      ],
+      "expected_actual": [
+        "Land Mimic-as-Warrior; water genuine Warrior Raft; genuine readiness preserved."
+      ],
+      "expected_visible": [
+        "No true-identity path through maybe-shuffle."
+      ],
+      "must_not_happen": [
+        "Blocking immediate real Raft movement solely because a wrapper was created."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-062",
+      "level": 4,
+      "title": "Case B Disguise Keep",
+      "rule_refs": [
+        "§7.5"
+      ],
+      "setup": "Same case B fixture.",
+      "actions": [
+        "Boat Disguises, Keep."
+      ],
+      "expected_actual": [
+        "Land Warrior-as-Giant; water Mimic Boat-as-Juggernaut."
+      ],
+      "expected_visible": [
+        "Apparent Giant and Juggernaut."
+      ],
+      "must_not_happen": [
+        "Granting Giant movement/health to genuine Warrior."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-063",
+      "level": 4,
+      "title": "Case B Disguise Swap",
+      "rule_refs": [
+        "§7.5"
+      ],
+      "setup": "Same case B fixture.",
+      "actions": [
+        "Boat Disguises, Swap."
+      ],
+      "expected_actual": [
+        "Land Mimic-as-Giant; water real Warrior Raft-as-Juggernaut."
+      ],
+      "expected_visible": [
+        "Normal-looking matching land/sea appearance."
+      ],
+      "must_not_happen": [
+        "Water unit actually acquires Juggernaut splash."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-064",
+      "level": 4,
+      "title": "Actual Rammer disembarks",
+      "rule_refs": [
+        "§7.1",
+        "§7.2"
+      ],
+      "setup": "Rammer carries an actual Warrior and has a different apparent passenger.",
+      "actions": [
+        "Legal coastal exchange ashore."
+      ],
+      "expected_actual": [
+        "Actual Warrior restored with prior flags; apparent land form uses apparent passenger; native real wrapper lost as appropriate."
+      ],
+      "expected_visible": [
+        "Native-looking disembarkation, not a walking Rammer sprite."
+      ],
+      "must_not_happen": [
+        "Rejecting transports as aquatic-only or inventing Giant payload."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-065",
+      "level": 4,
+      "title": "Aquatic-only dry-land swap rejected",
+      "rule_refs": [
+        "§7.2"
+      ],
+      "setup": "Genuine Living Island/Jellyfish/Shark without cargo; dry shore partner.",
+      "actions": [
+        "Inspect coastal outcomes."
+      ],
+      "expected_actual": [
+        "Illegal dry-land Swap rejected before cost; any independently legal Keep remains."
+      ],
+      "expected_visible": [
+        "Controller sees ordinary placement restriction."
+      ],
+      "must_not_happen": [
+        "Fabricating passenger or beaching an invalid body."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-066",
+      "level": 4,
+      "title": "Aquatic legal flooded endpoint",
+      "rule_refs": [
+        "§7.2"
+      ],
+      "setup": "Same genuine aquatic fixture with endpoint that native traversal permits because flooded.",
+      "actions": [
+        "Perform otherwise legal exchange."
+      ],
+      "expected_actual": [
+        "Swap allowed; true body remains aquatic; no arrival movement passives."
+      ],
+      "expected_visible": [
+        "Legal apparent form at flooded endpoint."
+      ],
+      "must_not_happen": [
+        "Blanket ban despite native legal flooded terrain."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-067",
+      "level": 4,
+      "title": "Free upgrade research gate",
+      "rule_refs": [
+        "§7.3"
+      ],
+      "setup": "Mimic Boat-as-Raft in own territory; lacks target tech and Propaganda.",
+      "actions": [
+        "Attempt feigned Bomber.",
+        "Research Propaganda, retry in fresh eligible state."
+      ],
+      "expected_actual": [
+        "First unavailable; second costs zero and grants apparent Bomber only."
+      ],
+      "expected_visible": [
+        "Enemy sees ordinary apparent upgrade; controller sees Feign/0 cost."
+      ],
+      "must_not_happen": [
+        "Free genuine technology or attack."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-068",
+      "level": 4,
+      "title": "Two Raft upgrade menus",
+      "rule_refs": [
+        "§2.4",
+        "§7.3"
+      ],
+      "setup": "Actual Raft receives independent Raft disguise; real tech and funds available.",
+      "actions": [
+        "Compare Actual and Appearance upgrade menus."
+      ],
+      "expected_actual": [
+        "Actual path uses native price and real eligibility; fake path 0 stars with permitted research."
+      ],
+      "expected_visible": [
+        "Both private modes identify their outputs."
+      ],
+      "must_not_happen": [
+        "Only one ambiguous Upgrade command."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-069",
+      "level": 4,
+      "title": "Fake first then real upgrade preserves mask",
+      "rule_refs": [
+        "§7.3"
+      ],
+      "setup": "Actual Raft in own territory, real upgrade tech, enough stars; timing fixture permits chosen sequence.",
+      "actions": [
+        "Feign Bomber.",
+        "Pay for genuine Rammer when native upgrade timing allows."
+      ],
+      "expected_actual": [
+        "Final real Rammer/apparent Bomber; payment only real price; correct native budget transition."
+      ],
+      "expected_visible": [
+        "Opponent remains seeing Bomber, no Rammer flash; controller sees both forms."
+      ],
+      "must_not_happen": [
+        "Paid upgrade stripping approved independent mask."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-070",
+      "level": 4,
+      "title": "Real first with same-type independence",
+      "rule_refs": [
+        "§7.3"
+      ],
+      "setup": "Actual Raft/apparent Raft.",
+      "actions": [
+        "Buy genuine Scout, then inspect independent Appearance upgrade options when action-eligible."
+      ],
+      "expected_actual": [
+        "Actual Scout/apparent Raft remains independent; fake upgrade may still be offered under rules."
+      ],
+      "expected_visible": [
+        "No private coalescing because actual and apparent matched before upgrade."
+      ],
+      "must_not_happen": [
+        "Native constructor overwrites the Raft mask automatically."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-071",
+      "level": 4,
+      "title": "Juggernaut feigns Bomber",
+      "rule_refs": [
+        "§3",
+        "§7.3"
+      ],
+      "setup": "Actual Juggernaut/apparent Raft; eligible territory/research.",
+      "actions": [
+        "Feign Bomber.",
+        "Inspect movement and actual weapon."
+      ],
+      "expected_actual": [
+        "Still true Juggernaut movement/HP/passive/weapon; no Bomber weapon."
+      ],
+      "expected_visible": [
+        "Apparent Bomber publicly; actual armament private."
+      ],
+      "must_not_happen": [
+        "Disarming genuine unit or granting ranged Bomber attack."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-072",
+      "level": 4,
+      "title": "Genuine weapon after feigned upgrade",
+      "rule_refs": [
+        "§4",
+        "§7.3"
+      ],
+      "setup": "True Juggernaut/apparent Bomber with real attack eligible.",
+      "actions": [
+        "Use Actual attack."
+      ],
+      "expected_actual": [
+        "Mask removed; genuine Juggernaut attack resolves."
+      ],
+      "expected_visible": [
+        "Poof and true attack; not Bomber projectile."
+      ],
+      "must_not_happen": [
+        "Appearance-mode nonexistent weapon used for genuine damage."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-073",
+      "level": 4,
+      "title": "Mimic free-upgrade cannot buy a real weapon",
+      "rule_refs": [
+        "§2.4",
+        "§7.3"
+      ],
+      "setup": "Actual Mimic Boat/apparent Raft, sufficient stars/real tech.",
+      "actions": [
+        "Inspect Actual and Appearance menus, fake-upgrade."
+      ],
+      "expected_actual": [
+        "Only allowed imitation path; always one HP/no real offense."
+      ],
+      "expected_visible": [
+        "Truthful private Mimic Boat info; convincing apparent ship."
+      ],
+      "must_not_happen": [
+        "Actual-mode native Raft upgrade creating genuine warship from Mimic."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-074",
+      "level": 4,
+      "title": "Raft reappearance renews eligibility, not action",
+      "rule_refs": [
+        "§7.3"
+      ],
+      "setup": "Fake-upgraded boat; another Mimic can give Raft appearance.",
+      "actions": [
+        "Receive Raft mask and inspect free upgrade, first with ready and then spent flags."
+      ],
+      "expected_actual": [
+        "Eligibility renews in ready native state; spent state is not reset and native timing still applies."
+      ],
+      "expected_visible": [
+        "State-based option, no lifetime/voyage quota."
+      ],
+      "must_not_happen": [
+        "Resetting actions with appearance or enforcing once-ever limit."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-075",
+      "level": 4,
+      "title": "Two paths yield same genuine armament",
+      "rule_refs": [
+        "§7.3"
+      ],
+      "setup": "Same actual Juggernaut in two reset fixtures.",
+      "actions": [
+        "A: directly receive Bomber disguise.",
+        "B: receive Raft then feign Bomber."
+      ],
+      "expected_actual": [
+        "Actual abilities/HP/movement match in both; only legitimately spent allowances/investment differ."
+      ],
+      "expected_visible": [
+        "Same final apparent form."
+      ],
+      "must_not_happen": [
+        "Path-dependent disarm flag or borrowed weapon."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-076",
+      "level": 5,
+      "title": "Mimic Mooni splits tile and unit freeze",
+      "rule_refs": [
+        "§3.2"
+      ],
+      "setup": "Mimic-as-Mooni beside eligible terrain and an enemy unit.",
+      "actions": [
+        "Make true movement that normally triggers the represented passive."
+      ],
+      "expected_actual": [
+        "Real permitted tile ice created; no copied unit freeze or damage."
+      ],
+      "expected_visible": [
+        "Normal apparent movement/passive cue; unchanged enemy status is valid evidence."
+      ],
+      "must_not_happen": [
+        "Executing native full freeze then undoing unit status."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-077",
+      "level": 5,
+      "title": "Genuine Warrior dressed as Mooni",
+      "rule_refs": [
+        "§3"
+      ],
+      "setup": "True Warrior-as-Mooni on eligible terrain.",
+      "actions": [
+        "Move normally."
+      ],
+      "expected_actual": [
+        "Appearance ice real; no borrowed unit freeze; actual Warrior movement/weapon remains."
+      ],
+      "expected_visible": [
+        "Convincing terrain effect and Mooni art."
+      ],
+      "must_not_happen": [
+        "No ice because only Mimics were patched."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-078",
+      "level": 5,
+      "title": "Terrain source replacement",
+      "rule_refs": [
+        "§3.2"
+      ],
+      "setup": "True Crab-as-Warrior in one fixture; Warrior-as-Crab in another.",
+      "actions": [
+        "Move each."
+      ],
+      "expected_actual": [
+        "Former creates no Crab flood; latter creates approved real flood; do not stack underlying profile."
+      ],
+      "expected_visible": [
+        "Terrain matches appearance."
+      ],
+      "must_not_happen": [
+        "Calling both true and apparent terrain routines."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-079",
+      "level": 5,
+      "title": "Fake Juggernaut movement splash",
+      "rule_refs": [
+        "§3",
+        "§4.4"
+      ],
+      "setup": "Mimic Boat-as-Juggernaut or real Raft-as-Juggernaut beside enemy.",
+      "actions": [
+        "Move genuinely."
+      ],
+      "expected_actual": [
+        "No acquired splash damage; actual HP of nearby units unchanged."
+      ],
+      "expected_visible": [
+        "Juggernaut-style source splash can play."
+      ],
+      "must_not_happen": [
+        "Animation callback causing damage."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-080",
+      "level": 5,
+      "title": "Real Juggernaut in ordinary appearance",
+      "rule_refs": [
+        "§4.4"
+      ],
+      "setup": "True Juggernaut-as-Raft beside vulnerable enemy.",
+      "actions": [
+        "Move genuinely."
+      ],
+      "expected_actual": [
+        "True native splash damages victims; source keeps mask."
+      ],
+      "expected_visible": [
+        "Raft source animation; true victim hit/HP feedback; no Juggernaut type cue."
+      ],
+      "must_not_happen": [
+        "Suppressing genuine damage or exposing source through splash artwork."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-081",
+      "level": 5,
+      "title": "Source passive keeps mask, victim loses mask",
+      "rule_refs": [
+        "§4.3"
+      ],
+      "setup": "Previous fixture; victim is disguised genuine unit or Mimic in reset tests.",
+      "actions": [
+        "Apply true movement splash."
+      ],
+      "expected_actual": [
+        "Source remains disguised; genuine positive-damage victim unmasks; Mimic victim dies."
+      ],
+      "expected_visible": [
+        "Observer-filtered victim poof/damage; source still Raft."
+      ],
+      "must_not_happen": [
+        "Applying the source-preservation exception to the damaged victim."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-082",
+      "level": 5,
+      "title": "Living Island terrain exactness",
+      "rule_refs": [
+        "§3.2",
+        "V11"
+      ],
+      "setup": "Mimic or genuine unit with Living Island appearance.",
+      "actions": [
+        "Move on eligible sea."
+      ],
+      "expected_actual": [
+        "Approved native fruitless algae created; borrowed unit damage suppressed; no free fruit population."
+      ],
+      "expected_visible": [
+        "Appearance matches native intended terrain/VFX."
+      ],
+      "must_not_happen": [
+        "Using a generic fruit-generating algae routine."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-083",
+      "level": 5,
+      "title": "No movement passive on swap",
+      "rule_refs": [
+        "§6.2"
+      ],
+      "setup": "Any terrain-maker/splash form; multiple exchange chain links.",
+      "actions": [
+        "Exchange several times without walking."
+      ],
+      "expected_actual": [
+        "No ice/flood/algae/splash per exchange; genuine positional sight still updates."
+      ],
+      "expected_visible": [
+        "Only exchange effects plus discovery where entitled."
+      ],
+      "must_not_happen": [
+        "Repeated free damage or terrain per teleport."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-084",
+      "level": 5,
+      "title": "Mimic Cloak profile",
+      "rule_refs": [
+        "§9"
+      ],
+      "setup": "Ready Mimic-as-Cloak.",
+      "actions": [
+        "Move/hide under native conditions, approach an enemy detection footprint."
+      ],
+      "expected_actual": [
+        "Copied movement/Sneak/Scout/concealment; no Infiltrate; appropriate detection applies."
+      ],
+      "expected_visible": [
+        "Enemy gets Cloak eye cue and visible apparent Cloak if detected."
+      ],
+      "must_not_happen": [
+        "Generic Scout triggers mistaken eye or Mimic receives real Infiltrate."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-085",
+      "level": 5,
+      "title": "Warrior cloak disguise",
+      "rule_refs": [
+        "§9"
+      ],
+      "setup": "Actual Warrior receives invisible Cloak appearance.",
+      "actions": [
+        "Inspect/move within Warrior allowance, then have opponent detect it."
+      ],
+      "expected_actual": [
+        "True Warrior movement/sight, functional concealment; detection alone retains Cloak appearance."
+      ],
+      "expected_visible": [
+        "Enemy sees Cloak/eye, not true Warrior until genuine reveal."
+      ],
+      "must_not_happen": [
+        "Granting Scout/Sneak or stripping costume upon mere detection."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-086",
+      "level": 5,
+      "title": "Cloak warrior disguise",
+      "rule_refs": [
+        "§9"
+      ],
+      "setup": "Actual Cloak receives Warrior appearance.",
+      "actions": [
+        "Inspect and move."
+      ],
+      "expected_actual": [
+        "Actual Cloak mobility/Sneak/Scout; publicly visible Warrior; real Cloak warning still applies."
+      ],
+      "expected_visible": [
+        "Enemy info says Warrior; eye warning can be present nearby."
+      ],
+      "must_not_happen": [
+        "Underlying stealth hiding the Warrior appearance."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-087",
+      "level": 5,
+      "title": "Invisible-state transfer and local detection",
+      "rule_refs": [
+        "§9",
+        "§6.5"
+      ],
+      "setup": "Invisible Cloak and adjacent ready Mimic; destination detection conditions controlled.",
+      "actions": [
+        "Regroup then Disguise another unit with that snapshot."
+      ],
+      "expected_actual": [
+        "Transferred concealment is functional; native detection at final positions still applies."
+      ],
+      "expected_visible": [
+        "Visible participant transformation cue only; no hidden endpoint disclosure."
+      ],
+      "must_not_happen": [
+        "Visibility state always reset to visible or forced hidden despite detector."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-088",
+      "level": 5,
+      "title": "Hidden shuffle visibility clipping",
+      "rule_refs": [
+        "§6.5",
+        "§14"
+      ],
+      "setup": "One visible participant and one invisible participant; third observer lacks both tiles.",
+      "actions": [
+        "Regroup/Disguise with Keep and Swap in equivalent reset runs."
+      ],
+      "expected_actual": [
+        "Correct states and actions."
+      ],
+      "expected_visible": [
+        "First observer sees only authorized local change; third gets no positional sound/camera trail."
+      ],
+      "must_not_happen": [
+        "A flash on the invisible tile."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-089",
+      "level": 5,
+      "title": "Copied egg phase",
+      "rule_refs": [
+        "§3.3"
+      ],
+      "setup": "Mimic copies a growing body with one scheduled owner tick remaining.",
+      "actions": [
+        "Advance to that scheduled tick."
+      ],
+      "expected_actual": [
+        "Apparent next form/genuine Mimic profile updates; HP remains 1; no true offspring/weapon."
+      ],
+      "expected_visible": [
+        "Native apparent growth animation and wounded-state carryover."
+      ],
+      "must_not_happen": [
+        "Timer reset to newborn or actual dragon generated."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-090",
+      "level": 5,
+      "title": "Growth cannot be accelerated by control",
+      "rule_refs": [
+        "§3.3",
+        "C02"
+      ],
+      "setup": "Growing Mimic is Subverted, transformed, saved/reloaded and converted within one scheduling interval.",
+      "actions": [
+        "Trigger all those transitions then the scheduled owner tick."
+      ],
+      "expected_actual": [
+        "No duplicate growth tick; stable identity/history persists."
+      ],
+      "expected_visible": [
+        "One appropriate apparent transition."
+      ],
+      "must_not_happen": [
+        "Every new commander/constructor hatching it again."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-091",
+      "level": 5,
+      "title": "Copy one compound body",
+      "rule_refs": [
+        "§3.3",
+        "C03",
+        "V11"
+      ],
+      "setup": "Owned native linked body/segment fixture with adapter.",
+      "actions": [
+        "Regroup with one target body."
+      ],
+      "expected_actual": [
+        "One Mimic remains one actual body; no real copied neighboring army/offspring; genuine original structure unchanged."
+      ],
+      "expected_visible": [
+        "Only supported approved appearance; no hidden extra targetable tiles."
+      ],
+      "must_not_happen": [
+        "Cloning real tails/passengers or silently claiming an unimplemented adapter passed."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-092",
+      "level": 5,
+      "title": "Borrowed terrain effect on occupied tiles",
+      "rule_refs": [
+        "§3.2",
+        "C01"
+      ],
+      "setup": "Appearance terrain helper natively bundles a terrain change and an occupant effect.",
+      "actions": [
+        "Run copied passive near an occupied tile."
+      ],
+      "expected_actual": [
+        "Eligible terrain output may occur; separate copied unit damage/freeze/ejection is suppressed; genuine underlying effects separate."
+      ],
+      "expected_visible": [
+        "Real terrain and truthful victim state."
+      ],
+      "must_not_happen": [
+        "Executing destructive compound routine before suppression."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-093",
+      "level": 6,
+      "title": "Smuggle standard",
+      "rule_refs": [
+        "§8"
+      ],
+      "setup": "Ready Mimic stands on fruit; commander owns harvesting tech and 2 stars.",
+      "actions": [
+        "Use unit-menu harvest."
+      ],
+      "expected_actual": [
+        "2 stars paid once; fruit removed once; population to native home city; both move/action spent."
+      ],
+      "expected_visible": [
+        "Normal resource/pop flight within view, no revealed-Mimic tag."
+      ],
+      "must_not_happen": [
+        "Local tile city substituted for home city."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-094",
+      "level": 6,
+      "title": "Immediate Smuggle after delivery",
+      "rule_refs": [
+        "§6",
+        "§8"
+      ],
+      "setup": "Fully ready Mimic A; ready Mimic B can exchange A onto fish.",
+      "actions": [
+        "B exchanges A; A Smuggles."
+      ],
+      "expected_actual": [
+        "B spends exchange; A pays 2 and both allowances; no start-turn-position requirement."
+      ],
+      "expected_visible": [
+        "Normal shared shuffle then harvesting; appearances maintained."
+      ],
+      "must_not_happen": [
+        "Blocking harvest because A arrived this turn."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-095",
+      "level": 6,
+      "title": "No Dash harvesting",
+      "rule_refs": [
+        "§8"
+      ],
+      "setup": "Mimic with a Dash-capable appearance can reach an animal.",
+      "actions": [
+        "Walk onto animal then attempt Smuggle."
+      ],
+      "expected_actual": [
+        "Movement spent; Smuggle unavailable even if a generic action remains."
+      ],
+      "expected_visible": [
+        "Private reason truthful."
+      ],
+      "must_not_happen": [
+        "Dash or copied appearance permitting harvest after ordinary move."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-096",
+      "level": 6,
+      "title": "Domestic transfer versus native tile harvest",
+      "rule_refs": [
+        "§8.1"
+      ],
+      "setup": "Mimic home city A stands on resource inside own city B.",
+      "actions": [
+        "In separate reset runs choose Mimic Smuggle or native tile/city harvest."
+      ],
+      "expected_actual": [
+        "Smuggle feeds A; native harvest feeds B; native real costs/actions each applied once."
+      ],
+      "expected_visible": [
+        "Appropriate destination animation and private home info."
+      ],
+      "must_not_happen": [
+        "Globally redirecting every harvest to selected unit home."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-097",
+      "level": 6,
+      "title": "Hostile and unclaimed resources",
+      "rule_refs": [
+        "§8"
+      ],
+      "setup": "Ready Mimic on resource in enemy territory, then unclaimed territory in reset test.",
+      "actions": [
+        "Smuggle with actual technology/funds."
+      ],
+      "expected_actual": [
+        "Both permitted; ordinary yield to home city; no subtraction of already-earned city population."
+      ],
+      "expected_visible": [
+        "Resource visibly disappears where observed; no naked model."
+      ],
+      "must_not_happen": [
+        "Reintroducing outside-borders-only or hostile-territory ban."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-098",
+      "level": 6,
+      "title": "Home reassignment after village",
+      "rule_refs": [
+        "§8"
+      ],
+      "setup": "Non-Rogue Mimic captures neutral village and native assignment changes.",
+      "actions": [
+        "On a later eligible action harvest a resource."
+      ],
+      "expected_actual": [
+        "Uses currently assigned new home city, not original recruitment city."
+      ],
+      "expected_visible": [
+        "Unit info and population path agree."
+      ],
+      "must_not_happen": [
+        "Independent immutable origin pointer."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-099",
+      "level": 6,
+      "title": "Lost home remains destination",
+      "rule_refs": [
+        "§8.2"
+      ],
+      "setup": "Native home city still exists but is now enemy-owned.",
+      "actions": [
+        "Eligible Mimic Smuggles."
+      ],
+      "expected_actual": [
+        "Commander pays; current native home receives population even enemy-owned."
+      ],
+      "expected_visible": [
+        "Truthful private destination; opponent owner gets native benefit."
+      ],
+      "must_not_happen": [
+        "Silently choosing friendly fallback or barring every enemy home."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-100",
+      "level": 6,
+      "title": "Other owner level-up is deferred",
+      "rule_refs": [
+        "§8.2",
+        "C09"
+      ],
+      "setup": "Smuggle would level an enemy home city.",
+      "actions": [
+        "Harvest then end turn until recipient owner begins."
+      ],
+      "expected_actual": [
+        "Population credited once; native queued choice for city owner on their next turn after required start ordering."
+      ],
+      "expected_visible": [
+        "Harvester never receives the enemy upgrade choice."
+      ],
+      "must_not_happen": [
+        "Duplicate reward or forcing opponent to act during harvester turn."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-101",
+      "level": 6,
+      "title": "Treaty resource distinction",
+      "rule_refs": [
+        "§8",
+        "§10"
+      ],
+      "setup": "P has treaty with Q; resource belongs Q.",
+      "actions": [
+        "Try owned Mimic harvest; then acquire third-party Rogue Mimic and try harvest in reset eligible state."
+      ],
+      "expected_actual": [
+        "Ordinary Mimic blocked; Rogue permitted; P treaty intact; Rogue home receives population."
+      ],
+      "expected_visible": [
+        "No invented war declaration."
+      ],
+      "must_not_happen": [
+        "Rogue counted ordinary ally or ordinary Mimic allowed treaty theft."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-102",
+      "level": 6,
+      "title": "Rogue Smuggle despite enemy home",
+      "rule_refs": [
+        "§8",
+        "§10"
+      ],
+      "setup": "P commands Q Rogue Mimic with home in Q city; resource eligible.",
+      "actions": [
+        "Smuggle."
+      ],
+      "expected_actual": [
+        "P pays, Q home grows; Rogue remains ownerless and spent."
+      ],
+      "expected_visible": [
+        "Map stays apparent with Rogue cue."
+      ],
+      "must_not_happen": [
+        "Population automatically awarded to P because P commanded."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-103",
+      "level": 6,
+      "title": "Missing home fails atomically",
+      "rule_refs": [
+        "§8.2",
+        "V06"
+      ],
+      "setup": "Instrument malformed Mimic with null home pointer and eligible resource.",
+      "actions": [
+        "Attempt harvest."
+      ],
+      "expected_actual": [
+        "No charge/removal/reward; diagnostic and native repair path invoked."
+      ],
+      "expected_visible": [
+        "No false successful population animation."
+      ],
+      "must_not_happen": [
+        "Inventing independent home or crashing after consuming resource."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-104",
+      "level": 6,
+      "title": "Starfish separate from Smuggle",
+      "rule_refs": [
+        "§8.2",
+        "C10"
+      ],
+      "setup": "Mimic Boat or Rogue on Starfish; commander lacks Navigation then gains it.",
+      "actions": [
+        "Attempt ordinary Starfish collection in each state."
+      ],
+      "expected_actual": [
+        "No Smuggle option; needs actual Navigation; allowed reward stars go commander, not home city."
+      ],
+      "expected_visible": [
+        "Native collection icon/reward, not population flight."
+      ],
+      "must_not_happen": [
+        "Propaganda substitutes Navigation for actual star reward."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-105",
+      "level": 6,
+      "title": "Cloak-form capture restriction",
+      "rule_refs": [
+        "§8",
+        "§9"
+      ],
+      "setup": "Cloak-shaped Mimic near an owned enemy city; Warrior-as-Cloak in separate native-valid fixture.",
+      "actions": [
+        "Try ordinary entry/capture."
+      ],
+      "expected_actual": [
+        "Mimic respects Cloak operative entry restrictions and lacks Infiltrate; genuine Warrior keeps actual Warrior rules."
+      ],
+      "expected_visible": [
+        "Apparent Cloak in both, actual private command differences."
+      ],
+      "must_not_happen": [
+        "Appearance granting genuine Infiltrate or banning Warrior actual legal entry."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-106",
+      "level": 7,
+      "title": "Single Subvert turn",
+      "rule_refs": [
+        "§10.1",
+        "§10.2"
+      ],
+      "setup": "P Spy detects Q ordinary unit; Q unit had spent actions on Q previous turn.",
+      "actions": [
+        "P Subverts, moves and uses allowed genuine action."
+      ],
+      "expected_actual": [
+        "P receives one ordinary available allowance for P turn; original Q turn flags do not make it permanently exhausted."
+      ],
+      "expected_visible": [
+        "P sees actual/apparent info only after commit; Q sees Rogue cue."
+      ],
+      "must_not_happen": [
+        "No usable allowance or repeated fresh allowance on every lookup."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-107",
+      "level": 7,
+      "title": "One acquisition despite reconstruction",
+      "rule_refs": [
+        "§10.2"
+      ],
+      "setup": "P acquired Q Raft and spent action; upgrades/transport can replace object.",
+      "actions": [
+        "Reconstruct through permitted upgrade/save and attempt a second Subvert this P turn."
+      ],
+      "expected_actual": [
+        "Stable logical ID remains marked acquired; no new allowance."
+      ],
+      "expected_visible": [
+        "No second eligible target cue created by new object ID."
+      ],
+      "must_not_happen": [
+        "Keying acquisition only to transient native object."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-108",
+      "level": 7,
+      "title": "Rogue can attack any side",
+      "rule_refs": [
+        "§10.3"
+      ],
+      "setup": "P commands Q Rogue armed unit with an eligible target of P, Q, R or another Rogue in reset fixtures.",
+      "actions": [
+        "Attack each permitted target."
+      ],
+      "expected_actual": [
+        "All combat hostilities allowed; native real weapons/retaliation/range/status apply."
+      ],
+      "expected_visible": [
+        "Truthful Rogue visuals and actual damage."
+      ],
+      "must_not_happen": [
+        "Temporary command makes P units immune or grants Mimic a weapon."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-109",
+      "level": 7,
+      "title": "Treaty deniability",
+      "rule_refs": [
+        "§10.3"
+      ],
+      "setup": "P allied Q; R hostile.",
+      "actions": [
+        "P subverts R armed unit and attacks Q unit."
+      ],
+      "expected_actual": [
+        "Attack allowed; P–Q treaty persists; casualties real."
+      ],
+      "expected_visible": [
+        "Rogue indicator explains factionless action; no automatic treaty break."
+      ],
+      "must_not_happen": [
+        "P directly subverting ordinary Q unit or standard attack treaty hook firing."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-110",
+      "level": 7,
+      "title": "Rogue cannot capture or explore",
+      "rule_refs": [
+        "§10.3"
+      ],
+      "setup": "P commands Q Rogue already on village/ruin/owned city in reset fixtures.",
+      "actions": [
+        "Open actions and try alternate capture/explore commands."
+      ],
+      "expected_actual": [
+        "Village/city capture and ruins all denied; siege on city permitted."
+      ],
+      "expected_visible": [
+        "No active capture button or fake reward."
+      ],
+      "must_not_happen": [
+        "Using ordinary commander ownership to authorize capture."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-111",
+      "level": 7,
+      "title": "Rogue cannot disband",
+      "rule_refs": [
+        "§10.3"
+      ],
+      "setup": "P commands expensive Q Rogue.",
+      "actions": [
+        "Attempt disband via menu and direct command."
+      ],
+      "expected_actual": [
+        "Denied; no refund/removal."
+      ],
+      "expected_visible": [
+        "Private menu excludes command."
+      ],
+      "must_not_happen": [
+        "Selling borrowed unit through underlying-form mode."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-112",
+      "level": 7,
+      "title": "Convert borrowed target permanently",
+      "rule_refs": [
+        "§10.4"
+      ],
+      "setup": "P genuine Mind Bender adjacent P-commanded Q Rogue.",
+      "actions": [
+        "Convert Rogue."
+      ],
+      "expected_actual": [
+        "Permanent owner P; pending Q return removed; flags/history preserved; native support reassigned once."
+      ],
+      "expected_visible": [
+        "P full info; Q ordinary apparent enemy info after conversion."
+      ],
+      "must_not_happen": [
+        "Restoring Q ownership at turn boundary despite conversion."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-113",
+      "level": 7,
+      "title": "Rogue Mind Bender converts another Rogue",
+      "rule_refs": [
+        "§10.4"
+      ],
+      "setup": "P commands two Q Rogues, including Mind Bender; target moved beside it.",
+      "actions": [
+        "Use Rogue Mind Bender Convert."
+      ],
+      "expected_actual": [
+        "Target becomes permanently P, retaining spent movement; Mind Bender remains due Q return and spends its action."
+      ],
+      "expected_visible": [
+        "Source specialist reveal; target actual/app info for P."
+      ],
+      "must_not_happen": [
+        "Rejecting target as friendly or converting it to Q."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-114",
+      "level": 7,
+      "title": "Support excludes all Rogue recipients",
+      "rule_refs": [
+        "§4.2",
+        "§10"
+      ],
+      "setup": "P genuine and Rogue support casters; owned P unit, ordinary Q unit and P-commanded Rogue nearby.",
+      "actions": [
+        "Real/feigned Heal or Swarm in separate fixtures."
+      ],
+      "expected_actual": [
+        "Only eligible permanently P-owned recipient benefits; no Rogue or ordinary enemy, regardless of caster."
+      ],
+      "expected_visible": [
+        "Public support otherwise convincing; private actual outcomes precise."
+      ],
+      "must_not_happen": [
+        "Old Rogue-healer affects-everyone rule."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-115",
+      "level": 7,
+      "title": "Conversion unlocks support not actions",
+      "rule_refs": [
+        "§10.4"
+      ],
+      "setup": "P-commanded Rogue is exhausted, then converted permanently to P.",
+      "actions": [
+        "Heal it with another P Mind Bender and attempt its attack."
+      ],
+      "expected_actual": [
+        "Support now allowed; own exhausted attack remains unavailable."
+      ],
+      "expected_visible": [
+        "Private readiness exact; no misleading action refresh."
+      ],
+      "must_not_happen": [
+        "Conflating support friendship with a new unit turn."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-116",
+      "level": 7,
+      "title": "Paid upgrade on borrowed ship",
+      "rule_refs": [
+        "§7",
+        "§10"
+      ],
+      "setup": "P commands Q actual Raft in P territory, P has upgrade tech/stars.",
+      "actions": [
+        "Pay for genuine upgrade."
+      ],
+      "expected_actual": [
+        "P pays; actual upgrade persists; current mask preserved if independent; Q gets improved ship on return."
+      ],
+      "expected_visible": [
+        "P actual/private output truthful; public independent form stays as specified."
+      ],
+      "must_not_happen": [
+        "Using Q stars/tech or refunding upgrade automatically at return."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-117",
+      "level": 7,
+      "title": "Income before return",
+      "rule_refs": [
+        "§10.5"
+      ],
+      "setup": "Q city occupied by its own former unit, now P-commanded Rogue.",
+      "actions": [
+        "End P turn; begin Q turn."
+      ],
+      "expected_actual": [
+        "City income computed under Rogue siege; then surviving unit returns Q; normal new action allowance."
+      ],
+      "expected_visible": [
+        "No separate Disrupted tag; Q can use returned accessible unit."
+      ],
+      "must_not_happen": [
+        "Return before income or borrowed turn acting as stun."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-118",
+      "level": 7,
+      "title": "Return beneath fog",
+      "rule_refs": [
+        "§10.5",
+        "§12"
+      ],
+      "setup": "Same due-return Rogue, tile remains Blackout-covered for Q.",
+      "actions": [
+        "Begin Q turn and restore it."
+      ],
+      "expected_actual": [
+        "Unit becomes Q and fresh by native turn rules, but cannot be selected/commanded until discovery."
+      ],
+      "expected_visible": [
+        "Q still sees fog, no private badge/control bypass."
+      ],
+      "must_not_happen": [
+        "Ownership restoration self-clears the tile."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-119",
+      "level": 7,
+      "title": "Multiplayer sequential acquisition",
+      "rule_refs": [
+        "§10.5",
+        "C11"
+      ],
+      "setup": "Q unit was Subverted by P; R has intervening turn before Q.",
+      "actions": [
+        "R legitimately Subverts it and uses it, then Q begins turn."
+      ],
+      "expected_actual": [
+        "One acquisition for each P and R turn; original return owner remains Q; no nested stack; Q gets normal return."
+      ],
+      "expected_visible": [
+        "Public Rogue status and entitled info per commander."
+      ],
+      "must_not_happen": [
+        "Treating P as new return owner or denying R solely because P used it."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-120",
+      "level": 7,
+      "title": "No surviving return after death",
+      "rule_refs": [
+        "§10.5"
+      ],
+      "setup": "Q Rogue is killed while commanded before Q turn.",
+      "actions": [
+        "Begin Q turn."
+      ],
+      "expected_actual": [
+        "No unit recreated; support reservation removed according to death once."
+      ],
+      "expected_visible": [
+        "No phantom return animation."
+      ],
+      "must_not_happen": [
+        "Restoration queue resurrecting dead object."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-121",
+      "level": 7,
+      "title": "No passive support-slot exploit",
+      "rule_refs": [
+        "§10.5",
+        "C11"
+      ],
+      "setup": "Full-support Q city has one unit Subverted.",
+      "actions": [
+        "Inspect capacity and try recruit/defeat calculations before return."
+      ],
+      "expected_actual": [
+        "Native support reservation remains; temporary neutrality alone causes no free slot or elimination."
+      ],
+      "expected_visible": [
+        "Public/private support consistent with authorized data."
+      ],
+      "must_not_happen": [
+        "owner=null interpreted as permanent removal."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-122",
+      "level": 7,
+      "title": "Owner eliminated while Rogue survives elsewhere",
+      "rule_refs": [
+        "C11",
+        "V08"
+      ],
+      "setup": "Q is actually eliminated/resigns for unrelated valid reason before restoration.",
+      "actions": [
+        "Run native elimination cleanup."
+      ],
+      "expected_actual": [
+        "Reserved Rogue follows specified native permanent-removal cleanup, no owner resurrection/orphan turn."
+      ],
+      "expected_visible": [
+        "No later ghost return to defeated player."
+      ],
+      "must_not_happen": [
+        "Treating missing return owner as a new neutral player."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-123",
+      "level": 7,
+      "title": "Rogue ZOC and road context",
+      "rule_refs": [
+        "C12",
+        "§10.6"
+      ],
+      "setup": "P-commanded Rogue on road network and near P/Q units; native distance fixture.",
+      "actions": [
+        "Request movement."
+      ],
+      "expected_actual": [
+        "Command-context tech/road privileges apply; Rogue is nonfriendly for ZOC; actual Sneak still bypasses normally."
+      ],
+      "expected_visible": [
+        "Controller movement highlight matches authoritative validator."
+      ],
+      "must_not_happen": [
+        "Shared command automatically disabling ZOC or borrowing original owner tech."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-124",
+      "level": 8,
+      "title": "Two-node extended reach",
+      "rule_refs": [
+        "§11"
+      ],
+      "setup": "P Spies at (0,0) and (2,0); detected target at (4,0), native straight-line range fixture.",
+      "actions": [
+        "Select rear Spy and Subvert target."
+      ],
+      "expected_actual": [
+        "Connected reach valid; rear spends action; endpoint remains unchanged."
+      ],
+      "expected_visible": [
+        "One target selection, no relay menu."
+      ],
+      "must_not_happen": [
+        "Only selected Spy radius highlighted."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-125",
+      "level": 8,
+      "title": "Movement immediately changes network",
+      "rule_refs": [
+        "§11"
+      ],
+      "setup": "Spy moves into/out of link range while retaining Dash action.",
+      "actions": [
+        "Reopen target highlights and cast."
+      ],
+      "expected_actual": [
+        "Topology matches current positions, moved nodes valid."
+      ],
+      "expected_visible": [
+        "Targets update; no stale reachable cells."
+      ],
+      "must_not_happen": [
+        "Stationary-only node rule."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-126",
+      "level": 8,
+      "title": "Exhausted node relays",
+      "rule_refs": [
+        "§11"
+      ],
+      "setup": "Middle Spy spent its own action, connects rear to front.",
+      "actions": [
+        "Ready rear Spy uses network."
+      ],
+      "expected_actual": [
+        "Spent middle remains passive node; no second action consumed."
+      ],
+      "expected_visible": [
+        "No public emission at middle."
+      ],
+      "must_not_happen": [
+        "Deleting every exhausted node from graph."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-127",
+      "level": 8,
+      "title": "Frozen accessible node",
+      "rule_refs": [
+        "§11",
+        "C15"
+      ],
+      "setup": "Middle Spy frozen but tile accessible; rear ready.",
+      "actions": [
+        "Attempt own action on middle and network action from rear."
+      ],
+      "expected_actual": [
+        "Middle cannot violate its freeze; passive relay remains valid under C15."
+      ],
+      "expected_visible": [
+        "Private ready/frozen indicators accurate; no enemy readiness leak."
+      ],
+      "must_not_happen": [
+        "Treating passive link as movement."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-128",
+      "level": 8,
+      "title": "Real Spy wearing another appearance",
+      "rule_refs": [
+        "§11"
+      ],
+      "setup": "Actual forward Spy disguised as Warrior; apparent Spy-looking Mimic elsewhere.",
+      "actions": [
+        "Compute network."
+      ],
+      "expected_actual": [
+        "Real disguised Spy participates; Mimic never does."
+      ],
+      "expected_visible": [
+        "Enemy sees forms, not actual network proof."
+      ],
+      "must_not_happen": [
+        "Graph based on apparent type."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-129",
+      "level": 8,
+      "title": "Subvert real Spy adds local Scout",
+      "rule_refs": [
+        "§11"
+      ],
+      "setup": "Enemy Spy acquisition reveals further terrain containing another Spy.",
+      "actions": [
+        "Subvert first, inspect newly discovered target and network."
+      ],
+      "expected_actual": [
+        "New actual Scout source reveals its proper local footprint; acquired Spy joins network; no global map theft."
+      ],
+      "expected_visible": [
+        "P sees only legitimately discovered terrain."
+      ],
+      "must_not_happen": [
+        "Original enemy entire explored mask copied."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-130",
+      "level": 8,
+      "title": "Fake Spy interrupts expected chain",
+      "rule_refs": [
+        "§10",
+        "§11"
+      ],
+      "setup": "Enemy apparent Spy is actually Mimic.",
+      "actions": [
+        "Commit Subvert and open its menu."
+      ],
+      "expected_actual": [
+        "Source spends action; target actual Mimic; may give copied Scout but no Subvert/Relay."
+      ],
+      "expected_visible": [
+        "P learns private truth after commitment, others keep appearance/Rogue cue."
+      ],
+      "must_not_happen": [
+        "Target highlight or pre-commit menu reveals fake."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-131",
+      "level": 8,
+      "title": "Recursive Spy chain",
+      "rule_refs": [
+        "§10.2",
+        "§11"
+      ],
+      "setup": "P Spy reaches enemy Spy B; B reaches enemy Spy C; C reaches Knight.",
+      "actions": [
+        "Subvert B, then C via B, then Knight via C."
+      ],
+      "expected_actual": [
+        "Each initiator spends its action; all acquired once; Knight uses one native allowance."
+      ],
+      "expected_visible": [
+        "Public Rogue changes as detected; no chain cap."
+      ],
+      "must_not_happen": [
+        "Refreshed B or C on later selection."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-132",
+      "level": 8,
+      "title": "Fresh rear action through spent forward Rogue",
+      "rule_refs": [
+        "§11"
+      ],
+      "setup": "Rogue Spy B already spent Subverting C; another owned ready Spy connects to B.",
+      "actions": [
+        "Owned Spy uses its own action through network at forward target."
+      ],
+      "expected_actual": [
+        "Allowed if graph/range current; does not refresh B."
+      ],
+      "expected_visible": [
+        "Initiator reveal/emission only."
+      ],
+      "must_not_happen": [
+        "Conflating exhausted relay with unavailable route."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-133",
+      "level": 8,
+      "title": "Network cycle",
+      "rule_refs": [
+        "§11"
+      ],
+      "setup": "Three or more real nodes form cycle, one target in overlapping ranges.",
+      "actions": [
+        "Select action and commit once."
+      ],
+      "expected_actual": [
+        "Target highlighted once, action/effect charged once, finite traversal."
+      ],
+      "expected_visible": [
+        "No duplicated bullseyes/effects."
+      ],
+      "must_not_happen": [
+        "Recursive graph loop or multiple charges."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-134",
+      "level": 8,
+      "title": "Hidden node breaks network",
+      "rule_refs": [
+        "§11",
+        "§12"
+      ],
+      "setup": "Opponent covers bridge-node tile for P with Blackout.",
+      "actions": [
+        "P selects rear Spy."
+      ],
+      "expected_actual": [
+        "Hidden node excluded; disconnected reach disappears; remembered positions cannot authorize."
+      ],
+      "expected_visible": [
+        "No control via old selection."
+      ],
+      "must_not_happen": [
+        "Allowing fogged node to relay."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-135",
+      "level": 8,
+      "title": "Rediscovered node reconnects without own action",
+      "rule_refs": [
+        "§11",
+        "§12"
+      ],
+      "setup": "Previous fixture; P moves another source to reveal bridge tile.",
+      "actions": [
+        "Recompute network then use ready rear Spy."
+      ],
+      "expected_actual": [
+        "Bridge returns as passive relay, no bridge action spent by recovery."
+      ],
+      "expected_visible": [
+        "Highlights reconnect promptly."
+      ],
+      "must_not_happen": [
+        "Permanent disconnection or rescued node charged discovery action."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-136",
+      "level": 8,
+      "title": "Initiator emits at long range",
+      "rule_refs": [
+        "§11",
+        "§14"
+      ],
+      "setup": "Disguised rear Spy uses connected remote node for Blackout beyond rear native radius.",
+      "actions": [
+        "Commit Blackout."
+      ],
+      "expected_actual": [
+        "Rear reveals and spends action; passive nodes keep masks/flags."
+      ],
+      "expected_visible": [
+        "Smoke bomb originates rear, clipped per observer; no intermediate route traced."
+      ],
+      "must_not_happen": [
+        "Final relay throws/reveals or extra endpoint chooser."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-137",
+      "level": 8,
+      "title": "Post-selection topology change revalidates",
+      "rule_refs": [
+        "§11",
+        "§15"
+      ],
+      "setup": "Network target selected but a state update removes relay before commitment in instrumented fixture.",
+      "actions": [
+        "Commit stale command."
+      ],
+      "expected_actual": [
+        "Reject atomically or refresh selection before any charge/effect."
+      ],
+      "expected_visible": [
+        "No false hit animation or private state leak."
+      ],
+      "must_not_happen": [
+        "Using cached reach despite dead/covered node."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-138",
+      "level": 8,
+      "title": "No continuing tether",
+      "rule_refs": [
+        "§10.1"
+      ],
+      "setup": "P acquired unit, then loses network path/source and moves target out of all Spy ranges.",
+      "actions": [
+        "Use remaining legal target actions during P turn."
+      ],
+      "expected_actual": [
+        "Control persists to turn end; no range-based release."
+      ],
+      "expected_visible": [
+        "Rogue status remains."
+      ],
+      "must_not_happen": [
+        "Destroying a relay returning every acquired unit instantly."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-139",
+      "level": 9,
+      "title": "Blackout one tile for every other player",
+      "rule_refs": [
+        "§12.1",
+        "C16"
+      ],
+      "setup": "P Spy can reach a tile; Q/R have different prior visibility; Q may have treaty with P.",
+      "actions": [
+        "Cast Blackout."
+      ],
+      "expected_actual": [
+        "One tile becomes fog for Q/R/all other players; P mask unchanged; no treaty break under C16."
+      ],
+      "expected_visible": [
+        "P sees cast but no residual mark; others see ordinary fog."
+      ],
+      "must_not_happen": [
+        "Opponent chooser, area cloud, or timer status."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-140",
+      "level": 9,
+      "title": "Already fogged target gives no feedback",
+      "rule_refs": [
+        "§12.1"
+      ],
+      "setup": "Two identical fixtures except Q can see target in one and not other.",
+      "actions": [
+        "P without Propaganda opens targeter and casts."
+      ],
+      "expected_actual": [
+        "Both valid and cost same one action; no additional effect needed in already-fogged mask."
+      ],
+      "expected_visible": [
+        "P-visible target highlights/cast/result identical."
+      ],
+      "must_not_happen": [
+        "Success tooltip or disabled tile reveals Q prior mask."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-141",
+      "level": 9,
+      "title": "Caster-unexplored target",
+      "rule_refs": [
+        "§12.1"
+      ],
+      "setup": "Tile lies in network range but P own fog.",
+      "actions": [
+        "Blackout target tile."
+      ],
+      "expected_actual": [
+        "Allowed in bounds; other masks changed; P own tile remains fogged."
+      ],
+      "expected_visible": [
+        "No discovery through targeting or projectile camera."
+      ],
+      "must_not_happen": [
+        "Caster sight prerequisite or free exploration."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-142",
+      "level": 9,
+      "title": "Covered unit/city interfaces all blocked",
+      "rule_refs": [
+        "§12.2"
+      ],
+      "setup": "P unit/city tile Blackout-covered for P; previously selected unit.",
+      "actions": [
+        "Try map, hotkey, city list, unit cycle, stored command, roads/buildings and relay."
+      ],
+      "expected_actual": [
+        "All tile manipulation denied; unit/city still physically present; income native absent siege."
+      ],
+      "expected_visible": [
+        "Ordinary fog, no private badge/control bypass."
+      ],
+      "must_not_happen": [
+        "Only mouse clicking disabled."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-143",
+      "level": 9,
+      "title": "Trapped Scout cannot self-reveal",
+      "rule_refs": [
+        "§12.3"
+      ],
+      "setup": "Covered P Scout/Spy, adjacent static P unit at turn start.",
+      "actions": [
+        "Begin P turn and refresh UI."
+      ],
+      "expected_actual": [
+        "Fog persists; neither self Scout nor static placement discovers."
+      ],
+      "expected_visible": [
+        "No automatic cloud opening."
+      ],
+      "must_not_happen": [
+        "Global owned-unit reveal on turn start."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-144",
+      "level": 9,
+      "title": "Nearby movement clears covered tile",
+      "rule_refs": [
+        "§12.3"
+      ],
+      "setup": "Previous fixture with movable adjacent accessible unit.",
+      "actions": [
+        "Move that other unit within a footprint covering trapped tile."
+      ],
+      "expected_actual": [
+        "P discovers tile; trapped unit regains existing allowance; no automatic spent action on rescue."
+      ],
+      "expected_visible": [
+        "Ordinary reveal animation."
+      ],
+      "must_not_happen": [
+        "Requiring rescuer initially be outside range or charging rescued unit."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-145",
+      "level": 9,
+      "title": "Recruitment/borders/Explorer discovery",
+      "rule_refs": [
+        "§12.3"
+      ],
+      "setup": "Covered tile within legal native footprint of a nearby new recruit, border growth or Explorer move in reset fixtures.",
+      "actions": [
+        "Trigger external discovery source."
+      ],
+      "expected_actual": [
+        "That source reveals for its entitled player; no other player automatic clearance."
+      ],
+      "expected_visible": [
+        "Ordinary exploration cues."
+      ],
+      "must_not_happen": [
+        "Only walking implemented despite approved alternative sources."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-146",
+      "level": 9,
+      "title": "Conversion/Subvert discovery",
+      "rule_refs": [
+        "§12.3"
+      ],
+      "setup": "P acquires accessible source with real Scout near a P-fogged tile.",
+      "actions": [
+        "Commit acquisition."
+      ],
+      "expected_actual": [
+        "New actual local source can reveal surrounding tile; no global map transfer."
+      ],
+      "expected_visible": [
+        "New visible region is native local footprint."
+      ],
+      "must_not_happen": [
+        "Acquisition rejected as mere UI refresh or giving original owner new sight."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-147",
+      "level": 9,
+      "title": "Exchange discovery",
+      "rule_refs": [
+        "§6",
+        "§12.3"
+      ],
+      "setup": "P has accessible ready Mimic and actual sight-capable partner near covered region.",
+      "actions": [
+        "Exchange partner to legal visible endpoint whose true sight reaches covered tile."
+      ],
+      "expected_actual": [
+        "New actual sight reveals; no movement passives/actions charged to partner."
+      ],
+      "expected_visible": [
+        "Normal explored area, no apparent Scout bonus for genuine non-Scout disguise."
+      ],
+      "must_not_happen": [
+        "Using apparent genuine-unit vision or full movement callback."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-148",
+      "level": 9,
+      "title": "Hidden attacker no retaliation",
+      "rule_refs": [
+        "§12.4"
+      ],
+      "setup": "P Warrior visible to P, its tile fogged for Q; adjacent Q Warrior visible to P, Q lacks attacker detection.",
+      "actions": [
+        "P attacks Q Warrior."
+      ],
+      "expected_actual": [
+        "Actual attack damage; no Q retaliation; Q fog remains."
+      ],
+      "expected_visible": [
+        "P source may reveal disguise but Q tile access unchanged."
+      ],
+      "must_not_happen": [
+        "Combat-only discovery granting immediate retaliation."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-149",
+      "level": 9,
+      "title": "Covered defender can retaliate",
+      "rule_refs": [
+        "§12.4"
+      ],
+      "setup": "Q defender tile fogged for Q but visible to P; Q sees P attacker tile.",
+      "actions": [
+        "P attacks defender."
+      ],
+      "expected_actual": [
+        "Normal true retaliation allowed if range/status/survival permit; Q defender tile stays fogged."
+      ],
+      "expected_visible": [
+        "True combat damage; no new manual Q control."
+      ],
+      "must_not_happen": [
+        "Treating uncommandable defender as automatically unable to retaliate."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-150",
+      "level": 9,
+      "title": "Both inaccessible positions",
+      "rule_refs": [
+        "§12.4"
+      ],
+      "setup": "Q cannot access its defender tile or see P attacker; P can see both.",
+      "actions": [
+        "P attacks."
+      ],
+      "expected_actual": [
+        "No retaliation because attacker unseen; both Q fog states persist absent independent discovery."
+      ],
+      "expected_visible": [
+        "No fog popping from hit effects."
+      ],
+      "must_not_happen": [
+        "Assuming automatic defender vision repairs owner fog."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-151",
+      "level": 9,
+      "title": "Several attacks through persistent fog",
+      "rule_refs": [
+        "§12.4"
+      ],
+      "setup": "Genuine P attacker has permitted native follow-up sequence; attacker positions remain unseen to Q.",
+      "actions": [
+        "Perform sequence, checking actual sight each strike."
+      ],
+      "expected_actual": [
+        "No automatic one-strike expiration; no retaliation where Q still cannot see attacker."
+      ],
+      "expected_visible": [
+        "True damages, no fake damage; any independent real discovery changes later checks."
+      ],
+      "must_not_happen": [
+        "Hidden immunity persists after discovery or automatically ends without discovery."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-152",
+      "level": 9,
+      "title": "Splash through fog",
+      "rule_refs": [
+        "§12.4",
+        "§4"
+      ],
+      "setup": "Actual splash source can legally act; secondary target tile hidden from attacker or target owner.",
+      "actions": [
+        "Resolve true splash footprint."
+      ],
+      "expected_actual": [
+        "Native actual splash hits valid occupants; positive damage reveals genuine victim internally/kills Mimic."
+      ],
+      "expected_visible": [
+        "Only authorized victim effects; fog not removed to display poof."
+      ],
+      "must_not_happen": [
+        "Fog grants damage immunity or splash reveals all hidden tiles."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-153",
+      "level": 9,
+      "title": "Independent players uncover independently",
+      "rule_refs": [
+        "§12.3",
+        "§13"
+      ],
+      "setup": "P Blackout target applied to Q and R.",
+      "actions": [
+        "Q reveals it through movement; R takes no reveal action."
+      ],
+      "expected_actual": [
+        "Q mask clears; R remains fogged."
+      ],
+      "expected_visible": [
+        "Propaganda shows different selected masks."
+      ],
+      "must_not_happen": [
+        "One shared fog flag for all observers."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-154",
+      "level": 9,
+      "title": "Propaganda selection UI",
+      "rule_refs": [
+        "§13"
+      ],
+      "setup": "P owns Propaganda; Q unit and R city visible; own unexplored area present.",
+      "actions": [
+        "Select Q unit then R city then deselect."
+      ],
+      "expected_actual": [
+        "Overlay follows selected faction and only P-visible tiles; no cost/Spy needed."
+      ],
+      "expected_visible": [
+        "Translucent fog over selected opponent unseen tiles; no information inside P own fog."
+      ],
+      "must_not_happen": [
+        "Map button/opponent picker or global opponent exploration leak."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-155",
+      "level": 9,
+      "title": "Propaganda on Rogue and no authenticity",
+      "rule_refs": [
+        "§13"
+      ],
+      "setup": "P selects Q-origin Rogue now commanded by another side; unit disguised.",
+      "actions": [
+        "Inspect overlay."
+      ],
+      "expected_actual": [
+        "Uses remembered Q mask; does not report true type or Cloak detection."
+      ],
+      "expected_visible": [
+        "Apparent unit info plus appropriate Rogue cue."
+      ],
+      "must_not_happen": [
+        "Using temporary commander or neutral empty mask."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-156",
+      "level": 9,
+      "title": "Isolated fog lockout remains until discovery",
+      "rule_refs": [
+        "§12.2"
+      ],
+      "setup": "Only isolated city and its garrison are covered for owner; no immediate rescue source.",
+      "actions": [
+        "Advance owner turn without a legitimate reveal event."
+      ],
+      "expected_actual": [
+        "City income still normal absent siege; no production/unit orders; fog can persist indefinitely."
+      ],
+      "expected_visible": [
+        "Ordinary fog, no timer or auto-rescue."
+      ],
+      "must_not_happen": [
+        "Adding unapproved immunity, expiry or commandable hidden city."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-157",
+      "level": 10,
+      "title": "Attack, extract and permanently convert",
+      "rule_refs": [
+        "§6",
+        "§10"
+      ],
+      "setup": "P controls Q Rogue Giant; P ready Mind Bender and ready Mimic line can place Giant adjacent to it.",
+      "actions": [
+        "Attack Q unit with borrowed Giant.",
+        "Use Mimics to move spent Giant to P Mind Bender.",
+        "Convert Giant."
+      ],
+      "expected_actual": [
+        "Real damage once; Mimic initiators spend actions; Giant permanently P, still spent; no Q return."
+      ],
+      "expected_visible": [
+        "Attacking Giant reveals itself; later masks may change normally; P actual info correct."
+      ],
+      "must_not_happen": [
+        "Extraction refreshes Giant or conversion blocked by temporary command friendship."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-158",
+      "level": 10,
+      "title": "Same chain but fake continuation",
+      "rule_refs": [
+        "§6",
+        "§10"
+      ],
+      "setup": "P borrowed Giant cannot be converted; multiple apparent Giant Mimics.",
+      "actions": [
+        "Attack, then exchange borrowed Giant halfway down line.",
+        "Continue visible operations using only Mimics.",
+        "Begin Q turn."
+      ],
+      "expected_actual": [
+        "Giant returns to Q after income wherever actual chain stopped; Mimics remain P."
+      ],
+      "expected_visible": [
+        "Q command restoration distinguishes its unit; no persistent promise of post-return bluff."
+      ],
+      "must_not_happen": [
+        "Returning wrong apparent Giant or propagating owner through presentation chain."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-159",
+      "level": 10,
+      "title": "Coastal delivery, fake upgrade, real weapon",
+      "rule_refs": [
+        "§6",
+        "§7",
+        "§4"
+      ],
+      "setup": "P ready true Giant and naval Mimics; real research/Propaganda eligible.",
+      "actions": [
+        "Exchange Giant into water.",
+        "Give actual Juggernaut Raft appearance.",
+        "Feign Bomber when native timing allows.",
+        "Use remaining genuine movement/attack as allowed."
+      ],
+      "expected_actual": [
+        "No exchange splash; true movement uses Juggernaut speed/splash; genuine attack strips mask; no Bomber weapon."
+      ],
+      "expected_visible": [
+        "Raft/Bomber source animation until actual active reveal; victim damage true."
+      ],
+      "must_not_happen": [
+        "Embark exhaustion on delivery, borrowed weapons or extra action from fake upgrade."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-160",
+      "level": 10,
+      "title": "Real and fake upgrade paths survive same-type collision",
+      "rule_refs": [
+        "§2",
+        "§7"
+      ],
+      "setup": "P actual Raft/apparent Raft; native timing fixture and paid tech.",
+      "actions": [
+        "Feign Scout.",
+        "Buy genuine Scout when eligible, making actual/apparent names equal.",
+        "Later receive Raft appearance and feign Bomber."
+      ],
+      "expected_actual": [
+        "Independence persists through equal-type stage; final actual Scout/apparent Bomber; actual payment/flags correct."
+      ],
+      "expected_visible": [
+        "No map truth leak when fields happen to match."
+      ],
+      "must_not_happen": [
+        "Independent flag discarded and later Appearance commands lost."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-161",
+      "level": 10,
+      "title": "Enemy network infiltration with own backline action",
+      "rule_refs": [
+        "§10",
+        "§11"
+      ],
+      "setup": "P rear Spy can reach Q Spy B; B Scout discovers C; another P ready Spy connects after acquisition.",
+      "actions": [
+        "Acquire B, then C.",
+        "Use remaining P Spy action through newly acquired network on a valuable Q unit."
+      ],
+      "expected_actual": [
+        "Each acquisition/action once; spent B/C may relay; reach follows actual current graph."
+      ],
+      "expected_visible": [
+        "Only legitimately gained local sight and public Rogue events; no enemy network auto-access."
+      ],
+      "must_not_happen": [
+        "Taking one Spy automatically gives every enemy relay or generating unlimited commands."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-162",
+      "level": 10,
+      "title": "Invisible Rogue Cloak infiltrates commander city",
+      "rule_refs": [
+        "§9",
+        "§15"
+      ],
+      "setup": "P Subverts visible genuine Q Cloak; P has invisible Cloak-shaped Mimic and an eligible P city.",
+      "actions": [
+        "Disguise Rogue Cloak with invisible snapshot.",
+        "Use genuine Infiltrate on P own city."
+      ],
+      "expected_actual": [
+        "Action available before commit; true hidden eligibility satisfied; source reveals then committed action executes; P receives Daggers/stolen income; native city consequences."
+      ],
+      "expected_visible": [
+        "No hidden endpoint disclosure from shuffle; genuine ability visible where entitled."
+      ],
+      "must_not_happen": [
+        "Reveal invalidates already-committed Infiltrate or reward goes Q."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-163",
+      "level": 10,
+      "title": "Rogue support after permanent conversion",
+      "rule_refs": [
+        "§4",
+        "§10"
+      ],
+      "setup": "P commands Rogue healer H and Rogue wounded target T; own eligible unit U nearby.",
+      "actions": [
+        "Attempt Heal/feint on T and U in reset branches.",
+        "Convert T permanently using another Mind Bender.",
+        "Heal T with ready H."
+      ],
+      "expected_actual": [
+        "Before conversion only U eligible; after conversion T eligible; no target action refresh; no Rogue-heal-all exception."
+      ],
+      "expected_visible": [
+        "Private true/apparent changes and source reveal versus feint correctly separated."
+      ],
+      "must_not_happen": [
+        "Caster neutrality changes support recipient ownership test."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-164",
+      "level": 10,
+      "title": "Rogue Knight sacrifices owned Mimics",
+      "rule_refs": [
+        "§10",
+        "C14"
+      ],
+      "setup": "P borrowed Q Knight and P Mimics form a legal kill path toward Q target.",
+      "actions": [
+        "Attack P Mimics then continue native Persist sequence onto Q target."
+      ],
+      "expected_actual": [
+        "Real one-HP deaths and genuine follow-ups; no newly invented score bonus for own sacrifices; action ledger not refreshed."
+      ],
+      "expected_visible": [
+        "Truthful damage/deaths; enemies never see naked Mimic survivors."
+      ],
+      "must_not_happen": [
+        "Blocking own-side targets or giving fake kills without casualties."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-165",
+      "level": 10,
+      "title": "Rogue siege plus Blackout at return",
+      "rule_refs": [
+        "§10.5",
+        "§12"
+      ],
+      "setup": "P borrowed Q city garrison remains in Q city; P Blackouts that tile for Q.",
+      "actions": [
+        "End P turn; start Q."
+      ],
+      "expected_actual": [
+        "Income denied while Rogue siege; then return/fresh allowance; Q still cannot command under fog; no extra city status."
+      ],
+      "expected_visible": [
+        "Q sees ordinary fog, not return clearing tile."
+      ],
+      "must_not_happen": [
+        "Return-before-income or new Blackout Disrupted income penalty on later clear turns."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-166",
+      "level": 10,
+      "title": "Fogged relay rescue and counter-Blackout",
+      "rule_refs": [
+        "§11",
+        "§12"
+      ],
+      "setup": "P network cut by Q Blackout; another P source can move to reveal its middle Spy.",
+      "actions": [
+        "Move rescuer.",
+        "Use a ready Spy through restored network to Blackout Q forward Spy."
+      ],
+      "expected_actual": [
+        "Middle no action cost for rescue; P initiator spends; Q node disabled until Q discovery."
+      ],
+      "expected_visible": [
+        "Each player sees own ordinary masks; no global network trace."
+      ],
+      "must_not_happen": [
+        "Automatically restoring every affected faction or exhausting recovered node."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-167",
+      "level": 10,
+      "title": "Paid hidden upgrade under fog",
+      "rule_refs": [
+        "§7.3",
+        "§12",
+        "§14"
+      ],
+      "setup": "P genuine Raft/apparent Bomber in own territory; Q cannot see tile.",
+      "actions": [
+        "Pay genuine Rammer upgrade then later move into Q-visible area."
+      ],
+      "expected_actual": [
+        "Actual Rammer/app Bomber persists; correct native expenditure/sight for actual source; no free Q discovery."
+      ],
+      "expected_visible": [
+        "Q first sees Bomber; no cached Rammer upgrade animation revealed later."
+      ],
+      "must_not_happen": [
+        "Replay/UI constructor leaking actual form through fog."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-168",
+      "level": 10,
+      "title": "Fake heal followed by real splash and attack",
+      "rule_refs": [
+        "§4"
+      ],
+      "setup": "P target actual 4/10, apparent 8/10 receives fake healing; actual enemy hidden splash later hits; source mask different.",
+      "actions": [
+        "Feign Heal.",
+        "Apply positive true passive splash.",
+        "Use any surviving target genuine attack when eligible."
+      ],
+      "expected_actual": [
+        "No real heal; positive damage applies true HP and removes target false state; passive source stays disguised; later attack real."
+      ],
+      "expected_visible": [
+        "Real loss/current actual HP on reveal; no fake damage to reconcile displayed old total."
+      ],
+      "must_not_happen": [
+        "Subtracting from apparent HP or exposing passive source automatically."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-169",
+      "level": 10,
+      "title": "Disguised terrain-maker sea exchange",
+      "rule_refs": [
+        "§3",
+        "§6",
+        "§7"
+      ],
+      "setup": "Actual Crab-as-Warrior and Warrior-as-Crab in legal land/sea reset fixtures.",
+      "actions": [
+        "Exchange each without walking.",
+        "Then make genuine movement when allowed."
+      ],
+      "expected_actual": [
+        "No arrival terrain; subsequent movement follows apparent terrain profile only and actual traversal/weapon."
+      ],
+      "expected_visible": [
+        "No flood for Crab-as-Warrior; approved flood for Warrior-as-Crab after true move."
+      ],
+      "must_not_happen": [
+        "Actual terrain routine triggered by wrapper constructor or both profiles stacked."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-170",
+      "level": 10,
+      "title": "Three-player re-subversion and permanent conversion",
+      "rule_refs": [
+        "§10.4",
+        "§10.5"
+      ],
+      "setup": "Order P→R→Q. Q Rogue acquired P, then R can acquire and convert it.",
+      "actions": [
+        "P ends commands; R Subverts same physical Rogue once.",
+        "R permanently converts it.",
+        "Begin Q turn."
+      ],
+      "expected_actual": [
+        "Return owner stays Q until conversion; then permanent R, no Q return; R turn actions not refreshed by conversion."
+      ],
+      "expected_visible": [
+        "Truth access changes appropriately; Propaganda before conversion used Q mask."
+      ],
+      "must_not_happen": [
+        "Nested owner stack, double action or Q restoration overriding permanent R."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-171",
+      "level": 11,
+      "title": "Save after spend and before native follow-up",
+      "rule_refs": [
+        "§15",
+        "V13"
+      ],
+      "setup": "Acquired Rogue Knight has used an attack but retains a native follow-up; stable ID known.",
+      "actions": [
+        "Save/reload, continue sequence and attempt reacquisition."
+      ],
+      "expected_actual": [
+        "Exactly remaining native follow-up retained; no full refresh/acquisition; true owner/home/appearance preserved."
+      ],
+      "expected_visible": [
+        "Same permitted view after reload."
+      ],
+      "must_not_happen": [
+        "Resetting action bits or stripping mask because object rebuilt."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-172",
+      "level": 11,
+      "title": "Save between payment and animation completion",
+      "rule_refs": [
+        "§15",
+        "V13"
+      ],
+      "setup": "A paid genuine upgrade or Smuggle has committed; visual animation pending.",
+      "actions": [
+        "Interrupt and reload/replay."
+      ],
+      "expected_actual": [
+        "Cost, resource, population/upgrade each apply once; pending presentation may resume without repeating mechanics."
+      ],
+      "expected_visible": [
+        "No duplicate resource or true-type flash."
+      ],
+      "must_not_happen": [
+        "Animation completion owns authoritative effect and reruns it."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-173",
+      "level": 11,
+      "title": "Atomic shuffle save boundary",
+      "rule_refs": [
+        "§6.2",
+        "§15"
+      ],
+      "setup": "Keep/Swap selection pending, then committed in separate fixture.",
+      "actions": [
+        "Save/load or replay across each boundary."
+      ],
+      "expected_actual": [
+        "Pending precommit state either canceled/restored safely; committed final pair applies exactly once; no half-swap."
+      ],
+      "expected_visible": [
+        "No temporary overlap/naked model or private choice leak."
+      ],
+      "must_not_happen": [
+        "Range mutation between stages or one unit duplicated/lost."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-174",
+      "level": 11,
+      "title": "Fog survives reconstruction and rendering",
+      "rule_refs": [
+        "§12",
+        "V04",
+        "V13"
+      ],
+      "setup": "Covered source/Spy/city with apparent overlay and pending Rogue return.",
+      "actions": [
+        "Save/load, open UI lists, apply non-revealing status refresh and return."
+      ],
+      "expected_actual": [
+        "Stored masks remain until approved discovery; no source self-clear; network excludes covered node."
+      ],
+      "expected_visible": [
+        "All alternate interfaces continue blocked."
+      ],
+      "must_not_happen": [
+        "Generic visibility rebuild grants free rescue."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-175",
+      "level": 11,
+      "title": "Player-perspective replay secrecy",
+      "rule_refs": [
+        "§14",
+        "V12",
+        "V15"
+      ],
+      "setup": "Recorded match includes disguised swaps, hidden specialist action, fake upgrades and mixed visibility.",
+      "actions": [
+        "Replay from P, Q and authorized debug perspectives."
+      ],
+      "expected_actual": [
+        "One deterministic gameplay sequence; authorized state differs only by viewer."
+      ],
+      "expected_visible": [
+        "P/Q each receive their permitted apparent info, no true IDs via scrub; debug explicitly noncompetitive."
+      ],
+      "must_not_happen": [
+        "Ordinary replay path revealing hidden network/disguises."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-176",
+      "level": 11,
+      "title": "AI must act on observations",
+      "rule_refs": [
+        "V14",
+        "§14"
+      ],
+      "setup": "Two world states differ only hidden actual enemy type, same apparent histories.",
+      "actions": [
+        "Compare AI evaluation inputs and pre-interaction decisions under same random seed."
+      ],
+      "expected_actual": [
+        "AI receives equivalent permitted observations; real execution still uses actual state."
+      ],
+      "expected_visible": [
+        "No privileged authenticity query through pathfinding/score hints."
+      ],
+      "must_not_happen": [
+        "AI targets Mimics perfectly from raw true fields."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-177",
+      "level": 11,
+      "title": "Alternate inputs cannot bypass modes/access",
+      "rule_refs": [
+        "§2.4",
+        "§12",
+        "§15"
+      ],
+      "setup": "Appearance mode/Blackout-covered unit and stale queued upgrade fixture.",
+      "actions": [
+        "Try hotkeys, controller, city list, direct command injection in test harness and canceled dialogs."
+      ],
+      "expected_actual": [
+        "Revalidate explicit command kind, actual tech/cost/flags/access; no action on covered tile."
+      ],
+      "expected_visible": [
+        "Clear lawful private rejection; no secret target-state leak."
+      ],
+      "must_not_happen": [
+        "UI mode treated as security boundary or old selection as authorization."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-178",
+      "level": 11,
+      "title": "Observer-equivalence regression capture",
+      "rule_refs": [
+        "§14",
+        "V12"
+      ],
+      "setup": "Generate two legal states with same observed histories, masks, apparent records and public statuses but swapped hidden identities/readiness.",
+      "actions": [
+        "Render map, tooltips, info, action hints, camera/audio events and replay selection for unauthorized observer."
+      ],
+      "expected_actual": [
+        "Authoritative states differ but no public action resolves yet."
+      ],
+      "expected_visible": [
+        "Outputs equivalent in all specified identity-sensitive channels."
+      ],
+      "must_not_happen": [
+        "One pixel/tint/name/cost/value/track distinguishes true units before allowed evidence."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-179",
+      "level": 11,
+      "title": "Native-adapter evidence and advertised coverage",
+      "rule_refs": [
+        "§17"
+      ],
+      "setup": "Implementation claims a pinned build and supported forms/modes.",
+      "actions": [
+        "Run V01–V16 probes and all relevant cases; record build/adapter data and failures."
+      ],
+      "expected_actual": [
+        "Native upgrade timing, range metric, support/pop/turn hooks and special forms documented from actual environment."
+      ],
+      "expected_visible": [
+        "Unimplemented adapters/modes clearly listed, not marketed as passing."
+      ],
+      "must_not_happen": [
+        "Calling this documentation suite executed merely because it was generated."
+      ],
+      "status": "NOT RUN"
+    },
+    {
+      "id": "DEC-180",
+      "level": 11,
+      "title": "Full deterministic combined replay",
+      "rule_refs": [
+        "§15",
+        "§17"
+      ],
+      "setup": "Construct scenario with coastal exchange, same-type disguise, paid+fake upgrades, Rogue chain/conversion, treaty theft and multi-player Blackout.",
+      "actions": [
+        "Run scripted commands uninterrupted, then replay with save/load inserted after every committed command."
+      ],
+      "expected_actual": [
+        "Stable IDs, stars, cities, real/app HP/forms, actions, home/support, Rogue returns and every mask match at all checkpoints."
+      ],
+      "expected_visible": [
+        "Each player view matches its uninterrupted counterpart, including private mode reset."
+      ],
+      "must_not_happen": [
+        "Any duplicate reward, hidden-state leak, action refresh or fog difference after reconstruction."
+      ],
+      "status": "NOT RUN"
+    }
+  ]
+}

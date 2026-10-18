@@ -1,0 +1,28 @@
+{
+  "passed": true,
+  "cases": 21,
+  "assertions": 188,
+  "tests": [
+    "native_egg_remains_hidden_cost_ten_and_exact_native_definition",
+    "forest_magic_has_no_added_egg_unlock_or_other_mutation",
+    "all_sixteen_tribes_cannot_recruit_eggs_from_start_or_full_research",
+    "elyrion_starting_research_skins_and_city_reward_override_unchanged",
+    "native_egg_dragon_and_super_unit_bodies_remain_unchanged",
+    "five_star_genuine_recruit_dcp_motherfogger",
+    "five_star_genuine_recruit_dcp_spy",
+    "five_star_genuine_recruit_dcp_spymaid",
+    "five_star_recruits_keep_research_and_aquarion_override",
+    "all_mimic_carriers_keep_price_health_and_zero_damage",
+    "egg_mimic_remains_existing_field_copy_only_form",
+    "complete_production_catalog_order_and_strict_roster_reentry",
+    "reentry_rejects_changed_dcp_motherfogger_cost",
+    "reentry_rejects_changed_dcp_motherfogger_health",
+    "reentry_rejects_changed_dcp_motherfogger_unitAbilities",
+    "reentry_rejects_changed_dcp_spy_cost",
+    "reentry_rejects_changed_dcp_spy_health",
+    "reentry_rejects_changed_dcp_spy_unitAbilities",
+    "reentry_rejects_changed_dcp_spymaid_cost",
+    "reentry_rejects_changed_dcp_spymaid_health",
+    "reentry_rejects_changed_dcp_spymaid_unitAbilities"
+  ]
+}

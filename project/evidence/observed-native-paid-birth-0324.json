@@ -1,0 +1,9 @@
+{
+  "version": "0.3.24",
+  "archive_sha256": "3b42cc5a3fe06ada6fdcd2c0c2d135fc2f2e90ba50b4506d38b5e30fcbc41a0a",
+  "dll_sha256": "e293a257767e76c1f07d8fee709ae11ac78b2231b705ed956195a6f447eebed2",
+  "build_receipt": "run-output/full-branch-implementation/candidate-0324/build-receipt.json",
+  "native_paid_birth_private_probe": "PASS 72 retained native log checks; subsequent bridge-prepare fault, no reload success",
+  "observations": "run-output/full-branch-implementation/candidate-0324/OBSERVATIONS.md",
+  "installed_archive_rehashed": "2026-09-16"
+}

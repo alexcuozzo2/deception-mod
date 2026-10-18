@@ -1,0 +1,201 @@
+{
+  "reported_issue": "User could not buy Deception or original technologies due to a dcp_root_imperius prerequisite; user reports no crash.",
+  "run_exit_status": 0,
+  "captured_basic": {
+    "techUnlocks": [
+      "organization",
+      "climbing",
+      "fishing",
+      "hunting",
+      "riding"
+    ],
+    "unitUnlocks": [
+      "giant",
+      "bunny",
+      "scout",
+      "transportship",
+      "warrior",
+      "babydragon",
+      "firedragon",
+      "dagger",
+      "larva"
+    ],
+    "improvementUnlocks": [
+      "city",
+      "ruin"
+    ],
+    "movementUnlocks": {
+      "field": 1,
+      "forest": 2,
+      "ice": 1,
+      "wetland": 2
+    },
+    "cost": 0,
+    "idx": 0
+  },
+  "captured_imperius_starting_tech": [
+    "basic",
+    "organization"
+  ],
+  "old_added_roots": [
+    "dcp_root_aimo",
+    "dcp_root_bardur",
+    "dcp_root_hoodrick",
+    "dcp_root_imperius",
+    "dcp_root_kickoo",
+    "dcp_root_luxidoor",
+    "dcp_root_oumaji",
+    "dcp_root_quetzali",
+    "dcp_root_vengir",
+    "dcp_root_xinxi",
+    "dcp_root_yadakk",
+    "dcp_root_zebasi"
+  ],
+  "imperius_mapping_log": [
+    "[Info   :   PolyMod] Created mapping for Polytopia.Data.TechData+Type with id dcp_root_imperius and index 1004"
+  ],
+  "all_playable_tribes": [
+    {
+      "id": "aimo",
+      "category": 1,
+      "starting_basic": true,
+      "basic_override": null,
+      "native_overrides": {}
+    },
+    {
+      "id": "aquarion",
+      "category": 2,
+      "starting_basic": true,
+      "basic_override": null,
+      "native_overrides": {
+        "chivalry": "spearing",
+        "sailing": "marinelife",
+        "ramming": "aquaculture",
+        "fishing": "aquafishing",
+        "roads": "waterways"
+      }
+    },
+    {
+      "id": "bardur",
+      "category": 1,
+      "starting_basic": true,
+      "basic_override": null,
+      "native_overrides": {}
+    },
+    {
+      "id": "elyrion",
+      "category": 2,
+      "starting_basic": true,
+      "basic_override": null,
+      "native_overrides": {
+        "hunting": "forestmagic",
+        "whaling": "watermagic"
+      }
+    },
+    {
+      "id": "hoodrick",
+      "category": 1,
+      "starting_basic": true,
+      "basic_override": null,
+      "native_overrides": {}
+    },
+    {
+      "id": "imperius",
+      "category": 1,
+      "starting_basic": true,
+      "basic_override": null,
+      "native_overrides": {}
+    },
+    {
+      "id": "kickoo",
+      "category": 1,
+      "starting_basic": true,
+      "basic_override": null,
+      "native_overrides": {}
+    },
+    {
+      "id": "luxidoor",
+      "category": 1,
+      "starting_basic": true,
+      "basic_override": null,
+      "native_overrides": {}
+    },
+    {
+      "id": "oumaji",
+      "category": 1,
+      "starting_basic": true,
+      "basic_override": null,
+      "native_overrides": {}
+    },
+    {
+      "id": "quetzali",
+      "category": 1,
+      "starting_basic": true,
+      "basic_override": null,
+      "native_overrides": {}
+    },
+    {
+      "id": "vengir",
+      "category": 1,
+      "starting_basic": true,
+      "basic_override": null,
+      "native_overrides": {}
+    },
+    {
+      "id": "xinxi",
+      "category": 1,
+      "starting_basic": true,
+      "basic_override": null,
+      "native_overrides": {}
+    },
+    {
+      "id": "yadakk",
+      "category": 1,
+      "starting_basic": true,
+      "basic_override": null,
+      "native_overrides": {}
+    },
+    {
+      "id": "zebasi",
+      "category": 1,
+      "starting_basic": true,
+      "basic_override": null,
+      "native_overrides": {}
+    },
+    {
+      "id": "polaris",
+      "category": 2,
+      "starting_basic": true,
+      "basic_override": null,
+      "native_overrides": {
+        "sailing": "icefishing",
+        "fishing": "frostwork",
+        "navigation": "polarwarfare",
+        "aquatism": "polarism",
+        "aquaculture": "sledding"
+      }
+    },
+    {
+      "id": "cymanti",
+      "category": 2,
+      "starting_basic": true,
+      "basic_override": null,
+      "native_overrides": {
+        "construction": "recycling",
+        "chivalry": "shock",
+        "meditation": "rituals",
+        "philosophy": "mysticism"
+      }
+    }
+  ],
+  "unchanged_original_inputs": {
+    "spec/FINAL_v1_5.md": true,
+    "spec/ACCEPTANCE_TESTS.json": true,
+    "spec/TEST_RESULTS_TEMPLATE.json": true,
+    "spec/VISUAL_AUDIO_UI_APPENDIX.md": true,
+    "tools/host-contract.json": true,
+    "tools/coreclr-probe.c": true
+  },
+  "new_amendment_exact_copy": true,
+  "native_M0_2_tests": "NOT RUN"
+}

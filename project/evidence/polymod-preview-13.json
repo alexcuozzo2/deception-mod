@@ -1,0 +1,10 @@
+{
+  "original": "/LOCAL_HOME/Developer/deception-local-workspace/run-output/full-branch-implementation/candidate-0378/polymod-preview/preview.dll",
+  "original_sha256": "a878eecfcf15a5140d78ae7811a2d2610eb70ffdbb7bc4e4477b5aec4ec0e016",
+  "adapted_sha256": "61588813d4b62d133db06fad64a2c440869aaffaf7460ec8bc8e9d82b1be63d7",
+  "previous_sha256": "db971aa345811ca299cc27a03c2699e17f85f63c0bcc0780dd1c8fb845815f6d",
+  "authorization": "Alex supplied the PolyMod1.3 preview and requested integrating it into the current setup.",
+  "adaptation": "Only dormant Client.Deserialize_Postfix Harmony target/postfix attributes removed; method instruction/local/EH semantics and resources unchanged. One Cecil MaxStack header increase3 to4.",
+  "evidence": "/LOCAL_HOME/Developer/deception-local-workspace/run-output/full-branch-implementation/candidate-0378/polymod-preview/adapted/receipt.json",
+  "native_game_test": "NOT RUN"
+}

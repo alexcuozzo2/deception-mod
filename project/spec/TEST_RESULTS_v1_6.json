@@ -1,0 +1,1006 @@
+{
+  "amendment": "A01",
+  "note": "Complete native cases remain NOT RUN; model subchecks do not constitute acceptance.",
+  "records": [
+    {
+      "id": "DEC-001",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-002",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-003",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-004",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-005",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-006",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-007",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-008",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-009",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-010",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-011",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-012",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-013",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-014",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-015",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-016",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-017",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-018",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-019",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-020",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-021",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-022",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-023",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-024",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-025",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-026",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-027",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-028",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-029",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-030",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-031",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-032",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-033",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-034",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-035",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-036",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-037",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-038",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-039",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-040",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-041",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-042",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-043",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-044",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-045",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-046",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-047",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-048",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-049",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-050",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-051",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-052",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-053",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-054",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-055",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-056",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-057",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-058",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-059",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-060",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-061",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-062",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-063",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-064",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-065",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-066",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-067",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-068",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-069",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-070",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-071",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-072",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-073",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-074",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-075",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-076",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-077",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-078",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-079",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-080",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-081",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-082",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-083",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-084",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-085",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-086",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-087",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-088",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-089",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-090",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-091",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-092",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-093",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-094",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-095",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-096",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-097",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-098",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-099",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-100",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-101",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-102",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-103",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-104",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-105",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-106",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-107",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-108",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-109",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-110",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-111",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-112",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-113",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-114",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-115",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-116",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-117",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-118",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-119",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-120",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-121",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-122",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-123",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-124",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-125",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-126",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-127",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-128",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-129",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-130",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-131",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-132",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-133",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-134",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-135",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-136",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-137",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-138",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-139",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-140",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-141",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-142",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-143",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-144",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-145",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-146",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-147",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-148",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-149",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-150",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-151",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-152",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-153",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-154",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-155",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-156",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-157",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-158",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-159",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-160",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-161",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-162",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-163",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-164",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-165",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-166",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-167",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-168",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-169",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-170",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-171",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-172",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-173",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-174",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-175",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-176",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-177",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-178",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-179",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-180",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-181",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-182",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-183",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-184",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-185",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-186",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-187",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-188",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-189",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-190",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-191",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-192",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-193",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-194",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-195",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-196",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-197",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-198",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-199",
+      "status": "NOT RUN",
+      "evidence": []
+    },
+    {
+      "id": "DEC-200",
+      "status": "NOT RUN",
+      "evidence": []
+    }
+  ]
+}

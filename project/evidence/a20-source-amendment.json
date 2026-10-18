@@ -1,0 +1,8 @@
+{
+  "authority": "spec/UI_A20_NAVAL_AND_DISGUISE.md",
+  "authority_sha256": "118edb11c0a87ea5764eed9fac954db99b6181c3e40e63e6d3284b5be7af0be9",
+  "source": "src/Core/RecruitmentCatalog.cs",
+  "source_sha256": "f9e538d70a32461bdcd093ff42e1eaacc594dcb3362c23fdd3c4d3f4ebea93a1",
+  "previous_sha256": "6ae04b5808c5e10887a1ada43cef2d3ae88981684905366903419aa7d6634c9e",
+  "reason": "Alex requests identity-safe naval Mimics and water/coast exchange. Append seven field-only naval carriers at zero wrapper cost; preserve existing city recruitment and true1HP/zero-offense rules."
+}

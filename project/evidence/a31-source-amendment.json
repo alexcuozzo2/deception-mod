@@ -1,0 +1,12 @@
+{
+  "authority": "spec/UI_A31_AQUARION_AND_FLOODED_REPAIR.md",
+  "authority_sha256": "6bee489ba6c1450c861ec2c10840e33901bf968e56d931284344b24ec24c453b",
+  "previous_sha256": "b8a6a06ef4fd3d5c89a73d9056a7061e4a774f0b715069bf3f145f038c856cb9",
+  "source_sha256": "27b217dde74fc907f76619048a1e2ca85834a286992df78fc54e99bf834e671c",
+  "reason": "Native Aquarion Mermimic and Spymaid overrides and one additional Spymaid copy carrier; unchanged original native definitions and existing numeric IDs.",
+  "tech_preview": {
+    "historical_sha256": "2a331cae2b39f17d80555342a42bc3f60cb846076a9873a6f8596bef3d563180",
+    "source_sha256": "43e76c3ec89abcd96762b525519ac79fbd779062b6450a46d0dc7112b335ed94",
+    "reason": "Detached Aquarion tech-only unit override presentation, preserving all existing compact preview/native clone mechanisms."
+  }
+}

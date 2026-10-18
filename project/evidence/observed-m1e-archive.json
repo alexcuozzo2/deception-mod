@@ -1,0 +1,9 @@
+{
+  "milestone": "M1E",
+  "version": "0.2.5",
+  "installed_mod_sha256": "4d30c151870657ada9f005794ed57dc5d9fbce034f7bf161c834a259302d97da",
+  "dll_sha256": "b60eb7601467f7089904615f60872718087bc8cf7b721a1f14d820b882b462ce",
+  "report": "reports/original/deception-m0-report.be47lo_p.zip",
+  "report_sha256": "81d331110aa6deedfafb48f5cfcef37b322391c71fc7a126ea79a4f626d2c0a8",
+  "provenance": "Imported from environment/OBSERVED_M1E_LOCK.json; all pinned disk hashes independently matched tools/inspect_mac.py on 2026-09-15 before baseline reproduction."
+}

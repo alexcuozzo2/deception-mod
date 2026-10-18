@@ -1,0 +1,15 @@
+{
+  "version": "0.3.15",
+  "archive_sha256": "04e209b742140a7c7647c6f0138a04820867889b1a42030a52337a527b895ac7",
+  "native_bridge_sha256": "a40bfa3346aad13a090d755da6e44867feb6b3e2ebc0691171b580e7e2595df5",
+  "source_receipt": "run-output/full-branch-implementation/candidate-0315/build-receipt.json",
+  "native_registry_verified_before_resume": true,
+  "native_transport_checks": 104,
+  "native_command_checks": 191,
+  "native_exchange_child_checks": 624,
+  "native_ownership_checks": 165,
+  "native_ownership_passed": true,
+  "live_session_enrollment": "NOT IMPLEMENTED",
+  "normal_quit_exit": 0,
+  "user_save_inactive_and_protected": true
+}

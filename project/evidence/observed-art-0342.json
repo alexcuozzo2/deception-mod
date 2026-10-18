@@ -1,0 +1,7 @@
+{
+  "version": "0.3.42",
+  "archive_sha256": "2b4d77c673cf9dd7b678cb005c65b2e6552b100ffb5b5af9b2875d658b89b322",
+  "source": "run-output/full-branch-implementation/candidate-0342/final-verification.json",
+  "dll_sha256": "9fdd5e10177f29f4a0666081c3ed0f5f3bc964c02a4994a02ea014d77e911300",
+  "provenance": "Exact installed0.3.42 verified after normal exit and protected-save restoration; Alex reported art visible and proportion/readiness/flicker issues."
+}

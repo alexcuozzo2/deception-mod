@@ -1,0 +1,7 @@
+{
+  "version": "0.3.55",
+  "installed_path": "/LOCAL_HOME/Library/Application Support/Steam/steamapps/common/The Battle of Polytopia/Mods/alex_deception_m0.polymod",
+  "sha256": "5da9d10ba79840c5396b1f53f685676be0b1c64f9534567147a2341840abb28d",
+  "provenance": "Observed installed archive after Alex confirmed successful Egg/Baby Dragon growing disguises, menus and maps; exact build receipt candidate-0355. Game closed.",
+  "build_receipt": "run-output/full-branch-implementation/candidate-0355/build-receipt.json"
+}

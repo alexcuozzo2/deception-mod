@@ -1,0 +1,28 @@
+{
+  "status": "PASS",
+  "cases": 21,
+  "assertions": 57,
+  "tests": [
+    "DISPATCH-001-uninitialized-never-runs-leaf",
+    "DISPATCH-002-missing-native-queue-does-not-initialize",
+    "DISPATCH-003-main-thread-initialize-creates-one-rooted-pulse",
+    "DISPATCH-004-worker-cannot-reinitialize-dispatcher",
+    "DISPATCH-005-main-leaf-direct-and-ref-out-values",
+    "DISPATCH-006-worker-waits-for-main-drain",
+    "DISPATCH-007-worker-preserves-exact-ref-out-array",
+    "DISPATCH-008-exceptions-propagate-original-not-reflection-wrapper",
+    "DISPATCH-009-expired-queued-work-never-executes-later",
+    "DISPATCH-010-started-work-waits-past-queue-timeout",
+    "DISPATCH-011-capacity-bounded-and-pulses-coalesced",
+    "DISPATCH-012-wrong-thread-native-drain-fails-without-callback-throw",
+    "DISPATCH-013-enqueue-failure-propagates-and-releases-work",
+    "DISPATCH-014-post-enqueue-failure-cancels-before-late-pulse",
+    "DISPATCH-015-cancelled-pulse-can-service-new-valid-request",
+    "DISPATCH-016-main-thread-nesting-does-not-requeue",
+    "DISPATCH-017-async-instance-generic-and-arity-rejected-before-run",
+    "DISPATCH-018-timeout-input-and-null-arguments-rejected",
+    "DISPATCH-019-failing-leaf-does-not-block-next-request",
+    "DISPATCH-020-only-audited-enqueue-runs-native-on-workers",
+    "DISPATCH-021-interrupted-wait-cancels-before-late-native-drain"
+  ]
+}

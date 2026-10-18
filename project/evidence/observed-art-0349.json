@@ -1,0 +1,7 @@
+{
+  "version": "0.3.49",
+  "archive_sha256": "c8a6a21e4618092d291e56f2e46e2dc217b63c340bd8098c809806b15a6231ab",
+  "dll_sha256": "68f24c34242d1607092b0615b4ba997e862c6302e15d0f83b40381d2992390d5",
+  "source": "run-output/full-branch-implementation/candidate-0350/manual-restore-source-verification.json",
+  "provenance": "Exact installed 0.3.49 and all 215 source inputs were verified before production edits. Current manual test is backed up; archive/restore requires Alex confirmation. Acceptance of this exact prior archive does not authorize deleting any save."
+}

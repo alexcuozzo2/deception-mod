@@ -1,0 +1,12 @@
+# A50 — Spy stealth and restored Mimic Dash
+
+Alex is still playtesting and requests source changes now, installation only after explicit confirmation that testing is done. Supersedes A44 only for Mimic Dash; preserves Spy move OR act.
+
+- Genuine Spy and Spymaid start visible. Native movement earns Invisible, with native visibility, detection and save/replay semantics. No automatic concealment just from recruitment or turn refresh.
+- Successful active abilities reveal the acting Spy, including Subvert, Blackout, self-Recover, Shed and feigned support where eligible. Capture already reveals through the native command. Failed/denied actions preserve invisibility and allowance. Inspection, focus, Surveillance/Blackmail global UI actions and receiving an ally's heal are not the Spy using an ability.
+- Preserve Spy5HP/1defense, Scout, no Dash, no damaging attacks or Infiltrate. This request adds concealment, not extra physical movement or new boat types: path queries and embarkation must retain their prior mechanics despite native Hide's additional side effects.
+- Actual Spy concealment survives changes to its disguise. Copied Spy appearances get convincing concealment just like Cloak appearances, but never grant another real unit the Spy's powers.
+- Mimic, Mermimic and all generated land/naval carriers have their own Dash, regardless of copied form. After movement, an unused action may Regroup, Disguise, Smuggle or feign support. Each consumes the existing action budget; failed actions must never restore movement. Frozen, exhausted and newborn initiators remain ineligible. Partners keep their own action history.
+- Movement-earned native Hide normally sets attacked. Only a verified passive Hide accompanying a Mimic's pending move may preserve its previously unused action so Dash is usable with Cloak/Spy disguises. Direct Hide and previously exhausted units must not be refreshed.
+- Keep no borrowed Scout or terrain-changing powers, actual Mimic1HP/zero offense, no forced refocus, identity/transport and private observer guards, blackmail3/4/5 pricing, and Sanctuary updates.
+- Offline fixtures and metadata can run while the game is open. Do not run full preflight/build/install, alter the game or its saves, or launch/quit it. After Alex explicitly finishes: fullcheck/build/install, exact previousmod backup, updated combinedMac+Windows ZIP with the new double-click Mac updater. Windows remains preparation-only.

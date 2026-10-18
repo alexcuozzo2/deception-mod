@@ -1,0 +1,8 @@
+{
+  "authority": "spec/UI_A56_FLAT_BLACKMAIL.md",
+  "authority_sha256": "8dd8bfc2d7b7d2055cf3ed33cdbd858c3e41d3073f658d8be4ac617717a8eadb",
+  "source": "src/Core/RecruitmentCatalog.cs",
+  "previous_sha256": "ec41ae39c8b696c612aaa62e4421ec66679c9f99d793b2d159c33b254a5414eb",
+  "source_sha256": "eeeedf24a775a387cc8bec4531a4b047c0b0ed86c57a00bd4289d47ebd7ce534",
+  "reason": "Authorized display-only rename: FoggerCatalog.Id display label changes from Motherfogger to Fogger. Serialized identifiers and recruitment rules unchanged."
+}

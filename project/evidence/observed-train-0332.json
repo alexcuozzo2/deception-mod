@@ -1,0 +1,8 @@
+{
+  "version": "0.3.32",
+  "archive_sha256": "06e519d462a034ee0e3122e62f34b7efbe3d77857801f28e9f2682c835eea3f2",
+  "dll_sha256": "d40b74f8d6905ddf5a5c520cac6fd4af757e6d2164e2374cfa6422240c667b14",
+  "native_result": "164_PRIVATE_NATIVE_TRAIN_CHECKS_AND_LIVE_BASE_ACTIONS_PASS",
+  "observations": "run-output/full-branch-implementation/candidate-0332/OBSERVATIONS.md",
+  "user_files": "RESTORED_EXACT_AFTER_FRESH_ENROLLED_DISPOSABLE"
+}

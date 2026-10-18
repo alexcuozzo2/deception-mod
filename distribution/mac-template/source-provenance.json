@@ -1,0 +1,8 @@
+{
+  "baseline_version": "0.3.100",
+  "origin": "verified local Mac setup scripts; no runtime payload copied",
+  "sha256": {
+    "setup.py": "d8c9e55aba69e427dbf1cafef831a91a40d5eabf4e4409e15e2417fbab781056",
+    "setup.sh": "19fe479f145690a9ccf363e9c99e50ee8fa4ee20cdf0931a8cf096ec46ad4f5a"
+  }
+}

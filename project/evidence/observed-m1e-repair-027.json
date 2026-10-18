@@ -1,0 +1,6 @@
+{
+  "version": "0.2.7",
+  "installed_mod_sha256": "83acf8b86bb0ac6b1a0f620177d39ab01b3b4b94b5e1bbf9d7e347982d22023b",
+  "dll_sha256": "b6530b872cca7c0db018eefdc04e290041fdd93eb8934118b351212cf4aeac2d",
+  "provenance": "Local build/install receipt preserved in run-output/m1e-repair-027/build-receipt.json; native playtest recorded"
+}

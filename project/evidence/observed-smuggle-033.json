@@ -1,0 +1,8 @@
+{
+  "version": "0.3.3",
+  "source_files_verified": 89,
+  "receipt": "run-output/full-branch-implementation/candidate-033/build-receipt.json",
+  "source_snapshot": "run-output/full-branch-implementation/candidate-033/baseline-source",
+  "observed": "Installed candidate 0.3.3 verified against fresh build receipt before popup lifecycle edits. Native animal action succeeded and survived reload; confirmation cancel exposed layout and QuickActions lifetime defects.",
+  "installed_archive_sha256": "832d10d7ba569196b00473314606a94671b02456584a15f2592fde9459577582"
+}

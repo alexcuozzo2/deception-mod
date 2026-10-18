@@ -1,0 +1,54 @@
+DECEPTION @VERSION@ — MAC AND WINDOWS PACKAGE
+
+Extract the whole ZIP into a NEW folder. Open Deception-Setup, then choose
+your platform below. Keep each platform folder's contents together.
+
+MAC — INSTALLER INCLUDED
+------------------------
+For the Intel Mac game on Apple Silicon with Rosetta, game 2.17.3.16375.
+Open Mac/Deception-Mac-Setup/START-HERE.md and follow its steps.
+The package includes Deception @VERSION@, the adapted PolyMod 1.3 multiplayer
+preview and its Mac loader/runtime. No separate PolyMod download is needed.
+Steam, Rosetta and Python prerequisites are separate. First launch requires
+internet for generated game bindings and Unity libraries.
+
+If extracted into Downloads, the Terminal folder is:
+  cd "$HOME/Downloads/Deception-Setup/Mac/Deception-Mac-Setup"
+
+Fresh installation: follow check, install, launch, then enable-deception.
+Existing installation: quit Polytopia, then double-click
+  Mac/Upgrade Deception.command
+Wait for "Upgrade complete", then use your usual modded shortcut to launch.
+The updater replaces any installed Deception version directly; no old-mod
+backup is created. Skipped intermediate releases do not block the update.
+If it stops, send Alex the complete message. Keep the extracted folders together.
+Manual Terminal commands and custom Steam paths are in the Mac README.
+Do not run every command blindly; the README explains the two different cases.
+
+WINDOWS — PREPARATION TOOLS INCLUDED; NOT PLAYABLE YET
+----------------------------------------------------
+Open Windows/START-HERE.txt. It gives exact Command Prompt steps and lists
+what to send Alex. The first step is a read-only compatibility inventory;
+it does not install or change your game. No compiler is needed for that step.
+
+There is no working Windows Deception installer or Windows PolyMod runtime
+bundle in this release. The mod currently recognizes only the verified Mac
+game build. The inventory helps prepare and validate the Windows port.
+Do not copy the Mac files into a Windows game. Windows friends cannot join
+a Deception multiplayer test using this package yet.
+
+MULTIPLAYER
+-----------
+The Mac build includes experimental online synchronization and the preview
+loader. Use the private two-player test steps in the Mac README; a real
+two-Mac/server match has not yet passed acceptance testing. Windows/Mac
+online compatibility also needs target-specific validation.
+
+PACKAGE CONTENTS
+----------------
+Mac/       Complete Mac setup and detailed instructions
+Windows/   Read-only inventory, shared native helper sources and instructions
+package-manifest.json   Version, component hashes and platform support status
+SHA256SUMS.txt          Checksums of every other file in the combined package
+
+No game binaries, game saves, accounts or personal logs are included.

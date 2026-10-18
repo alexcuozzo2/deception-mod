@@ -1,0 +1,6 @@
+{
+  "version": "0.3.5",
+  "installed_archive_sha256": "339a8ebc40ded7158ec0afa34ffed7ab28b82583cedfe07b8f9198fee416173a",
+  "dll_sha256": "b9a01f6dd1615ccd8ae6de927ae883d25a74a735dbbb9ee8f6d1afbf7fad70e6",
+  "provenance": "Exact installedarchive and all91receipt source files verified; candidate-035/baseline-source. Opt-in detached native probe passed52checks on clean retaineddisposable; source bytes/board unchanged. Native mechanics envelope not yet implemented."
+}

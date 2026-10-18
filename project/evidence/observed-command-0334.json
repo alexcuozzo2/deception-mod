@@ -1,0 +1,8 @@
+{
+  "version": "0.3.34",
+  "archive_sha256": "2684a26e66ee751e6f707eb938acb81f0515e93a189469278b97e7bd3250b806",
+  "dll_sha256": "36d2dd1aee5acdf9c3acb51277e23b9bc1adb97eef5bf90aac669f8f6aa9bcc5",
+  "native_result": "FIRST_TYPED_READ_ACK_FAILED_AFTER_SUCCESSFUL_WRITE_LEGACY_PARITY_AND_CLEANUP",
+  "observations": "run-output/full-branch-implementation/candidate-0334/OBSERVATIONS.md",
+  "user_files": "RESTORED_EXACT_AFTER_FRESH_ENROLLED_DISPOSABLE"
+}

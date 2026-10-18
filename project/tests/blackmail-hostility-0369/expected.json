@@ -1,0 +1,31 @@
+{
+  "cases": 25,
+  "assertions": 78,
+  "tests": [
+    "HOSTILE-001-prepare-readonly",
+    "HOSTILE-002-native-pair-queued-without-embassy-execution",
+    "HOSTILE-003-partial-rollback-True-1",
+    "HOSTILE-003-partial-rollback-True-2",
+    "HOSTILE-003-partial-rollback-True-3",
+    "HOSTILE-003-partial-rollback-True-4",
+    "HOSTILE-003-partial-rollback-True-5",
+    "HOSTILE-003-partial-rollback-False-1",
+    "HOSTILE-003-partial-rollback-False-2",
+    "HOSTILE-003-partial-rollback-False-3",
+    "HOSTILE-003-partial-rollback-False-4",
+    "HOSTILE-003-partial-rollback-False-5",
+    "HOSTILE-004-queue-setter-mutates-then-throws",
+    "HOSTILE-005-missing-relations-created-and-accepted",
+    "HOSTILE-006-stale-turn",
+    "HOSTILE-006-stale-actor",
+    "HOSTILE-006-stale-map",
+    "HOSTILE-006-stale-queue",
+    "HOSTILE-006-stale-relation",
+    "HOSTILE-006-stale-dictionary",
+    "HOSTILE-006-stale-player",
+    "HOSTILE-006-stale-session",
+    "HOSTILE-006-stale-peace",
+    "HOSTILE-007-peace-read-no-insert-and-bidirectional",
+    "HOSTILE-008-double-attach-and-unattached-accept-denied"
+  ]
+}

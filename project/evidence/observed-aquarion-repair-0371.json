@@ -1,0 +1,6 @@
+{
+  "version": "0.3.71",
+  "sha256": "8cd94961966cb77a3c1e123e4b346a784b791845d89ef87ff6b024127c74a1d8",
+  "provenance": "candidate-0371/install-verification.json; independently rehashed installed archive copied to candidate-0372/baseline-0371.polymod before edits",
+  "native_feedback": "Alex reports missing Spymaid and Fairy Mimic controls; native log faults on unknown visual profile city."
+}

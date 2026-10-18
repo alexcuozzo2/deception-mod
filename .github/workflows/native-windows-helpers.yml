@@ -1,0 +1,97 @@
+name: Windows native helper evidence
+
+# Prepared in Linux; NOT executed there. No push/PR trigger or release publishing.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  windows-helpers:
+    runs-on: windows-2022
+    timeout-minutes: 20
+    defaults:
+      run:
+        working-directory: cloud-source-é
+    steps:
+      - name: Check out reviewed source
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+          # Exercise UTF-8 CMake artifact paths on the actual Windows runner.
+          path: cloud-source-é
+
+      - name: Select Python
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: '3.12.10'
+          architecture: x64
+
+      - name: Prepare tools and find Visual Studio 2022
+        shell: pwsh
+        run: |
+          New-Item -ItemType Directory -Path ci-logs -ErrorAction Stop | Out-Null
+          @(
+            "OS=$([Environment]::OSVersion.VersionString)"
+            "PROCESSOR_ARCHITECTURE=$env:PROCESSOR_ARCHITECTURE"
+            "ImageOS=$env:ImageOS"
+            "ImageVersion=$env:ImageVersion"
+          ) | Set-Content ci-logs/runner.log
+          python -m pip install --disable-pip-version-check cmake==4.4.3 2>&1 | Tee-Object ci-logs/install-cmake.log
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          # VsDevCmd may prepend Visual Studio's own CMake. Pin the wheel binary
+          # explicitly so the version used by the build stays reproducible.
+          $cmakeBin = python -c "import cmake; print(cmake.CMAKE_BIN_DIR)"
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          "DCP_CMAKE_BIN=$cmakeBin" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
+          $vswhere = "${env:ProgramFiles(x86)}\Microsoft Visual Studio\Installer\vswhere.exe"
+          $vs = & $vswhere -latest -version '[17.0,18.0)' -products '*' -requires Microsoft.VisualStudio.Component.VC.Tools.x86.x64 -property installationPath
+          if ($LASTEXITCODE -ne 0 -or -not $vs) { throw 'Visual Studio 2022 x64 C++ tools unavailable' }
+          "DCP_VS_PATH=$vs" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
+          $vs | Set-Content ci-logs/visual-studio-path.log
+
+      - name: Execute Windows tests, MSVC build, CTest and audits
+        shell: cmd
+        run: |
+          @echo off
+          call "%DCP_VS_PATH%\Common7\Tools\VsDevCmd.bat" -no_logo -arch=amd64 -host_arch=amd64 > ci-logs\msvc-init.log 2>&1
+          if errorlevel 1 exit /b 1
+          where python cmake ctest cl dumpbin > ci-logs\tools.log 2>&1
+          if errorlevel 1 exit /b 1
+          python -c "import platform,sys; print(sys.version); print(platform.platform()); print(platform.machine()); assert platform.system() == 'Windows' and platform.machine().lower() == 'amd64'" > ci-logs\python-host.log 2>&1
+          if errorlevel 1 exit /b 1
+          "%DCP_CMAKE_BIN%\cmake.exe" --version > ci-logs\cmake-version.log 2>&1
+          if errorlevel 1 exit /b 1
+          "%DCP_CMAKE_BIN%\ctest.exe" --version > ci-logs\ctest-version.log 2>&1
+          if errorlevel 1 exit /b 1
+          python -B project\tests\native-build-0379\test_native_platform_build.py -v > ci-logs\python-native-build.log 2>&1
+          if errorlevel 1 exit /b 1
+          python -B project\tests\test_native_platform_survey.py -v > ci-logs\python-survey.log 2>&1
+          if errorlevel 1 exit /b 1
+          python project\tools\native-platform-build.py build --rid win-x64 --cmake "%DCP_CMAKE_BIN%\cmake.exe" --build-dir native-work\win-x64 --output native-packs\win-x64 --jobs 2 > ci-logs\build-command.log 2>&1
+          if errorlevel 1 exit /b 1
+          python project\tools\native-platform-build.py audit native-packs\win-x64 > ci-logs\pack-audit.log 2>&1
+          if errorlevel 1 exit /b 1
+          python -c "import json,pathlib; p=pathlib.Path('native-packs/win-x64/native-pack.json'); d=json.loads(p.read_text()); assert d['runtimeAdmitted'] is False; print('Helper evidence only. Game/save/load/multiplayer NOT RUN.')" > ci-logs\scope.log 2>&1
+          if errorlevel 1 exit /b 1
+
+      - name: Retain available success and failure evidence
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: deception-windows-helpers-${{ github.run_id }}-${{ github.run_attempt }}
+          retention-days: 14
+          if-no-files-found: warn
+          path: |
+            cloud-source-é/ci-logs/
+            cloud-source-é/native-packs/win-x64/
+            cloud-source-é/native-work/win-x64/build.log
+            cloud-source-é/native-work/win-x64/ctest.xml
+            cloud-source-é/native-work/win-x64/artifact-index-Release.json
+            cloud-source-é/native-work/win-x64/CMakeCache.txt
+            cloud-source-é/native-work/win-x64/CMakeFiles/CMakeConfigureLog.yaml
+            cloud-source-é/native-work/win-x64/CMakeFiles/CMakeError.log
+            cloud-source-é/native-work/win-x64/CMakeFiles/CMakeOutput.log
+            cloud-source-é/native-work/win-x64/Testing/Temporary/
+            cloud-source-é/native-work/win-x64/*.vcxproj

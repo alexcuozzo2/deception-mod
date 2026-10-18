@@ -1,0 +1,9 @@
+{
+  "milestone": "M1C",
+  "csharp_model_tests": "NOT RUN IN ASSISTANT ENVIRONMENT",
+  "native_game_test": "NOT RUN",
+  "required_user_build_count": 150,
+  "baseline_user_observation": "M1A research/chime/menu gate worked. Popup picker failed; selected form was not recruitable. This is not evidence of M1B execution.",
+  "ui_adapter_fixture_tests": "NOT RUN IN ASSISTANT ENVIRONMENT",
+  "note": "150 model checks and 24 actual managed UI-adapter checks against synthetic native objects must pass in the Mac build. No actual Unity UI execution is claimed."
+}

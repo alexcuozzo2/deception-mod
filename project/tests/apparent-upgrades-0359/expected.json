@@ -1,0 +1,6 @@
+{
+  "passed": true,
+  "cases": 81,
+  "assertions": 378,
+  "scope": "production planning/commit with synthetic native ports; no game rendering"
+}

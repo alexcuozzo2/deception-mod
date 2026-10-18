@@ -1,0 +1,7 @@
+{
+  "version": "0.3.44",
+  "archive_sha256": "f290cf2333044109b0c879664091cef23922ae1013c2e33fb5d843ad8957f73d",
+  "dll_sha256": "b8db5fad33d618f8dd58361dfd4792c5f02f35aa4e30e542d85954123dc74cf5",
+  "source": "run-output/full-branch-implementation/candidate-0344/final-verification.json",
+  "provenance": "Exact installed0.3.44 verified after normal exit and current protected-save restoration. Alex confirmed no end-turn flicker; map scale/neck contact and diffuse glow still need refinement."
+}

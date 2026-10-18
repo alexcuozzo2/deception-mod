@@ -1,0 +1,187 @@
+{
+  "suite": "M1D production UI/action adapters against synthetic native objects",
+  "scope": "Managed adapter execution; NO Unity or native game execution",
+  "is64Bit": true,
+  "runtime": "6.0.7",
+  "total": 44,
+  "passed": 44,
+  "failed": 0,
+  "tests": [
+    {
+      "id": "UI-001-original-target-failure-reproduced",
+      "status": "PASS"
+    },
+    {
+      "id": "UI-002-actual-draw-opens-with-null-target",
+      "status": "PASS"
+    },
+    {
+      "id": "UI-003-position-captured-before-native-clear",
+      "status": "PASS"
+    },
+    {
+      "id": "UI-004-nonnull-follow-target-not-required",
+      "status": "PASS"
+    },
+    {
+      "id": "UI-005-open-is-deferred-and-does-not-spend",
+      "status": "PASS"
+    },
+    {
+      "id": "UI-006-repeated-open-does-not-duplicate-wheel",
+      "status": "PASS"
+    },
+    {
+      "id": "UI-007-unlocked-only-plus-back-and-labels",
+      "status": "PASS"
+    },
+    {
+      "id": "UI-008-riding-adds-only-rider",
+      "status": "PASS"
+    },
+    {
+      "id": "UI-009-back-restores-normal-wheel-without-purchase",
+      "status": "PASS"
+    },
+    {
+      "id": "UI-010-native-close-cancels-without-purchase",
+      "status": "PASS"
+    },
+    {
+      "id": "UI-011-city-change-cancels-stale-wheel",
+      "status": "PASS"
+    },
+    {
+      "id": "UI-012-turn-change-cancels-stale-wheel",
+      "status": "PASS"
+    },
+    {
+      "id": "UI-013-select-defers-one-native-confirmation",
+      "status": "PASS"
+    },
+    {
+      "id": "UI-014-selection-survives-old-click-close",
+      "status": "PASS"
+    },
+    {
+      "id": "UI-015-affordability-rechecked-before-confirm",
+      "status": "PASS"
+    },
+    {
+      "id": "UI-016-roster-rechecked-before-confirm",
+      "status": "PASS"
+    },
+    {
+      "id": "UI-017-modern-popup-hook-installed",
+      "status": "PASS"
+    },
+    {
+      "id": "UI-018-modern-popup-exactly-one-category",
+      "status": "PASS"
+    },
+    {
+      "id": "UI-019-live-native-unlocks-and-cost-unchanged",
+      "status": "PASS"
+    },
+    {
+      "id": "UI-020-legacy-popup-also-compacted",
+      "status": "PASS"
+    },
+    {
+      "id": "UI-021-node-icon-compacted-not-full-registry",
+      "status": "PASS"
+    },
+    {
+      "id": "UI-022-other-tech-is-unmodified",
+      "status": "PASS"
+    },
+    {
+      "id": "UI-023-clone-alias-rejected-without-mutation",
+      "status": "PASS"
+    },
+    {
+      "id": "UI-024-preview-does-not-alter-own-roster",
+      "status": "PASS"
+    },
+    {
+      "id": "UI-025-projection-reads-separate-health-records",
+      "status": "PASS"
+    },
+    {
+      "id": "UI-026-projection-refuses-bad-actual-health",
+      "status": "PASS"
+    },
+    {
+      "id": "UI-027-projection-new-world-reused-id",
+      "status": "PASS"
+    },
+    {
+      "id": "UI-028-detached-clone-never-aliases-native-source",
+      "status": "PASS"
+    },
+    {
+      "id": "UI-029-ordinary-readiness-only-within-own-predicate",
+      "status": "PASS"
+    },
+    {
+      "id": "UI-030-native-false-and-exception-remain-authoritative",
+      "status": "PASS"
+    },
+    {
+      "id": "UI-031-nested-predicates-mask-and-unwind",
+      "status": "PASS"
+    },
+    {
+      "id": "UI-032-predicate-targets-are-narrow-and-registered",
+      "status": "PASS"
+    },
+    {
+      "id": "UI-033-health-widget-gets-detached-native-profile",
+      "status": "PASS"
+    },
+    {
+      "id": "UI-034-release-counted-once-automatic-selection-ignored",
+      "status": "PASS"
+    },
+    {
+      "id": "UI-035-command-target-and-busy-input-do-not-inspect",
+      "status": "PASS"
+    },
+    {
+      "id": "UI-036-popup-true-view-private-and-stale-view-downgraded",
+      "status": "PASS"
+    },
+    {
+      "id": "UI-037-selection-context-reset-and-replay-authorization",
+      "status": "PASS"
+    },
+    {
+      "id": "UI-038-popup-payload-is-detached-and-data-only",
+      "status": "PASS"
+    },
+    {
+      "id": "UI-039-controls-use-explicit-placeholder-and-restore-pool",
+      "status": "PASS"
+    },
+    {
+      "id": "UI-040-presentation-hooks-avoid-authoritative-health-getters",
+      "status": "PASS"
+    },
+    {
+      "id": "UI-041-open-private-popup-closes-on-access-loss",
+      "status": "PASS"
+    },
+    {
+      "id": "UI-042-second-selection-queues-one-native-popup",
+      "status": "PASS"
+    },
+    {
+      "id": "UI-043-queued-popup-cancel-and-context-handoff",
+      "status": "PASS"
+    },
+    {
+      "id": "UI-044-native-popup-deduplicates-and-bar-reset-is-local",
+      "status": "PASS"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "version": "0.3.11",
+  "archive_sha256": "bbd3def349b6e95ab2e5eb3db52a6cf697d3221199d8c41ef2db842b4da0268b",
+  "native_bridge_sha256": "a40bfa3346aad13a090d755da6e44867feb6b3e2ebc0691171b580e7e2595df5",
+  "source_receipt": "run-output/full-branch-implementation/candidate-0311/build-receipt.json",
+  "native_transport_regression": 104,
+  "native_command_checks": 191,
+  "native_command_passed": true,
+  "native_exchange_passed": false,
+  "native_exchange_failure": "Test participants unavailable because adding two diagnostic tech entries shifted all prior custom unit and improvement numeric IDs by2. Native source bytes unchanged did not imply unchanged interpretation.",
+  "registry_mapping_evidence": "run-output/full-branch-implementation/observed-registry-id-comparison.json",
+  "normal_quit_exit": 0,
+  "user_save_inactive_and_protected": true
+}

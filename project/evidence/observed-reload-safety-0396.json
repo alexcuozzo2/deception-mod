@@ -1,0 +1,8 @@
+{
+  "observed_utc": "2026-09-28T15:58:13.607215+00:00",
+  "installed_archive": "/LOCAL_HOME/Library/Application Support/Steam/steamapps/common/The Battle of Polytopia/Mods/alex_deception_m0.polymod",
+  "existing_build_archive": "/LOCAL_HOME/Developer/deception-local-workspace/project/build/m0-xhkv17do/alex_deception_m0.polymod",
+  "archive_sha256": "0e8a5f282bddabaa6c280f2409196c8d73b0dca8deec5cc4071e3fa317266ca4",
+  "source_receipt": "/LOCAL_HOME/Developer/deception-local-workspace/project/build/m0-xhkv17do/receipt.json",
+  "provenance": "Read installed 0.3.96 archive and matched successful prior receipt and archive before 0.3.97 own-mod replacement; no changes to frameworks, saves or loader."
+}

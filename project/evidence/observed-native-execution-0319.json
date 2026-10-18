@@ -1,0 +1,46 @@
+{
+  "version": "0.3.19",
+  "archive_sha256": "95e9974562dbfd386cf090bb00ed2396437fccb1bf3b02d1d25f299bc7387a8e",
+  "dll_sha256": "83c9f071e491fa4f73bc66c9b912fe6cb7fba688901b0f0243fe4d9252aa894a",
+  "native_bridge_sha256": "a40bfa3346aad13a090d755da6e44867feb6b3e2ebc0691171b580e7e2595df5",
+  "execution_bridge_sha256": "669987169842da89d333758c7baafde1707cf8eb65ab1fcc15eb65b3d7f9f7fa",
+  "sources_reverified": 129,
+  "native_fresh_creation": "BOARD_ENTERED",
+  "native_execution_trial": "NOT_STARTED_NULL_PENDING_TRIGGER_LIST",
+  "event_count": 33,
+  "execution_events": [
+    {
+      "timestamp": "2026-09-16T04:25:20.487541+05:30",
+      "kind": "native-execution-probe-armed",
+      "message": "Four typed native sites installed. Waiting for two idle frames in the exact newly enrolled disposable; no trial has run."
+    },
+    {
+      "timestamp": "2026-09-16T04:25:25.150198+05:30",
+      "kind": "native-execution-probe-first-tick",
+      "message": "Native GameManager.Update reached the installed diagnostic postfix."
+    },
+    {
+      "timestamp": "2026-09-16T04:25:25.157219+05:30",
+      "kind": "native-execution-probe-wait",
+      "message": "Waiting for the fresh disposable match."
+    },
+    {
+      "timestamp": "2026-09-16T04:27:53.124149+05:30",
+      "kind": "native-execution-probe-wait",
+      "message": "ClientBase.IsWaitingForCommand"
+    },
+    {
+      "timestamp": "2026-09-16T04:27:55.725255+05:30",
+      "kind": "native-execution-probe-wait",
+      "message": "PopupManager.PopupShowing"
+    },
+    {
+      "timestamp": "2026-09-16T04:28:21.553867+05:30",
+      "kind": "native-execution-probe-wait",
+      "message": "Readiness inspection failed after GameState.pendingCommandTriggers is nonempty: InvalidDataException: Fresh Local enrollment: Missing native queue."
+    }
+  ],
+  "build_receipt": "run-output/full-branch-implementation/candidate-0319/build-receipt.json",
+  "observations": "run-output/full-branch-implementation/candidate-0319/OBSERVATIONS.md",
+  "user_save_inactive_and_protected": true
+}

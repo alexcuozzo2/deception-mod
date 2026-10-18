@@ -1,0 +1,8 @@
+{
+  "version": "0.3.25",
+  "archive_sha256": "126843e8bfd3d7a020dbbe0e691bbb72f2b904331267c67de9ada115e8c811fc",
+  "dll_sha256": "e7c5a6f49f576998d1870b8ce451adc3d39fbdd03d47ea84d2224573b02d3266",
+  "native_result": "FAILED_REGISTRY_IDS_BEFORE_NEW_MATCH",
+  "observations": "run-output/full-branch-implementation/candidate-0325/OBSERVATIONS.md",
+  "user_files": "RESTORED_EXACT_AFTER_CANCELLATION"
+}

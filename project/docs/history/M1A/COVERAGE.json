@@ -1,0 +1,9 @@
+{
+  "milestone": "M1A",
+  "model_tests_supplied": 120,
+  "csharp_execution_here": "NOT RUN",
+  "native_release_acceptance": "NOT RUN",
+  "native_prototype": "SOURCE IMPLEMENTED; REQUIRES MAC TEST",
+  "scope_waivers": [],
+  "status_document": "STATUS.md"
+}

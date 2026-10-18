@@ -1,0 +1,106 @@
+{
+  "techData": {
+    "basic": {
+      "idx": 0,
+      "cost": 0,
+      "techUnlocks": [
+        "organization",
+        "climbing",
+        "fishing",
+        "hunting",
+        "riding"
+      ],
+      "unitUnlocks": [
+        "warrior",
+        "giant"
+      ],
+      "movementUnlocks": {
+        "field": 1,
+        "forest": 2
+      }
+    },
+    "organization": {
+      "idx": 1,
+      "cost": 1
+    },
+    "climbing": {
+      "idx": 2,
+      "cost": 1
+    },
+    "fishing": {
+      "idx": 3,
+      "cost": 1
+    },
+    "hunting": {
+      "idx": 4,
+      "cost": 1
+    },
+    "riding": {
+      "idx": 5,
+      "cost": 1
+    },
+    "aquafishing": {
+      "idx": 6,
+      "cost": 1
+    },
+    "frostwork": {
+      "idx": 7,
+      "cost": 1
+    }
+  },
+  "tribeData": {
+    "imperius": {
+      "category": "human",
+      "startingTech": [
+        "basic",
+        "organization"
+      ],
+      "startingUnit": "warrior"
+    },
+    "bardur": {
+      "category": 1,
+      "startingTech": [
+        "basic",
+        "hunting"
+      ]
+    },
+    "aquarion": {
+      "category": "special",
+      "startingTech": [
+        "basic"
+      ],
+      "techOverrides": {
+        "fishing": "aquafishing"
+      }
+    },
+    "polaris": {
+      "category": 2,
+      "startingTech": [
+        "basic",
+        "frostwork"
+      ],
+      "techOverrides": {
+        "fishing": "frostwork"
+      }
+    },
+    "nature": {
+      "category": 0,
+      "startingTech": [
+        "basic"
+      ]
+    }
+  },
+  "unitData": {
+    "warrior": {
+      "idx": 1,
+      "health": 100,
+      "attack": 20
+    }
+  },
+  "resourceData": {
+    "fruit": {
+      "idx": 1
+    }
+  },
+  "__fixture_note": "Synthetic structural input only. All-tribe regression also uses the separate captured registry."
+}

@@ -1,0 +1,7 @@
+{
+  "observed_at": "2026-09-28T06:44:27.200859+00:00",
+  "archive_path": "/LOCAL_HOME/Library/Application Support/Steam/steamapps/common/The Battle of Polytopia/Mods/alex_deception_m0.polymod",
+  "archive_sha256": "24f7760ecd84f156e4caa1abe6ec8638b963171a707ef545d6fad4f3fa54e2c2",
+  "existing_build_archive": "/LOCAL_HOME/Developer/deception-local-workspace/project/build/m0-winoufzf/alex_deception_m0.polymod",
+  "provenance": "Read-only installed 0.3.95 hash agrees with full-build receipt; resignation crash logs preserved separately."
+}

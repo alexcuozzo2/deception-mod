@@ -1,0 +1,8 @@
+{
+  "version": "0.3.65",
+  "sha256": "d5fccd6067b19195dffc3692f9fadbef761a9dad574e9a7310f3e67f977b4720",
+  "path": "/LOCAL_HOME/Library/Application Support/Steam/steamapps/common/The Battle of Polytopia/Mods/alex_deception_m0.polymod",
+  "observed_at": "2026-09-19T05:20:38.778823+00:00",
+  "preserved_archive": "run-output/full-branch-implementation/candidate-0366/baseline-0365.polymod",
+  "provenance": "Current installed archive read and copied before changes. Alex reported menu overflow, zero-star decoration, unrestricted Mimic water movement and missing splash cue."
+}

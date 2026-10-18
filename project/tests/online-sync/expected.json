@@ -1,0 +1,32 @@
+{
+  "status": "PASS",
+  "cases": 23,
+  "assertions": 258,
+  "tests": [
+    "ONLINE-001-current-frame-owned-sections-and-contract",
+    "ONLINE-002-wrong-or-empty-epoch-rejected",
+    "ONLINE-003-contract-mismatch-and-local-frame-rejected-online",
+    "ONLINE-004-noncanonical-contract-rejected",
+    "ONLINE-005-every-truncation-and-trailing-byte-rejected",
+    "ONLINE-006-header-payload-and-checksum-corruption-rejected",
+    "ONLINE-007-signed-invalid-ledger-and-native-version-rejected",
+    "ONLINE-008-inner-frame-boundary-is-explicit",
+    "ONLINE-009-legacy-local-frame-not-online-admission",
+    "ONLINE-010-native-body-validation-remains-adapter-owned",
+    "ONLINE-011-scope-exact-match-state-and-thread",
+    "ONLINE-012-closed-scope-cannot-revive",
+    "ONLINE-013-wrong-thread-require-and-close-rejected",
+    "ONLINE-014-exception-cleanup-and-independent-scopes",
+    "ONLINE-015-invalid-scope-construction",
+    "ONLINE-016-two-peers-real-planner-multiround-identical-frames",
+    "ONLINE-017-wire-gap-rejected-then-ordered-retry-applies",
+    "ONLINE-018-rejoin-framed-ledger-continues-sequence-and-retries",
+    "ONLINE-019-receipt-idempotence-after-new-turn-and-body-movement",
+    "ONLINE-020-next-index-malformed-and-foreign-intent-no-publication",
+    "ONLINE-021-native-authority-and-stale-digest-revalidated",
+    "ONLINE-022-native-wire-index-is-not-ushort-execution-cursor",
+    "ONLINE-023-specialist-kinds-preserve-complete-wire-choice"
+  ],
+  "nativeGame": "NOT RUN",
+  "backend": "NOT RUN"
+}

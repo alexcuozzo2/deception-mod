@@ -1,0 +1,8 @@
+{
+  "authority": "spec/UI_A61_LIGHTHOUSE_SECRET_AND_MIMIC_PRICE.md",
+  "authority_sha256": "7613817a058fa3c74bc7c29fa29ea650198a809e7ec965b744b74626e2b1f61f",
+  "source": "src/Core/RecruitmentCatalog.cs",
+  "previous_sha256": "eeeedf24a775a387cc8bec4531a4b047c0b0ed86c57a00bd4289d47ebd7ce534",
+  "source_sha256": "b0c0c857aaf79dd60fee8f1632167a5053bd5edd57985273e48b2a517c5f14cd",
+  "reason": "Authorized Mimic cost change: canonical paid recruitment cost1, free naval proxies unchanged. Preserves actual historical paid investment/refunds."
+}

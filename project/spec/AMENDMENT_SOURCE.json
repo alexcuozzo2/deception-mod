@@ -1,0 +1,16 @@
+{
+  "source_filename": "polytopia_deception_centipede_all_tribes_addendum_v1_6(4).md",
+  "sha256": "23062c8036dac0c88a698d7831c29e5cc5f85a2c289cb70e46d2875e97c037ff",
+  "supersedes": [
+    "v1.5 \u00a71.1 ordinary-only release scope",
+    "generic C03 compound-body copying for actual Centipedes",
+    "DEC-001",
+    "DEC-091"
+  ],
+  "source_not_present": "The separate supplemental acceptance JSON referenced by the Markdown.",
+  "derived_suite": "ACCEPTANCE_TESTS_v1_6.json",
+  "completion_defaults_not_new_user_claims": [
+    "A01-D1",
+    "A01-D2"
+  ]
+}

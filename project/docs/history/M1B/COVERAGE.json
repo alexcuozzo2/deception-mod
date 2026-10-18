@@ -1,0 +1,11 @@
+{
+  "milestone": "M1B",
+  "model_tests_supplied": 150,
+  "file_level_tests_executed_here": 70,
+  "native_metadata_signatures_checked": 144,
+  "csharp_execution_here": "NOT RUN",
+  "native_release_acceptance": "NOT RUN",
+  "native_prototype": "SOURCE IMPLEMENTED; REQUIRES MAC BUILD AND GAME TEST",
+  "scope_waivers": [],
+  "status_document": "STATUS.md"
+}

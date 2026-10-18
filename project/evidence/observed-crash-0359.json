@@ -1,0 +1,5 @@
+{
+  "version": "0.3.59",
+  "sha256": "05bd887b5ae76f7ac4201c8be32c23eb137de3e3dead525c3be5128606af3a45",
+  "provenance": "Exact installed archive independently rehashed after native crash; incident-0359/preservation-manifest.json and installed-0359.polymod; candidate-0360/preinstall-baseline.json and baseline-0359.polymod."
+}

@@ -1,0 +1,6 @@
+{
+  "version": "0.3.2",
+  "installed_archive_sha256": "fa5be8a92bdf8419b2fe8df91f512e9e9d149966c864dae73e459d12339e534a",
+  "dll_sha256": "6b3425cbf0dc99ebf07970b4448530896cbebc776085a467b3ea8fe597da1d72",
+  "provenance": "Native startup/Resume verified; native Hunting green; resource mapper returns hunting but redundant IsUnlocked false. Source/archive rehashed and source snapshot preserved in candidate-032/baseline-source."
+}

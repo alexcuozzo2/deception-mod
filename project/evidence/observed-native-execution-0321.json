@@ -1,0 +1,15 @@
+{
+  "version": "0.3.21",
+  "archive_sha256": "b98eea64c21573553e9a067e87109733048b3a857436c76dc83e521cad163ded",
+  "dll_sha256": "080a3c8ef13b2b5cb1651bbc1f56d2bded5a3526be77577078e80a01f9256e53",
+  "native_bridge_sha256": "a40bfa3346aad13a090d755da6e44867feb6b3e2ebc0691171b580e7e2595df5",
+  "execution_bridge_sha256": "669987169842da89d333758c7baafde1707cf8eb65ab1fcc15eb65b3d7f9f7fa",
+  "sources_reverified": 129,
+  "native_fresh_creation": "BOARD_ENTERED",
+  "native_execution_trial": "STARTED_FAILED_FIRST_COPY_BEFORE_EXECUTE",
+  "native_copy_difference": "4_BYTES_AT_5530_FFFFFFFF_TO_D2D2D200_LEDGER_EQUAL",
+  "event_count": 34,
+  "build_receipt": "run-output/full-branch-implementation/candidate-0321/build-receipt.json",
+  "observations": "run-output/full-branch-implementation/candidate-0321/OBSERVATIONS.md",
+  "user_save_inactive_and_protected": true
+}

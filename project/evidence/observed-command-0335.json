@@ -1,0 +1,8 @@
+{
+  "version": "0.3.35",
+  "archive_sha256": "339805c1fa41ecf6a4f1ef519817b02d0d9e4e970f5b6336cab44a032700c05b",
+  "dll_sha256": "5b48606d669785f01c1c5884b46311bda1f35f3d3f2c6f906b518e7156105fcb",
+  "native_result": "READ_VERSION_ZERO_POINTERS_AND_ROOT_FLAGS_CORRECT",
+  "observations": "run-output/full-branch-implementation/candidate-0335/OBSERVATIONS.md",
+  "user_files": "RESTORED_EXACT_AFTER_FRESH_ENROLLED_DISPOSABLE"
+}

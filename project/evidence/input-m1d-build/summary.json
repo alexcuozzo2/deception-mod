@@ -1,0 +1,62 @@
+{
+  "reports": [
+    {
+      "filename": "deception-m0-report.qzv9axvg.zip",
+      "sha256": "17521444c1173beec2eb2b2e3155a7f4dd14831101810fa97bde29a02c947b13"
+    },
+    {
+      "filename": "deception-m0-report.y4bb3dmv.zip",
+      "sha256": "e1d8145e4bf23f4dc85c3d60076447d55e883bf4707a8f6e12f080d4e75a8521"
+    }
+  ],
+  "report_contents_identical": true,
+  "member_sha256": {
+    "build/build.log": "f4ad592f755588af70f83ab6a9464300dc4714076f62f9363da0fe56a00c770a",
+    "build/model-test-results.json": "a810b7cf5ed31886886509eb9b95330e4859ebdeb1c312f9dd7699e6117d6981",
+    "build/ui-adapter-results.json": "338c0db0c29fc6a7aff02fcab257719593e9bb38c0d7703af0e40d30b5a6764b",
+    "build/native-api-results.json": "1b540f910830dff3cfa1b8b0b8dcf008bd04479313b212013555d37fd1b94133",
+    "deception/startup.json": "6c9d88a9955bece06dde048fb2f40942e46d00d4e4730fa942298a68906fcf37",
+    "deception/native-registry-before.json": "3c8754edde4889872d5b7916c5ae612a27fafed9d219af4496417a7e80588595",
+    "deception/tree-registration.json": "5626fd82e5b20d053d506899b80c746f7efbf6c3287e4d73fec06f69dce73222",
+    "deception/tree-after.json": "f24e02c7eaf8ccad6065b7bab107ee27e429a6b3e40ccb9f3be02ebe86c3bd3d",
+    "deception/recruitment-registration.json": "4db73de76c41eceef6812e44ffb5826249e7907021991d7d34116186ad6de805",
+    "deception/events.jsonl": "43a821ca553bd697563b32a429fb4599f3f0b0a7aa26098805666227bede05be",
+    "game/LogOutput.log": "a287308d31f3414205e51d789ab0e7cc3f5048cd27e377dc77179bdda8dc5340",
+    "game/BepInEx.cfg": "47e4fbd250a46b98b381e7a75ab26bd107101b41a991f5617ca54921286ec784",
+    "daily-launcher/session.json": "943a046145add0978a967eb9fe2e1d8ec38c8e4a5663783ce2bcb1495729edfd",
+    "daily-launcher/launch.log": "9d8ec18f87accc93f972a04ad142c8798d9e703e25a4bc25dee51f470c110277",
+    "daily-launcher/player.log": "86dba632870e94744f8952275f59ce09cd15c003aebeecc0c5e9dfcdaafc54b5",
+    "collection.json": "a79621b199c1ea21783433a801463175c1cd6e50c5703c2c8b2f33851aafbfa8"
+  },
+  "milestone": "M1D candidate, before R1 fix",
+  "model_results": {
+    "total": 157,
+    "passed": 157,
+    "failed": 0,
+    "runtime": "6.0.7"
+  },
+  "ui_fixture_results": {
+    "total": 44,
+    "passed": 44,
+    "failed": 0,
+    "runtime": "6.0.7"
+  },
+  "api_check": {
+    "pinned_signatures_matched": 235,
+    "runtime_ui_signatures_matched": 2
+  },
+  "failure": {
+    "stage": "final native adapter compilation (third csc invocation)",
+    "compiler": "SDK 9.0.303 Roslyn",
+    "code": "CS0656",
+    "error_count": 697,
+    "missing_members": [
+      "System.Runtime.CompilerServices.NullableAttribute..ctor",
+      "System.Runtime.CompilerServices.NullableContextAttribute..ctor"
+    ]
+  },
+  "completed_installable_build": false,
+  "m1d_gameplay": "NOT RUN",
+  "collection_installed_mod_sha256": null,
+  "collection_note": "The report could not identify an ordinary active Deception archive at collection time. This does not show that the build removed anything; build never mutates Mods. Retained game/launcher logs are historical M1C."
+}

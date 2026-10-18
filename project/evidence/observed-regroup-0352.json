@@ -1,0 +1,7 @@
+{
+  "version": "0.3.52",
+  "archive_sha256": "c006b31db7aaccb1bfdf6030af35ec93fa3276a54757f5201b561f90c5c02bb5",
+  "dll_sha256": "42a4fcd61a2ee8af14322c229a16c42031710e49fd078a5a710f7070989b7033",
+  "source": "run-output/full-branch-implementation/candidate-0352/install-verification.json",
+  "provenance": "Exact installed own-mod archive rehashed 2026-09-18 after Alex tested and accepted REGROUP capitalization and red-to-green targets. Authorized own-mod replacement with exact backup; preserve framework, launcher and saves."
+}

@@ -1,0 +1,14 @@
+{
+  "version": "0.3.14",
+  "archive_sha256": "b7d26ed48277bda79db9498db8d03c8d608f0c6829e6c186addda2a1b657217c",
+  "native_bridge_sha256": "a40bfa3346aad13a090d755da6e44867feb6b3e2ebc0691171b580e7e2595df5",
+  "source_receipt": "run-output/full-branch-implementation/candidate-0314/build-receipt.json",
+  "native_registry_verified_before_resume": true,
+  "native_transport_checks": 104,
+  "native_command_checks": 191,
+  "native_exchange_child_checks": 624,
+  "native_exchange_child_passed": true,
+  "native_child_execution": "PASS: five audited types on detached states",
+  "normal_quit_exit": 0,
+  "user_save_inactive_and_protected": true
+}

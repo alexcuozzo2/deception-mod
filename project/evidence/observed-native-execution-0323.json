@@ -1,0 +1,15 @@
+{
+  "version": "0.3.23",
+  "archive_sha256": "78cd7a504a13e1c40b79692ba7f0d8b13dd07719c3464c3c70ca38249b3b66e1",
+  "dll_sha256": "9994863c082ddb42ceb28a1fc4047887e946cd19b74373840a9854f09df3a968",
+  "native_bridge_sha256": "a40bfa3346aad13a090d755da6e44867feb6b3e2ebc0691171b580e7e2595df5",
+  "execution_bridge_sha256": "669987169842da89d333758c7baafde1707cf8eb65ab1fcc15eb65b3d7f9f7fa",
+  "sources_reverified": 129,
+  "native_fresh_creation": "BOARD_ENTERED",
+  "native_execution_trial": "PASSED_137",
+  "ordinary_gui": "MOVE_RECRUIT_5_TO_3_TURN_0_TO_1_INCOME_3_TO_5_OBSERVED",
+  "event_count": 57,
+  "build_receipt": "run-output/full-branch-implementation/candidate-0323/build-receipt.json",
+  "observations": "run-output/full-branch-implementation/candidate-0323/OBSERVATIONS.md",
+  "user_save_inactive_and_protected": true
+}

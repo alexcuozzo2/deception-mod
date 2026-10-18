@@ -1,0 +1,6 @@
+{
+  "version": "0.3.70",
+  "sha256": "09f232ede0d60b6930de4e68270511a7b5fcccb4f3191e03e5a2e27f18bfa3f6",
+  "provenance": "candidate-0370/install-verification.json; independently rehashed installed archive copied to candidate-0371/baseline-0370.polymod before edits",
+  "native_feedback": "Alex supplied Aquarion variants and reported flooded Disembark session failure, audio and Rogue presentation gaps."
+}

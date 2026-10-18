@@ -1,0 +1,398 @@
+{
+  "technology_names_dcp__deception": {
+    "English": "Deception"
+  },
+  "technology_descriptions_dcp__deception": {
+    "English": "Recruit Mimics for 1 star. Regroup copies a nearby unit appearance. Smuggle harvests for the Mimic's home city."
+  },
+  "unit_names_dcp__mimic": {
+    "English": "Mimic"
+  },
+  "unit_descriptions_dcp__mimic": {
+    "English": "A Mimic has 1 HP and cannot deal damage. Hold the unit or use Inspect Mimic to switch views. Harvest resources for its home city with Smuggle."
+  },
+  "unit_names_dcp__mimic__form__warrior": {
+    "English": "Mimic (Warrior)"
+  },
+  "unit_descriptions_dcp__mimic__form__warrior": {
+    "English": "A Mimic has 1 HP and cannot deal damage. Hold the unit or use Inspect Mimic to switch views. Harvest resources for its home city with Smuggle."
+  },
+  "unit_names_dcp__mimic__form__rider": {
+    "English": "Mimic (Rider)"
+  },
+  "unit_descriptions_dcp__mimic__form__rider": {
+    "English": "A Mimic has 1 HP and cannot deal damage. Hold the unit or use Inspect Mimic to switch views. Harvest resources for its home city with Smuggle."
+  },
+  "unit_names_dcp__mimic__form__knight": {
+    "English": "Mimic (Knight)"
+  },
+  "unit_descriptions_dcp__mimic__form__knight": {
+    "English": "A Mimic has 1 HP and cannot deal damage. Hold the unit or use Inspect Mimic to switch views. Harvest resources for its home city with Smuggle."
+  },
+  "unit_names_dcp__mimic__form__defender": {
+    "English": "Mimic (Defender)"
+  },
+  "unit_descriptions_dcp__mimic__form__defender": {
+    "English": "A Mimic has 1 HP and cannot deal damage. Hold the unit or use Inspect Mimic to switch views. Harvest resources for its home city with Smuggle."
+  },
+  "unit_names_dcp__mimic__form__archer": {
+    "English": "Mimic (Archer)"
+  },
+  "unit_descriptions_dcp__mimic__form__archer": {
+    "English": "A Mimic has 1 HP and cannot deal damage. Hold the unit or use Inspect Mimic to switch views. Harvest resources for its home city with Smuggle."
+  },
+  "unit_names_dcp__mimic__form__catapult": {
+    "English": "Mimic (Catapult)"
+  },
+  "unit_descriptions_dcp__mimic__form__catapult": {
+    "English": "A Mimic has 1 HP and cannot deal damage. Hold the unit or use Inspect Mimic to switch views. Harvest resources for its home city with Smuggle."
+  },
+  "unit_names_dcp__mimic__form__mindbender": {
+    "English": "Mimic (Mind Bender)"
+  },
+  "unit_descriptions_dcp__mimic__form__mindbender": {
+    "English": "A Mimic has 1 HP and cannot deal damage. Hold the unit or use Inspect Mimic to switch views. Harvest resources for its home city with Smuggle."
+  },
+  "unit_names_dcp__mimic__form__swordsman": {
+    "English": "Mimic (Swordsman)"
+  },
+  "unit_descriptions_dcp__mimic__form__swordsman": {
+    "English": "A Mimic has 1 HP and cannot deal damage. Hold the unit or use Inspect Mimic to switch views. Harvest resources for its home city with Smuggle."
+  },
+  "unit_names_dcp__mimic__form__amphibian": {
+    "English": "Mimic (Amphibian)"
+  },
+  "unit_descriptions_dcp__mimic__form__amphibian": {
+    "English": "A Mimic has 1 HP and cannot deal damage. Hold the unit or use Inspect Mimic to switch views. Harvest resources for its home city with Smuggle."
+  },
+  "unit_names_dcp__mimic__form__tridention": {
+    "English": "Mimic (Tridention)"
+  },
+  "unit_descriptions_dcp__mimic__form__tridention": {
+    "English": "A Mimic has 1 HP and cannot deal damage. Hold the unit or use Inspect Mimic to switch views. Harvest resources for its home city with Smuggle."
+  },
+  "unit_names_dcp__mimic__form__battlesled": {
+    "English": "Mimic (Battlesled)"
+  },
+  "unit_descriptions_dcp__mimic__form__battlesled": {
+    "English": "A Mimic has 1 HP and cannot deal damage. Hold the unit or use Inspect Mimic to switch views. Harvest resources for its home city with Smuggle."
+  },
+  "unit_names_dcp__mimic__form__icefortress": {
+    "English": "Mimic (Ice Fortress)"
+  },
+  "unit_descriptions_dcp__mimic__form__icefortress": {
+    "English": "A Mimic has 1 HP and cannot deal damage. Hold the unit or use Inspect Mimic to switch views. Harvest resources for its home city with Smuggle."
+  },
+  "unit_names_dcp__mimic__form__icearcher": {
+    "English": "Mimic (Ice Archer)"
+  },
+  "unit_descriptions_dcp__mimic__form__icearcher": {
+    "English": "A Mimic has 1 HP and cannot deal damage. Hold the unit or use Inspect Mimic to switch views. Harvest resources for its home city with Smuggle."
+  },
+  "unit_names_dcp__mimic__form__hexapod": {
+    "English": "Mimic (Hexapod)"
+  },
+  "unit_descriptions_dcp__mimic__form__hexapod": {
+    "English": "A Mimic has 1 HP and cannot deal damage. Hold the unit or use Inspect Mimic to switch views. Harvest resources for its home city with Smuggle."
+  },
+  "unit_names_dcp__mimic__form__doomux": {
+    "English": "Mimic (Doomux)"
+  },
+  "unit_descriptions_dcp__mimic__form__doomux": {
+    "English": "A Mimic has 1 HP and cannot deal damage. Hold the unit or use Inspect Mimic to switch views. Harvest resources for its home city with Smuggle."
+  },
+  "unit_names_dcp__mimic__form__phychi": {
+    "English": "Mimic (Phychi)"
+  },
+  "unit_descriptions_dcp__mimic__form__phychi": {
+    "English": "A Mimic has 1 HP and cannot deal damage. Hold the unit or use Inspect Mimic to switch views. Harvest resources for its home city with Smuggle."
+  },
+  "unit_names_dcp__mimic__form__kiton": {
+    "English": "Mimic (Kiton)"
+  },
+  "unit_descriptions_dcp__mimic__form__kiton": {
+    "English": "A Mimic has 1 HP and cannot deal damage. Hold the unit or use Inspect Mimic to switch views. Harvest resources for its home city with Smuggle."
+  },
+  "unit_names_dcp__mimic__form__exida": {
+    "English": "Mimic (Exida)"
+  },
+  "unit_descriptions_dcp__mimic__form__exida": {
+    "English": "A Mimic has 1 HP and cannot deal damage. Hold the unit or use Inspect Mimic to switch views. Harvest resources for its home city with Smuggle."
+  },
+  "unit_names_dcp__mimic__form__shaman": {
+    "English": "Mimic (Shaman)"
+  },
+  "unit_descriptions_dcp__mimic__form__shaman": {
+    "English": "A Mimic has 1 HP and cannot deal damage. Hold the unit or use Inspect Mimic to switch views. Harvest resources for its home city with Smuggle."
+  },
+  "unit_names_dcp__mimic__form__mermaidwarrior": {
+    "English": "Mimic (Mermaid Warrior)"
+  },
+  "unit_descriptions_dcp__mimic__form__mermaidwarrior": {
+    "English": "A Mimic has 1 HP and cannot deal damage. Hold the unit or use Inspect Mimic to switch views. Harvest resources for its home city with Smuggle."
+  },
+  "unit_names_dcp__mimic__form__mermaidarcher": {
+    "English": "Mimic (Mermaid Archer)"
+  },
+  "unit_descriptions_dcp__mimic__form__mermaidarcher": {
+    "English": "A Mimic has 1 HP and cannot deal damage. Hold the unit or use Inspect Mimic to switch views. Harvest resources for its home city with Smuggle."
+  },
+  "unit_names_dcp__mimic__form__mermaidswordsman": {
+    "English": "Mimic (Mermaid Swordsman)"
+  },
+  "unit_descriptions_dcp__mimic__form__mermaidswordsman": {
+    "English": "A Mimic has 1 HP and cannot deal damage. Hold the unit or use Inspect Mimic to switch views. Harvest resources for its home city with Smuggle."
+  },
+  "unit_names_dcp__mimic__form__mermaiddefender": {
+    "English": "Mimic (Mermaid Defender)"
+  },
+  "unit_descriptions_dcp__mimic__form__mermaiddefender": {
+    "English": "A Mimic has 1 HP and cannot deal damage. Hold the unit or use Inspect Mimic to switch views. Harvest resources for its home city with Smuggle."
+  },
+  "unit_names_dcp__mimic__form__siren": {
+    "English": "Mimic (Siren)"
+  },
+  "unit_descriptions_dcp__mimic__form__siren": {
+    "English": "A Mimic has 1 HP and cannot deal damage. Hold the unit or use Inspect Mimic to switch views. Harvest resources for its home city with Smuggle."
+  },
+  "unit_names_dcp__mimic__form__ciru": {
+    "English": "Mimic (Ciru)"
+  },
+  "unit_descriptions_dcp__mimic__form__ciru": {
+    "English": "A Mimic has 1 HP and cannot deal damage. Hold the unit or use Inspect Mimic to switch views. Harvest resources for its home city with Smuggle."
+  },
+  "unit_names_dcp__mimic__form__mantis": {
+    "English": "Mimic (Mantis)"
+  },
+  "unit_descriptions_dcp__mimic__form__mantis": {
+    "English": "A Mimic has 1 HP and cannot deal damage. Hold the unit or use Inspect Mimic to switch views. Harvest resources for its home city with Smuggle."
+  },
+  "improvement_names_dcp_smuggle_fruit": {
+    "English": "Smuggle"
+  },
+  "improvement_descriptions_dcp_smuggle_fruit": {
+    "English": "Harvest this resource for your home city. Uses this unit's movement and action."
+  },
+  "improvement_names_dcp_smuggle_fish": {
+    "English": "Smuggle"
+  },
+  "improvement_descriptions_dcp_smuggle_fish": {
+    "English": "Harvest this resource for your home city. Uses this unit's movement and action."
+  },
+  "improvement_names_dcp_smuggle_animal": {
+    "English": "Smuggle"
+  },
+  "improvement_descriptions_dcp_smuggle_animal": {
+    "English": "Harvest this resource for your home city. Uses this unit's movement and action."
+  },
+  "technology_names_dcp__propaganda": {
+    "English": "Propaganda"
+  },
+  "technology_descriptions_dcp__propaganda": {
+    "English": "Disinformation permits unresearched Mimic appearances. Disguise transfers a Mimic appearance to an adjacent ally."
+  },
+  "ability_names_dcp__disinformation": {
+    "English": "Disinformation"
+  },
+  "ability_descriptions_dcp__disinformation": {
+    "English": "Recruit Mimics in your tribe's unit appearances without researching them. Super units are excluded."
+  },
+  "technology_names_dcp__camouflage": {
+    "English": "Counter Intelligence"
+  },
+  "technology_descriptions_dcp__camouflage": {
+    "English": "Recruit Foggers to Blackout enemy vision twice per turn. Trade Secrets earns stars from technologies your met opponents have that you lack."
+  },
+  "technology_names_dcp__intelligence": {
+    "English": "Intelligence"
+  },
+  "technology_descriptions_dcp__intelligence": {
+    "English": "Reconnaissance marks technologies known to opponents you have met. Surveillance lets you inspect their fog."
+  },
+  "technology_names_dcp__espionage": {
+    "English": "Espionage"
+  },
+  "technology_descriptions_dcp__espionage": {
+    "English": "Recruit invisible Spies with Subvert. Blackmail visible enemy units for income."
+  },
+  "ability_names_dcp__regroup": {
+    "English": "REGROUP"
+  },
+  "ability_descriptions_dcp__regroup": {
+    "English": "Copy an adjacent ally's disguise and optionally swap positions."
+  },
+  "unit_names_dcp__mimic__form__giant": {
+    "English": "Mimic"
+  },
+  "unit_descriptions_dcp__mimic__form__giant": {
+    "English": "A Mimic has 1 HP and cannot attack. Regroup copies an adjacent ally\u2019s disguise and can exchange positions."
+  },
+  "unit_names_dcp__mimic__form__bunny": {
+    "English": "Mimic"
+  },
+  "unit_descriptions_dcp__mimic__form__bunny": {
+    "English": "A Mimic has 1 HP and cannot attack. Regroup copies an adjacent ally\u2019s disguise and can exchange positions."
+  },
+  "unit_names_dcp__mimic__form__polytaur": {
+    "English": "Mimic"
+  },
+  "unit_descriptions_dcp__mimic__form__polytaur": {
+    "English": "A Mimic has 1 HP and cannot attack. Regroup copies an adjacent ally\u2019s disguise and can exchange positions."
+  },
+  "unit_names_dcp__mimic__form__firedragon": {
+    "English": "Mimic"
+  },
+  "unit_descriptions_dcp__mimic__form__firedragon": {
+    "English": "A Mimic has 1 HP and cannot attack. Regroup copies an adjacent ally\u2019s disguise and can exchange positions."
+  },
+  "unit_names_dcp__mimic__form__dagger": {
+    "English": "Mimic"
+  },
+  "unit_descriptions_dcp__mimic__form__dagger": {
+    "English": "A Mimic has 1 HP and cannot attack. Regroup copies an adjacent ally\u2019s disguise and can exchange positions."
+  },
+  "unit_names_dcp__mimic__form__mermaiddagger": {
+    "English": "Mimic"
+  },
+  "unit_descriptions_dcp__mimic__form__mermaiddagger": {
+    "English": "A Mimic has 1 HP and cannot attack. Regroup copies an adjacent ally\u2019s disguise and can exchange positions."
+  },
+  "unit_names_dcp__mimic__form__boomchi": {
+    "English": "Mimic"
+  },
+  "unit_descriptions_dcp__mimic__form__boomchi": {
+    "English": "A Mimic has 1 HP and cannot attack. Regroup copies an adjacent ally\u2019s disguise and can exchange positions."
+  },
+  "unit_names_dcp__mimic__form__centipede": {
+    "English": "Mimic"
+  },
+  "unit_descriptions_dcp__mimic__form__centipede": {
+    "English": "A Mimic has 1 HP and cannot attack. Regroup copies an adjacent ally\u2019s disguise and can exchange positions."
+  },
+  "ui_labels_dcp__disguise": {
+    "English": "(Disguise)"
+  },
+  "ui_labels_dcp__disguise__unlock": {
+    "English": "Disguise"
+  },
+  "ability_names_dcp__knowledge": {
+    "English": "Surveillance"
+  },
+  "ability_descriptions_dcp__knowledge": {
+    "English": "Select an opponent's unit or city to see their fog on your visible map. Hold a selected enemy unit to hide or show it."
+  },
+  "ability_names_dcp__disguise": {
+    "English": "DISGUISE"
+  },
+  "ability_descriptions_dcp__disguise": {
+    "English": "Give an adjacent ally the Mimic's disguise and optionally swap positions."
+  },
+  "unit_names_dcp__spy": {
+    "English": "Spy"
+  },
+  "unit_descriptions_dcp__spy": {
+    "English": "An agent with 5 HP and 1 defense. Subvert briefly commands an enemy unit. Move or act once per turn."
+  },
+  "unit_names_dcp__mimic__form__raychi": {
+    "English": "Mimic (Raychi)"
+  },
+  "unit_descriptions_dcp__mimic__form__raychi": {
+    "English": "A Mimic has 1 HP and cannot deal damage. Hold the unit or use Inspect Mimic to switch views. Harvest resources for its home city with Smuggle."
+  },
+  "unit_names_dcp__mimic__form__jelly": {
+    "English": "Mimic (Jelly)"
+  },
+  "unit_descriptions_dcp__mimic__form__jelly": {
+    "English": "A Mimic has 1 HP and cannot deal damage. Hold the unit or use Inspect Mimic to switch views. Harvest resources for its home city with Smuggle."
+  },
+  "unit_names_dcp__mimic__form__shark": {
+    "English": "Mimic (Shark)"
+  },
+  "unit_descriptions_dcp__mimic__form__shark": {
+    "English": "A Mimic has 1 HP and cannot deal damage. Hold the unit or use Inspect Mimic to switch views. Harvest resources for its home city with Smuggle."
+  },
+  "unit_names_dcp__mimic__form__aquapult": {
+    "English": "Mimic (Aquapult)"
+  },
+  "unit_descriptions_dcp__mimic__form__aquapult": {
+    "English": "A Mimic has 1 HP and cannot deal damage. Hold the unit or use Inspect Mimic to switch views. Harvest resources for its home city with Smuggle."
+  },
+  "unit_names_dcp__mimic__form__island": {
+    "English": "Mimic (Living Island)"
+  },
+  "unit_descriptions_dcp__mimic__form__island": {
+    "English": "A Mimic has 1 HP and cannot deal damage. Hold the unit or use Inspect Mimic to switch views. Harvest resources for its home city with Smuggle."
+  },
+  "unit_names_dcp__mimic__form__dcp__spy": {
+    "English": "Mimic (Spy)"
+  },
+  "unit_descriptions_dcp__mimic__form__dcp__spy": {
+    "English": "A Mimic has 1 HP and cannot deal damage. Hold the unit or use Inspect Mimic to switch views. Harvest resources for its home city with Smuggle."
+  },
+  "ability_names_dcp__subvert": {
+    "English": "SUBVERT"
+  },
+  "ability_descriptions_dcp__subvert": {
+    "English": "Temporarily command a detected enemy within 2 tiles of this Spy. The unit becomes Rogue and can act once this turn. It returns at its original owner's next turn."
+  },
+  "ability_names_dcp__blackout": {
+    "English": "BLACKOUT"
+  },
+  "ability_descriptions_dcp__blackout": {
+    "English": "Throw a smoke grenade at a tile within range 2, covering it with fog for opponents. Foggers can fire twice per turn."
+  },
+  "ability_names_dcp__blackmail": {
+    "English": "Blackmail"
+  },
+  "ability_descriptions_dcp__blackmail": {
+    "English": "Blackmail a visible enemy unit once per turn. Every use costs 2 stars, including repeated Blackmail on the same unit. Each Blackmail transfers 1 star of its supporting city\u2019s income to you each turn, up to that city\u2019s income. The effect stacks and continues through fog. Losing the unit, converting it to another owner, changing its city\u2019s owner, or making peace ends it. This hostile action removes embassies."
+  },
+  "ability_names_dcp__mimicry": {
+    "English": "MIMICRY"
+  },
+  "ability_descriptions_dcp__mimicry": {
+    "English": "Uses its disguise's movement and concealment, but gains no Scout or terrain-changing abilities. Moving where only the Mimic can go sheds its disguise. Dash lets it move, then use an action."
+  },
+  "unit_names_dcp__mermimic": {
+    "English": "Mermimic"
+  },
+  "unit_descriptions_dcp__mermimic": {
+    "English": "An amphibious Mimic with 1 HP. Mimicry inherits its disguise movement; its exposed body remains amphibious."
+  },
+  "unit_names_dcp__spymaid": {
+    "English": "Spymaid"
+  },
+  "unit_descriptions_dcp__spymaid": {
+    "English": "An amphibious agent with 5 HP and 1 defense. Subvert briefly commands an enemy unit. Move or act once per turn."
+  },
+  "unit_names_dcp__mimic__form__dcp__spymaid": {
+    "English": "Mimic (Spymaid)"
+  },
+  "unit_descriptions_dcp__mimic__form__dcp__spymaid": {
+    "English": "A Mimic disguised as a Spymaid. Actual health is 1 HP."
+  },
+  "unit_names_dcp__motherfogger": {
+    "English": "Fogger"
+  },
+  "unit_descriptions_dcp__motherfogger": {
+    "English": "A flying support unit with 10 HP, 2 movement and range 2. Move, then throw up to two Blackout smoke grenades. Cannot deal damage."
+  },
+  "unit_names_dcp__mimic__form__dcp__motherfogger": {
+    "English": "Mimic (Fogger)"
+  },
+  "unit_descriptions_dcp__mimic__form__dcp__motherfogger": {
+    "English": "A Mimic has 1 HP and cannot deal damage. Mimicry copies movement, but does not grant Blackout or Scout."
+  },
+  "ability_names_dcp__tech__insight": {
+    "English": "Reconnaissance"
+  },
+  "ability_descriptions_dcp__tech__insight": {
+    "English": "Your tech tree marks technologies researched by opponents you have met with their tribe badges."
+  },
+  "ability_names_dcp__trade__secrets": {
+    "English": "Trade Secrets"
+  },
+  "ability_descriptions_dcp__trade__secrets": {
+    "English": "Earn 1/2/3 stars per turn for each tier 1/2/3 technology you lack, for each met opponent who owns it. Payments stack across opponents. Researching a technology ends all income from it."
+  }
+}

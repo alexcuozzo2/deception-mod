@@ -1,0 +1,49 @@
+{
+  "archive_name": "polytopia_deception_v1_implementation_handoff_v1_5.zip",
+  "sha256": "015ca6ceabbf95cec526f69c6ae9e426a059efedff86ecb740ea2727e2ec8269",
+  "outer_members": [
+    {
+      "name": "polytopia_deception_branch_FINAL_v1_5.md",
+      "bytes": 182155,
+      "sha256": "0b22cae70aa4db8085f7802dba64165afb27817c68797a8fad0f1aa36e760af7"
+    },
+    {
+      "name": "polytopia_deception_acceptance_tests.json",
+      "bytes": 126091,
+      "sha256": "2ee6b9191d5e3a4ebeefbea2d46fc4256d6303a00f239a873a839850217f9a97"
+    },
+    {
+      "name": "polytopia_deception_visual_audio_ui_appendix_v1.md",
+      "bytes": 18149,
+      "sha256": "a6c0c8d0b90794ed8101f615f048b17cde768c960b487caf09b57916f0e3fb0c"
+    },
+    {
+      "name": "polytopia_deception_v1_implementation_handoff.zip",
+      "bytes": 83950,
+      "sha256": "ecf86aaadec71d8144888ec41f8d206ca3b40fa1d8831976dcd8f9ece1c806fd"
+    }
+  ],
+  "nested_manifest_validation": [
+    {
+      "name": "START_HERE.md",
+      "size_sha256_match": true
+    },
+    {
+      "name": "DECEPTION_V1_FINAL.md",
+      "size_sha256_match": true
+    },
+    {
+      "name": "ACCEPTANCE_TESTS.json",
+      "size_sha256_match": true
+    },
+    {
+      "name": "TEST_RESULTS_TEMPLATE.json",
+      "size_sha256_match": true
+    }
+  ],
+  "acceptance_json_identical": true,
+  "outer_begins_exact_nested_spec": true,
+  "outer_includes_exact_appendix": true,
+  "native_execution_claimed": false,
+  "artwork_present": false
+}

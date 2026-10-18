@@ -1,0 +1,21 @@
+{
+  "schema": 1,
+  "purpose": "Own-helper build audit only; not a game ABI or runtime admission contract",
+  "bridges": {
+    "state": {
+      "prefix": "dcp_state_bridge_",
+      "exports": ["abi_version", "config_size", "call_size", "plan_size", "site_count", "configure", "configure_site", "serialize", "deserialize", "command_serialize", "command_deserialize", "action_serialize", "action_deserialize", "train_command_serialize", "train_command_deserialize", "train_action_serialize", "train_action_deserialize"],
+      "testSummary": "RESULT 67 passed, 0 failed. C++ control flow only; IL2CPP integration remains untested."
+    },
+    "execution": {
+      "prefix": "dcp_exec_bridge_",
+      "exports": ["abi_version", "call_size", "plan_size", "config_size", "site_count", "configure_site", "build_command", "build_action", "train_command", "train_action"],
+      "testSummary": "PASS 85 native execution bridge control-flow assertions; mock native functions only."
+    },
+    "command": {
+      "prefix": "dcp_cmd_bridge_",
+      "exports": ["abi_version", "call_size", "value_size", "plan_size", "config_size", "configure", "to_bytes", "from_bytes"],
+      "testSummary": "PASS 117 typed command bridge checks"
+    }
+  }
+}

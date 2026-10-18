@@ -1,0 +1,6 @@
+{
+  "version": "0.3.39",
+  "archive_sha256": "2065b8f827c9bb9f32db00d1a0f5e147b8186f3b6d21ad8e51c7ed7f19de6d30",
+  "source": "run-output/full-branch-implementation/candidate-0339/final-verification.json",
+  "observed": "Rehashed installed archive 2026-09-17 before asset edits; Alex reported successful recruitment and immediate loading."
+}

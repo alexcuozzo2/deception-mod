@@ -1,0 +1,29 @@
+{
+  "cases": 23,
+  "assertions": 84,
+  "tests": [
+    "once_per_met_living_opponent_technology_and_native_currency",
+    "research_and_lifecycle_recalculate",
+    "polaris_changed_tree_normalizes_override_chains",
+    "counterintelligence_from_special_viewer",
+    "foreign_and_suppressed_turns_do_not_credit",
+    "detached_state_does_not_read_global_game",
+    "queue_and_context_failure_are_bounded",
+    "finalizer_removes_only_own_child",
+    "preview_resource_normalization_preserves_income",
+    "unexpected_original_action_removal_fails_without_payment",
+    "duplicate_postfix_and_suppressed_forecast_are_inert",
+    "registry_cached_and_rebuilt_for_new_logic",
+    "native_hooks_use_exact_managed_signatures",
+    "tech_ui_marks_badges_and_income_without_native_mutation",
+    "async_head_restores_alpha_and_pooled_cleanup",
+    "hotseat_replay_hidden_tree_and_unmet_are_private",
+    "research_command_refreshes_income_and_clears_cell_payment",
+    "stacking_ignores_unmet_dead_and_self_research",
+    "stacked_markers_forecast_and_research_removal_agree",
+    "native_research_aliases_and_duplicate_rows_pay_once_per_opponent",
+    "pure_duplicate_slot_and_opponent_records_never_multiply_shares",
+    "mixed_tiers_and_researchers_weight_each_missing_slot",
+    "pure_validation_and_equivalence"
+  ]
+}

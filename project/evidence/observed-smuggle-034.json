@@ -1,0 +1,6 @@
+{
+  "version": "0.3.4",
+  "installed_archive_sha256": "9584ec6a638747d325ecf596259e79a9406d16372ec85eba94027d228cd4fd09",
+  "dll_sha256": "64cec133e787a19af44a3a5dc083dedf555a0a448b4d326ba6d8f0a29a6f1991",
+  "provenance": "Exact installed archive and all receipt source files rehashed; candidate-034/baseline-source. Native bottom unit action, confirmation cancel/reopen/accept, home levelup, spent flags and inspection regression observed; no native QuickActions errors. Framework/config retained."
+}

@@ -1,0 +1,10 @@
+{
+  "milestone": "M1C",
+  "design": "v1.5+A01/v1.6 + UI A02",
+  "changed_scope": "Two UI defects only",
+  "model_tests": 150,
+  "managed_ui_adapter_fixture_tests": 24,
+  "native_game_tests": "NOT RUN",
+  "actual_native_draw_confirmation": "PENDING USER TEST",
+  "full_gameplay_design_status": "INCOMPLETE \u2014 see STATUS.md"
+}

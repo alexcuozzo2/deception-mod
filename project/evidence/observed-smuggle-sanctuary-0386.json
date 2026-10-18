@@ -1,0 +1,7 @@
+{
+  "observed_at": "2026-09-24T06:49:57.024267+00:00",
+  "archive_path": "/LOCAL_HOME/Library/Application Support/Steam/steamapps/common/The Battle of Polytopia/Mods/alex_deception_m0.polymod",
+  "archive_sha256": "770fb3a854f4414cf9f7b086645a08586a8389359e87df502d3bd769f1e808e7",
+  "backup": "/LOCAL_HOME/Developer/deception-local-workspace/run-output/smuggle-sanctuary-0387/baseline-0386.polymod",
+  "provenance": "Exact installed 0.3.86 before immediate Sanctuary Smuggle correction; no save edits or game launch."
+}

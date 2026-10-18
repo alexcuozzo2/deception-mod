@@ -1,0 +1,13 @@
+{
+  "version": "0.3.12",
+  "archive_sha256": "1bce6c532d1a0f25bc2c36d6a42cb9bc62e58e68b03050396f2598faaf00e187",
+  "native_bridge_sha256": "a40bfa3346aad13a090d755da6e44867feb6b3e2ebc0691171b580e7e2595df5",
+  "source_receipt": "run-output/full-branch-implementation/candidate-0312/build-receipt.json",
+  "native_registry_mapping_verified_before_resume": true,
+  "native_transport_checks": 104,
+  "native_command_checks": 191,
+  "native_exchange_checks": 204,
+  "native_exchange_passed": true,
+  "normal_quit_exit": 0,
+  "user_save_inactive_and_protected": true
+}

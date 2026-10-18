@@ -1,0 +1,9 @@
+# A48 — Immediate Sanctuary update after Smuggle
+
+Alex reports an animal Smuggled beside an enemy Sanctuary changes its visible level only after switching perspectives. The Sanctuary's model, income notification and visible level animation must update during the initiating turn, after the animal disappears.
+
+Use native adjacency calculation and level-change actions. Do not manually subtract a level, modify another unit, recalculate the entire map, reveal fogged buildings, or delay this work until turn handoff. Preserve cost2, native resource removal, home population transfer and both spent action allowances.
+
+Pinned native DestroyResourceAction currently checks adjacency before clearing its resource. Defer that check only inside a recognized Smuggle removal, replay it after successful removal, and attribute each native improvement update to that improvement's owner. Retain native level-change serialization, reaction, visibility handling, puff and income events. Scope cleanup must survive exceptions and session clearing. Flattened native children resumed from save retain this behavior without new counterfeit fields or save bytes. Their exhausted-Mimic plus pending home-population pattern is also shared by an ordinary harvest beneath that Mimic; this equivalent case receives the same post-removal adjacency correction. Other ordinary resource removals retain native ordering.
+
+Validate immediate enemy/multiple Sanctuary updates, no duplicate adjustment, ordinary resource-action isolation, pending-child resume, failure cleanup and hidden native reaction behavior with actual source against synthetic native objects. Full build and guarded own-mod installation remain required. Alex leads native playtesting; do not launch or change saves automatically. Include Mac and Windows sections in any new setup ZIP; Windows remains preparation-only.

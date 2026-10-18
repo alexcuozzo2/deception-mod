@@ -1,0 +1,13 @@
+{
+  "provenance": "run-output/full-branch-implementation/native-serializer-prologue-audit.json; pinned x86_64 GameAssembly SHA5391c27c. Fingerprints only, never addresses for resolution.; native-build-serializer-prologue-audit.json covers both Build pairs. Existing own Harmony serializer hooks are omitted only in the explicit command bridge mode.",
+  "GameState.Serialize": "554889e54157415641554154534883ec184189d74889f348897dd0803d42d234",
+  "GameState.Deserialize": "554889e54157415641554154534883ec284189d44989f64989ff803d04cd3404",
+  "BuildCommand.Serialize": "554889e541574156535089d34989f64989ff803dd5ac3604007513488d3d9e8c",
+  "BuildCommand.Deserialize": "554889e54157415653504885f674674189d64889fb488b0e488b81e001000048",
+  "BuildAction.Serialize": "554889e54157415653504189d74889f34989fe803d6b4a3a04007513488d3d4d",
+  "BuildAction.Deserialize": "554889e54157415653504189d74989f64889fb31c9e8562cffff4d85f6745b49",
+  "TrainCommand.Serialize": "554889e541574156535089d34989f64989ff803d91013604007513488d3dfee0",
+  "TrainCommand.Deserialize": "554889e54157415653504189d64989f74889fb31c9e8b69bfeff4d85ff744549",
+  "TrainAction.Serialize": "554889e541574156535089d34989f64989ff31c9e8f780fcff83fb3b7e2083fb",
+  "TrainAction.Deserialize": "554889e541574156534883ec184189d74989f64889fb31c9e8d37dfcff4183ff"
+}

@@ -1,0 +1,8 @@
+{
+  "version": "0.3.31",
+  "archive_sha256": "eb751f57f11f6c50f9fb1007f4032c74d88be6c07e2811c47dd9cbf2bab7ac70",
+  "dll_sha256": "021af6e023bd2b968ccfabd87cf893884741b363a92b074c82a8a807aa2be836",
+  "native_result": "CENSUS_AND_LEGACY_COMMAND_PASSED_FACTORY_WEAK_STREAM_CAST_FAILED",
+  "observations": "run-output/full-branch-implementation/candidate-0331/OBSERVATIONS.md",
+  "user_files": "RESTORED_EXACT_AFTER_FRESH_ENROLLED_DISPOSABLE"
+}

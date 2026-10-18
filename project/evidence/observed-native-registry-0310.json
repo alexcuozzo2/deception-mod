@@ -1,0 +1,173 @@
+{
+  "source": "run-output/full-branch-implementation/candidate-0310/final-logs/launcher/bepinex.log",
+  "source_sha256": "5ceb58ee5708fa8ef3cfd2e7d78c98a9e95e42a75abf8546d826c956096e3b16",
+  "mappings": [
+    {
+      "type": "Polytopia.Data.TechData+Type",
+      "id": "dcp_deception",
+      "index": 1000
+    },
+    {
+      "type": "Polytopia.Data.UnitData+Type",
+      "id": "dcp_mimic_form_amphibian",
+      "index": 1001
+    },
+    {
+      "type": "Polytopia.Data.UnitData+Type",
+      "id": "dcp_mimic_form_archer",
+      "index": 1002
+    },
+    {
+      "type": "Polytopia.Data.UnitData+Type",
+      "id": "dcp_mimic_form_battlesled",
+      "index": 1003
+    },
+    {
+      "type": "Polytopia.Data.UnitData+Type",
+      "id": "dcp_mimic_form_catapult",
+      "index": 1004
+    },
+    {
+      "type": "Polytopia.Data.UnitData+Type",
+      "id": "dcp_mimic_form_ciru",
+      "index": 1005
+    },
+    {
+      "type": "Polytopia.Data.UnitData+Type",
+      "id": "dcp_mimic_form_defender",
+      "index": 1006
+    },
+    {
+      "type": "Polytopia.Data.UnitData+Type",
+      "id": "dcp_mimic_form_doomux",
+      "index": 1007
+    },
+    {
+      "type": "Polytopia.Data.UnitData+Type",
+      "id": "dcp_mimic_form_exida",
+      "index": 1008
+    },
+    {
+      "type": "Polytopia.Data.UnitData+Type",
+      "id": "dcp_mimic_form_hexapod",
+      "index": 1009
+    },
+    {
+      "type": "Polytopia.Data.UnitData+Type",
+      "id": "dcp_mimic_form_icearcher",
+      "index": 1010
+    },
+    {
+      "type": "Polytopia.Data.UnitData+Type",
+      "id": "dcp_mimic_form_icefortress",
+      "index": 1011
+    },
+    {
+      "type": "Polytopia.Data.UnitData+Type",
+      "id": "dcp_mimic_form_kiton",
+      "index": 1012
+    },
+    {
+      "type": "Polytopia.Data.UnitData+Type",
+      "id": "dcp_mimic_form_knight",
+      "index": 1013
+    },
+    {
+      "type": "Polytopia.Data.UnitData+Type",
+      "id": "dcp_mimic_form_mantis",
+      "index": 1014
+    },
+    {
+      "type": "Polytopia.Data.UnitData+Type",
+      "id": "dcp_mimic_form_mermaidarcher",
+      "index": 1015
+    },
+    {
+      "type": "Polytopia.Data.UnitData+Type",
+      "id": "dcp_mimic_form_mermaiddefender",
+      "index": 1016
+    },
+    {
+      "type": "Polytopia.Data.UnitData+Type",
+      "id": "dcp_mimic_form_mermaidswordsman",
+      "index": 1017
+    },
+    {
+      "type": "Polytopia.Data.UnitData+Type",
+      "id": "dcp_mimic_form_mermaidwarrior",
+      "index": 1018
+    },
+    {
+      "type": "Polytopia.Data.UnitData+Type",
+      "id": "dcp_mimic_form_mindbender",
+      "index": 1019
+    },
+    {
+      "type": "Polytopia.Data.UnitData+Type",
+      "id": "dcp_mimic_form_phychi",
+      "index": 1020
+    },
+    {
+      "type": "Polytopia.Data.UnitData+Type",
+      "id": "dcp_mimic_form_rider",
+      "index": 1021
+    },
+    {
+      "type": "Polytopia.Data.UnitData+Type",
+      "id": "dcp_mimic_form_shaman",
+      "index": 1022
+    },
+    {
+      "type": "Polytopia.Data.UnitData+Type",
+      "id": "dcp_mimic_form_siren",
+      "index": 1023
+    },
+    {
+      "type": "Polytopia.Data.UnitData+Type",
+      "id": "dcp_mimic_form_swordsman",
+      "index": 1024
+    },
+    {
+      "type": "Polytopia.Data.UnitData+Type",
+      "id": "dcp_mimic_form_tridention",
+      "index": 1025
+    },
+    {
+      "type": "Polytopia.Data.UnitData+Type",
+      "id": "dcp_mimic_form_warrior",
+      "index": 1026
+    },
+    {
+      "type": "Polytopia.Data.UnitData+Type",
+      "id": "dcp_mimic",
+      "index": 1027
+    },
+    {
+      "type": "Polytopia.Data.ImprovementData+Type",
+      "id": "dcp_smuggle_fruit",
+      "index": 1028
+    },
+    {
+      "type": "Polytopia.Data.ImprovementData+Type",
+      "id": "dcp_smuggle_fish",
+      "index": 1029
+    },
+    {
+      "type": "Polytopia.Data.ImprovementData+Type",
+      "id": "dcp_smuggle_animal",
+      "index": 1030
+    },
+    {
+      "type": "Polytopia.Data.ImprovementData+Type",
+      "id": "dcp_exchange_regroup",
+      "index": 1031
+    },
+    {
+      "type": "Polytopia.Data.ImprovementData+Type",
+      "id": "dcp_exchange_disguise",
+      "index": 1032
+    }
+  ],
+  "version": "0.3.10",
+  "purpose": "Exact PolyMod Created mapping log entries from the natively observed unshifted build; historical save-compatible IDs for this project."
+}

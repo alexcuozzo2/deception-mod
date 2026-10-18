@@ -1,0 +1,8 @@
+{
+  "authority": "spec/UI_A18_GROWING_DISGUISES.md",
+  "authority_sha256": "d1d045d7698968359ad2a7a14bd3f471746e0283bdf4957cb0d1d55a8cfa4aa0",
+  "source": "src/Core/RecruitmentCatalog.cs",
+  "source_sha256": "6ae04b5808c5e10887a1ada43cef2d3ae88981684905366903419aa7d6634c9e",
+  "previous_sha256": "fffff38ea2e8c93911ab46231a49e4a1cf5b94899bb9f59a8a9ca0362ad66dd0",
+  "reason": "Alex explicitly permits growing field disguises; append Egg/Baby only, keep city roster26 and no native growth/offense."
+}

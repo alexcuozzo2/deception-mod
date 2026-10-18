@@ -1,0 +1,9 @@
+{
+  "source_report": "deception-m0-report.8he6zjgy.zip",
+  "installed_mod_sha256": "57e1389e2d0ad1212a3776d23b5eeeaa55121566634996bb1d159e254873b7ee",
+  "source_sha256": {
+    "src/PolyMod/ResearchAudio.cs": "23ee338a9537a67257c7a0b0d28afbf472e4caa19b9e4b42716aa06d5929f119",
+    "src/Core/TechTree.cs": "e52ec775981e6a6c54fab92338a2680d0509ea1a2f5426c2ab251980e86964ac",
+    "content/localization.json": "24698f85a9338347face5d9f7fce1d1580413fb0671dbe9a6219d5584dc3a49d"
+  }
+}

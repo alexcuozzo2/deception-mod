@@ -1,0 +1,25 @@
+{
+  "version": "0.3.20",
+  "archive_sha256": "f502ddd0406d78994a358d5a61c4378452723139337fa5a0c3ac7b425d1b488c",
+  "dll_sha256": "c71cc0226a65fc5377dec41885923530a0639270796e7e59da77c321ca789ef7",
+  "native_bridge_sha256": "a40bfa3346aad13a090d755da6e44867feb6b3e2ebc0691171b580e7e2595df5",
+  "execution_bridge_sha256": "669987169842da89d333758c7baafde1707cf8eb65ab1fcc15eb65b3d7f9f7fa",
+  "sources_reverified": 129,
+  "native_fresh_creation": "BOARD_ENTERED",
+  "native_execution_trial": "STARTED_FAILED_FIRST_CLONE_BYTE_EQUALITY_BEFORE_EXECUTE",
+  "probe_result": {
+    "Passed": false,
+    "Scope": "detached-native-four-site-execution-bridge",
+    "Checks": [],
+    "Measurements": {
+      "retired-private-states": "1",
+      "retired-private-carriers": "1"
+    },
+    "Failure": " execution-probe: InvalidDataException: Detached clone differs from source.",
+    "Limit": "Native Execute boundary only. BuildAction positive coverage is an audited missing-player no-op; no harvest is accepted. Genuine Warrior birth occurs only in a detached clone; its city is synthetically emptied if occupied by relocating the copied existing Warrior to an adjacent clear field before the training baseline. No child queue is executed, no Mimic is spawned, no ledger identity/payment receipt is attached, and no state is published or saved. Injected Finish failure deliberately leaves prior native private-state effects in place until that clone is discarded; it is not rollback."
+  },
+  "event_count": 34,
+  "build_receipt": "run-output/full-branch-implementation/candidate-0320/build-receipt.json",
+  "observations": "run-output/full-branch-implementation/candidate-0320/OBSERVATIONS.md",
+  "user_save_inactive_and_protected": true
+}

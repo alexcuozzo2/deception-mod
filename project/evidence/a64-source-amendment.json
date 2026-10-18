@@ -1,0 +1,10 @@
+{
+  "authority": "spec/UI_A64_BRANCH_POSITION.md",
+  "authority_sha256": "433a27d80ae5abf123b2ef060732ec67c3ff42541a0b35d6bc049bf7ad4aeab8",
+  "sources": {
+    "src/Core/TechTree.cs": {
+      "previous_sha256": "e0b5e410dfd74cea99f66c8d748423593fd54f7e7ba008b677ee29f03982c804",
+      "source_sha256": "3d59e4260b54a647d029452f0f81594fe304a88c78558f6458183f0af2e85bb2"
+    }
+  }
+}

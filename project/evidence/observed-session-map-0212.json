@@ -1,0 +1,6 @@
+{
+  "version": "0.2.12",
+  "installed_mod_sha256": "509f0f939febf464cc9de9efa0b43b92f71d66102f2816537b5562a4133ba8d6",
+  "dll_sha256": "9792dc38c309c8681bdfd50f25b956bd815e2a15eea920037a681915a057c8ef",
+  "provenance": "Exact installed candidate rehashed 2026-09-15 after native UI-A06 test. Receipt project/build/m0-tjwmkde1/receipt.json. Map toggle/memory worked; repeated native UI duplication exposed misplaced portrait, screenshot run-output/session-map-0212/10-disguise-button-map-and-menu.jpg. Candidate repair required."
+}

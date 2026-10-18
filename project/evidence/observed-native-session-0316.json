@@ -1,0 +1,18 @@
+{
+  "version": "0.3.16",
+  "archive_sha256": "80d4a2731008adf106b41f39b14c767af44de99a94caae5e05d31f0868523997",
+  "dll_sha256": "bc56123981d7bfbe58dc28c021ec5ef5eb79aaf4437fd248009bbe6fb4bc4a99",
+  "native_bridge_sha256": "a40bfa3346aad13a090d755da6e44867feb6b3e2ebc0691171b580e7e2595df5",
+  "build_receipt": "run-output/full-branch-implementation/candidate-0316/build-receipt.json",
+  "sources_reverified": 121,
+  "native_fresh_creation": "FAILED_AT_NATIVE_SAVE_VALIDATION_FALSE",
+  "native_initial_framing_observed": true,
+  "native_level_entered": false,
+  "armed_attempt": "037ca5dc-e5a9-4d9d-8d35-a43ae77f70ce",
+  "native_game_id": "db47f067-aaef-48c3-b2ad-50479bc15301",
+  "native_process_id": 76450,
+  "normal_quit_exit": 0,
+  "user_save_inactive_and_protected": true,
+  "new_guid_signature_preserved": true,
+  "new_guid_state_file_present": false
+}

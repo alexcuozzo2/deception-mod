@@ -1,0 +1,7 @@
+{
+  "version": "0.3.37",
+  "archive_sha256": "659297fecdae53e4efe4c8047ca99699e3e6859e068eb40879a403d8d8ea3af7",
+  "dll_sha256": "09245ee96ff606f98df9244a659f697c76bc4a5c8798a32e8eb23f600ac26f1c",
+  "source": "run-output/full-branch-implementation/candidate-0337/final-verification.json",
+  "outcome": "269 native Build journal,164 Train leaf,63 factory/frame,51 typed-command checks and ordinary gameplay passed. Exact current user state and three signatures restored."
+}

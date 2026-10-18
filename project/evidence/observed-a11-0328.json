@@ -1,0 +1,8 @@
+{
+  "version": "0.3.28",
+  "archive_sha256": "fd72d00aab12426819766f210d204293ab4764464b362e91425d8caa3fceff91",
+  "dll_sha256": "d3648d3119aa26d1a47f5bbf3a5009bedfff09f5413c536c50ead6a1561f3858",
+  "native_result": "UNIT_SELECTION_REACHES_RENDERER_FOG_SPRITE_CACHE_MISSING",
+  "observations": "run-output/full-branch-implementation/candidate-0328/OBSERVATIONS.md",
+  "user_files": "RESTORED_EXACT_AFTER_ENROLLED_DISPOSABLE_REPLAY"
+}

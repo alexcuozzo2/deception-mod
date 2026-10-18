@@ -1,0 +1,8 @@
+{
+  "version": "0.3.68",
+  "sha256": "96a9817723df3fac7dec3a9dad165da52f2e1497098e3c1f9f45cd72ad851174",
+  "source": "/LOCAL_HOME/Library/Application Support/Steam/steamapps/common/The Battle of Polytopia/Mods/alex_deception_m0.polymod",
+  "observed_at": "2026-09-19T08:43:26.415749+00:00",
+  "evidence": "run-output/full-branch-implementation/candidate-0369/baseline-0368.polymod",
+  "provenance": "Exact installed0.3.68 from m0-7mdsbe5p, verified against install receipt; Alex reports Blackmail works and requests price/city display/Surveillance refinements."
+}

@@ -1,0 +1,7 @@
+{
+  "observed_at": "2026-09-21T10:03:39.410242+00:00",
+  "archive_path": "/LOCAL_HOME/Library/Application Support/Steam/steamapps/common/The Battle of Polytopia/Mods/alex_deception_m0.polymod",
+  "archive_sha256": "8deef6c0c87deb854b82228e5c6290cb5da5078fcf96c11ba6941cb36e97a08e",
+  "source": "Observed installed 0.3.84 before A46; matches build/m0-k7p9t_f8 and preserved run-output/blackmail-relay-0385/baseline-0384.polymod",
+  "game_running": false
+}

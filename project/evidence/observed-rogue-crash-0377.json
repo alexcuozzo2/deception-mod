@@ -1,0 +1,6 @@
+{
+  "version": "0.3.77",
+  "sha256": "c40d02bc6ce3a030c6ffe77aea44dc0be63a23381224d660d9e7999e15da8be8",
+  "provenance": "candidate-0377/install-verification.json; freshly hashed installed archive and copied candidate-0378/baseline-0377.polymod before edits",
+  "native_feedback": "Alex accepted Spy/Spymaid art and village capture. Chained Rogue subvert/attack caused zero damage against another Rogue and post-kill match failure with apparent team/Spy artwork changes. Disband remains untested. Portability implementation now requested."
+}

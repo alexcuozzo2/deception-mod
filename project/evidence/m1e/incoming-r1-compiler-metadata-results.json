@@ -1,0 +1,9 @@
+{
+  "status": "MANAGED_NULLABLE_METADATA_MATCH",
+  "dll_sha256": "53c66f7980b57732ad8d2e5e7a884ddbbe90807c0cca9ae876f2aca524d7e3d5",
+  "local_attribute_applications": {
+    "System.Runtime.CompilerServices.NullableAttribute": 241,
+    "System.Runtime.CompilerServices.NullableContextAttribute": 187
+  },
+  "native_game_execution": "NOT RUN"
+}

@@ -1,0 +1,30 @@
+{
+  "names": [
+    "hooks-use-safe-native-reference-abi",
+    "remembered-growth-babydragon",
+    "remembered-growth-firedragon",
+    "remembered-growth-larva",
+    "remembered-growth-moth",
+    "commanded-paid-upgrade-False",
+    "commanded-paid-upgrade-True",
+    "expired-commander-upgrade-no-fog-refresh",
+    "native-noop-keeps-original",
+    "native-failure-preserves-exception-and-cleans-scope",
+    "unrelated-clone-is-not-reowned",
+    "wrong-target-clone-is-not-reowned",
+    "different-arrival-is-never-reowned",
+    "new-authority-is-never-overwritten",
+    "clear-invalidates-old-scope",
+    "nested-scopes-restore-parent",
+    "covered-commanded-source-no-fog-refresh",
+    "failed-upgrade-does-not-publish-footprint",
+    "unrelated-native-path-ordinary",
+    "unrelated-native-path-mimic",
+    "unrelated-native-path-inactive",
+    "unrelated-native-path-wrong-player",
+    "unrelated-native-path-wrong-owner",
+    "unrelated-native-path-dead",
+    "unrelated-native-path-missing-tile"
+  ],
+  "assertions": 67
+}

@@ -1,0 +1,11 @@
+[
+  "census-native-object-retains-managed-wrapper",
+  "census-array-wrapper-same-pointer-cast",
+  "census-mixed-order-aliases-and-input-unchanged",
+  "census-wrong-pointer-cast-rejected",
+  "census-null-cast-rejected",
+  "census-native-cast-exception-preserved",
+  "census-zero-pointer-rejected-before-cast",
+  "census-mid-conversion-input-change-rejected",
+  "census-null-item-and-bound-rejected"
+]

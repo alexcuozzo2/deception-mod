@@ -1,0 +1,6 @@
+{
+  "version": "0.2.16",
+  "installed_mod_sha256": "590747accc61f6380e387f69af6c7e3fb5ee85c5423f4f5e1834a3b85d855bb2",
+  "dll_sha256": "6b9083a2b1572339f7c682089e6a89780376e7f842c3df0b6ce93b7b237c467a",
+  "provenance": "Exact installed archive rehashed on this Mac before full-branch continuation on 2026-09-15; project/build/m0-nlw4g_dp/receipt.json and run-output/session-map-0216/final-verification.json. Prior native fixed-slot visual increment passed; original current save restored. Baseline sources preserved under run-output/full-branch-implementation/baseline-source."
+}

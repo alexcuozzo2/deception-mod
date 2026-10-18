@@ -1,0 +1,8 @@
+{
+  "observed_utc": "2026-09-29T07:02:02.970808+00:00",
+  "installed_archive": "/LOCAL_HOME/Library/Application Support/Steam/steamapps/common/The Battle of Polytopia/Mods/alex_deception_m0.polymod",
+  "existing_build_archive": "/LOCAL_HOME/Developer/deception-local-workspace/project/build/m0-sez4pwuh/alex_deception_m0.polymod",
+  "archive_sha256": "b8415fd93169393ac96d849b02cbbe11d7738661f648674f69b7088bcc3dfce6",
+  "source_receipt": "/LOCAL_HOME/Developer/deception-local-workspace/project/build/m0-sez4pwuh/receipt.json",
+  "provenance": "Read-only installed 0.3.99 baseline before urgent lighthouse reward removal; exact successful receipt matched."
+}

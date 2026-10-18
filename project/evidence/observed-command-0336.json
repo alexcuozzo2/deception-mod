@@ -1,0 +1,7 @@
+{
+  "version": "0.3.36",
+  "archive_sha256": "53c1c58139c5e4f7406f741c6411b574fd20b16c2ae6b079787ebfc97a534dbb",
+  "dll_sha256": "40f6ce4f26eb385366f9ff92a538e436cf4bb93db15b78b2b7ef5a5422fb648a",
+  "source": "run-output/full-branch-implementation/candidate-0336/final-verification.json",
+  "outcome": "51 native typed command,164 Train leaf,63 frame/factory checks and ordinary gameplay passed. Exact user save restored."
+}

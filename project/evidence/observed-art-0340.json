@@ -1,0 +1,6 @@
+{
+  "version": "0.3.40",
+  "archive_sha256": "9911393de1567783a4298d4e886fd128d0fa8c06f39ec629751782aa48355f02",
+  "source": "run-output/full-branch-implementation/candidate-0340/final-verification.json",
+  "observed": "Installed archive rehashed after Alex normal quit and exact save restoration on 2026-09-17. Native artwork and toggle failures reported; log confirms null head lookup. This records replacement authority, not visual acceptance."
+}

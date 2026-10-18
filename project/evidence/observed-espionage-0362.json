@@ -1,0 +1,5 @@
+{
+  "version": "0.3.62",
+  "sha256": "2bb733ae574100f5cde2449367733e4fff214319869eff7284a26b741baa0e99",
+  "provenance": "Exact Alex-tested installed archive rehashed before 0.3.63; candidate-0363/preinstall-baseline.json and baseline-0362.polymod; prior candidate-0362/install-verification.json."
+}

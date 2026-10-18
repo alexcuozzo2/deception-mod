@@ -1,0 +1,7 @@
+{
+  "version": "0.3.43",
+  "archive_sha256": "6688f9dd249bfca2c1663f28f05fa923475e6a991929f6109feb43f54bda97c3",
+  "dll_sha256": "fb099df803cdaf26e883ba8b6bd510f4169a97cf0720a3800d267f31cd575efe",
+  "source": "run-output/full-branch-implementation/candidate-0343/final-verification.json",
+  "provenance": "Exact installed 0.3.43 verified after normal exit and protected-save restoration. Alex confirmed no flicker and working spent washout; layout, glow and first-open delay remain to refine."
+}

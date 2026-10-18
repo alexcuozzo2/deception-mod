@@ -1,0 +1,8 @@
+{
+  "authority": "spec/UI_A50_SPY_STEALTH_AND_MIMIC_DASH.md",
+  "authority_sha256": "e49ece3f50c80a9b3df5e393b9a9626a21f9a6bdcd4bd06641dbe2f2d5bb92ee",
+  "source": "src/Core/RecruitmentCatalog.cs",
+  "previous_sha256": "6faef93fddb3df5a6a2874611b24b3992c8cf06834ee8d7c7ef3e6e6b1fda5a8",
+  "source_sha256": "3bf3899446dfe21e2261b4d52459cf32a1420a004c4707510ed4dc6f5d18393f",
+  "reason": "Alex restores Mimic Dash. Preserve A44 no borrowed Scout/terrain powers; Spy movement earns invisibility while Spy keeps move OR act."
+}

@@ -1,0 +1,12 @@
+{
+  "version": "0.3.9",
+  "archive_sha256": "9138549a7433661379cac788fc4f38a8433fe9cc3135b3d795d9c56a91523f8b",
+  "native_bridge_sha256": "a40bfa3346aad13a090d755da6e44867feb6b3e2ebc0691171b580e7e2595df5",
+  "source_receipt": "run-output/full-branch-implementation/candidate-039/build-receipt.json",
+  "transport_regression_passed": 104,
+  "command_probe_passed": false,
+  "command_probe_failure": "Il2CppInterop.Runtime.Il2CppException: System.MethodAccessException: Attempt to access method 'IBinarySerializable.Serialize' on type 'BuildCommand' failed.\n--- BEGIN IL2CPP STACK TRACE ---\nSystem.MethodAccessException: Attempt to access method 'IBinarySerializable.Serialize' on type 'BuildCommand' failed.\n  at SerializationHelpers.ToByteArray[T] (T serializable, System.Int32 version) [0x00000] in <00000000000000000000000000000000>:0 \n--- END IL2CPP STACK TRACE ---\n",
+  "recruitment_status": "observed-paid3-empty-tile",
+  "smuggle_native_commit": true,
+  "normal_quit_exit": 0
+}

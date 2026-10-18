@@ -1,0 +1,8 @@
+{
+  "authority": "spec/UI_A14_REGROUP_TARGETS.md",
+  "authority_sha256": "f560133556d6505839a0be73f40ad69995ef14c3dd4ea0291b458e3cc86e0487",
+  "reason": "Alex requires field copying independent of city recruitment and Regroup before/after movement. Carrier catalog adds eight field-only forms and true Dash; executed model fixtures verify native originals and city roster protections. Historical source receipts remain unchanged.",
+  "source": "src/Core/RecruitmentCatalog.cs",
+  "source_sha256": "fffff38ea2e8c93911ab46231a49e4a1cf5b94899bb9f59a8a9ca0362ad66dd0",
+  "historical_sha256": "e23c7a79e5769920e503ef53c544d061516bb673c25b0805873648e70772aae9"
+}

@@ -1,0 +1,5 @@
+# Preserve source bytes: the local build audits exact input hashes.
+* -text
+*.png binary
+*.mp3 binary
+*.wav binary

@@ -1,0 +1,17 @@
+{
+  "version": "0.3.17",
+  "archive_sha256": "826090d1cab391fe7017ef4a3fd590b4c7f90c546289fed915f770cef97c7ea9",
+  "dll_sha256": "60a19de958b7deb5bb6354c381c19cb4abf630c07093ba7979252247f9d1b4b1",
+  "native_bridge_sha256": "a40bfa3346aad13a090d755da6e44867feb6b3e2ebc0691171b580e7e2595df5",
+  "sources_reverified": 121,
+  "native_fresh_creation": "PASS_BOUNDED_EMPTY_LEDGER_ORDINARY_PLAY",
+  "native_fault_runs": "THREE_EXPECTED_REJECTIONS_NO_BOARD",
+  "not_observed": [
+    "save/reload ownership",
+    "paid Mimic ledger birth",
+    "live Regroup/Disguise"
+  ],
+  "build_receipt": "run-output/full-branch-implementation/candidate-0317/build-receipt.json",
+  "observations": "run-output/full-branch-implementation/candidate-0317/OBSERVATIONS.md",
+  "user_save_inactive_and_protected": true
+}

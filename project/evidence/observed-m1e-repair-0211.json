@@ -1,0 +1,6 @@
+{
+  "version": "0.2.11",
+  "installed_mod_sha256": "76bd89f30727a41991a35dd1f9320d94373470f6122fa4522f26b7e6abc9bd89",
+  "dll_sha256": "8ef5338748d0641338451c57fce678dc4879d05a1fdd89a00af8885ef2f2a491",
+  "provenance": "Installed archive rehashed locally on 2026-09-15 before UI-A06. Exact build receipt project/build/m0-fsnxhu1_/receipt.json (root receipt project/build/latest.json); native evidence run-output/m1e-repair-0211/REPORT.md."
+}

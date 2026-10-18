@@ -1,0 +1,6 @@
+{
+  "version": "0.2.8",
+  "installed_mod_sha256": "929fa186a85bdffb85e2fda17e0b21a4cb23efc421e1590730bd32dad07ad2a6",
+  "dll_sha256": "06a199afbf375401a19bcee446c9675a18eb4473a096f5d70458c6a12c50c18f",
+  "provenance": "Local receipt preserved run-output/m1e-repair-028/build-receipt.json; visiblebutton/nativeplaytest recorded"
+}

@@ -1,0 +1,6 @@
+{
+  "version": "0.2.9",
+  "installed_mod_sha256": "263fd3b2a6be1053ac83249ec143f01d274f52f1a3c3a05eb612735e2fac9bc2",
+  "dll_sha256": "90ee3606c0965d847820a2ed8f3bcd5e7904ca06930bcb3f0a1587f436a50646",
+  "provenance": "Local receipt preserved run-output/m1e-repair-029/build-receipt.json; nativehold/input/art tests recorded"
+}

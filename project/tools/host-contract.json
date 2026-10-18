@@ -1,0 +1,24 @@
+{
+  "game_version": "2.17.3.16375",
+  "polymod_version": "1.3.0-preview (reviewed dormant GLD patch adaptation)",
+  "framework_checksums": {
+    "BepInEx/core/BepInEx.Unity.IL2CPP.dll": "010ed8ba5e102e23f38c141e090cb94cc20c2dc6502fe1cc81f546f20b6d25ae",
+    "BepInEx/core/LibCpp2IL.dll": "40ad2ec38371c4602ce8e6c1fb8e2dea506413755ed4568fc89f96c8f6b643b0",
+    "BepInEx/core/BepInEx.Core.dll": "9619bb632cec6aa512b9ab6e587f901c34bfdcd50751e5be44d11918e477dd97",
+    "BepInEx/core/Il2CppInterop.Runtime.dll": "bb8630fe5a36b43cc166aa5b4ccd850d24002db5f887760c766f0c7ee8c74e1c",
+    "BepInEx/core/Il2CppInterop.HarmonySupport.dll": "f7612ea2e5a4d473b771f34ee3b20cf32dc0c4ecea0185416474999a17fbcc07",
+    "BepInEx/core/MonoMod.RuntimeDetour.dll": "1b3d55f53cb9f9f2550daed4dfd300b247d71698a0ace82bc7b9ff38d563594f",
+    "BepInEx/core/MonoMod.Utils.dll": "72a5b4249985873d7ecb160cbbed7a1e6540a38ee7618c72c64b9cb068c1438a",
+    "BepInEx/core/libfunchook.dylib": "d5d2f15700279f3bdd25fb3f000695ca771c16a66717681735b261e36b909d0b",
+    "BepInEx/core/Polymod.MacModuleBridge.dll": "c136e9c741e26ca4f91b151f1f485783a6a1bd191fec3b4a95ee953a941d590d",
+    "BepInEx/core/Polymod.MacMetadataBridge.dll": "a41c42735adc36dcbd883aa8ce65d18a15ba508ba9eb9e2e19b3def585f4bd58",
+    "BepInEx/plugins/PolyMod.dll": "61588813d4b62d133db06fad64a2c440869aaffaf7460ec8bc8e9d82b1be63d7"
+  },
+  "reference_api_sha256": {
+    "PolyMod.dll": "61588813d4b62d133db06fad64a2c440869aaffaf7460ec8bc8e9d82b1be63d7",
+    "0Harmony.dll": "6c898933b52149e8bcf6722305c7e4d94add47c9e53b364096f91721624c0877",
+    "GameLogicAssembly.dll": "ddc43014de6b1e014324b39a594fb76c73ea967e15a4698868b4dbae7745d92f",
+    "PolytopiaAssembly.dll": "cc8ef74ba23f5d8c2c1ceca461e9011c6a947446db3083d2bd7338ca7dd68c13",
+    "Il2Cppmscorlib.dll": "8c1dcc3e3c0d2d0d0924b6dd3d5e2012e3f5b66b53822a079f2300ce675fb7a7"
+  }
+}

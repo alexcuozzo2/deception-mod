@@ -1,0 +1,7 @@
+{
+  "version": "0.3.50",
+  "archive_sha256": "df2d55d60b715cae9a89cce7a1cdc9d150bea9dd175c69005d9ec9c6d0e20337",
+  "dll_sha256": "f44bd2af3c878af4fae6c3120b466622ad710b8e0fd0bed6875dd9271d11d10a",
+  "source": "run-output/full-branch-implementation/candidate-0350/install-verification.json",
+  "provenance": "Exact 0.3.50 installed archive reverified before this increment. Alex tested both-view Smuggle and Regroup Keep/Swap animation; reported unstable action order and eligibility. Previous archive backup guard remains mandatory. No save mutation required."
+}

@@ -1,0 +1,7 @@
+{
+  "version": "0.3.51",
+  "archive_sha256": "8d421e2579d9b5a296ff8f070d61fdde8cdb030c6f15e84eee910166714ae8c4",
+  "dll_sha256": "748232572dcf37320e99568e85d2f67cfaf9e92ac39fa1b57721e07e696b33e6",
+  "source": "run-output/full-branch-implementation/candidate-0351/install-verification.json",
+  "provenance": "Exact installed 0.3.51 rehashed after user-reported freeze and reboot. Incident logs preserved in incident-0351. Authorized own-mod replacement with exact backup; no framework or save changes."
+}

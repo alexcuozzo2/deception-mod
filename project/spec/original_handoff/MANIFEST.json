@@ -1,0 +1,43 @@
+{
+  "design_id": "DECEPTION-DF-1",
+  "date": "2026-09-14",
+  "status": "Final design handoff; implementation and gameplay tests not run",
+  "acceptance_case_count": 180,
+  "completion_default_count": 20,
+  "native_check_count": 16,
+  "structural_checks": [
+    "JSON parses",
+    "180 unique consecutive IDs",
+    "Markdown and JSON case IDs match in order",
+    "Every case has setup/actions/actual outcome/observer outcome/forbidden behavior/rule references",
+    "Levels increase from 1 through 11",
+    "All case statuses NOT RUN",
+    "Rule reference ranges valid",
+    "20 main sections",
+    "Balanced fenced blocks"
+  ],
+  "files": [
+    {
+      "name": "START_HERE.md",
+      "bytes": 5858,
+      "sha256": "158ae33039807045ade3170d188e9c26207f66fce1c22803c8c1ffc0cb80ca73"
+    },
+    {
+      "name": "DECEPTION_V1_FINAL.md",
+      "bytes": 164004,
+      "sha256": "452b6f1f81ce86d8164bf82daa74f7f90f7ac7d46d83f492979679ba73597a42"
+    },
+    {
+      "name": "ACCEPTANCE_TESTS.json",
+      "bytes": 126091,
+      "sha256": "2ee6b9191d5e3a4ebeefbea2d46fc4256d6303a00f239a873a839850217f9a97"
+    },
+    {
+      "name": "TEST_RESULTS_TEMPLATE.json",
+      "bytes": 36461,
+      "sha256": "4790adae68733e8ea5d13c724f3cac9a4a5f2a7873c4fe8d9600ced0dcdf2bf7"
+    }
+  ],
+  "source_reconciled": "polytopia_deception_branch_design_spec_v1_4.md plus final approval",
+  "source_sha256": "6390286c3e626be219c87ee69648cf0c0cf12583682b52a7a0274bc4591972f0"
+}

@@ -1,0 +1,13 @@
+{
+  "version": "0.3.8",
+  "archive_sha256": "c98cb4101f1875546b30f20436e0125b40998211fe75a702ba0b459a68a6ce9f",
+  "native_bridge_sha256": "e7d90a0903ff16b4eec50cb183967dd36848175a90f25e491d620a703a962cd7",
+  "source_receipt": "run-output/full-branch-implementation/candidate-038/build-receipt.json",
+  "native_result": "run-output/full-branch-implementation/candidate-038/native-ledger-probe-result.json",
+  "native_checks": 97,
+  "transport_regression_checks": 104,
+  "scope": "detached-native-private-identity-ledger",
+  "limit": "Private ledger transport/semantic diagnostic only. No Regroup/Disguise command, actual death/payment, native mutation, client adoption, saved-game migration, replay or multiplayer secrecy is established. Receipt and tombstone are synthetic private records; genuine data remains native.",
+  "observed_installed_prior": "da01f126cf8b05ca8a5235dcff1278d153ff2e824e18dd18a14165815b9c5416",
+  "normal_quit_exit": 0
+}

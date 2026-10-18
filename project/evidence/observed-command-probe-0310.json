@@ -1,0 +1,15 @@
+{
+  "version": "0.3.10",
+  "archive_sha256": "87ab82d33bda25f490fbc8f31d296064db8cfa5ac670a2ebf73f0b36346a2692",
+  "source_receipt": "run-output/full-branch-implementation/candidate-0310/build-receipt.json",
+  "transport_regression_passed": 104,
+  "command_probe_passed": false,
+  "command_checks_before_failure": 136,
+  "command_probe_failure": "Native CommandBase.FromByteArray propagates Il2CppException; diagnostic incorrectly expected generic-helper false/null. Exact native factory rejection contract corrected for next build.",
+  "source_native_sha256": "06977e3975c12416954a46853ebb99daae2f164cf908ae89575cc283e92fa2a1",
+  "prepared": 312,
+  "cleaned": 312,
+  "smuggle_native_commit": true,
+  "picker_heading_native_verified": true,
+  "normal_quit_exit": 0
+}

@@ -1,0 +1,6 @@
+{
+  "version": "0.3.73",
+  "sha256": "b2e23a8ea20d2b56d151224b574ab0a69f181ab803fc2ede3885e6a479c8a72b",
+  "provenance": "candidate-0373/install-verification.json; independently hashed installed archive and copied candidate-0374/baseline-0373.polymod before edits",
+  "native_feedback": "Alex reports missing Pass-and-Play listing, stale Lighthouse population/extra rediscovery award, missing Blackout fog click feedback and bolt/badge alignment."
+}

@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "suite": "Hosted Python/file-level checks",
+  "command": "DECEPTION_API_REFERENCE_DIR=<supplied external reference directory> python3 -m unittest discover -s project/tests -p test_*.py -q",
+  "tests": 101,
+  "failed": 0,
+  "environment": "Linux x86_64; Python 3.12; no dotnet/csc/mono or Mac game execution",
+  "source_compilation": "NOT RUN",
+  "managed_model_execution": "NOT RUN",
+  "managed_ui_fixture_execution": "NOT RUN",
+  "native_game_execution": "NOT RUN",
+  "note": "Installer/report unit tests use disposable temporary fixture directories, not real Mac installation or game logs."
+}

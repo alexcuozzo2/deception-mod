@@ -1,0 +1,8 @@
+{
+  "version": "0.3.29",
+  "archive_sha256": "5395ccc813aa6a1c08c805db6303207afe42a3c246ac24f0994809b56a6f27a6",
+  "dll_sha256": "c1a50dfd6b1ec69c33cc1cce63bffebda0b41d7d6a40771b6dc2bc3226535740",
+  "native_result": "BOUNDED_ENEMY_RAFT_OVERLAY_LIFECYCLE_PASS",
+  "observations": "run-output/full-branch-implementation/candidate-0329/OBSERVATIONS.md",
+  "user_files": "RESTORED_EXACT_AFTER_ENROLLED_DISPOSABLE_REPLAY"
+}

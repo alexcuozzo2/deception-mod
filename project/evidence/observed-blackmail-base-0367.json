@@ -1,0 +1,8 @@
+{
+  "version": "0.3.67",
+  "sha256": "7a40f20cd89f58839ffa5549c37dd0ed3757f02d0acaeef0bff80211a559e263",
+  "source": "/LOCAL_HOME/Library/Application Support/Steam/steamapps/common/The Battle of Polytopia/Mods/alex_deception_m0.polymod",
+  "observed_at": "2026-09-19T07:59:17.980396+00:00",
+  "evidence": "run-output/full-branch-implementation/candidate-0368/baseline-0367.polymod",
+  "provenance": "Exact installed0.3.67 candidate produced by m0-bcng0wjj and verified against prior install receipt. Native acceptance remains pending Alex."
+}

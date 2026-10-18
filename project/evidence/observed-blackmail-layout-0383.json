@@ -1,0 +1,7 @@
+{
+  "observed_at": "2026-09-21T08:55:44.758846+00:00",
+  "archive_path": "/LOCAL_HOME/Library/Application Support/Steam/steamapps/common/The Battle of Polytopia/Mods/alex_deception_m0.polymod",
+  "archive_sha256": "19a6fed560841a5ddb41f2fae7a45d2b360d2b09ca2c98489c43c88819b0b5f9",
+  "source": "Observed installed 0.3.83 before Blackmail layout update; matches build/m0-u458m7dj receipt and preserved run-output/blackmail-layout-0384/baseline-0383.polymod",
+  "game_running": false
+}

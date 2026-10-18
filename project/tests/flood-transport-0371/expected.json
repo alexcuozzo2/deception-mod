@@ -1,0 +1,23 @@
+{
+  "passed": true,
+  "cases": 15,
+  "assertions": 40,
+  "tests": [
+    "queued-flooded-disembark-preserves-cargo-False-False",
+    "queued-flooded-disembark-preserves-cargo-False-True",
+    "queued-flooded-disembark-preserves-cargo-True-False",
+    "queued-flooded-disembark-preserves-cargo-True-True",
+    "queued-flooded-embark-preserves-land-False-False",
+    "queued-flooded-embark-preserves-land-False-True",
+    "queued-flooded-embark-preserves-land-True-False",
+    "queued-flooded-embark-preserves-land-True-True",
+    "wetland-mode-resolution-False-False",
+    "wetland-mode-resolution-False-True",
+    "wetland-mode-resolution-True-False",
+    "wetland-mode-resolution-True-True",
+    "flood-no-op-then-dry-landing-retains-original-identity",
+    "normal-port-boarding-still-wraps",
+    "flood-child-does-not-bypass-owner-guard"
+  ],
+  "nativeGame": "NOT RUN"
+}

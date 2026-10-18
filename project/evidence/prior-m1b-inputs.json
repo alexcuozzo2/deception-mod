@@ -1,0 +1,19 @@
+{
+  "report": "deception-m0-report.hbg493h_(2).zip",
+  "installed_mod_sha256": "9ebbb99a905820a0665e34598ff182f88947f81790712703299eb9d5a282fa55",
+  "source_sha256": {
+    "src/Version.cs": "d24cd71350626e038ac981ed8e97a0f92256d4b8d6466e645ebb8d2f5a62db41",
+    "src/PolyMod/NativeApi.cs": "42b6cc51608f37c21587be4fb7f02c6340fa7d8085b0fd0f5dd8c2d5349e160b",
+    "src/PolyMod/RecruitmentWheelUi.cs": "12c15ef415bd1dc9a623c865e271febef300c96898d27591991c821f40875965",
+    "src/PolyMod/ResearchAudio.cs": "23ee338a9537a67257c7a0b0d28afbf472e4caa19b9e4b42716aa06d5929f119",
+    "src/PolyMod/Entry.cs": "5b9e1c987ad95576743956d2321897bbbc420b4602626172fa7681c3054c692e",
+    "src/PolyMod/RecruitmentHooks.cs": "86a8db90e1ec644561fa5c6b4f9bcc781f9b7470e3f51207895c69bfb5b30b62",
+    "src/Core/TechTree.cs": "e52ec775981e6a6c54fab92338a2680d0509ea1a2f5426c2ab251980e86964ac",
+    "src/Core/State.cs": "cff5817eb9dc99d50c4dc1fdccb546d6354cd871c68ec00d012f1fbf22e622aa",
+    "src/Core/RecruitmentCatalog.cs": "e23c7a79e5769920e503ef53c544d061516bb673c25b0805873648e70772aae9",
+    "src/Core/Rules.cs": "098d9c397f5d620ddd4edca18634d618fe75c0c0982ae469d01144d7178a3a52",
+    "src/Core/CompoundBodies.cs": "c137ac0543e0fcc0a8b26a3edd00f92fa567ec319374533e9927906a3ec65014",
+    "src/Core/RecruitmentWheel.cs": "7aa7a667e0e63a691052b662c6a451588f146a44f756597f3734dcadad5484df",
+    "src/Core/NativeJson.cs": "96c3222cfca78b8f086c76ec223b0b424313b64ce860dd084acc253aab92b2d1"
+  }
+}

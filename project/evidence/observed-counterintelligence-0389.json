@@ -1,0 +1,7 @@
+{
+  "observed_at": "2026-09-27T11:14:26.255796+00:00",
+  "archive_path": "/LOCAL_HOME/Library/Application Support/Steam/steamapps/common/The Battle of Polytopia/Mods/alex_deception_m0.polymod",
+  "archive_sha256": "05bbc05a2a8075ec36ce0d508e223bd0c7d2ea29656224f54e4cd0556e017ae7",
+  "backup": "/LOCAL_HOME/Developer/deception-local-workspace/run-output/counterintelligence-0390/baseline-0389.polymod",
+  "provenance": "Exact read-only copy of installed 0.3.89 before the user-requested Counterintelligence update."
+}

@@ -1,0 +1,32 @@
+{
+  "source": "Alex supplied 2026-09-19; PNG and MP3 bytes unchanged. Local macOS afconvert decoded MP3 to PCM16 WAV for runtime AudioClip; no image editing.",
+  "files": [
+    {
+      "name": "ninja_smoke.mp3",
+      "source": "user-supplied/ninja_smoke.mp3",
+      "bytes": 26176,
+      "sha256": "29eff0d70e2e7b51468ca49bc88b8c4d4aa93d2d25b3d175a100bdf70240c53b"
+    },
+    {
+      "name": "smoke_grenade_icon.png",
+      "source": "user-supplied/smoke_grenade_icon.png",
+      "bytes": 401079,
+      "sha256": "f74c08e7d64580c33c3126b62a2c230978517f0603a450b9bc0cd52e8790e206"
+    },
+    {
+      "name": "smoke_grenade_projectile.png",
+      "source": "user-supplied/smoke_grenade_projectile.png",
+      "bytes": 300135,
+      "sha256": "04c68d7a7aaef6c0676acbabd804b266cc5edb8b4e73b3f9304b827b8adb0aa9"
+    }
+  ],
+  "derived_audio": {
+    "name": "ninja_smoke.wav",
+    "sha256": "64de332f5839795a8969e4d567921044cc86c88ca36dd0cb56b4743df148353f",
+    "channels": 2,
+    "sample_width": 2,
+    "rate": 48000,
+    "frames": 24000
+  },
+  "audio_authorship": "Alex confirmed on 2026-10-18 that he created Ninja Smoke; WAV is derived from that MP3."
+}

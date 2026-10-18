@@ -1,0 +1,19 @@
+{
+  "authority": "spec/AMENDMENT_A11_BEHAVIOR_PRIORITY_AND_BRANCH.md",
+  "authority_sha256": "a7c87e293100fa556df642aee7c17093b26663648860e29a95381d1c288d502c",
+  "reason": "User revises branch topology; all five nodes use native research cue. Original root and native data preservation are covered by executed model fixtures. Historical source receipts remain unchanged.",
+  "sources": {
+    "src/Core/TechTree.cs": "bac17206e7c718d94d24ab5d231f4fe6f678569c92f6233cd595448e85aaa076",
+    "src/PolyMod/ResearchAudio.cs": "9d7841296afd0cc1a7d3819aa57dd299fe271abf10dc31c948d377824df6b4c3"
+  },
+  "historical": {
+    "evidence/prior-m1a-inputs.json": {
+      "src/Core/TechTree.cs": "e52ec775981e6a6c54fab92338a2680d0509ea1a2f5426c2ab251980e86964ac",
+      "src/PolyMod/ResearchAudio.cs": "23ee338a9537a67257c7a0b0d28afbf472e4caa19b9e4b42716aa06d5929f119"
+    },
+    "evidence/m1c-baseline.json": {
+      "src/Core/TechTree.cs": "e52ec775981e6a6c54fab92338a2680d0509ea1a2f5426c2ab251980e86964ac",
+      "src/PolyMod/ResearchAudio.cs": "23ee338a9537a67257c7a0b0d28afbf472e4caa19b9e4b42716aa06d5929f119"
+    }
+  }
+}

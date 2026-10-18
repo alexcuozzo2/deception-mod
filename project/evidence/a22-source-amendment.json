@@ -1,0 +1,8 @@
+{
+  "authority": "spec/UI_A22_CLOAKS_AND_NAVAL_UPGRADES.md",
+  "authority_sha256": "84ec1d61198a22d4d867ace46e8b1ddf22a110d6fc1cf41361402ce3416ce346",
+  "source": "src/Core/RecruitmentCatalog.cs",
+  "source_sha256": "6b4bd2b372aa19ac011be6c7f47863e5d4bd292e61f1c795d41e33f4ab0f5973",
+  "previous_sha256": "f9e538d70a32461bdcd093ff42e1eaacc594dcb3362c23fdd3c4d3f4ebea93a1",
+  "reason": "Alex requests Cloak and Mermaid Cloak recruitment, copying and independent disguises with native concealment; retain real Mimic 1HP, zero offense and separate genuine powers."
+}

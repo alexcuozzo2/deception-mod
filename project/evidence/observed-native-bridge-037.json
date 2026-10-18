@@ -1,0 +1,9 @@
+{
+  "version": "0.3.7",
+  "installed_archive_sha256": "da01f126cf8b05ca8a5235dcff1278d153ff2e824e18dd18a14165815b9c5416",
+  "native_bridge_sha256": "e7d90a0903ff16b4eec50cb183967dd36848175a90f25e491d620a703a962cd7",
+  "native_result": "/LOCAL_HOME/Developer/deception-local-workspace/run-output/full-branch-implementation/candidate-037/native-envelope-probe-result.json",
+  "native_passed": true,
+  "native_checks": 104,
+  "provenance": "Exact036 backup. Source99 hashes snapshotted. Opt-in bridge installed with verified nativeexport/delegate/provider pointers, owningimage, nativeprologues andABI. Detached valid+corrupt/container/writer acceptance passed. Source state/board unchanged; selected hold/UI smoke passed. NormalQuit launcher42673 exit0. No gameplay framed state or client publication/replay claim."
+}

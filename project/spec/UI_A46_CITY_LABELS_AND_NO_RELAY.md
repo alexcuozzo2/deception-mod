@@ -1,0 +1,7 @@
+# A46 — Blackmail city layout and removal of Relay
+
+Alex reports that Blackmail notes are correctly placed below foreign city names, but overlap the population bar when viewing an owned city. Position the centered note row below the visible native city label/status area for both viewer layouts, clear of the population bar. Preserve A45's consistent icon dimensions, aspect ratio, actor colors, compact spacing, camera behavior and pooled city/viewer safety. Account for native status elements appearing or disappearing after selection or a pass-and-play turn change.
+
+Remove Relay from Spy and Spymaid entirely. Subvert and Blackout use only the initiating actual Spy's native range-two area; nearby allied, exhausted, disguised or Rogue Spies never extend it. Preserve direct-range targets, visibility and authority checks, one move-or-action budget, and 5HP/1defense. Remove the Relay ability tag and help text from map, tech and inspected Spy presentations. Update other ability descriptions to state direct range. Reject stale remote targets at command validation before any cost or state mutation.
+
+Alex leads gameplay testing. No automatic launch, Computer Use or save edits. Preserve logs and the exact previous mod; run required build/check/install gates while the game is closed. Update Hub information and distribute both platform sections in the combined setup ZIP, clearly retaining Windows preparation-only status.

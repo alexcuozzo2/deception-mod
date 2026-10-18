@@ -1,0 +1,21 @@
+{
+  "version": "0.3.18",
+  "archive_sha256": "7afebae2b3213795aaa3ffadca7cb61380b93aa899edc3410f056e9bfb2911ea",
+  "dll_sha256": "a6e82b6d27b752b15dffd7fc0a7f3fd959317f96c1f7e4a3d08912f758aef10b",
+  "native_bridge_sha256": "a40bfa3346aad13a090d755da6e44867feb6b3e2ebc0691171b580e7e2595df5",
+  "execution_bridge_sha256": "669987169842da89d333758c7baafde1707cf8eb65ab1fcc15eb65b3d7f9f7fa",
+  "sources_reverified": 129,
+  "native_fresh_creation": "BOARD_ENTERED_ORDINARY_SELECTION_AND_MOVEMENT_OBSERVED",
+  "native_execution_trial": "NOT_STARTED_READINESS_GATE",
+  "event_count": 35,
+  "execution_events": [
+    {
+      "timestamp": "2026-09-16T04:13:26.299484+05:30",
+      "kind": "native-execution-probe-armed",
+      "message": "Four typed native sites installed. Waiting for two idle frames in the exact newly enrolled disposable; no trial has run."
+    }
+  ],
+  "build_receipt": "run-output/full-branch-implementation/candidate-0318/build-receipt.json",
+  "observations": "run-output/full-branch-implementation/candidate-0318/OBSERVATIONS.md",
+  "user_save_inactive_and_protected": true
+}

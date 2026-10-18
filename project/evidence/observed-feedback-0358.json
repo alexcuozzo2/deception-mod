@@ -1,0 +1,5 @@
+{
+  "version": "0.3.58",
+  "sha256": "75a062ac2e634eaa45d4f9e142aa4be3031b47c69603aed81425e02e1f587cfe",
+  "provenance": "Installed archive rehashed and preserved before 0.3.59 work; run-output/full-branch-implementation/candidate-0359/preinstall-baseline.json and baseline-0358.polymod. Prior verified install: candidate-0358/install-verification.json."
+}

@@ -1,0 +1,9 @@
+{
+  "version": "0.3.33",
+  "archive_sha256": "5434013e61d33cac99627a6dfbcafc396da99fe8b04ac396a638c89dc753cde1",
+  "dll_sha256": "1245569f0ed061ba7cd2b91296ba59921189284ed5b8a7df64be0f1d58758dc4",
+  "provenance": "run-output/full-branch-implementation/candidate-0333/final-verification.json",
+  "native_leaf_checks": 164,
+  "native_outer_checks": 63,
+  "base_gameplay": "movement, ordinary Warrior purchase, end turn observed; normal quit and exact user restoration"
+}

@@ -1,0 +1,18 @@
+{
+  "authority": "spec/UI_A52_COUNTERINTELLIGENCE_RESTRUCTURE.md",
+  "authority_sha256": "1941145b312d67d0372d9bdf36063874d2db8acaf34b2bdaf92d3625d9fa4570",
+  "sources": {
+    "src/Core/TechTree.cs": {
+      "previous_sha256": "bac17206e7c718d94d24ab5d231f4fe6f678569c92f6233cd595448e85aaa076",
+      "source_sha256": "e0b5e410dfd74cea99f66c8d748423593fd54f7e7ba008b677ee29f03982c804"
+    },
+    "src/Core/RecruitmentCatalog.cs": {
+      "previous_sha256": "3bf3899446dfe21e2261b4d52459cf32a1420a004c4707510ed4dc6f5d18393f",
+      "source_sha256": "ec41ae39c8b696c612aaa62e4421ec66679c9f99d793b2d159c33b254a5414eb"
+    },
+    "src/PolyMod/TechPresentation.cs": {
+      "previous_sha256": "66c87d73333900ee9fe2a10a056b0efbcc577df98d7ced9c860bda1613a353ad",
+      "source_sha256": "cc9757ce01c9d9745ed28901095c9dca062b340d646c95b4a1d0b2b9d7c61e25"
+    }
+  }
+}

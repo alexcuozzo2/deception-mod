@@ -1,0 +1,8 @@
+{
+  "version": "0.3.30",
+  "archive_sha256": "3e9bb7ce486958cbbe195f5bfeaa041362a327a2b8c0fb4334bb52d2d6a38c98",
+  "dll_sha256": "247c1835916b5638758c9c8a47e4ec5b7d85be2942ceb4137a0f01b66c0e9cd6",
+  "native_result": "PROTECTED_CENSUS_WRAPPER_MISMATCH_BEFORE_NATIVE_DETOURS",
+  "observations": "run-output/full-branch-implementation/candidate-0330/OBSERVATIONS.md",
+  "user_files": "RESTORED_EXACT_AFTER_FRESH_ENROLLED_DISPOSABLE"
+}

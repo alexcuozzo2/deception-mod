@@ -1,0 +1,7 @@
+{
+  "version": "0.3.6",
+  "archive_sha256": "037a7a1f884c2300a662a9020a20230819d5cb85acd385220aa36be94805cecc",
+  "provenance": "Installed checked candidate036 with exact035 backup; actual-detour diagnostic passed valid copies but FAILED malformed native caller propagation. All six corrupt records accepted by generic helper; source unchanged. Opt-in only, not gameplay persistence.",
+  "result": "/LOCAL_HOME/Developer/deception-local-workspace/run-output/full-branch-implementation/candidate-036/native-envelope-probe-result.json",
+  "receipt": "/LOCAL_HOME/Developer/deception-local-workspace/run-output/full-branch-implementation/candidate-036/build-receipt.json"
+}

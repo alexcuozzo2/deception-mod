@@ -1,0 +1,13 @@
+{
+  "tag": "v0.3.102-windows-mac.1",
+  "sourceCommit": "c534862d63f3303f3b3ce0f49ab56649a0807bbd",
+  "asset": "Deception-Setup-0.3.102-windows-mac.1.zip",
+  "sha256": "aba41a5a427eaad153cfb45cb6973b6acc8a13e0a561f39d09ec742178356159",
+  "size": 87384744,
+  "modSha256": "0cd166ad26a1ec84083698e14b4a363029687727a3220f4520de62533eec5e43",
+  "platforms": [
+    "win-x64",
+    "osx-x64 (Rosetta on Apple Silicon)"
+  ],
+  "status": "WITHDRAWN: loader redistribution under review; use standalone official-loader review artifact"
+}

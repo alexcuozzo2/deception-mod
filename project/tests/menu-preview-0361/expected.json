@@ -1,0 +1,28 @@
+{
+  "cases": 22,
+  "assertions": 60,
+  "results": [
+    "PREVIEW-001-exact-no-argument-producer-hook-and-finalizer",
+    "PREVIEW-002-outside-scope-does-not-inspect-envelope",
+    "PREVIEW-003-unbound-template-scope-is-balanced",
+    "PREVIEW-004-nested-scope-restores-exact-prior-depth",
+    "PREVIEW-005-error-finalizer-preserves-original-exception",
+    "PREVIEW-006-inner-error-does-not-leak-or-revoke-outer",
+    "PREVIEW-007-scope-does-not-cross-thread",
+    "PREVIEW-008-unbound-template-transport-read",
+    "PREVIEW-008-unbound-template-transport-write",
+    "PREVIEW-009-active-match-legacy-denial-retained-outside-producer",
+    "PREVIEW-010-initial-opening-legacy-window-retained",
+    "PREVIEW-011-enrolled-match-rejected-inside-producer-False",
+    "PREVIEW-011-enrolled-match-rejected-inside-producer-True",
+    "PREVIEW-012-framed-unenrolled-rejected-inside-producer-False",
+    "PREVIEW-012-framed-unenrolled-rejected-inside-producer-True",
+    "PREVIEW-013-enrolled-with-missing-frame-is-still-rejected",
+    "PREVIEW-014-framed-input-with-preview-null-token-rejected",
+    "PREVIEW-015-gameplay-frame-remains-exact-token-and-epoch-bound",
+    "PREVIEW-016-unbound-preview-does-not-validate-active-fake-client",
+    "PREVIEW-017-unbound-preview-does-not-repair-or-borrow-faulted-session",
+    "PREVIEW-018-paid-action-reentry-remains-forbidden",
+    "PREVIEW-019-exception-denial-finally-revokes-scope"
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "milestone": "M1D source candidate",
+  "design": "v1.5 + A01/v1.6 + UI-A02/A03 + latest UI-A04",
+  "changed_scope": "Apparent form/HP UI, private repeat-selection inspection, text controls, scoped native noncombat readiness",
+  "model_tests_authored": 157,
+  "managed_ui_adapter_fixture_tests_authored": 44,
+  "model_tests_executed_here": "NOT RUN",
+  "managed_ui_adapter_fixture_tests_executed_here": "NOT RUN",
+  "native_adapter_compilation_here": "NOT RUN",
+  "native_game_tests": "NOT RUN",
+  "metadata_signatures_matched": 235,
+  "runtime_ui_methods_not_checked_here": 2,
+  "m1c_baseline": "USER-REPORTED working research, compact popup, second wheel and purchases; not exhaustive form coverage",
+  "known_gaps": [
+    "Identity-safe native transport",
+    "Cloak and other deferred forms",
+    "Native independent apparent-wound persistence",
+    "Keyboard/controller repeat-selection",
+    "Global enemy readiness, combat prediction/AI, replay/multiplayer secrecy",
+    "Higher technologies and save migration"
+  ],
+  "full_gameplay_design_status": "INCOMPLETE \u2014 see M1D_REVIEW.md"
+}

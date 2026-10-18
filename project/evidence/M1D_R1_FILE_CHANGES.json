@@ -1,0 +1,37 @@
+{
+  "baseline": "Exact delivered M1D candidate",
+  "modified": [
+    "README.md",
+    "content/manifest.json",
+    "docs/COVERAGE.json",
+    "docs/STATUS.md",
+    "docs/VALIDATION_M1D.md",
+    "evidence/README.md",
+    "run.sh",
+    "src/Version.cs",
+    "tests/test_m1a_packaging.py",
+    "tests/test_m1b_packaging.py",
+    "tools/manage.py"
+  ],
+  "added": [
+    "docs/BUILD_REPAIR_M1D_R1.md",
+    "docs/VALIDATION_M1D_R1.md",
+    "docs/history/M1D/COVERAGE.json",
+    "docs/history/M1D/HANDOFF.md",
+    "docs/history/M1D/README.md",
+    "docs/history/M1D/STATUS.md",
+    "docs/history/M1D/VALIDATION_M1D.md",
+    "evidence/input-m1d-build/model-test-results.json",
+    "evidence/input-m1d-build/native-api-results.json",
+    "evidence/input-m1d-build/summary.json",
+    "evidence/input-m1d-build/ui-adapter-results.json",
+    "evidence/m1d-r1-python-results.json",
+    "evidence/m1d-r1-python-tests.txt",
+    "src/PolyMod/CompilerMetadata.cs",
+    "tests/test_compiler_metadata.py",
+    "tools/audit_compiler_metadata.py"
+  ],
+  "removed": [],
+  "gameplay_and_csharp_fixtures_byte_identical": true,
+  "new_csharp_scope": "Internal managed compiler metadata only; Version.cs updated"
+}

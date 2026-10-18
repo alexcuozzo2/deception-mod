@@ -1,0 +1,180 @@
+{
+  "baseline": "M1D-R1 exact source matched to 68 supplied receipt entries",
+  "candidate": "M1E 0.2.5",
+  "changes": [
+    {
+      "file": "content/DEVELOPMENT-STATUS.txt",
+      "old_sha256": "d9913dfefa831c0661095f2f354c45258c28a7bf27e5ed37eaf4b1569eb5453d",
+      "new_sha256": "2d275a3814f1f164b0b1fd609091561888e2aba6c886e2e5ee88e8445b8f9140"
+    },
+    {
+      "file": "content/manifest.json",
+      "old_sha256": "deec131ed7acd56e87f978c3660c232d36ee2bbbb9058312cf94f5d912be0dca",
+      "new_sha256": "db6b2853055cfccd41d6f34a81ef9423fb06704fee292f0bc1d1a19b4948a8b8"
+    },
+    {
+      "file": "run.sh",
+      "old_sha256": "d1fbdd2269ba127bf912958b11df2f41b4e896673440ccbf0d1eab660103b365",
+      "new_sha256": "909ec4ad68c5214ca4cd9218770bdd2bf71aa52ff35429564ec86f192f8e345e"
+    },
+    {
+      "file": "spec/START_HERE.md",
+      "old_sha256": "45025a436da4e4a7feca07aff24d15660f7c78dea51a3b9eb11879ad5f3f1983",
+      "new_sha256": "5b17da744e003620624d30b662b400461a63ceb620fcc44078d2a8a7478e4c56"
+    },
+    {
+      "file": "spec/UI_A05_HOLD_INSPECTION.md",
+      "old_sha256": null,
+      "new_sha256": "5535051a39a5de7dd8c558b10b3aa4b0e9a6b4fd958acd8e78d233dc8b318a1a"
+    },
+    {
+      "file": "src/Core/Presentation.cs",
+      "old_sha256": "5a28c5035b972c602fd7f74c6444644ceeb27fd2374427ac6e964f4ef5ae3244",
+      "new_sha256": "4d3920f1fd641cb8ed341f3a15d6a673312e4f68e19fa8231fefc5974ba3a388"
+    },
+    {
+      "file": "src/Core/State.cs",
+      "old_sha256": "c396144c4d8984da8e2c704d7da75361e3e50856ea374925ae2f07b77b86b11c",
+      "new_sha256": "553a5bee17d09daea52cd6c75bed38999a68149073b27217b48d665aad9696d6"
+    },
+    {
+      "file": "src/PolyMod/Entry.cs",
+      "old_sha256": "f0953c31d87f564f37ca2d2b30ffdf817d584d363468b7f39dcb7b97e1bcdfff",
+      "new_sha256": "953eba7d3513ec308a23843d291a0bd03206e28afc625acc058b0cfffc595564"
+    },
+    {
+      "file": "src/PolyMod/MimicControls.cs",
+      "old_sha256": "0e87093ebd59c5bbf62744b625a24663cca75ad04c187b34e53b8fc682573482",
+      "new_sha256": "a40dbc21e884c22ab25d411c7a49c3a242127e1e78ca8c20e47e0b3c8a6e4860"
+    },
+    {
+      "file": "src/PolyMod/MimicHoldInput.cs",
+      "old_sha256": null,
+      "new_sha256": "52fb105ff6d98b912f1d5b60deb27933194c964f665e54de8412033cc6884043"
+    },
+    {
+      "file": "src/PolyMod/MimicInspectionControls.cs",
+      "old_sha256": null,
+      "new_sha256": "6f8b89415b65b005f74543f84861806140d9adb966e32e86b6c0963e696add28"
+    },
+    {
+      "file": "src/PolyMod/MimicPresentationUi.cs",
+      "old_sha256": "2230bdc3753eefd06fa2408f4481c387ade59aa36c4d598440cc6e6d2cfd92b1",
+      "new_sha256": "1134fb9a51116379ccc82c33e43c15c78db0b030daedea9dafee9ad77d428361"
+    },
+    {
+      "file": "src/PolyMod/RecruitmentWheelUi.cs",
+      "old_sha256": "952f2eb2090b70effb39448b9feb86b3ac9d574adf532f1599d844304632c490",
+      "new_sha256": "125d46ca424ba70dcf844dffc5eae5d696b29d0a89a043cbb8493e5313be2e0a"
+    },
+    {
+      "file": "src/Version.cs",
+      "old_sha256": "1763abd2da11785c2a6a72e2fba864b63bc5cce62015b22f55e778f849d28545",
+      "new_sha256": "f2ccccd7c1a962ec9bbc1f48eb7866442ec5107f3e71ecb45dc09e6a321c3d94"
+    },
+    {
+      "file": "tests/PresentationTests.cs",
+      "old_sha256": "edcc8ec7452afc907fddfdebcea43cf2dc730ed5ba4dc11cefb6c377b89d8b2a",
+      "new_sha256": "c3330d79001fd4f878904a22ffb0241bb52cfb73b2c302166141f8131e845c33"
+    },
+    {
+      "file": "tests/expected-model-tests.json",
+      "old_sha256": "3ea1585e29eb8f04f8d05346c0cf188227cb9302b8bf5dc4c0355fa44cc2cfb2",
+      "new_sha256": "b954c8588fae9b1bcdf61b95bc3423fdfa3712028db8be63d60881a842183e4d"
+    },
+    {
+      "file": "tests/expected-ui-adapter-tests.json",
+      "old_sha256": "c4679e427e4de7fa4a605f62c250083b03c1992e6d09457176cfa11a41ff9c0b",
+      "new_sha256": "788651abb7aee5952ddb47d2691b60d2d24c123664a15b664103e5f8c94165de"
+    },
+    {
+      "file": "tests/test_m1a_packaging.py",
+      "old_sha256": "b9df6345c8b66e42dcdfe5a1930dd0fc22dad9433934dc8057ae437f76e4208b",
+      "new_sha256": "11708698e5a10b429b7b804ea15afcfb4d507c3640866677835282137f1fe125"
+    },
+    {
+      "file": "tests/test_m1b_packaging.py",
+      "old_sha256": "8ca8636324147516ba0ac254993e834751c4379cf67d8e1fbe3580bb72f64d2c",
+      "new_sha256": "1e3056e58805776b378a426b7c4d7d3c269b4577101e3199cc75caec7f312e75"
+    },
+    {
+      "file": "tests/ui-adapter/HoldInputAdapterTests.cs",
+      "old_sha256": null,
+      "new_sha256": "79c1fab2f8b758987f5c9cffb1993294621a5e30a398fbc4fb33e68beb3a358c"
+    },
+    {
+      "file": "tests/ui-adapter/NativeUiFixture.cs",
+      "old_sha256": "6fedc4b56b1f2f306bbba13b46065dd0b24963a42a7590641f8fe20cd8781baf",
+      "new_sha256": "059733e39d92b5c0ed0e381acdff62262f5abeb0d6a05cca049f8b33f253b6af"
+    },
+    {
+      "file": "tests/ui-adapter/PresentationAdapterTests.cs",
+      "old_sha256": "56ca6c42a0a1eee6c57dde1fe66c94e7208dcf21df2da6a095ab4f71bc524bf0",
+      "new_sha256": "1f01bc9e326f8d151c6593359d3e1dfc76d92d31757315ef5be14a1fc0c34a59"
+    },
+    {
+      "file": "tests/ui-adapter/UiAdapterTests.cs",
+      "old_sha256": "4dadf1c550c21e647ce2f04812aeb224645f1185d7c3c9a98d3d924ed9764d19",
+      "new_sha256": "df4a832d448879aac16a828b156f6cea1a895312724ac685ec7004f7037f7f02"
+    },
+    {
+      "file": "tools/manage.py",
+      "old_sha256": "6c6975fee38fee28d320035fcbfbf49e777ad5a8cde06cf1c66c27bf62d27666",
+      "new_sha256": "c9b71b4820758ae7cfeff724b6cdb3a4d065dec48a7eabe74786907e4962ec96"
+    },
+    {
+      "file": "tools/native-wheel-api.json",
+      "old_sha256": "3d51881e625fdcd7a0fa69de70cd7bf045bb30941d8c8f94be547ac9154f0590",
+      "new_sha256": "13250621703d6db59f48704d3e622dab3d2ecc809c96f5575bbbcabfae91f7ee"
+    }
+  ],
+  "unchanged_files": [
+    "content/localization.json",
+    "spec/ACCEPTANCE_TESTS.json",
+    "spec/ACCEPTANCE_TESTS_v1_6.json",
+    "spec/AMENDMENT_A01_v1_6.md",
+    "spec/AMENDMENT_SOURCE.json",
+    "spec/FINAL_v1_5.md",
+    "spec/SOURCE_MANIFEST.json",
+    "spec/TEST_RESULTS_TEMPLATE.json",
+    "spec/TEST_RESULTS_v1_6.json",
+    "spec/UI_A02_RECRUITMENT_WHEEL.md",
+    "spec/UI_A03_UI_REGRESSION_CHECKS.md",
+    "spec/UI_A04_MIMIC_PRESENTATION.md",
+    "spec/VISUAL_AUDIO_UI_APPENDIX.md",
+    "spec/original_handoff/ACCEPTANCE_TESTS.json",
+    "spec/original_handoff/DECEPTION_V1_FINAL.md",
+    "spec/original_handoff/MANIFEST.json",
+    "spec/original_handoff/START_HERE.md",
+    "spec/original_handoff/TEST_RESULTS_TEMPLATE.json",
+    "src/Core/CompoundBodies.cs",
+    "src/Core/NativeJson.cs",
+    "src/Core/RecruitmentCatalog.cs",
+    "src/Core/RecruitmentWheel.cs",
+    "src/Core/Rules.cs",
+    "src/Core/TechTree.cs",
+    "src/PolyMod/CompilerMetadata.cs",
+    "src/PolyMod/MimicPresentationState.cs",
+    "src/PolyMod/NativeApi.cs",
+    "src/PolyMod/OrdinaryActionEligibility.cs",
+    "src/PolyMod/RecruitmentHooks.cs",
+    "src/PolyMod/ResearchAudio.cs",
+    "src/PolyMod/TechPresentation.cs",
+    "tests/AmendmentTests.cs",
+    "tests/KernelTests.cs",
+    "tests/RecruitmentTests.cs",
+    "tests/RecruitmentWheelTests.cs",
+    "tests/native-tree.captured.json",
+    "tests/native-tree.synthetic.json",
+    "tests/test_compiler_metadata.py",
+    "tests/test_m1c_packaging.py",
+    "tests/test_m1d_packaging.py",
+    "tests/test_packaging.py",
+    "tools/audit_compiler_metadata.py",
+    "tools/audit_native_api.py",
+    "tools/cli_metadata.py",
+    "tools/coreclr-probe.c",
+    "tools/host-contract.json",
+    "tools/previous-source-contract.json"
+  ]
+}

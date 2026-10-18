@@ -1,0 +1,6 @@
+{
+  "version": "0.3.1",
+  "installed_archive_sha256": "1a8ce639b1df3f83edef28068c6ffae3ea5c796f40edc469653268b32ec5f9f8",
+  "dll_sha256": "e66602f7f2eaca9b5c77d0bee53ba3450b52e441584ac2cda7bd4d129ba13cd1",
+  "provenance": "Exact installed diagnostic candidate with verified030 backup; native Resume and UI toggle observed, Smuggle rejected by combined harvest lookup/research guard. Rehashed source preserved in candidate-031/baseline-source."
+}

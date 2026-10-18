@@ -1,6 +1,6 @@
-# Declarative content review — 0.3.106 candidate
+# Declarative content review — 0.3.107 candidate
 
-This refactor separates ordinary game data and original artwork/audio from the compiled behavior. It preserves 0.3.105 gameplay and the shared Mac/Windows native helpers. Native playtesting of this candidate is pending; 0.3.105 remains the published release.
+This refactor separates ordinary game data and original artwork/audio from the compiled behavior. It preserves 0.3.105 gameplay and the shared Mac/Windows native helpers. Alex reported that 0.3.106 passed basic Mac playtesting. Version 0.3.107 adds a scoped Rogue-to-friendly hover-calculator fix; its native playtesting and Windows refactor playtesting are pending. 0.3.105 remains the main published release.
 
 ## Start here
 

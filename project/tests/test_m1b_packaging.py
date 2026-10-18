@@ -70,7 +70,7 @@ class M1BChecks(unittest.TestCase):
         self.assertNotIn('Native.Set(data,',code)
     def test_13_self_contained_mod_only_dependency(self):
         manifest=json.loads((ROOT/'content/manifest.json').read_text())
-        self.assertEqual(manifest['id'],'alex_deception');self.assertEqual(manifest['version'],'0.3.106')
+        self.assertEqual(manifest['id'],'alex_deception');self.assertEqual(manifest['version'],'0.3.107')
         self.assertIn(manifest['version'],manifest['name']);self.assertNotIn('M1E',manifest['name'])
         assembly=(ROOT/'src/Version.cs').read_text()
         self.assertIn('AssemblyVersion("'+manifest['version']+'.0")',assembly)

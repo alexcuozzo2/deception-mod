@@ -31,6 +31,7 @@ namespace Deception.PolyModAdapter
             internal readonly Dictionary<uint,Prediction> Targets=new();
             internal Prediction? Last;
             internal bool Closed,Failed;
+            internal object? HoverOwner;internal bool HoverOwnerChecked;
             internal Scope(Scope? previous){Previous=previous;State=Client=Map=World=Attacker=Body=null!;Epoch=Generation;Current=this;}
             internal Scope(Scope? previous,object state,object client,object map,object attacker,object body,byte viewer,bool overlays,object? interaction,object? hover)
             {Previous=previous;Bound=true;State=state;Client=client;Map=map;World=Native.Get(state,"Map")!;Snapshot=NativeGameStateEnvelope.Get(state);Attacker=attacker;Body=body;Viewer=viewer;Overlays=overlays;Interaction=interaction;Hover=hover;Turn=Convert.ToUInt32(Native.Get(state,"CurrentTurn"));Epoch=Generation;Current=this;}
@@ -74,6 +75,7 @@ namespace Deception.PolyModAdapter
         internal static void Install(Harmony h)
         {
             var t=typeof(NativeCombatPreview);
+            Native.Hook(h,Native.M("Unit","get_Owner"),t,null,nameof(HoverOwner));
             Native.Hook(h,Native.M("ClientInteraction","StartHoverUnit","Unit"),t,nameof(BeforeHover),null,nameof(Finished));
             Native.Hook(h,Native.M("Unit","UpdateOverlays"),t,nameof(BeforeOverlays),nameof(AfterOverlays),nameof(Finished));
             Native.Hook(h,Native.M("BattleHelpers","GetBattleResults","GameState","UnitState","UnitState","System.Boolean","System.Boolean"),t,nameof(BeforeBattle),nameof(AfterBattle),nameof(BattleFinished));
@@ -110,6 +112,31 @@ namespace Deception.PolyModAdapter
         }
         public static bool BeforeHover(object __instance,object __0,out Scope? __state)
         {__state=null;try{Begin(Native.Get(__instance,"selectedUnit"),false,__instance,__0,out __state);return true;}catch(Exception e){Fail(__state,e);return false;}}
+        // StartHoverUnit compares the two Owner object pointers before calling
+        // BattleHelpers. For a same-controller Rogue attack only, give that
+        // comparison a detached, unchanged player object. No ownership, color,
+        // diplomacy or combat state is written; consume the exception once.
+        public static void HoverOwner(object __instance,ref object __result)
+        {
+            var s=Current;
+            if(Computing is not null||s is null||s.Overlays||s.HoverOwnerChecked||s.Hover is null||!s.Valid)return;
+            try
+            {
+                if(Native.Same(__instance,s.Attacker)){s.HoverOwner=__result;return;}
+                if(!Native.Same(__instance,s.Hover)||s.HoverOwner is null)return;
+                s.HoverOwnerChecked=true;
+                var target=Native.Get(s.Hover,"UnitState");
+                if(target is null||Native.Same(s.Body,target)||!Exact(s.State,s.Map,s.Hover,target)||!Visible(s.Hover)||
+                    Native.Int(Native.Get(s.Body,"owner"))!=s.Viewer||Native.Int(Native.Get(target,"owner"))!=s.Viewer||
+                    !Native.Same(s.HoverOwner,__result)||Native.Int(Native.Get(__result,"Id"))!=s.Viewer)return;
+                var source=NativeRogueRules.Row(s.State,s.Body);
+                var defender=NativeRogueRules.Row(s.State,target);
+                bool Rogue(LedgerUnit? row)=>row is {Alive:true,Rogue:not null}&&row.Rogue.Commander==s.Viewer&&row.Rogue.AcquiredTurn<=s.Turn;
+                if(!Rogue(source)&&!Rogue(defender))return;
+                __result=Native.DetachedClone(__result,"PlayerState");
+            }
+            catch(Exception e){Fail(s,e);}
+        }
         public static bool BeforeOverlays(object __instance,out Scope? __state)
         {__state=null;try{Begin(__instance,true,null,null,out __state);return true;}catch(Exception e){Fail(__state,e);return false;}}
         // MapView returns null for an enemy Mimic rendered by its native

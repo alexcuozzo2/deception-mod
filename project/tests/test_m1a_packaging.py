@@ -63,7 +63,7 @@ class M1APackaging(unittest.TestCase):
         self.assertGreaterEqual(len(m.expected_model_ids()),150)
         self.assertEqual(len(set(m.expected_model_ids())),len(m.expected_model_ids()))
     def test_11_only_one_archive_and_no_game_art(self):
-        mf=json.loads((ROOT/'content/manifest.json').read_text());self.assertEqual(mf['version'],'0.3.106');self.assertEqual(mf['id'],'alex_deception')
+        mf=json.loads((ROOT/'content/manifest.json').read_text());self.assertEqual(mf['version'],'0.3.107');self.assertEqual(mf['id'],'alex_deception')
         self.assertNotIn('polibrary',str(mf['dependencies']).lower())
         self.assertIn('prototype',(ROOT/'content/DEVELOPMENT-STATUS.txt').read_text().lower())
     def test_12_no_native_star_or_unit_mutation_in_picker(self):

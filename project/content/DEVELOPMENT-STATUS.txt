@@ -1,1 +1,2 @@
-0.3.106 refactor prototype candidate: patch.json is the unit/technology definition source; PNG/WAV assets are separate archive files. Custom gameplay and existing native helpers retained. Automated checks and Mac/Windows playtest status are recorded in docs/CONTENT-REFACTOR.md. Not a gameplay balance change.
+0.3.107 refactor prototype candidate: patch.json is the unit/technology definition source; PNG/WAV assets are separate archive files. Custom gameplay and existing native helpers retained. Automated checks and Mac/Windows playtest status are recorded in docs/CONTENT-REFACTOR.md. Not a gameplay balance change.
+Rogue-to-friendly hover calculator fix; Mac 0.3.106 refactor playtest passed per user, 0.3.107 native testing pending.
